@@ -37,15 +37,15 @@
   },
   {
     "file": "entries/glm-5.3-high-2026-08-25.svg",
-    "note": "三角钢琴+琴凳弹奏姿态正确，条纹/胡须/月光星空细节丰富。",
+    "note": "三角钢琴+琴凳弹奏姿态正确，条纹/胡须/月光星空细节丰富；但口鼻米色块与嘴错位（偏右约8px），面部对称性受损。",
     "scores": {
-      "cat": 9,
+      "cat": 8,
       "piano": 9,
       "playing": 9,
       "scene": 8,
-      "detail": 8
+      "detail": 7
     },
-    "order": 4
+    "order": 5.5
   },
   {
     "file": "entries/deepseek-v4-pro-deep-2026-08-25.svg",

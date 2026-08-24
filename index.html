@@ -1,136 +1,800 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cat Plays Piano — LLM SVG Gallery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>猫咪弹钢琴画廊 · Cat Plays Piano</title>
+    <meta property="og:title" content="猫咪弹钢琴画廊 · Cat Plays Piano" />
+    <meta
+      property="og:description"
+      content="同一个 prompt，喂给一个又一个语言模型——每一幅都是它们亲手写下的猫弹钢琴 SVG。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="og-image.png" />
     <style>
+      :root {
+        --bg: #fafaf7;
+        --surface: #ffffff;
+        --fg: #1a1916;
+        --muted: #6b6964;
+        --border: #e8e5df;
+        --accent: #c96442;
+        --accent-soft: color-mix(in oklch, var(--accent) 14%, transparent);
+        --fg-soft: color-mix(in oklch, var(--fg) 6%, transparent);
+        --font-display:
+          "Iowan Old Style", "Charter", Georgia, "Times New Roman", serif;
+        --font-body:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+        --font-mono:
+          ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+        --fs-h1: clamp(44px, 6vw, 76px);
+        --fs-h2: clamp(32px, 4vw, 48px);
+        --fs-h3: 22px;
+        --fs-lead: 19px;
+        --fs-body: 16px;
+        --fs-meta: 13px;
+        --gap-xs: 8px;
+        --gap-sm: 12px;
+        --gap-md: 20px;
+        --gap-lg: 32px;
+        --gap-xl: 56px;
+        --gap-2xl: 96px;
+        --container: 1120px;
+        --gutter: 32px;
+        --radius: 10px;
+        --radius-lg: 16px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
       body {
         margin: 0;
-        background: #fdf6e3;
-        color: #6c5b7b;
-        font-family: system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--font-body);
+        font-size: var(--fs-body);
+        line-height: 1.7;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
       }
-      header {
-        text-align: center;
-        padding: 32px 16px 8px;
-      }
-      h1 {
-        margin: 0 0 6px;
-        font-size: 1.6rem;
-      }
-      header p {
-        margin: 0;
-        font-size: 0.9rem;
-        opacity: 0.75;
-      }
-      main {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 16px 16px 48px;
-      }
-      section h2 {
-        margin: 32px 4px 12px;
-        font-size: 1.15rem;
-        border-bottom: 2px solid #f2a65a55;
-        padding-bottom: 6px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 16px;
-      }
-      .card {
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(108, 91, 123, 0.12);
-        margin: 0;
-      }
-      .card img {
+      img,
+      svg {
         display: block;
-        width: 100%;
-        height: auto;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      p {
+        text-wrap: pretty;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        text-wrap: balance;
+      }
+
+      .container {
+        max-width: var(--container);
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+      }
+      .section {
+        padding-block: clamp(48px, 8vw, var(--gap-2xl));
+      }
+      .section + .section {
+        border-top: 1px solid var(--border);
+      }
+      .stack {
+        display: flex;
+        flex-direction: column;
+      }
+      .stack > * + * {
+        margin-top: var(--gap-md);
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-md);
+      }
+      .row-between {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--gap-md);
+      }
+      /* 中文展示字：字形填满 em 框，行高取 CJK 下限 1.3，不做负字距 */
+      .h1,
+      h1 {
+        font-family: var(--font-display);
+        font-size: var(--fs-h1);
+        line-height: 1.3;
+        margin: 0;
+      }
+      .h2,
+      h2 {
+        font-family: var(--font-display);
+        font-size: var(--fs-h2);
+        line-height: 1.3;
+        margin: 0;
+      }
+      .lead {
+        font-size: var(--fs-lead);
+        line-height: 1.75;
+        color: var(--muted);
+        max-width: 60ch;
+        margin: 0;
+      }
+      .eyebrow {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 var(--gap-md);
       }
       .meta {
+        font-family: var(--font-mono);
+        font-size: var(--fs-meta);
+        color: var(--muted);
+      }
+
+      .topnav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: color-mix(in oklch, var(--bg) 92%, transparent);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .topnav-inner {
         display: flex;
-        gap: 8px;
         align-items: center;
-        padding: 8px 12px;
-        font-size: 0.85rem;
+        justify-content: space-between;
+        padding-block: 14px;
       }
-      .badge {
-        background: #f2a65a33;
-        color: #b06a1e;
+      .topnav .logo {
+        font-family: var(--font-display);
+        font-size: 19px;
+        font-weight: 600;
+      }
+      .topnav .logo .note-glyph {
+        font-family: var(--font-mono);
+        color: var(--accent);
+      }
+      .topnav nav {
+        display: flex;
+        gap: var(--gap-lg);
+      }
+      .topnav nav a {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .topnav nav a:hover {
+        color: var(--fg);
+      }
+      .pagefoot {
+        padding-block: var(--gap-xl);
+        color: var(--muted);
+        font-size: 13px;
+        border-top: 1px solid var(--border);
+      }
+      .pagefoot .row-between {
+        flex-wrap: wrap;
+        gap: var(--gap-md);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 20px;
+        border-radius: var(--radius);
+        border: 1px solid transparent;
+        font-size: 15px;
+        font-weight: 500;
+        transition:
+          transform 0.05s ease,
+          background 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: var(--surface);
+        border-color: var(--accent);
+      }
+      .btn-primary:hover {
+        background: color-mix(in oklch, var(--accent) 88%, black);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--fg);
+        border-color: var(--border);
+      }
+      .btn-secondary:hover {
+        border-color: var(--fg);
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .btn-arrow::after {
+        content: "→";
+        transition: transform 0.15s ease;
+      }
+      .btn-arrow:hover::after {
+        transform: translateX(2px);
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+      }
+
+      .hero-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap-2xl);
+        align-items: center;
+      }
+      @media (max-width: 920px) {
+        .hero-split {
+          grid-template-columns: 1fr;
+        }
+      }
+      .hero h1 {
+        margin-bottom: var(--gap-md);
+      }
+      .hero .lead {
+        margin-bottom: var(--gap-lg);
+      }
+      .hero-cta {
+        display: inline-flex;
+        gap: var(--gap-sm);
+        flex-wrap: wrap;
+      }
+
+      /* ─── gallery ──────────────────────────────────────────────────── */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap-lg);
+      }
+      @media (max-width: 920px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .gallery-card {
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .gallery-thumb {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        padding: 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--bg);
+        overflow: hidden;
+      }
+      .gallery-thumb:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .gallery-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 10px;
+        transition: transform 0.25s ease;
+      }
+      .gallery-card:hover .gallery-thumb img {
+        transform: scale(1.03);
+      }
+      .gallery-name {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 14px;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+      }
+      .gallery-meta {
+        font-size: 12px;
+        color: var(--muted);
+        font-family: var(--font-mono);
+      }
+
+      .filter-bar {
+        display: flex;
+        gap: var(--gap-xs);
+        flex-wrap: wrap;
+      }
+      .filter-btn {
+        padding: 7px 16px;
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid var(--border);
         border-radius: 999px;
-        padding: 2px 10px;
+        font-size: 13px;
+        transition:
+          color 0.15s ease,
+          background 0.15s ease,
+          border-color 0.15s ease;
       }
-      .date {
-        opacity: 0.65;
-        margin-left: auto;
+      .filter-btn:hover {
+        color: var(--fg);
+        border-color: var(--fg);
       }
-      #status {
-        text-align: center;
-        padding: 40px;
-        opacity: 0.7;
+      .filter-btn[aria-pressed="true"] {
+        background: var(--fg);
+        color: var(--bg);
+        border-color: var(--fg);
+      }
+      .filter-btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      /* ─── viewer dialog ────────────────────────────────────────────── */
+      dialog.viewer {
+        border: 0;
+        padding: 0;
+        background: var(--surface);
+        color: var(--fg);
+        border-radius: var(--radius-lg);
+        max-width: min(640px, 92vw);
+        width: 100%;
+        box-shadow: 0 24px 64px color-mix(in oklch, var(--fg) 30%, transparent);
+      }
+      dialog.viewer::backdrop {
+        background: color-mix(in oklch, var(--fg) 55%, transparent);
+      }
+      .viewer-img-wrap {
+        padding: 20px 20px 0;
+      }
+      .viewer-img-wrap img {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+      }
+      .viewer-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--gap-md);
+        padding: 16px 20px 20px;
+      }
+      .viewer-title {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 15px;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+      }
+      .viewer-meta {
+        margin: 2px 0 0;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .viewer-close {
+        flex-shrink: 0;
+        padding: 9px 16px;
+        background: var(--fg);
+        color: var(--bg);
+        border: 1px solid var(--fg);
+        border-radius: var(--radius);
+        font-size: 13px;
+      }
+      .viewer-close:hover {
+        background: color-mix(in oklch, var(--fg) 85%, var(--bg));
+      }
+      .viewer-close:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .viewer-nav {
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        color: var(--fg);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+      .viewer-nav:hover {
+        border-color: var(--fg);
+      }
+      .viewer-nav:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 480px) {
+        .viewer-foot {
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .gallery-thumb img,
+        .btn-arrow::after,
+        .btn,
+        .filter-btn {
+          transition: none;
+        }
+        .gallery-card:hover .gallery-thumb img {
+          transform: none;
+        }
+        .btn:active {
+          transform: none;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>🐱 Cat Plays Piano 🎹</h1>
-      <p>
-        同一个 prompt，不同 LLM 的 SVG 产出 · “Generate an SVG of a cat playing
-        a piano.”
-      </p>
+    <header class="topnav" data-od-id="topnav">
+      <div class="container topnav-inner">
+        <span class="logo">猫咪弹钢琴 <span class="note-glyph">♪</span></span>
+        <nav>
+          <a href="#gallery">画廊</a>
+          <a
+            href="https://github.com/zhaochunqi/cat-plays-piano"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+        </nav>
+      </div>
     </header>
-    <main id="gallery"><div id="status">loading…</div></main>
-    <script>
-      const el = (tag, cls, text) => {
-        const n = document.createElement(tag);
-        if (cls) n.className = cls;
-        if (text != null) n.textContent = text;
-        return n;
-      };
 
-      fetch("entries.json")
-        .then((r) => r.json())
-        .then((entries) => {
-          const g = document.getElementById("gallery");
-          g.replaceChildren();
-          if (!entries.length) {
-            const empty = el("div", "", "暂无条目");
-            empty.id = "status";
-            g.append(empty);
-            return;
-          }
-          const groups = {};
-          for (const e of entries) (groups[e.model] ??= []).push(e);
-          for (const model of Object.keys(groups).sort()) {
-            const sec = el("section");
-            sec.append(el("h2", "", model));
-            const grid = el("div", "grid");
-            for (const e of groups[model]) {
-              const card = el("figure", "card");
-              const img = el("img");
-              img.src = e.file;
-              img.alt = `${model} 的猫弹钢琴 SVG`;
-              img.loading = "lazy";
-              const meta = el("figcaption", "meta");
-              if (e.thinking)
-                meta.append(el("span", "badge", `thinking: ${e.thinking}`));
-              meta.append(el("span", "date", e.date));
-              card.append(img, meta);
-              grid.append(card);
-            }
-            sec.append(grid);
-            g.append(sec);
-          }
-        })
-        .catch(() => {
-          document.getElementById("status").textContent =
-            "entries.json 加载失败";
+    <main id="content">
+      <section class="section hero" data-od-id="hero-split">
+        <div class="container hero-split">
+          <div>
+            <p class="eyebrow">CAT PLAYS PIANO · SVG GALLERY</p>
+            <h1>AI 猫咪，<br />同一场钢琴独奏。</h1>
+            <p class="lead">
+              同一个 prompt——「Generate an SVG of a cat playing a
+              piano.」——喂给一个又一个语言模型，每一幅都是它们亲手写下的 SVG
+              代码。作品列表直接读取仓库的
+              entries.json，新作品一提交就会出现在这里。
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#gallery">进入画廊</a>
+              <a
+                class="btn btn-secondary btn-arrow"
+                href="https://github.com/zhaochunqi/cat-plays-piano"
+                target="_blank"
+                rel="noopener"
+                >看原始仓库</a
+              >
+            </div>
+          </div>
+          <figure style="margin: 0">
+            <div
+              class="hero-frame"
+              style="
+                aspect-ratio: 4 / 3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 16px;
+                background: var(--bg);
+                border: 1px solid var(--border);
+                border-radius: var(--radius-lg);
+              "
+            >
+              <img
+                id="hero-img"
+                alt=""
+                hidden
+                style="max-width: 100%; max-height: 100%"
+              />
+              <span class="meta" id="hero-loading">首展加载中…</span>
+            </div>
+            <figcaption class="meta" id="hero-cap" style="margin-top: 12px">
+              正在同步仓库数据…
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="gallery">
+        <div class="container stack" style="gap: 32px">
+          <div class="row-between" style="flex-wrap: wrap; gap: 20px">
+            <div>
+              <p class="eyebrow">THE COLLECTION</p>
+              <h2>全部作品</h2>
+            </div>
+            <div
+              class="filter-bar"
+              id="filter-bar"
+              role="group"
+              aria-label="按生成方式筛选"
+            ></div>
+          </div>
+          <div class="gallery-grid" id="gallery-grid">
+            <p class="meta" id="gallery-status">正在加载作品…</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        data-od-id="cta-strip"
+        style="text-align: center"
+      >
+        <div class="container" style="max-width: 600px">
+          <h2>想看你的模型怎么画猫？</h2>
+          <p class="lead" style="margin: 16px auto 32px">
+            仓库里有一行固定的 prompt
+            和完整的投稿流程——跑一次，就能为画廊添一只新的钢琴猫。
+          </p>
+          <a
+            class="btn btn-primary"
+            href="https://github.com/zhaochunqi/cat-plays-piano"
+            target="_blank"
+            rel="noopener"
+            >前往 GitHub 仓库</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="pagefoot" data-od-id="footer">
+      <div class="container row-between">
+        <span>© <span id="foot-year">2026</span> cat-plays-piano</span>
+        <span class="meta">一个 prompt · 无尽的猫</span>
+      </div>
+    </footer>
+
+    <dialog class="viewer" id="viewer" aria-label="作品放大查看">
+      <div class="viewer-img-wrap">
+        <img id="viewer-img" alt="" />
+      </div>
+      <div class="viewer-foot">
+        <div style="min-width: 0">
+          <p class="viewer-title" id="viewer-title"></p>
+          <p class="viewer-meta" id="viewer-meta"></p>
+        </div>
+        <div class="row" style="gap: 8px">
+          <button
+            class="viewer-nav"
+            type="button"
+            id="viewer-prev"
+            aria-label="上一幅"
+          >
+            ←
+          </button>
+          <button
+            class="viewer-nav"
+            type="button"
+            id="viewer-next"
+            aria-label="下一幅"
+          >
+            →
+          </button>
+          <button class="viewer-close" type="button" id="viewer-close">
+            关闭
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <script>
+      (function () {
+        var THINK_LABELS = { none: "直接生成", high: "深度思考" };
+        var grid = document.getElementById("gallery-grid");
+        var bar = document.querySelector(".filter-bar");
+        var visible = [];
+        var cur = -1;
+
+        function thinkLabel(t) {
+          return THINK_LABELS[t] || "thinking: " + t;
+        }
+
+        function makeCard(e, i) {
+          var card = document.createElement("article");
+          card.className = "card gallery-card";
+          card.dataset.think = e.thinking;
+          card.setAttribute("data-od-id", "gallery-card-" + i);
+
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "gallery-thumb";
+          btn.dataset.src = e.file;
+          btn.dataset.model = e.model;
+          btn.dataset.thinkLabel = thinkLabel(e.thinking);
+          btn.dataset.date = e.date;
+
+          var img = document.createElement("img");
+          img.src = e.file;
+          img.loading = "lazy";
+          img.alt = "模型 " + e.model + " 绘制的猫弹钢琴画作";
+          btn.appendChild(img);
+
+          var name = document.createElement("p");
+          name.className = "gallery-name";
+          name.textContent = e.model;
+
+          var meta = document.createElement("p");
+          meta.className = "gallery-meta";
+          meta.textContent = thinkLabel(e.thinking) + " · " + e.date;
+
+          card.append(btn, name, meta);
+          return card;
+        }
+
+        function applyFilter(v) {
+          grid.querySelectorAll(".gallery-card").forEach(function (c) {
+            c.style.display =
+              v === "all" || c.dataset.think === v ? "" : "none";
+          });
+          syncVisible();
+        }
+
+        // 当前筛选下可见的作品序列，供放大视图前后翻页
+        function syncVisible() {
+          visible.length = 0;
+          grid.querySelectorAll(".gallery-card").forEach(function (c) {
+            if (c.style.display !== "none")
+              visible.push(c.querySelector(".gallery-thumb"));
+          });
+        }
+
+        function setViewer(i) {
+          cur = (i + visible.length) % visible.length;
+          var t = visible[cur];
+          document.getElementById("viewer-img").src = t.dataset.src;
+          document.getElementById("viewer-img").alt =
+            "模型 " + t.dataset.model + " 生成的猫弹钢琴画作（放大视图）";
+          document.getElementById("viewer-title").textContent = t.dataset.model;
+          document.getElementById("viewer-meta").textContent =
+            t.dataset.thinkLabel + " · " + t.dataset.date;
+        }
+
+        // 筛选：事件委托，卡片异步渲染后依然有效
+        bar.addEventListener("click", function (e) {
+          var b = e.target.closest(".filter-btn");
+          if (!b) return;
+          bar.querySelectorAll(".filter-btn").forEach(function (x) {
+            x.setAttribute("aria-pressed", x === b ? "true" : "false");
+          });
+          applyFilter(b.dataset.filter);
         });
+
+        // 放大查看：委托到 dialog 外层容器
+        var dlg = document.getElementById("viewer");
+        grid.addEventListener("click", function (e) {
+          var t = e.target.closest(".gallery-thumb");
+          if (!t) return;
+          setViewer(visible.indexOf(t));
+          dlg.showModal();
+        });
+        document
+          .getElementById("viewer-prev")
+          .addEventListener("click", function () {
+            setViewer(cur - 1);
+          });
+        document
+          .getElementById("viewer-next")
+          .addEventListener("click", function () {
+            setViewer(cur + 1);
+          });
+        dlg.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") setViewer(cur - 1);
+          if (e.key === "ArrowRight") setViewer(cur + 1);
+        });
+        document
+          .getElementById("viewer-close")
+          .addEventListener("click", function () {
+            dlg.close();
+          });
+        dlg.addEventListener("click", function (e) {
+          if (e.target === dlg) dlg.close();
+        });
+
+        // 实时数据源：全部数字与筛选按钮都由 entries.json 现算
+        fetch("entries.json")
+          .then(function (r) {
+            if (!r.ok) throw new Error(r.status);
+            return r.json();
+          })
+          .then(function (data) {
+            grid.replaceChildren.apply(grid, data.map(makeCard));
+            // 筛选按钮全量由数据现算：全部 + 实际出现的 thinking 级别
+            function makeFilter(value, label, pressed) {
+              var b = document.createElement("button");
+              b.type = "button";
+              b.className = "filter-btn";
+              b.dataset.filter = value;
+              b.setAttribute("aria-pressed", pressed ? "true" : "false");
+              b.textContent = label;
+              return b;
+            }
+            var levels = [];
+            data.forEach(function (e) {
+              if (levels.indexOf(e.thinking) < 0) levels.push(e.thinking);
+            });
+            bar.replaceChildren(makeFilter("all", "全部", true));
+            levels.forEach(function (t) {
+              bar.appendChild(makeFilter(t, thinkLabel(t), false));
+            });
+            syncVisible();
+            // 首展位跟随数据源：最新日期优先，同日取深度思考
+            var latest = data
+              .slice()
+              .sort(function (a, b) {
+                // 升序排列后 .pop() 取最新；同日把 high 排在后面供 pop 选中
+                return a.date === b.date
+                  ? (a.thinking !== "none") - (b.thinking !== "none")
+                  : a.date < b.date
+                    ? -1
+                    : 1;
+              })
+              .pop();
+            var heroImg = document.getElementById("hero-img");
+            heroImg.onload = function () {
+              heroImg.hidden = false;
+              var hint = document.getElementById("hero-loading");
+              if (hint) hint.remove();
+            };
+            heroImg.onerror = function () {
+              var hint = document.getElementById("hero-loading");
+              if (hint) hint.textContent = "首展暂时无法加载";
+              document.getElementById("hero-cap").textContent =
+                "首展作品加载失败";
+            };
+            heroImg.src = latest.file;
+            heroImg.alt = "首展作品：" + latest.model + " 绘制的猫弹钢琴";
+            document.getElementById("hero-cap").textContent =
+              "首展 · " +
+              latest.model +
+              "（" +
+              thinkLabel(latest.thinking) +
+              "）· " +
+              latest.date;
+          })
+          .catch(function () {
+            var p = document.createElement("p");
+            p.className = "meta";
+            p.textContent = "作品列表暂时无法加载，请稍后刷新。";
+            grid.replaceChildren(p);
+            var hint = document.getElementById("hero-loading");
+            if (hint) hint.textContent = "首展暂时无法加载";
+            document.getElementById("hero-cap").textContent = "数据源连接失败";
+          });
+        document.getElementById("foot-year").textContent =
+          new Date().getFullYear();
+      })();
     </script>
   </body>
 </html>

@@ -184,5 +184,11 @@
         "thinking": "medium",
         "date": "2026-08-25",
         "file": "entries/sonnet-5-medium-2026-08-25.svg"
+    },
+    {
+        "model": "glm-5-turbo",
+        "thinking": "medium",
+        "date": "2026-08-25",
+        "file": "entries/glm-5-turbo-medium-2026-08-25.svg"
     }
 ]

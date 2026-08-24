@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="pianoBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c2c2c"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="pianoSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#222"/>
+      <stop offset="100%" stop-color="#111"/>
+    </linearGradient>
+    <linearGradient id="catFur" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#f5a623"/>
+      <stop offset="100%" stop-color="#e08e0b"/>
+    </linearGradient>
+    <linearGradient id="catBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fce4b8"/>
+      <stop offset="100%" stop-color="#f5d6a0"/>
+    </linearGradient>
+    <linearGradient id="lidGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#333"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <radialGradient id="spotlight" cx="0.5" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="rgba(255,220,150,0.15)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="500" fill="url(#bgGrad)"/>
+  <rect width="600" height="500" fill="url(#spotlight)"/>
+
+  <!-- Floor -->
+  <rect x="0" y="420" width="600" height="80" fill="#0f0f1a" opacity="0.8"/>
+  <line x1="0" y1="420" x2="600" y2="420" stroke="#333" stroke-width="1" opacity="0.5"/>
+
+  <!-- Piano Legs -->
+  <rect x="135" y="350" width="14" height="70" rx="2" fill="#1a1a1a" stroke="#111" stroke-width="1"/>
+  <rect x="451" y="350" width="14" height="70" rx="2" fill="#1a1a1a" stroke="#111" stroke-width="1"/>
+  <rect x="200" y="370" width="10" height="50" rx="2" fill="#1a1a1a" stroke="#111" stroke-width="1"/>
+  <rect x="390" y="370" width="10" height="50" rx="2" fill="#1a1a1a" stroke="#111" stroke-width="1"/>
+
+  <!-- Pedals -->
+  <rect x="280" y="405" width="8" height="15" rx="1" fill="#b8860b"/>
+  <rect x="296" y="405" width="8" height="15" rx="1" fill="#b8860b"/>
+  <rect x="312" y="405" width="8" height="15" rx="1" fill="#b8860b"/>
+  <line x1="280" y1="395" x2="320" y2="395" stroke="#666" stroke-width="1.5"/>
+
+  <!-- Piano Body - Main -->
+  <rect x="120" y="200" width="360" height="155" rx="3" fill="url(#pianoBody)" filter="url(#softShadow)"/>
+  
+  <!-- Piano Side Panel -->
+  <rect x="120" y="200" width="15" height="155" fill="url(#pianoSide)" rx="2"/>
+  
+  <!-- Piano Top Edge -->
+  <rect x="120" y="195" width="360" height="8" rx="2" fill="#3a3a3a"/>
+  
+  <!-- Music Stand -->
+  <rect x="180" y="210" width="240" height="60" rx="2" fill="#252525" stroke="#333" stroke-width="0.5"/>
+  <rect x="195" y="218" width="210" height="44" rx="1" fill="#f5f0e8" opacity="0.9"/>
+  <!-- Sheet Music Lines -->
+  <line x1="205" y1="228" x2="395" y2="228" stroke="#aaa" stroke-width="0.5"/>
+  <line x1="205" y1="233" x2="395" y2="233" stroke="#aaa" stroke-width="0.5"/>
+  <line x1="205" y1="238" x2="395" y2="238" stroke="#aaa" stroke-width="0.5"/>
+  <line x1="205" y1="243" x2="395" y2="243" stroke="#aaa" stroke-width="0.5"/>
+  <line x1="205" y1="248" x2="395" y2="248" stroke="#aaa" stroke-width="0.5"/>
+  <!-- Notes on sheet music -->
+  <ellipse cx="220" cy="235" rx="4" ry="3" fill="#333"/>
+  <line x1="224" y1="235" x2="224" y2="220" stroke="#333" stroke-width="1.2"/>
+  <ellipse cx="240" cy="240" rx="4" ry="3" fill="#333"/>
+  <line x1="244" y1="240" x2="244" y2="225" stroke="#333" stroke-width="1.2"/>
+  <ellipse cx="260" cy="230" rx="4" ry="3" fill="#333"/>
+  <line x1="264" y1="230" x2="264" y2="215" stroke="#333" stroke-width="1.2"/>
+  <ellipse cx="285" cy="243" rx="4" ry="3" fill="#333"/>
+  <line x1="289" y1="243" x2="289" y2="228" stroke="#333" stroke-width="1.2"/>
+  <ellipse cx="305" cy="233" rx="4" ry="3" fill="#333"/>
+  <line x1="309" y1="233" x2="309" y2="218" stroke="#333" stroke-width="1.2"/>
+  <ellipse cx="325" cy="238" rx="4" ry="3" fill="#333"/>
+  <line x1="329" y1="238" x2="329" y2="223" stroke="#333" stroke-width="1.2"/>
+  <ellipse cx="350" cy="232" rx="4" ry="3" fill="#333"/>
+  <line x1="354" y1="232" x2="354" y2="217" stroke="#333" stroke-width="1.2"/>
+  <ellipse cx="370" cy="241" rx="4" ry="3" fill="#333"/>
+  <line x1="374" y1="241" x2="374" y2="226" stroke="#333" stroke-width="1.2"/>
+  <ellipse cx="390" cy="236" rx="4" ry="3" fill="#333"/>
+  <line x1="394" y1="236" x2="394" y2="221" stroke="#333" stroke-width="1.2"/>
+
+  <!-- Piano Lid (Open, angled back) -->
+  <path d="M120,195 L120,110 L470,110 L480,195" fill="url(#lidGrad)" stroke="#3a3a3a" stroke-width="0.5"/>
+  <path d="M125,115 L125,190 L475,190" fill="none" stroke="#444" stroke-width="0.5" opacity="0.3"/>
+  <!-- Lid prop stick -->
+  <line x1="380" y1="190" x2="390" y2="118" stroke="#b8860b" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Key Bed -->
+  <rect x="135" y="330" width="330" height="25" rx="1" fill="#1a1a1a"/>
+
+  <!-- White Keys -->
+  <g fill="#f8f6f0" stroke="#ccc" stroke-width="0.5">
+    <rect x="137" y="332" width="18" height="21" rx="1"/>
+    <rect x="157" y="332" width="18" height="21" rx="1"/>
+    <rect x="177" y="332" width="18" height="21" rx="1"/>
+    <rect x="197" y="332" width="18" height="21" rx="1"/>
+    <rect x="217" y="332" width="18" height="21" rx="1"/>
+    <rect x="237" y="332" width="18" height="21" rx="1"/>
+    <rect x="257" y="332" width="18" height="21" rx="1"/>
+    <rect x="277" y="332" width="18" height="21" rx="1"/>
+    <rect x="297" y="332" width="18" height="21" rx="1"/>
+    <rect x="317" y="332" width="18" height="21" rx="1"/>
+    <rect x="337" y="332" width="18" height="21" rx="1"/>
+    <rect x="357" y="332" width="18" height="21" rx="1"/>
+    <rect x="377" y="332" width="18" height="21" rx="1"/>
+    <rect x="397" y="332" width="18" height="21" rx="1"/>
+    <rect x="417" y="332" width="18" height="21" rx="1"/>
+    <rect x="437" y="332" width="18" height="21" rx="1"/>
+  </g>
+
+  <!-- Black Keys -->
+  <g fill="#111" stroke="#000" stroke-width="0.5">
+    <rect x="150" y="332" width="12" height="13" rx="1"/>
+    <rect x="170" y="332" width="12" height="13" rx="1"/>
+    <rect x="210" y="332" width="12" height="13" rx="1"/>
+    <rect x="230" y="332" width="12" height="13" rx="1"/>
+    <rect x="250" y="332" width="12" height="13" rx="1"/>
+    <rect x="290" y="332" width="12" height="13" rx="1"/>
+    <rect x="310" y="332" width="12" height="13" rx="1"/>
+    <rect x="350" y="332" width="12" height="13" rx="1"/>
+    <rect x="370" y="332" width="12" height="13" rx="1"/>
+    <rect x="390" y="332" width="12" height="13" rx="1"/>
+    <rect x="430" y="332" width="12" height="13" rx="1"/>
+  </g>
+
+  <!-- Piano Bench -->
+  <rect x="250" y="385" width="100" height="10" rx="3" fill="#2a2a2a" stroke="#222" stroke-width="1"/>
+  <rect x="260" y="395" width="8" height="25" rx="1" fill="#222"/>
+  <rect x="332" y="395" width="8" height="25" rx="1" fill="#222"/>
+
+  <!-- === CAT === -->
+  
+  <!-- Cat Tail (behind body, curving up) -->
+  <path d="M240,380 C210,370 185,340 180,300 C178,280 190,265 200,270 C210,275 200,295 205,320 C208,335 220,355 240,370" 
+        fill="url(#catFur)" stroke="#c47a08" stroke-width="1.5"/>
+  <!-- Tail stripes -->
+  <path d="M188,310 C192,305 195,308 192,315" fill="#c47a08" opacity="0.5"/>
+  <path d="M195,290 C199,285 202,288 199,295" fill="#c47a08" opacity="0.5"/>
+
+  <!-- Cat Body -->
+  <ellipse cx="300" cy="360" rx="55" ry="40" fill="url(#catFur)" stroke="#c47a08" stroke-width="1"/>
+  
+  <!-- Cat Belly -->
+  <ellipse cx="300" cy="370" rx="32" ry="25" fill="url(#catBelly)"/>
+
+  <!-- Cat Body Stripes -->
+  <path d="M275,335 C280,345 278,355 275,360" fill="none" stroke="#c47a08" stroke-width="2" opacity="0.4"/>
+  <path d="M290,330 C293,340 292,352 290,358" fill="none" stroke="#c47a08" stroke-width="2" opacity="0.4"/>
+  <path d="M310,330 C307,340 308,352 310,358" fill="none" stroke="#c47a08" stroke-width="2" opacity="0.4"/>
+  <path d="M325,335 C320,345 322,355 325,360" fill="none" stroke="#c47a08" stroke-width="2" opacity="0.4"/>
+
+  <!-- Left Arm/Paw reaching to keys -->
+  <path d="M258,345 C240,335 220,328 210,335 C205,338 208,342 215,340 C225,337 240,340 255,348" 
+        fill="url(#catFur)" stroke="#c47a08" stroke-width="1"/>
+  <!-- Left Paw on keys -->
+  <ellipse cx="210" cy="338" rx="14" ry="7" fill="url(#catFur)" stroke="#c47a08" stroke-width="0.8"/>
+  <!-- Paw pads hint -->
+  <circle cx="205" cy="337" r="2" fill="#f5d6a0" opacity="0.6"/>
+  <circle cx="212" cy="336" r="2" fill="#f5d6a0" opacity="0.6"/>
+  <circle cx="218" cy="337" r="2" fill="#f5d6a0" opacity="0.6"/>
+
+  <!-- Right Arm/Paw reaching to keys -->
+  <path d="M342,345 C360,335 380,328 390,335 C395,338 392,342 385,340 C375,337 360,340 345,348" 
+        fill="url(#catFur)" stroke="#c47a08" stroke-width="1"/>
+  <!-- Right Paw on keys -->
+  <ellipse cx="390" cy="338" rx="14" ry="7" fill="url(#catFur)" stroke="#c47a08" stroke-width="0.8"/>
+  <!-- Paw pads hint -->
+  <circle cx="385" cy="337" r="2" fill="#f5d6a0" opacity="0.6"/>
+  <circle cx="392" cy="336" r="2" fill="#f5d6a0" opacity="0.6"/>
+  <circle cx="398" cy="337" r="2" fill="#f5d6a0" opacity="0.6"/>
+
+  <!-- Cat Head -->
+  <ellipse cx="300" cy="300" rx="42" ry="38" fill="url(#catFur)" stroke="#c47a08" stroke-width="1"/>
+
+  <!-- Cat Cheeks (lighter) -->
+  <ellipse cx="275" cy="310" rx="15" ry="12" fill="#f5d6a0" opacity="0.5"/>
+  <ellipse cx="325" cy="310" rx="15" ry="12" fill="#f5d6a0" opacity="0.5"/>
+
+  <!-- Left Ear -->
+  <path d="M265,275 L252,235 L285,268 Z" fill="url(#catFur)" stroke="#c47a08" stroke-width="1"/>
+  <path d="M267,272 L258,243 L281,267 Z" fill="#f0a0b0" opacity="0.6"/>
+  
+  <!-- Right Ear -->
+  <path d="M335,275 L348,235 L315,268 Z" fill="url(#catFur)" stroke="#c47a08" stroke-width="1"/>
+  <path d="M333,272 L342,243 L319,267 Z" fill="#f0a0b0" opacity="0.6"/>
+
+  <!-- Forehead Stripes -->
+  <path d="M300,270 L300,282" stroke="#c47a08" stroke-width="2.5" opacity="0.5" stroke-linecap="round"/>
+  <path d="M292,272 L290,283" stroke="#c47a08" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+  <path d="M308,272 L310,283" stroke="#c47a08" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <!-- Left Eye -->
+  <ellipse cx="282" cy="298" rx="10" ry="11" fill="#fff"/>
+  <ellipse cx="284" cy="299" rx="7" ry="9" fill="#4a7c3f"/>
+  <ellipse cx="284" cy="299" rx="4" ry="8" fill="#1a1a1a"/>
+  <circle cx="281" cy="295" r="2.5" fill="#fff" opacity="0.8"/>
+  <circle cx="287" cy="302" r="1.2" fill="#fff" opacity="0.4"/>
+  
+  <!-- Right Eye -->
+  <ellipse cx="318" cy="298" rx="10" ry="11" fill="#fff"/>
+  <ellipse cx="316" cy="299" rx="7" ry="9" fill="#4a7c3f"/>
+  <ellipse cx="316" cy="299" rx="4" ry="8" fill="#1a1a1a"/>
+  <circle cx="313" cy="295" r="2.5" fill="#fff" opacity="0.8"/>
+  <circle cx="319" cy="302" r="1.2" fill="#fff" opacity="0.4"/>
+
+  <!-- Nose -->
+  <path d="M296,312 L300,316 L304,312 Z" fill="#f07088"/>
+  
+  <!-- Mouth -->
+  <path d="M300,316 C296,320 290,319 288,317" fill="none" stroke="#c47a08" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M300,316 C304,320 310,319 312,317" fill="none" stroke="#c47a08" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Whiskers -->
+  <g stroke="#fce4b8" stroke-width="1" opacity="0.7" stroke-linecap="round">
+    <!-- Left whiskers -->
+    <line x1="275" y1="312" x2="235" y2="305"/>
+    <line x1="275" y1="316" x2="232" y2="318"/>
+    <line x1="275" y1="320" x2="238" y2="330"/>
+    <!-- Right whiskers -->
+    <line x1="325" y1="312" x2="365" y2="305"/>
+    <line x1="325" y1="316" x2="368" y2="318"/>
+    <line x1="325" y1="320" x2="362" y2="330"/>
+  </g>
+
+  <!-- === Floating Music Notes === -->
+  <g filter="url(#glow)" opacity="0.8">
+    <!-- Note 1 -->
+    <g transform="translate(150, 150)">
+      <ellipse cx="0" cy="0" rx="7" ry="5" fill="#f5d6a0" transform="rotate(-20)"/>
+      <line x1="6" y1="-2" x2="6" y2="-30" stroke="#f5d6a0" stroke-width="2"/>
+      <path d="M6,-30 C15,-25 15,-18 6,-15" fill="#f5d6a0"/>
+    </g>
+    
+    <!-- Note 2 -->
+    <g transform="translate(190, 120)">
+      <ellipse cx="0" cy="0" rx="6" ry="4.5" fill="#f0a0b0" transform="rotate(-15)"/>
+      <line x1="5" y1="-2" x2="5" y2="-25" stroke="#f0a0b0" stroke-width="1.8"/>
+      <path d="M5,-25 C13,-21 13,-15 5,-12" fill="#f0a0b0"/>
+    </g>
+    
+    <!-- Note 3 (double) -->
+    <g transform="translate(440, 130)">
+      <ellipse cx="0" cy="0" rx="6" ry="4.5" fill="#f5d6a0" transform="rotate(-20)"/>
+      <ellipse cx="16" cy="-3" rx="6" ry="4.5" fill="#f5d6a0" transform="rotate(-20)"/>
+      <line x1="5" y1="-2" x2="5" y2="-28" stroke="#f5d6a0" stroke-width="1.8"/>
+      <line x1="21" y1="-5" x2="21" y2="-28" stroke="#f5d6a0" stroke-width="1.8"/>
+      <line x1="5" y1="-28" x2="21" y2="-28" stroke="#f5d6a0" stroke-width="2.5"/>
+    </g>
+    
+    <!-- Note 4 -->
+    <g transform="translate(480, 100)">
+      <ellipse cx="0" cy="0" rx="5.5" ry="4" fill="#f0a0b0" transform="rotate(-15)"/>
+      <line x1="5" y1="-2" x2="5" y2="-22" stroke="#f0a0b0" stroke-width="1.5"/>
+    </g>
+
+    <!-- Note 5 -->
+    <g transform="translate(130, 90)" opacity="0.5">
+      <ellipse cx="0" cy="0" rx="5" ry="3.5" fill="#f5d6a0" transform="rotate(-20)"/>
+      <line x1="4" y1="-1" x2="4" y2="-20" stroke="#f5d6a0" stroke-width="1.5"/>
+      <path d="M4,-20 C11,-17 11,-12 4,-10" fill="#f5d6a0"/>
+    </g>
+    
+    <!-- Note 6 -->
+    <g transform="translate(500, 160)" opacity="0.5">
+      <ellipse cx="0" cy="0" rx="5" ry="3.5" fill="#f0a0b0" transform="rotate(-15)"/>
+      <line x1="4" y1="-1" x2="4" y2="-18" stroke="#f0a0b0" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Subtle floor reflection -->
+  <rect x="140" y="422" width="320" height="30" rx="2" fill="url(#pianoBody)" opacity="0.15"/>
+  
+  <!-- Sparkle effects on keys where paws press -->
+  <circle cx="210" cy="340" r="3" fill="#fff" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="390" cy="340" r="3" fill="#fff" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Animated music notes (subtle float) -->
+  <g opacity="0.6">
+    <g transform="translate(170, 140)">
+      <ellipse cx="0" cy="0" rx="4" ry="3" fill="#f5d6a0" transform="rotate(-20)"/>
+      <line x1="3.5" y1="-1" x2="3.5" y2="-15" stroke="#f5d6a0" stroke-width="1.2"/>
+      <animateTransform attributeName="transform" type="translate" values="170,140;168,120;170,140" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(450, 110)">
+      <ellipse cx="0" cy="0" rx="4" ry="3" fill="#f0a0b0" transform="rotate(-15)"/>
+      <line x1="3.5" y1="-1" x2="3.5" y2="-15" stroke="#f0a0b0" stroke-width="1.2"/>
+      <animateTransform attributeName="transform" type="translate" values="450,110;452,90;450,110" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.5s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>

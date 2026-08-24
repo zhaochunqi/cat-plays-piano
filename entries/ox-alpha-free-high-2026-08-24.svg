@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="480" role="img" aria-label="一只橘猫在弹钢琴">
+  <!-- 背景 -->
+  <rect width="400" height="320" fill="#fdf6e3"/>
+
+  <!-- 音符 -->
+  <text x="90" y="60" font-size="28" fill="#6c5b7b">♪</text>
+  <text x="310" y="45" font-size="24" fill="#6c5b7b">♫</text>
+
+  <!-- 尾巴 -->
+  <path d="M255 175 Q330 168 322 105 Q317 78 294 86"
+        fill="none" stroke="#e8964a" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- 身体 -->
+  <ellipse cx="200" cy="168" rx="56" ry="52" fill="#f2a65a"/>
+
+  <!-- 耳朵 -->
+  <path d="M162 66 L148 20 L188 46 Z" fill="#f2a65a"/>
+  <path d="M238 66 L252 20 L212 46 Z" fill="#f2a65a"/>
+  <path d="M164 58 L156 32 L180 48 Z" fill="#f8b5b5"/>
+  <path d="M236 58 L244 32 L220 48 Z" fill="#f8b5b5"/>
+
+  <!-- 头 -->
+  <circle cx="200" cy="98" r="48" fill="#f2a65a"/>
+
+  <!-- 眼睛（专注看琴键） -->
+  <circle cx="182" cy="92" r="6" fill="#333"/>
+  <circle cx="218" cy="92" r="6" fill="#333"/>
+  <path d="M174 82 q8 -7 16 -1" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M210 81 q8 -6 16 1" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 鼻子和嘴 -->
+  <path d="M196 106 L204 106 L200 112 Z" fill="#e0708a"/>
+  <path d="M200 112 q-6 8 -13 3 M200 112 q6 8 13 3"
+        fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 胡须 -->
+  <g stroke="#d98d4a" stroke-width="2" stroke-linecap="round">
+    <line x1="158" y1="100" x2="126" y2="94"/>
+    <line x1="158" y1="108" x2="126" y2="108"/>
+    <line x1="158" y1="116" x2="128" y2="122"/>
+    <line x1="242" y1="100" x2="274" y2="94"/>
+    <line x1="242" y1="108" x2="274" y2="108"/>
+    <line x1="242" y1="116" x2="272" y2="122"/>
+  </g>
+
+  <!-- 琴腿上的前腿 -->
+  <line x1="178" y1="185" x2="152" y2="216" stroke="#f2a65a" stroke-width="18" stroke-linecap="round"/>
+  <line x1="222" y1="185" x2="208" y2="218" stroke="#f2a65a" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- 钢琴琴身 -->
+  <rect x="62" y="240" width="276" height="52" rx="8" fill="#8b3a3a"/>
+  <rect x="62" y="228" width="276" height="18" rx="4" fill="#a04444"/>
+
+  <!-- 白键 -->
+  <g fill="#ffffff" stroke="#999" stroke-width="1">
+    <rect x="72" y="206" width="24" height="40" rx="2"/>
+    <rect x="97" y="206" width="24" height="40" rx="2"/>
+    <rect x="122" y="206" width="24" height="40" rx="2"/>
+    <rect x="147" y="206" width="24" height="40" rx="2"/>
+    <rect x="172" y="206" width="24" height="40" rx="2"/>
+    <rect x="197" y="206" width="24" height="40" rx="2"/>
+    <rect x="222" y="206" width="24" height="40" rx="2"/>
+    <rect x="247" y="206" width="24" height="40" rx="2"/>
+    <rect x="272" y="206" width="24" height="40" rx="2"/>
+    <rect x="297" y="206" width="24" height="40" rx="2"/>
+  </g>
+
+  <!-- 黑键 -->
+  <g fill="#222">
+    <rect x="91"  y="206" width="13" height="26" rx="2"/>
+    <rect x="116" y="206" width="13" height="26" rx="2"/>
+    <rect x="166" y="206" width="13" height="26" rx="2"/>
+    <rect x="191" y="206" width="13" height="26" rx="2"/>
+    <rect x="216" y="206" width="13" height="26" rx="2"/>
+    <rect x="266" y="206" width="13" height="26" rx="2"/>
+    <rect x="291" y="206" width="13" height="26" rx="2"/>
+  </g>
+
+  <!-- 按在琴键上的爪子 -->
+  <ellipse cx="152" cy="214" rx="15" ry="11" fill="#f2a65a"/>
+  <ellipse cx="209" cy="217" rx="15" ry="11" fill="#f2a65a"/>
+  <path d="M146 211 v6 M152 210 v7 M158 211 v6" stroke="#d98d4a" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M203 214 v6 M209 213 v7 M215 214 v6" stroke="#d98d4a" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

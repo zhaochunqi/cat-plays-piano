@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fde9d0"/>
+      <stop offset="100%" stop-color="#f0d5b0"/>
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a9784a"/>
+      <stop offset="100%" stop-color="#7a532d"/>
+    </linearGradient>
+    <linearGradient id="pianoGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wall -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Wall picture -->
+  <rect x="80" y="100" width="84" height="64" rx="2" fill="#c9b896" stroke="#8a7350" stroke-width="3"/>
+  <rect x="86" y="106" width="72" height="52" fill="#b8d4e8"/>
+  <path d="M 86 158 L 115 128 L 135 148 L 158 122 L 158 158 Z" fill="#6a8f5a"/>
+  <path d="M 86 158 L 120 138 L 140 152 L 158 142 L 158 158 Z" fill="#557a48"/>
+  <circle cx="140" cy="118" r="5" fill="#f5e06b"/>
+
+  <!-- Floor -->
+  <rect x="0" y="540" width="800" height="60" fill="url(#floorGrad)"/>
+  <g stroke="#6b4a25" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="558" x2="800" y2="558"/>
+    <line x1="0" y1="582" x2="800" y2="582"/>
+    <line x1="160" y1="540" x2="160" y2="600"/>
+    <line x1="320" y1="540" x2="320" y2="600"/>
+    <line x1="480" y1="540" x2="480" y2="600"/>
+    <line x1="640" y1="540" x2="640" y2="600"/>
+  </g>
+
+  <!-- Piano body -->
+  <rect x="170" y="130" width="460" height="210" rx="8" fill="url(#pianoGrad)"/>
+  <rect x="170" y="130" width="460" height="16" rx="4" fill="#333"/>
+  <rect x="185" y="156" width="180" height="6" rx="3" fill="#262626" opacity="0.5"/>
+  <rect x="200" y="200" width="400" height="24" rx="3" fill="#111"/>
+  <rect x="200" y="200" width="400" height="3" fill="#1e1e1e"/>
+  <g stroke="#8a7a55" stroke-width="0.8" opacity="0.75">
+    <line x1="215" y1="209" x2="585" y2="209"/>
+    <line x1="215" y1="214" x2="585" y2="214"/>
+    <line x1="215" y1="219" x2="585" y2="219"/>
+  </g>
+  <g fill="#6a5a32">
+    <ellipse cx="270" cy="216" rx="5" ry="3.5"/>
+    <line x1="275" y1="216" x2="275" y2="200" stroke="#6a5a32" stroke-width="1.5"/>
+    <ellipse cx="330" cy="212" rx="5" ry="3.5"/>
+    <line x1="335" y1="212" x2="335" y2="196" stroke="#6a5a32" stroke-width="1.5"/>
+    <ellipse cx="400" cy="217" rx="5" ry="3.5"/>
+    <line x1="405" y1="217" x2="405" y2="201" stroke="#6a5a32" stroke-width="1.5"/>
+    <ellipse cx="470" cy="213" rx="5" ry="3.5"/>
+    <line x1="475" y1="213" x2="475" y2="197" stroke="#6a5a32" stroke-width="1.5"/>
+  </g>
+  <rect x="195" y="340" width="410" height="12" fill="#1a1a1a"/>
+
+  <!-- Keyboard -->
+  <rect x="200" y="352" width="400" height="98" rx="4" fill="#f5f0e8" stroke="#bbb" stroke-width="1.5"/>
+  <g stroke="#c4bfb0" stroke-width="0.8">
+    <line x1="220" y1="352" x2="220" y2="450"/>
+    <line x1="240" y1="352" x2="240" y2="450"/>
+    <line x1="260" y1="352" x2="260" y2="450"/>
+    <line x1="280" y1="352" x2="280" y2="450"/>
+    <line x1="300" y1="352" x2="300" y2="450"/>
+    <line x1="320" y1="352" x2="320" y2="450"/>
+    <line x1="340" y1="352" x2="340" y2="450"/>
+    <line x1="360" y1="352" x2="360" y2="450"/>
+    <line x1="380" y1="352" x2="380" y2="450"/>
+    <line x1="400" y1="352" x2="400" y2="450"/>
+    <line x1="420" y1="352" x2="420" y2="450"/>
+    <line x1="440" y1="352" x2="440" y2="450"/>
+    <line x1="460" y1="352" x2="460" y2="450"/>
+    <line x1="480" y1="352" x2="480" y2="450"/>
+    <line x1="500" y1="352" x2="500" y2="450"/>
+    <line x1="520" y1="352" x2="520" y2="450"/>
+    <line x1="540" y1="352" x2="540" y2="450"/>
+    <line x1="560" y1="352" x2="560" y2="450"/>
+    <line x1="580" y1="352" x2="580" y2="450"/>
+  </g>
+  <g fill="#111">
+    <rect x="204" y="356" width="12" height="56" rx="2"/>
+    <rect x="224" y="356" width="12" height="56" rx="2"/>
+    <rect x="264" y="356" width="12" height="56" rx="2"/>
+    <rect x="284" y="356" width="12" height="56" rx="2"/>
+    <rect x="304" y="356" width="12" height="56" rx="2"/>
+    <rect x="344" y="356" width="12" height="56" rx="2"/>
+    <rect x="364" y="356" width="12" height="56" rx="2"/>
+    <rect x="404" y="356" width="12" height="56" rx="2"/>
+    <rect x="424" y="356" width="12" height="56" rx="2"/>
+    <rect x="444" y="356" width="12" height="56" rx="2"/>
+    <rect x="484" y="356" width="12" height="56" rx="2"/>
+    <rect x="504" y="356" width="12" height="56" rx="2"/>
+    <rect x="544" y="356" width="12" height="56" rx="2"/>
+    <rect x="564" y="356" width="12" height="56" rx="2"/>
+  </g>
+
+  <!-- Bench -->
+  <rect x="250" y="500" width="300" height="20" rx="5" fill="#6b3a1f"/>
+  <rect x="250" y="500" width="300" height="5" rx="2" fill="#7d4528"/>
+  <rect x="268" y="520" width="12" height="22" fill="#5a2f1a"/>
+  <rect x="520" y="520" width="12" height="22" fill="#5a2f1a"/>
+
+  <!-- Cat (seen from behind, reaching up to keys) -->
+  <!-- Tail -->
+  <path d="M 322 465 Q 270 430 262 380 Q 260 360 272 348" fill="none" stroke="#e8913a" stroke-width="20" stroke-linecap="round"/>
+  <path d="M 322 465 Q 270 430 262 380 Q 260 360 272 348" fill="none" stroke="#d07a28" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 11"/>
+  <!-- Body -->
+  <path d="M 320 505 Q 295 460 325 420 Q 355 395 400 393 Q 445 395 475 420 Q 505 460 480 505 Z" fill="#e8913a"/>
+  <g fill="none" stroke="#d07a28" stroke-width="4" stroke-linecap="round" opacity="0.7">
+    <path d="M 348 430 Q 354 450 348 470"/>
+    <path d="M 376 418 Q 382 440 376 464"/>
+    <path d="M 424 418 Q 418 440 424 464"/>
+    <path d="M 452 430 Q 446 450 452 470"/>
+  </g>
+  <!-- Forelegs -->
+  <path d="M 355 425 Q 348 435 350 444 L 370 444 Q 372 435 365 425 Z" fill="#e8913a"/>
+  <path d="M 435 425 Q 428 435 430 444 L 450 444 Q 452 435 445 425 Z" fill="#e8913a"/>
+  <!-- Paws on keys -->
+  <ellipse cx="360" cy="447" rx="20" ry="11" fill="#e8913a"/>
+  <ellipse cx="440" cy="447" rx="20" ry="11" fill="#e8913a"/>
+  <g fill="#f7b8a0">
+    <circle cx="353" cy="448" r="3.5"/>
+    <circle cx="360" cy="444" r="3.5"/>
+    <circle cx="367" cy="448" r="3.5"/>
+    <circle cx="360" cy="453" r="2.5"/>
+    <circle cx="433" cy="448" r="3.5"/>
+    <circle cx="440" cy="444" r="3.5"/>
+    <circle cx="447" cy="448" r="3.5"/>
+    <circle cx="440" cy="453" r="2.5"/>
+  </g>
+  <!-- Head (seen from behind, lowered toward keys) -->
+  <ellipse cx="400" cy="408" rx="30" ry="26" fill="#e8913a"/>
+  <g fill="none" stroke="#d07a28" stroke-width="3.5" stroke-linecap="round" opacity="0.7">
+    <path d="M 388 388 Q 392 397 388 406"/>
+    <path d="M 412 388 Q 408 397 412 406"/>
+    <path d="M 400 384 L 396 396"/>
+    <path d="M 400 384 L 404 396"/>
+  </g>
+  <!-- Ears -->
+  <polygon points="378,390 370,366 396,386" fill="#e8913a"/>
+  <polygon points="422,390 430,366 404,386" fill="#e8913a"/>
+  <polygon points="381,389 375,373 393,387" fill="#f7b8a0"/>
+  <polygon points="419,389 425,373 407,387" fill="#f7b8a0"/>
+  <line x1="372" y1="370" x2="366" y2="362" stroke="#d07a28" stroke-width="2" stroke-linecap="round"/>
+  <line x1="428" y1="370" x2="434" y2="362" stroke="#d07a28" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Floating musical notes -->
+  <g fill="#5a3a8a" opacity="0.85">
+    <ellipse cx="150" cy="180" rx="11" ry="8"/>
+    <line x1="161" y1="180" x2="161" y2="148" stroke="#5a3a8a" stroke-width="3"/>
+    <path d="M161,148 Q180,152 175,168" fill="#5a3a8a"/>
+  </g>
+  <g fill="#5a3a8a" opacity="0.85">
+    <ellipse cx="660" cy="170" rx="11" ry="8"/>
+    <line x1="671" y1="170" x2="671" y2="138" stroke="#5a3a8a" stroke-width="3"/>
+    <path d="M671,138 Q690,142 685,158" fill="#5a3a8a"/>
+  </g>
+  <g fill="#7a4ab0" opacity="0.7">
+    <ellipse cx="620" cy="120" rx="9" ry="6"/>
+    <line x1="629" y1="120" x2="629" y2="95" stroke="#7a4ab0" stroke-width="2.5"/>
+  </g>
+  <g fill="#7a4ab0" opacity="0.7">
+    <ellipse cx="180" cy="130" rx="9" ry="6"/>
+    <line x1="189" y1="130" x2="189" y2="105" stroke="#7a4ab0" stroke-width="2.5"/>
+  </g>
+</svg>

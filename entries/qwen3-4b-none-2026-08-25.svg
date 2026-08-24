@@ -1,0 +1,65 @@
+<svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .cat { fill: #FFD700; }
+    .cat-eyes { fill: #000; }
+    .cat-nose { fill: #FF0000; }
+    .cat-body { fill: #FFC107; }
+    .piano { fill: #8B4513; }
+    .key { fill: #8B4513; }
+    .key-active { fill: #FF8C00; }
+    .key-top { fill: #A0522D; }
+    .key-side { fill: #7A462A; }
+    .piano-wood { fill: #B8860B; }
+    .piano-stands { fill: #5D4037; }
+  </style>
+
+  <!-- Piano -->
+  <rect x="200" y="150" width="100" height="150" class="piano" />
+  <rect x="200" y="300" width="100" height="20" class="piano-wood" />
+  <rect x="250" y="150" width="100" height="20" class="piano-stands" />
+
+  <!-- Piano Keys (7 keys) -->
+  <!-- Keys are drawn as vertical rectangles -->
+  <rect x="210" y="150" width="10" height="150" class="key" />
+  <rect x="225" y="150" width="10" height="150" class="key" />
+  <rect x="240" y="150" width="10" height="150" class="key" />
+  <rect x="255" y="150" width="10" height="150" class="key" />
+  <rect x="270" y="150" width="10" height="150" class="key" />
+  <rect x="285" y="150" width="10" height="150" class="key" />
+  <rect x="300" y="150" width="10" height="150" class="key" />
+
+  <!-- Active key (middle one) -->
+  <rect x="270" y="150" width="10" height="150" class="key-active" />
+
+  <!-- Cat (on the piano) -->
+  <!-- Body (curved) -->
+  <ellipse cx="275" cy="280" rx="25" ry="30" class="cat-body" />
+  <!-- Head -->
+  <circle cx="275" cy="240" r="25" class="cat" />
+  <!-- Ears -->
+  <circle cx="260" cy="210" r="15" class="cat" />
+  <circle cx="290" cy="210" r="15" class="cat" />
+  <!-- Eyes -->
+  <circle cx="265" cy="225" r="5" class="cat-eyes" />
+  <circle cx="295" cy="225" r="5" class="cat-eyes" />
+  <!-- Nose -->
+  <circle cx="275" cy="240" r="3" class="cat-nose" />
+  <!-- Tail -->
+  <path d="M275 280 C300 300, 315 290, 315 280" stroke="black" stroke-width="2" fill="none" />
+  <!-- Cat's front paws on piano -->
+  <circle cx="270" cy="250" r="5" fill="black" />
+  <circle cx="290" cy="250" r="5" fill="black" />
+
+  <!-- Piano lid (optional) -->
+  <rect x="190" y="140" width="120" height="10" class="piano-top" fill="#6B4E2C" />
+  <rect x="195" y="120" width="110" height="10" class="piano-top" fill="#6B4E2C" />
+
+  <!-- Pianist notes -->
+  <text x="275" y="120" font-size="14" fill="black" font-family="serif">🎵</text>
+  <text x="285" y="125" font-size="12" fill="gray">C</text>
+  <text x="295" y="125" font-size="12" fill="gray">D</text>
+  <text x="305" y="125" font-size="12" fill="gray">E</text>
+
+  <!-- Piano leg -->
+  <rect x="180" y="370" width="120" height="30" class="piano-stands" />
+</svg>

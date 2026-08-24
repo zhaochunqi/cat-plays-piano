@@ -1,0 +1,48 @@
+<svg width="400" height="300" viewBox="0 0 400 300"
+     xmlns="http://www.w3.org/2000/svg"
+     style="background:#f5f5dc;">
+  <!-- Piano -->
+  <rect x="120" y="180" width="160" height="80" rx="5" fill="#8B4513"/>
+  <rect x="130" y="190" width="140" height="60" rx="3" fill="#A0522D"/>
+  <!-- Keys (just a few white keys) -->
+  <rect x="135" y="195" width="20" height="50" fill="#fff"/>
+  <rect x="165" y="195" width="20" height="50" fill="#fff"/>
+  <rect x="195" y="195" width="20" height="50" fill="#fff"/>
+  <rect x="225" y="195" width="20" height="50" fill="#fff"/>
+  <!-- Black keys -->
+  <rect x="150" y="195" width="10" height="35" fill="#000"/>
+  <rect x="180" y="195" width="10" height="35" fill="#000"/>
+  <!-- Bench -->
+  <rect x="150" y="240" width="100" height="10" rx="2" fill="#5D4037"/>
+  <!-- Cat -->
+  <!-- Body -->
+  <ellipse cx="150" cy="160" rx="30" ry="20" fill="#D2B48C"/>
+  <!-- Head -->
+  <circle cx="180" cy="150" r="15" fill="#D2B48C"/>
+  <!-- Ears -->
+  <polygon points="170,135 180,120 190,135" fill="#D2B48C"/>
+  <!-- Whiskers -->
+  <path d="M150,155 Q140,150 150,145 Q160,150 150,155" stroke="#000" stroke-width="1.5" fill="none"/>
+  <path d="M150,155 Q160,150 150,145 Q140,150 150,155" stroke="#000" stroke-width="1.5" fill="none"/>
+  <!-- Eyes -->
+  <circle cx="175" cy="145" r="2" fill="#000"/>
+  <!-- Nose -->
+  <rect x="174" y="149" width="2" height="2" fill="#000"/>
+  <!-- Mouth -->
+  <path d="M174,151 Q174,155 180,155" stroke="#000" stroke-width="1.5" fill="none"/>
+  <!-- Paws / front legs -->
+  <rect x="140" y="170" width="8" height="30" rx="4" fill="#D2B48C"/>
+  <rect x="160" y="170" width="8" height="30" rx="4" fill="#D2B48C"/>
+  <!-- Tail -->
+  <rect x="120" y="160" width="20" height="8" rx="4" transform="rotate(-20,130,164)" fill="#D2B48C"/>
+  <!-- Paws on keys (front paws on piano keys) -->
+  <rect x="136" y="190" width="4" height="10" fill="#D2B48C"/>
+  <rect x="166" y="190" width="4" height="10" fill="#D2B48C"/>
+  <!-- Simple "music notes" to suggest playing -->
+  <g font-family="Arial, sans-serif" font-size="14">
+    <path d="M260,230 L260,250 L270,245 L260,240 Z" fill="#000"/>
+    <path d="M260,240 Q270,220 280,240" stroke="#000" stroke-width="1.5" fill="none"/>
+    <text x="285" y="245">♪</text>
+    <text x="240" y="170">Meow!</text>
+  </g>
+</svg>

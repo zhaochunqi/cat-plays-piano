@@ -1,0 +1,54 @@
+<svg width="300" height="200" viewBox="0 0 300 200"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <!-- Piano background -->
+  <rect x="50" y="100" width="200" height="30" fill="#777"/>
+  
+  <!-- Piano keys -->
+  <g id="keys">
+    <!-- White keys -->
+    <rect x="60"  y="115" width="15" height="15" fill="#fff"/>
+    <rect x="85"  y="115" width="15" height="15" fill="#fff"/>
+    <rect x="110" y="115" width="15" height="15" fill="#fff"/>
+    <rect x="135" y="115" width="15" height="15" fill="#fff"/>
+    <rect x="160" y="115" width="15" height="15" fill="#fff"/>
+    <rect x="185" y="115" width="15" height="15" fill="#fff"/>
+    <rect x="210" y="115" width="15" height="15" fill="#fff"/>
+    <rect x="235" y="115" width="15" height="15" fill="#fff"/>
+    <!-- Black keys (offset) -->
+    <rect x="75"  y="110" width="10" height="12" fill="#000"/>
+    <rect x="95"  y="110" width="10" height="12" fill="#000"/>
+    <rect x="115" y="110" width="10" height="12" fill="#000"/>
+    <rect x="135" y="110" width="10" height="12" fill="#000"/>
+    <rect x="155" y="110" width="10" height="12" fill="#000"/>
+    <rect x="175" y="110" width="10" height="12" fill="#000"/>
+    <rect x="195" y="110" width="10" height="12" fill="#000"/>
+    <rect x="215" y="110" width="10" height="12" fill="#000"/>
+    <rect x="235" y="110" width="10" height="12" fill="#000"/>
+  </g>
+
+  <!-- Cat -->
+  <g id="cat" transform="translate(80,80)">
+    <!-- Body -->
+    <ellipse cx="30" cy="30" rx="20" ry="15" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+    <!-- Head -->
+    <circle cx="30" cy="10" r="12" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+    <!-- Eyes -->
+    <circle cx="22" cy="8" r="3" fill="#000"/>
+    <circle cx="38" cy="8" r="3" fill="#000"/>
+    <!-- Ears -->
+    <polygon points="20,0 15,8 25,8" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+    <polygon points="40,0 35,8 45,8" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+    <!-- Whiskers -->
+    <line x1="12" y1="12" x2="0"   y2="12" stroke="#000" stroke-width="1"/>
+    <line x1="12" y1="14" x2="-2"  y2="14" stroke="#000" stroke-width="1"/>
+    <line x1="48" y1="12" x2="50"  y2="12" stroke="#000" stroke-width="1"/>
+    <line x1="48" y1="14" x2="52"  y2="14" stroke="#000" stroke-width="1"/>
+    <!-- Tail -->
+    <path d="M50,30 Q55,10 65,30" stroke="#000" stroke-width="4" fill="none"/>
+    <!-- Front paws (on piano keys) -->
+    <g id="paws" transform="translate(0,20)">
+      <circle cx="10" cy="15" r="8" fill="#000"/>
+      <circle cx="30" cy="15" r="8" fill="#000"/>
+    </g>
+  </g>
+</svg>

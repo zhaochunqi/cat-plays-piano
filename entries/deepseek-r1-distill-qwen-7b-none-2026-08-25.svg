@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="400 300 600 400">
+  <!-- Cat -->
+  <g transform="translate(100,300)">
+    <!-- Body -->
+    <path d="M0 0 L60 20 L60 40 L0 60 Z" fill="#8B4513" />
+    <!-- Head -->
+    <ellipse cx="30 30" cy="30" rx="25" ry="15" fill="#662C00" stroke="#000000" stroke-width="2" />
+    <!-- Ears -->
+    <circle cx="10 30" cy="30" r="8" fill="#662C00" />
+    <circle cx="50 30" cy="30" r="8" fill="#662C00" />
+    <!-- Eyes -->
+    <circle cx="20 25" cy="30" r="2" fill="white" />
+    <circle cx="25 30" cy="30" r="2" fill="white" />
+    <!-- Legs -->
+    <line x1="45" y1="70" x2="15" y2="70" stroke="#000000" stroke-width="2" />
+    <line x1="20" y1="100" x2="40" y2="100" stroke="#000000" stroke-width="2" />
+    <!-- Tail -->
+    <path d="M10 140 L60 140 L60 170 Z" fill="#8B4513" stroke="#000000" stroke-width="2" />
+  </g>
+
+  <!-- Piano -->
+  <g transform="translate(300,300)">
+    <!-- Piano keys -->
+    <rect x="50" y="50" width="50" height="100" fill="#E0E0E0" />
+    <rect x="125" y="50" width="50" height="100" fill="#E0E0E0" />
+    <rect x="200" y="50" width="50" height="100" fill="#E0E0E0" />
+    <rect x="275" y="50" width="50" height="100" fill="#E0E0E0" />
+    <rect x="350" y="50" width="50" height="100" fill="#E0E0E0" />
+    <rect x="425" y="50" width="50" height="100" fill="#E0E0E0" />
+    <rect x="500" y="50" width="50" height="100" fill="#E0E0E0" />
+    
+    <!-- Black keys -->
+    <rect x="60" y="50" width="30" height="30" fill="#666666" />
+    <rect x="135" y="50" width="30" height="30" fill="#666666" />
+    <rect x="220" y="50" width="30" height="30" fill="#666666" />
+    <rect x="295" y="50" width="30" height="30" fill="#666666" />
+    <rect x="370" y="50" width="30" height="30" fill="#666666" />
+    <rect x="445" y="50" width="30" height="30" fill="#666666" />
+    <rect x="520" y="50" width="30" height="30" fill="#666666" />
+    
+    <!-- Staff -->
+    <path d="M50 100 L50 140" stroke="#000000" stroke-width="2" />
+    <path d="M125 100 L125 140" stroke="#000000" stroke-width="2" />
+    <path d="M200 100 L200 140" stroke="#000000" stroke-width="2" />
+    <path d="M275 100 L275 140" stroke="#000000" stroke-width="2" />
+    <path d="M350 100 L350 140" stroke="#000000" stroke-width="2" />
+    <path d="M425 100 L425 140" stroke="#000000" stroke-width="2" />
+    <path d="M500 100 L500 140" stroke="#000000" stroke-width="2" />
+    
+    <!-- Clef and notes -->
+    <rect x="50" y="20" width="40" height="40" fill="none" stroke="#000000" stroke-width="2" />
+    <rect x="125" y="20" width="40" height="40" fill="none" stroke="#000000" stroke-width="2" />
+    <rect x="200" y="20" width="40" height="40" fill="none" stroke="#000000" stroke-width="2" />
+    <rect x="275" y="20" width="40" height="40" fill="none" stroke="#000000" stroke-width="2" />
+    <rect x="350" y="20" width="40" height="40" fill="none" stroke="#000000" stroke-width="2" />
+  </g>
+
+  <!-- Cat playing piano -->
+  <g transform="translate(300,300)">
+    <path d="M250 310 L280 310 L270 300 L250 310 Z" fill="#8B4513" />
+    <path d="M270 315 L285 315 L275 305 L270 315 Z" fill="#8B4513" />
+    <path d="M265 310 L290 310 L280 300 L265 310 Z" fill="#8B4513" />
+  </g>
+</svg>

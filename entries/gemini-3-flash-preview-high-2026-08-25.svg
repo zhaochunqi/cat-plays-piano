@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF8F0"/>
+      <stop offset="100%" stop-color="#F5EBE0"/>
+    </radialGradient>
+
+    <!-- Drop Shadow Filter for Piano and Elements -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#5C4033" flood-opacity="0.15" />
+    </filter>
+    
+    <!-- Cheeky Paw Shadow -->
+    <filter id="pawShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.1" />
+    </filter>
+
+    <!-- Wood Gradient for Bench -->
+    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A16B47"/>
+      <stop offset="100%" stop-color="#6F442A"/>
+    </linearGradient>
+
+    <!-- Gold/Brass Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F1C40F"/>
+      <stop offset="50%" stop-color="#F39C12"/>
+      <stop offset="100%" stop-color="#F1C40F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  
+  <!-- Cozy Ambient Circle -->
+  <circle cx="400" cy="350" r="280" fill="#FFEAD2" opacity="0.5" />
+
+  <!-- Floor Line -->
+  <line x1="100" y1="620" x2="700" y2="620" stroke="#D5C5B5" stroke-width="4" stroke-linecap="round" />
+
+  <!-- ==================== PIANO SHADOW & LEGS ==================== -->
+  <ellipse cx="400" cy="625" rx="270" ry="15" fill="#E3D5CA" />
+  
+  <!-- Left Piano Leg -->
+  <rect x="170" y="420" width="35" height="200" rx="5" fill="#1A252F" />
+  <rect x="165" y="610" width="45" height="12" rx="3" fill="#2C3E50" />
+
+  <!-- Right Piano Leg -->
+  <rect x="595" y="420" width="35" height="200" rx="5" fill="#1A252F" />
+  <rect x="590" y="610" width="45" height="12" rx="3" fill="#2C3E50" />
+
+  <!-- Pedals -->
+  <rect x="375" y="605" width="50" height="15" rx="3" fill="#1A252F" />
+  <path d="M 385,612 L 380,620 L 390,620 Z" fill="url(#goldGrad)" />
+  <path d="M 400,612 L 398,620 L 404,620 Z" fill="url(#goldGrad)" />
+  <path d="M 415,612 L 420,620 L 410,620 Z" fill="url(#goldGrad)" />
+
+  <!-- ==================== PIANO BODY ==================== -->
+  <!-- Main Piano Backboard -->
+  <rect x="150" y="140" width="500" height="280" rx="10" fill="#2C3E50" filter="url(#softShadow)" />
+  
+  <!-- Piano Music Sheet Stand -->
+  <rect x="260" y="270" width="280" height="10" fill="#1A252F" rx="3" />
+  
+  <!-- Sheet Music (Left Page) -->
+  <path d="M 330,195 L 395,205 L 390,260 L 325,250 Z" fill="#FFFFFF" filter="url(#softShadow)"/>
+  <!-- Sheet Music (Right Page) -->
+  <path d="M 405,205 L 470,195 L 475,250 L 410,260 Z" fill="#FFFFFF" filter="url(#softShadow)"/>
+  
+  <!-- Music Notes on Sheet -->
+  <path d="M 338,215 L 380,222 M 336,225 L 378,232 M 334,235 L 376,242" stroke="#B2BEC3" stroke-width="2" stroke-linecap="round" />
+  <path d="M 418,222 L 460,215 M 420,232 L 462,225 M 422,242 L 464,235" stroke="#B2BEC3" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Little Fish Drawing on Left Page -->
+  <path d="M 350,248 C 355,245 362,245 365,248 C 362,251 355,251 350,248 Z" fill="#FF7675" />
+  <line x1="364" y1="248" x2="368" y2="245" stroke="#FF7675" stroke-width="1.5" />
+  <line x1="364" y1="248" x2="368" y2="251" stroke="#FF7675" stroke-width="1.5" />
+
+  <!-- Metronome -->
+  <g transform="translate(180, 85)">
+    <polygon points="15,50 35,50 25,10" fill="#8D6E63" />
+    <polygon points="17,48 33,48 25,15" fill="#FFF2E2" />
+    <line x1="25" y1="45" x2="20" y2="18" stroke="#2D3436" stroke-width="2" stroke-linecap="round" />
+    <circle cx="20" cy="18" r="3" fill="url(#goldGrad)" />
+  </g>
+
+  <!-- Potted Plant on Piano -->
+  <g transform="translate(560, 75)">
+    <!-- Pot -->
+    <polygon points="10,65 35,65 40,40 5,40" fill="#E28743" />
+    <rect x="2" y="36" width="41" height="5" fill="#D35400" rx="1" />
+    <!-- Vines/Leaves -->
+    <path d="M 12,38 Q 2,20 -5,35" fill="none" stroke="#27AE60" stroke-width="3" stroke-linecap="round" />
+    <path d="M 28,38 Q 38,15 45,30" fill="none" stroke="#2ECC71" stroke-width="3" stroke-linecap="round" />
+    <path d="M 20,38 Q 20,10 12,5" fill="none" stroke="#27AE60" stroke-width="4" stroke-linecap="round" />
+    <circle cx="-5" cy="35" r="4" fill="#2ECC71" />
+    <circle cx="45" cy="30" r="4" fill="#27AE60" />
+    <circle cx="12" cy="5" r="5" fill="#2ECC71" />
+  </g>
+
+  <!-- ==================== KEYBOARD ==================== -->
+  <!-- Red Felt Strip -->
+  <rect x="170" y="377" width="460" height="5" fill="#C0392B" />
+
+  <!-- Keyboard Bed Base -->
+  <rect x="165" y="380" width="470" height="40" fill="#1A252F" />
+
+  <!-- White Keys -->
+  <!-- 22 keys total, 21px width each -->
+  <g fill="#FFFFFF">
+    <rect x="170" y="382" width="19" height="35" rx="2" />
+    <rect x="191" y="382" width="19" height="35" rx="2" />
+    <rect x="212" y="382" width="19" height="35" rx="2" />
+    <rect x="233" y="382" width="19" height="35" rx="2" />
+    <rect x="254" y="382" width="19" height="35" rx="2" />
+    <rect x="275" y="382" width="19" height="35" rx="2" />
+    <rect x="296" y="382" width="19" height="35" rx="2" />
+    
+    <!-- Pressed White Key 1 -->
+    <rect x="317" y="385" width="19" height="32" rx="2" fill="#EAEAEA" />
+    
+    <rect x="338" y="382" width="19" height="35" rx="2" />
+    <rect x="359" y="382" width="19" height="35" rx="2" />
+    <rect x="380" y="382" width="19" height="35" rx="2" />
+    <rect x="401" y="382" width="19" height="35" rx="2" />
+    
+    <!-- Pressed White Key 2 -->
+    <rect x="422" y="385" width="19" height="32" rx="2" fill="#EAEAEA" />
+    
+    <rect x="443" y="382" width="19" height="35" rx="2" />
+    <rect x="464" y="382" width="19" height="35" rx="2" />
+    <rect x="485" y="382" width="19" height="35" rx="2" />
+    <rect x="506" y="382" width="19" height="35" rx="2" />
+    <rect x="527" y="382" width="19" height="35" rx="2" />
+    <rect x="548" y="382" width="19" height="35" rx="2" />
+    <rect x="569" y="382" width="19" height="35" rx="2" />
+    <rect x="590" y="382" width="19" height="35" rx="2" />
+    <rect x="611" y="382" width="19" height="35" rx="2" />
+  </g>
+
+  <!-- Black Keys -->
+  <g fill="#111111">
+    <!-- Group 1 -->
+    <rect x="183" y="382" width="12" height="22" rx="1" />
+    <rect x="204" y="382" width="12" height="22" rx="1" />
+    <!-- Gap -->
+    <rect x="246" y="382" width="12" height="22" rx="1" />
+    <rect x="267" y="382" width="12" height="22" rx="1" />
+    <rect x="288" y="382" width="12" height="22" rx="1" />
+    <!-- Gap -->
+    <rect x="330" y="382" width="12" height="22" rx="1" />
+    <rect x="351" y="382" width="12" height="22" rx="1" />
+    <!-- Gap -->
+    <rect x="393" y="382" width="12" height="22" rx="1" />
+    <rect x="414" y="382" width="12" height="22" rx="1" />
+    <rect x="435" y="382" width="12" height="22" rx="1" />
+    <!-- Gap -->
+    <rect x="477" y="382" width="12" height="22" rx="1" />
+    <rect x="498" y="382" width="12" height="22" rx="1" />
+    <!-- Gap -->
+    <rect x="540" y="382" width="12" height="22" rx="1" />
+    <rect x="561" y="382" width="12" height="22" rx="1" />
+    <rect x="582" y="382" width="12" height="22" rx="1" />
+  </g>
+
+  <!-- Keyboard Side Blocks (Cheeks) -->
+  <rect x="160" y="377" width="10" height="46" fill="#1A252F" rx="2" />
+  <rect x="630" y="377" width="10" height="46" fill="#1A252F" rx="2" />
+
+
+  <!-- ==================== CAT & BENCH ==================== -->
+  
+  <!-- Cat Tail (Behind Bench) -->
+  <path d="M 285,495 C 240,490 210,430 230,370 Q 238,345 255,360 C 265,370 250,395 248,420 C 245,450 270,480 295,482 Z" fill="#FF9F43" />
+  
+  <!-- Bench Legs -->
+  <line x1="280" y1="495" x2="265" y2="615" stroke="#5D4037" stroke-width="10" stroke-linecap="round"/>
+  <line x1="410" y1="495" x2="425" y2="615" stroke="#5D4037" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Bench Shadow -->
+  <rect x="250" y="492" width="190" height="8" fill="#5D4037" opacity="0.3" rx="4" />
+  
+  <!-- Bench Cushion -->
+  <rect x="245" y="480" width="200" height="20" rx="8" fill="url(#woodGrad)" filter="url(#softShadow)" />
+
+  <!-- Cat Body -->
+  <path d="M 285,490 C 270,430 300,360 350,370 C 400,380 410,440 395,490 Z" fill="#FF9F43" />
+  <!-- Tabby Stripes on Back -->
+  <path d="M 283,440 Q 305,442 320,438" stroke="#E67E22" stroke-width="5" stroke-linecap="round" fill="none" />
+  <path d="M 286,415 Q 305,420 315,414" stroke="#E67E22" stroke-width="5" stroke-linecap="round" fill="none" />
+  <path d="M 292,390 Q 310,395 318,390" stroke="#E67E22" stroke-width="5" stroke-linecap="round" fill="none" />
+  
+  <!-- Cat Chest (Fluffy Cream Patch) -->
+  <path d="M 335,372 C 375,375 390,410 380,440 C 365,420 345,410 335,372 Z" fill="#FFF2E2" />
+
+  <!-- Cat Hind Leg (folded) -->
+  <path d="M 290,490 C 285,455 315,450 325,490 Z" fill="#E67E22" />
+  <!-- White Back Paw -->
+  <ellipse cx="308" cy="492" rx="14" ry="8" fill="#FFF2E2" />
+
+  <!-- Cat Left Arm (Reaching down to keys) -->
+  <path d="M 320,385 C 320,385 315,415 322,418 C 330,420 338,405 338,385 Z" fill="#FF9F43" />
+  <path d="M 315,412 C 312,420 328,425 330,412 Z" fill="#FFF2E2" />
+
+  <!-- Cat Right Arm (Raised high in action) -->
+  <!-- Hand Shadow -->
+  <path d="M 390,385 Q 410,345 425,355 Q 425,375 395,395 Z" fill="#D35400" opacity="0.15" filter="url(#pawShadow)"/>
+  <!-- Main Arm Piece -->
+  <path d="M 375,390 Q 405,340 420,350 Q 420,370 385,395 Z" fill="#FF9F43" />
+  <!-- Cream Mitten Paw -->
+  <path d="M 405,357 C 410,348 426,358 418,367 C 412,372 402,365 405,357 Z" fill="#FFF2E2" />
+  
+  <!-- Pink Toe Beans! -->
+  <ellipse cx="412" cy="362" rx="4" ry="3" fill="#FF8B8B" transform="rotate(-30, 412, 362)" />
+  <circle cx="408" cy="355" r="1.5" fill="#FF8B8B" />
+  <circle cx="414" cy="353" r="1.5" fill="#FF8B8B" />
+  <circle cx="419" cy="358" r="1.5" fill="#FF8B8B" />
+
+  <!-- Cat Head -->
+  <g transform="translate(345, 330)">
+    <!-- Ears -->
+    <!-- Left Ear -->
+    <path d="M -45,-15 L -55,-48 C -55,-48 -35,-42 -23,-25 Z" fill="#FF9F43" />
+    <path d="M -40,-17 L -48,-42 C -48,-42 -33,-37 -24,-24 Z" fill="#FFB8B8" />
+    
+    <!-- Right Ear -->
+    <path d="M 15,-22 L 32,-52 C 32,-52 35,-31 23,-14 Z" fill="#FF9F43" />
+    <path d="M 14,-18 L 26,-44 C 26,-44 29,-28 20,-14 Z" fill="#FFB8B8" />
+
+    <!-- Main Face Oval -->
+    <ellipse cx="-10" cy="-2" rx="45" ry="38" fill="#FF9F43" />
+    
+    <!-- Cream Muzzle Area -->
+    <path d="M -30,10 C -30,-5 10,-5 10,10 C 10,22 -30,22 -30,10 Z" fill="#FFF2E2" />
+
+    <!-- Tabby Forehead Stripes -->
+    <path d="M -16,-34 L -16,-24 M -10,-37 L -10,-24 M -4,-34 L -4,-24" stroke="#E67E22" stroke-width="4" stroke-linecap="round" />
+    <!-- Tabby Cheek Stripes -->
+    <path d="M -48,-5 L -36,-7 M -46,2 L -36,-1" stroke="#E67E22" stroke-width="3" stroke-linecap="round" />
+    <path d="M 28,-7 L 16,-9 M 26,0 L 16,-3" stroke="#E67E22" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Happy Eyes (Closed Curves) -->
+    <path d="M -35,-2 Q -27,5 -20,-2" stroke="#5D4037" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    <path d="M -2,-4 Q 6,3 13,-4" stroke="#5D4037" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    
+    <!-- Blush Cheeks -->
+    <circle cx="-33" cy="7" r="6" fill="#FF8B8B" opacity="0.6" />
+    <circle cx="11" cy="5" r="6" fill="#FF8B8B" opacity="0.6" />
+
+    <!-- Nose -->
+    <polygon points="-12,5 -8,5 -10,8" fill="#FF8B8B" />
+    
+    <!-- Mouth -->
+    <path d="M -16,11 Q -12,15 -10,11 Q -8,15 -4,11" stroke="#5D4037" stroke-width="2" stroke-linecap="round" fill="none" />
+
+    <!-- Whiskers -->
+    <path d="M -38,12 L -58,11 M -36,17 L -55,20" stroke="#FFF" stroke-width="2" stroke-linecap="round" opacity="0.9" />
+    <path d="M 16,10 L 36,8 M 15,15 L 34,17" stroke="#FFF" stroke-width="2" stroke-linecap="round" opacity="0.9" />
+  </g>
+
+  <!-- ==================== MUSIC NOTES & MAGIC ==================== -->
+  
+  <!-- Sparkles -->
+  <g fill="#FFD93D">
+    <!-- Sparkle 1 -->
+    <path d="M 220,130 Q 220,138 228,138 Q 220,138 220,146 Q 220,138 212,138 Q 220,138 220,130 Z" />
+    <!-- Sparkle 2 -->
+    <path d="M 530,190 Q 530,195 535,195 Q 530,195 530,200 Q 530,195 525,195 Q 530,195 530,190 Z" />
+    <!-- Sparkle 3 -->
+    <path d="M 490,100 Q 490,106 496,106 Q 490,106 490,112 Q 490,106 484,106 Q 490,106 490,100 Z" />
+  </g>
+
+  <!-- Floating Music Notes -->
+  <!-- Note 1 (Pink Double Note, Top Right) -->
+  <g fill="#FF7675" transform="translate(520, 110) rotate(-15)">
+    <ellipse cx="10" cy="30" rx="7" ry="5" />
+    <ellipse cx="30" cy="25" rx="7" ry="5" />
+    <rect x="15" y="5" width="3" height="25" />
+    <rect x="35" y="0" width="3" height="25" />
+    <polygon points="15,5 38,0 38,6 15,11" />
+  </g>
+
+  <!-- Note 2 (Teal Single Note, Top Left) -->
+  <g fill="#74B9FF" transform="translate(260, 90) rotate(15)">
+    <ellipse cx="10" cy="25" rx="7" ry="5" />
+    <rect x="15" y="0" width="3" height="25" />
+    <path d="M 18,0 Q 28,5 25,15" stroke="#74B9FF" stroke-width="3" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Note 3 (Purple Single Note, Middle Right) -->
+  <g fill="#A29BFE" transform="translate(580, 240) rotate(-10)">
+    <ellipse cx="10" cy="25" rx="7" ry="5" />
+    <rect x="15" y="0" width="3" height="25" />
+    <path d="M 18,0 Q 28,5 25,15" stroke="#A29BFE" stroke-width="3" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Note 4 (Yellow G-Clef Style Curly Line, Center Left) -->
+  <path d="M 220,240 Q 210,210 230,200 T 235,170" fill="none" stroke="#FFEAA7" stroke-width="4" stroke-linecap="round" />
+  <circle cx="235" cy="170" r="3" fill="#FFEAA7" />
+
+  <!-- Note 5 (Pink Single Note, Bottom Left) -->
+  <g fill="#FF7675" transform="translate(140, 310) rotate(20)">
+    <ellipse cx="10" cy="25" rx="6" ry="4.5" />
+    <rect x="14" y="2" width="2.5" height="23" />
+  </g>
+</svg>

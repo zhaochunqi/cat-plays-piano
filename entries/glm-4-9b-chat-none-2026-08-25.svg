@@ -1,0 +1,21 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cat -->
+  <circle cx="200" cy="150" r="50" fill="gray" />
+  <circle cx="200" cy="100" r="20" fill="black" />
+  <path d="M200 120 q-10 0 -10 10 q0 10 10 10 q10 0 10 -10 q0 -10 -10 -10" fill="gray" />
+  <path d="M200 150 q-10 0 -10 -10 q0 -10 10 -10 q10 0 10 10 q0 10 -10 10" fill="gray" />
+  
+  <!-- Piano -->
+  <rect x="150" y="200" width="100" height="50" fill="black" />
+  <rect x="150" y="250" width="100" height="50" fill="black" />
+  <rect x="150" y="300" width="100" height="50" fill="black" />
+  <rect x="150" y="350" width="100" height="50" fill="black" />
+  <line x1="150" y1="205" x2="250" y2="205" stroke="white" />
+  <line x1="150" y1="255" x2="250" y2="255" stroke="white" />
+  <line x1="150" y1="305" x2="250" y2="305" stroke="white" />
+  <line x1="150" y1="355" x2="250" y2="355" stroke="white" />
+  
+  <!-- Cat's hand on the piano key -->
+  <circle cx="260" cy="205" r="5" fill="black" />
+  <line x1="200" y1="200" x2="260" y2="205" stroke="black" stroke-width="2" />
+</svg>

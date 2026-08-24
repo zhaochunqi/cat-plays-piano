@@ -1,0 +1,88 @@
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Piano -->
+  <rect x="50" y="150" width="400" height="100" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+  <rect x="70" y="130" width="360" height="20" fill="#A0522D" stroke="#654321" stroke-width="2"/>
+  
+  <!-- Keys -->
+  <g id="keys">
+    <!-- White keys -->
+    <rect x="80" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="100" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="120" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="140" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="160" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="180" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="200" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="220" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="240" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="260" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="280" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="300" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="320" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="340" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="360" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="380" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    <rect x="400" y="150" width="20" height="40" fill="white" stroke="black" stroke-width="1"/>
+    
+    <!-- Black keys -->
+    <rect x="90" y="150" width="10" height="25" fill="black" stroke="black" stroke-width="1"/>
+    <rect x="130" y="150" width="10" height="25" fill="black" stroke="black" stroke-width="1"/>
+    <rect x="170" y="150" width="10" height="25" fill="black" stroke="black" stroke-width="1"/>
+    <rect x="210" y="150" width="10" height="25" fill="black" stroke="black" stroke-width="1"/>
+    <rect x="250" y="150" width="10" height="25" fill="black" stroke="black" stroke-width="1"/>
+    <rect x="290" y="150" width="10" height="25" fill="black" stroke="black" stroke-width="1"/>
+    <rect x="330" y="150" width="10" height="25" fill="black" stroke="black" stroke-width="1"/>
+    <rect x="370" y="150" width="10" height="25" fill="black" stroke="black" stroke-width="1"/>
+  </g>
+  
+  <!-- Cat -->
+  <g id="cat">
+    <!-- Body -->
+    <ellipse cx="150" cy="200" rx="30" ry="25" fill="#808080" stroke="#000" stroke-width="2"/>
+    
+    <!-- Head -->
+    <circle cx="150" cy="160" r="20" fill="#808080" stroke="#000" stroke-width="2"/>
+    
+    <!-- Ears -->
+    <path d="M135,145 L140,130 L150,145" fill="#808080" stroke="#000" stroke-width="2"/>
+    <path d="M165,145 L160,130 L150,145" fill="#808080" stroke="#000" stroke-width="2"/>
+    
+    <!-- Eyes -->
+    <circle cx="145" cy="155" r="3" fill="#000"/>
+    <circle cx="155" cy="155" r="3" fill="#000"/>
+    
+    <!-- Nose -->
+    <path d="M150,160 L148,162 L152,162 Z" fill="#FF69B4"/>
+    
+    <!-- Whiskers -->
+    <line x1="130" y1="160" x2="140" y2="158" stroke="#000" stroke-width="1"/>
+    <line x1="130" y1="162" x2="140" y2="162" stroke="#000" stroke-width="1"/>
+    <line x1="130" y1="164" x2="140" y2="166" stroke="#000" stroke-width="1"/>
+    <line x1="170" y1="160" x2="160" y2="158" stroke="#000" stroke-width="1"/>
+    <line x1="170" y1="162" x2="160" y2="162" stroke="#000" stroke-width="1"/>
+    <line x1="170" y1="164" x2="160" y2="166" stroke="#000" stroke-width="1"/>
+    
+    <!-- Arms -->
+    <line x1="140" y1="180" x2="120" y2="190" stroke="#808080" stroke-width="8" stroke-linecap="round"/>
+    <line x1="160" y1="180" x2="180" y2="190" stroke="#808080" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Paws -->
+    <circle cx="120" cy="190" r="5" fill="#A9A9A9"/>
+    <circle cx="180" cy="190" r="5" fill="#A9A9A9"/>
+  </g>
+  
+  <!-- Musical notes -->
+  <g fill="#FFD700">
+    <circle cx="200" cy="100" r="5"/>
+    <line x1="205" y1="100" x2="205" y2="80" stroke="#FFD700" stroke-width="2"/>
+    <line x1="203" y1="80" x2="207" y2="80" stroke="#FFD700" stroke-width="2"/>
+    
+    <circle cx="250" cy="80" r="5"/>
+    <line x1="255" y1="80" x2="255" y2="60" stroke="#FFD700" stroke-width="2"/>
+    <line x1="253" y1="60" x2="257" y2="60" stroke="#FFD700" stroke-width="2"/>
+    
+    <circle cx="300" cy="110" r="5"/>
+    <line x1="305" y1="110" x2="305" y2="90" stroke="#FFD700" stroke-width="2"/>
+    <line x1="303" y1="90" x2="307" y2="90" stroke="#FFD700" stroke-width="2"/>
+  </g>
+</svg>

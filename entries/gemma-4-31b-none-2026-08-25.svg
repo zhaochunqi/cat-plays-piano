@@ -1,0 +1,76 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background/Floor -->
+  <rect width="400" height="400" fill="#f0f0f0" />
+  <rect x="0" y="320" width="400" height="80" fill="#d1d1d1" />
+
+  <!-- Piano Body -->
+  <rect x="100" y="200" width="250" height="120" rx="5" fill="#2c3e50" />
+  <rect x="100" y="200" width="250" height="40" fill="#34495e" />
+  
+  <!-- Music Stand -->
+  <rect x="180" y="150" width="90" height="50" fill="#2c3e50" rx="2" />
+  <rect x="220" y="160" width="10" height="40" fill="#2c3e50" />
+
+  <!-- Piano Keys (White) -->
+  <g fill="white" stroke="#bdc3c7" stroke-width="1">
+    <rect x="110" y="210" width="15" height="30" />
+    <rect x="125" y="210" width="15" height="30" />
+    <rect x="140" y="210" width="15" height="30" />
+    <rect x="155" y="210" width="15" height="30" />
+    <rect x="170" y="210" width="15" height="30" />
+    <rect x="185" y="210" width="15" height="30" />
+    <rect x="200" y="210" width="15" height="30" />
+    <rect x="215" y="210" width="15" height="30" />
+    <rect x="230" y="210" width="15" height="30" />
+    <rect x="245" y="210" width="15" height="30" />
+    <rect x="260" y="210" width="15" height="30" />
+    <rect x="275" y="210" width="15" height="30" />
+    <rect x="290" y="210" width="15" height="30" />
+    <rect x="305" y="210" width="15" height="30" />
+    <rect x="320" y="210" width="15" height="30" />
+    <rect x="335" y="210" width="15" height="30" />
+  </g>
+
+  <!-- Piano Keys (Black) -->
+  <g fill="#000">
+    <rect x="122" y="210" width="6" height="20" />
+    <rect x="137" y="210" width="6" height="20" />
+    <rect x="167" y="210" width="6" height="20" />
+    <rect x="182" y="210" width="6" height="20" />
+    <rect x="197" y="210" width="6" height="20" />
+    <rect x="232" y="210" width="6" height="20" />
+    <rect x="247" y="210" width="6" height="20" />
+    <rect x="277" y="210" width="6" height="20" />
+    <rect x="292" y="210" width="6" height="20" />
+    <rect x="307" y="210" width="6" height="20" />
+  </g>
+
+  <!-- Cat Body -->
+  <ellipse cx="130" cy="260" rx="40" ry="60" fill="#f39c12" />
+  
+  <!-- Cat Head -->
+  <circle cx="130" cy="180" r="30" fill="#f39c12" />
+  
+  <!-- Ears -->
+  <polygon points="110,165 110,140 125,160" fill="#f39c12" />
+  <polygon points="150,165 150,140 135,160" fill="#f39c12" />
+  
+  <!-- Eyes -->
+  <circle cx="120" cy="175" r="3" fill="#2c3e50" />
+  <circle cx="140" cy="175" r="3" fill="#2c3e50" />
+  
+  <!-- Nose/Mouth -->
+  <path d="M 127 182 Q 130 185 133 182" stroke="#2c3e50" fill="none" stroke-width="1" />
+  
+  <!-- Paws (Playing the keys) -->
+  <ellipse cx="160" cy="215" rx="8" ry="5" fill="#f39c12" transform="rotate(-20 160 215)" />
+  <ellipse cx="185" cy="215" rx="8" ry="5" fill="#f39c12" transform="rotate(10 185 215)" />
+  
+  <!-- Tail -->
+  <path d="M 100 300 Q 70 300 70 260" stroke="#f39c12" stroke-width="8" fill="none" stroke-linecap="round" />
+
+  <!-- Bench -->
+  <rect x="80" y="300" width="80" height="10" fill="#7f8c8d" />
+  <rect x="90" y="310" width="5" height="10" fill="#7f8c8d" />
+  <rect x="145" y="310" width="5" height="10" fill="#7f8c8d" />
+</svg>

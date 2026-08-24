@@ -1,0 +1,42 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Piano keys -->
+  <g fill="#f0d9b5" stroke="#8b6b4d">
+    <!-- White keys -->
+    <rect x="50" y="150" width="30" height="100"/>
+    <rect x="90" y="150" width="30" height="100"/>
+    <rect x="130" y="150" width="30" height="100"/>
+    <rect x="170" y="150" width="30" height="100"/>
+    <rect x="210" y="150" width="30" height="100"/>
+    <rect x="250" y="150" width="30" height="100"/>
+    <rect x="290" y="150" width="30" height="100"/>
+    <!-- Black keys -->
+    <rect x="65" y="130" width="15" height="40"/>
+    <rect x="105" y="130" width="15" height="40"/>
+    <rect x="145" y="130" width="15" height="40"/>
+    <rect x="185" y="130" width="15" height="40"/>
+    <rect x="225" y="130" width="15" height="40"/>
+    <rect x="265" y="130" width="15" height="40"/>
+  </g>
+
+  <!-- Cat -->
+  <g fill="#8B451A" stroke="#654321">
+    <!-- Head -->
+    <circle cx="150" cy="100" r="30"/>
+    <!-- Eyes -->
+    <circle cx="140" cy="95" r="5"/>
+    <circle cx="160" cy="95" r="5"/>
+    <!-- Nose -->
+    <circle cx="150" cy="105" r="3"/>
+    <!-- Body -->
+    <ellipse cx="150" cy="130" rx="20" ry="20"/>
+    <!-- Legs -->
+    <line x1="150" y1="150" x2="130" y2="170" stroke-width="4"/>
+    <line x1="150" y1="150" x2="170" y2="170" stroke-width="4"/>
+    <!-- Paws on keys -->
+    <circle cx="140" cy="160" r="8" fill="#f0d9b5"/>
+    <circle cx="160" cy="160" r="8" fill="#f0d9b5"/>
+  </g>
+
+  <!-- Piano base -->
+  <rect x="30" y="200" width="340" height="30" fill="#8b6b4d"/>
+</svg>

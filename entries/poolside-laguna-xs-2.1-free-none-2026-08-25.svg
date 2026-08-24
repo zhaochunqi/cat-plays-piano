@@ -1,0 +1,74 @@
+<svg width='600' height='400' viewBox='0 0 600 400' xmlns='http://www.w3.org/2000/svg'>
+  <!-- Piano -->
+  <rect x='100' y='200' width='400' height='180' fill='#5D4037' rx='10' />
+  <!-- Keys -->
+  <g fill='#FFFFFF' stroke='#808080' stroke-width='2'>
+    <!-- White Keys -->
+    <g id='white'>
+      <rect x='150' y='60' width='20' height='120' rx='3' />
+      <rect x='175' y='60' width='20' height='120' rx='3' />
+      <rect x='200' y='60' width='20' height='120' rx='3' />
+      <rect x='225' y='60' width='20' height='120' rx='3' />
+      <rect x='250' y='60' width='20' height='120' rx='3' />
+      <rect x='275' y='60' width='20' height='120' rx='3' />
+      <rect x='300' y='60' width='20' height='120' rx='3' />
+      <rect x='325' y='60' width='20' height='120' rx='3' />
+      <rect x='350' y='60' width='20' height='120' rx='3' />
+      <rect x='375' y='60' width='20' height='120' rx='3' />
+      <rect x='400' y='60' width='20' height='120' rx='3' />
+      <rect x='425' y='60' width='20' height='120' rx='3' />
+      <rect x='450' y='60' width='20' height='120' rx='3' />
+      <rect x='475' y='60' width='20' height='120' rx='3' />
+    </g>
+    <!-- Black Keys -->
+    <g fill='#000000'>
+      <rect x='165' y='60' width='12' height='70' rx='2' />
+      <rect x='190' y='60' width='12' height='70' rx='2' />
+      <rect x='215' y='60' width='12' height='70' rx='2' />
+      <rect x='240' y='60' width='12' height='70' rx='2' />
+      <rect x='265' y='60' width='12' height='70' rx='2' />
+      <rect x='290' y='60' width='12' height='70' rx='2' />
+      <rect x='315' y='60' width='12' height='70' rx='2' />
+      <rect x='340' y='60' width='12' height='70' rx='2' />
+      <rect x='365' y='60' width='12' height='70' rx='2' />
+      <rect x='390' y='60' width='12' height='70' rx='2' />
+      <rect x='415' y='60' width='12' height='70' rx='2' />
+      <rect x='440' y='60' width='12' height='70' rx='2' />
+      <rect x='465' y='60' width='12' height='70' rx='2' />
+    </g>
+  </g>
+  
+  <!-- Cat -->
+  <g id='cat' fill='#FFD700' stroke='#000000' stroke-width='1.5'>
+    <!-- Body -->
+    <ellipse cx='300' cy='280' rx='60' ry='35' />
+    <!-- Head -->
+    <circle cx='300' cy='200' r='35' />
+    <!-- Ear Left -->
+    <path d='M 265 180 Q 255 150 280 165' fill='none' />
+    <!-- Ear Right -->
+    <path d='M 335 180 Q 345 150 320 165' fill='none' />
+    <!-- Eye Left -->
+    <circle cx='285' cy='190' r='6' fill='#000000' />
+    <!-- Eye Right -->
+    <circle cx='315' cy='190' r='6' fill='#000000' />
+    <!-- Pupil Left -->
+    <circle cx='285' cy='190' r='3' fill='white' />
+    <!-- Pupil Right -->
+    <circle cx='315' cy='190' r='3' fill='white' />
+    <!-- Nose -->
+    <polygon points='297,200 303,200 300,206' fill='#FF69B4' />
+    <!-- Mouth -->
+    <path d='M 298 207 Q 300 212 302 207' stroke='#000000' stroke-width='1' fill='none' />
+    <!-- Tail -->
+    <path d='M 360 305 Q 385 325 410 305' stroke='#000000' stroke-width='3' fill='none' />
+    <!-- Paw Left -->
+    <path d='M 264 275 L 264 285 L 254 285 L 254 275 Z' fill='#FFE5B4' />
+    <!-- Paw Right -->
+    <path d='M 336 275 L 336 285 L 346 285 L 346 275 Z' fill='#FFE5B4' />
+  </g>
+  
+  <!-- Cat's Tail -->
+  <path d='M 360 305 Q 390 330 420 305' stroke='#FFD700' stroke-width='5' fill='none' />
+  
+</svg>

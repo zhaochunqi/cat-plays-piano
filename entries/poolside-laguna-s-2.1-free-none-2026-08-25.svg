@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Piano Body -->
+  <rect x="50" y="200" width="500" height="150" rx="15" fill="#2c2c2c"/>
+  
+  <!-- Piano Lid -->
+  <path d="M50 200 Q300 50 550 200" fill="#1a1a1a"/>
+  
+  <!-- Piano Keys -->
+  <!-- White Keys -->
+  <rect x="60" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="90" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="120" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="150" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="180" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="210" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="240" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="270" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="300" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="330" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="360" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="390" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="420" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="450" y="280" width="20" height="70" fill="#ffffff"/>
+  <rect x="480" y="280" width="20" height="70" fill="#ffffff"/>
+  
+  <!-- Black Keys -->
+  <rect x="75" y="280" width="12" height="70" fill="#000000"/>
+  <rect x="135" y="280" width="12" height="70" fill="#000000"/>
+  <rect x="195" y="280" width="12" height="70" fill="#000000"/>
+  <rect x="255" y="280" width="12" height="70" fill="#000000"/>
+  <rect x="315" y="280" width="12" height="70" fill="#000000"/>
+  <rect x="375" y="280" width="12" height="70" fill="#000000"/>
+  <rect x="435" y="280" width="12" height="70" fill="#000000"/>
+  
+  <!-- Cat Body -->
+  <ellipse cx="300" cy="180" rx="80" ry="50" fill="#ff6b6b"/>
+  
+  <!-- Cat Head -->
+  <circle cx="300" cy="120" r="35" fill="#ff6b6b"/>
+  
+  <!-- Cat Ears -->
+  <polygon points="280,100 295,125 270,120" fill="#ff6b6b"/>
+  <polygon points="320,100 305,125 330,120" fill="#ff6b6b"/>
+  
+  <!-- Cat Eyes -->
+  <circle cx="290" cy="115" r="5" fill="#000000"/>
+  <circle cx="310" cy="115" r="5" fill="#000000"/>
+  
+  <!-- Cat Nose -->
+  <circle cx="300" cy="125" r="3" fill="#ffa07a"/>
+  
+  <!-- Cat Mouth -->
+  <path d="M297 130 Q300 133 303 130" stroke="#000000" stroke-width="1" fill="none"/>
+  
+  <!-- Front Paws -->
+  <ellipse cx="260" cy="200" rx="12" ry="20" fill="#ff6b6b"/>
+  <ellipse cx="340" cy="200" rx="12" ry="20" fill="#ff6b6b"/>
+  
+  <!-- Back Legs -->
+  <ellipse cx="230" cy="220" rx="8" ry="15" fill="#ff6b6b"/>
+  <ellipse cx="370" cy="220" rx="8" ry="15" fill="#ff6b6b"/>
+  
+  <!-- Cat Tail -->
+  <path d="M220 170 C200 160 190 180 210 190" stroke="#ff6b6b" stroke-width="12" fill="none" stroke-linecap="round"/>
+  
+  <!-- Whiskers -->
+  <line x1="285" y1="122" x2="260" y2="120" stroke="#000000" stroke-width="1"/>
+  <line x1="315" y1="122" x2="340" y2="120" stroke="#000000" stroke-width="1"/>
+</svg>

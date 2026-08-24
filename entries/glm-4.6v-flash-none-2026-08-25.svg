@@ -1,0 +1,55 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Piano -->
+  <rect x="50" y="150" width="280" height="120" fill="#8B4513" rx="20" ry="20"/>
+  <rect x="60" y="150" width="260" height="100" fill="#A0522D"/>
+  <rect x="70" y="160" width="220" height="80" fill="#D2B48C"/>
+  
+  <!-- Piano keys -->
+  <rect x="80" y="170" width="20" height="70" fill="#4B3624"/>
+  <rect x="110" y="170" width="20" height="70" fill="#4B3624"/>
+  <rect x="140" y="170" width="20" height="70" fill="#4B3624"/>
+  <rect x="170" y="170" width="20" height="70" fill="#4B3624"/>
+  <rect x="200" y="170" width="20" height="70" fill="#4B3624"/>
+  <rect x="230" y="170" width="20" height="70" fill="#4B3624"/>
+  <rect x="260" y="170" width="20" height="70" fill="#4B3624"/>
+  
+  <!-- White keys -->
+  <rect x="95" y="170" width="20" height="70" fill="white"/>
+  <rect x="125" y="170" width="20" height="70" fill="white"/>
+  <rect x="155" y="170" width="20" height="70" fill="white"/>
+  <rect x="185" y="170" width="20" height="70" fill="white"/>
+  <rect x="215" y="170" width="20" height="70" fill="white"/>
+  <rect x="245" y="170" width="20" height="70" fill="white"/>
+  
+  <!-- Cat -->
+  <ellipse cx="180" cy="120" rx="40" ry="30" fill="#808080"/>
+  <ellipse cx="160" cy="115" rx="5" ry="8" fill="white"/>
+  <ellipse cx="200" cy="115" rx="5" ry="8" fill="white"/>
+  <path d="M160 115 Q165 110 170 115" fill="black"/>
+  <path d="M200 115 Q195 110 190 115" fill="black"/>
+  
+  <!-- Ears -->
+  <path d="M150 100 Q140 85 150 75" fill="#808080"/>
+  <path d="M210 100 Q220 85 210 75" fill="#808080"/>
+  
+  <!-- Whiskers -->
+  <line x1="150" y1="120" x2="110" y2="115" stroke="black" stroke-width="2"/>
+  <line x1="150" y1="125" x2="110" y2="120" stroke="black" stroke-width="2"/>
+  <line x1="210" y1="120" x2="250" y2="115" stroke="black" stroke-width="2"/>
+  <line x1="210" y1="125" x2="250" y2="120" stroke="black" stroke-width="2"/>
+  
+  <!-- Paws on piano -->
+  <ellipse cx="140" cy="200" rx="15" ry="10" fill="#808080"/>
+  <ellipse cx="220" cy="200" rx="15" ry="10" fill="#808080"/>
+  
+  <!-- Cat's tail -->
+  <path d="M180 90 Q200 70 190 60" fill="#808080"/>
+  
+  <!-- Music sheet -->
+  <rect x="250" y="140" width="30" height="40" fill="white" opacity="0.7"/>
+  <line x1="260" y1="145" x2="260" y2="180" stroke="black" stroke-width="1"/>
+  <line x1="270" y1="145" x2="270" y2="180" stroke="black" stroke-width="1"/>
+  
+  <!-- Piano lid -->
+  <path d="M60 150 Q150 100 240 150" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+</svg>

@@ -4,5 +4,155 @@
     "thinking": "high",
     "date": "2026-08-24",
     "file": "entries/ox-alpha-free-high-2026-08-24.svg"
+  },
+  {
+    "model": "agnes-2.0-flash",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/agnes-2.0-flash-none-2026-08-25.svg"
+  },
+  {
+    "model": "agnes-2.5-flash",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/agnes-2.5-flash-none-2026-08-25.svg"
+  },
+  {
+    "model": "cohere/north-mini-code:free",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/cohere-north-mini-code-free-none-2026-08-25.svg"
+  },
+  {
+    "model": "deepseek-r1-distill-qwen-7b",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg"
+  },
+  {
+    "model": "dots-studio/dots-3-note-preview:free",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg"
+  },
+  {
+    "model": "gemini-3-flash-preview",
+    "thinking": "high",
+    "date": "2026-08-25",
+    "file": "entries/gemini-3-flash-preview-high-2026-08-25.svg"
+  },
+  {
+    "model": "gemma-4-31b",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/gemma-4-31b-none-2026-08-25.svg"
+  },
+  {
+    "model": "glm-4-9b-chat",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/glm-4-9b-chat-none-2026-08-25.svg"
+  },
+  {
+    "model": "glm-4.5-flash",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/glm-4.5-flash-none-2026-08-25.svg"
+  },
+  {
+    "model": "glm-4.6v-flash",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/glm-4.6v-flash-none-2026-08-25.svg"
+  },
+  {
+    "model": "glm-4.7-flash",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/glm-4.7-flash-none-2026-08-25.svg"
+  },
+  {
+    "model": "gpt-4.1",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/gpt-4.1-none-2026-08-25.svg"
+  },
+  {
+    "model": "gpt-4o",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/gpt-4o-none-2026-08-25.svg"
+  },
+  {
+    "model": "grok-build-0.1",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/grok-build-0.1-none-2026-08-25.svg"
+  },
+  {
+    "model": "grok-chat-fast",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/grok-chat-fast-none-2026-08-25.svg"
+  },
+  {
+    "model": "huatuogpt-o1-7b",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/huatuogpt-o1-7b-none-2026-08-25.svg"
+  },
+  {
+    "model": "internlm3-8b-instruct",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/internlm3-8b-instruct-none-2026-08-25.svg"
+  },
+  {
+    "model": "liquid/lfm-2.5-2.6b:free",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg"
+  },
+  {
+    "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg"
+  },
+  {
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg"
+  },
+  {
+    "model": "poolside/laguna-s-2.1:free",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg"
+  },
+  {
+    "model": "poolside/laguna-xs-2.1:free",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg"
+  },
+  {
+    "model": "qwen2-7b-instruct",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/qwen2-7b-instruct-none-2026-08-25.svg"
+  },
+  {
+    "model": "qwen3-4b",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/qwen3-4b-none-2026-08-25.svg"
+  },
+  {
+    "model": "qwen3-8b",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/qwen3-8b-none-2026-08-25.svg"
   }
 ]

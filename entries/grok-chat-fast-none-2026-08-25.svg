@@ -1,0 +1,105 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8f1e3"/>
+
+  <!-- Floor -->
+  <rect y="180" width="400" height="120" fill="#3a2a1f"/>
+
+  <!-- Piano body -->
+  <rect x="80" y="130" width="240" height="50" rx="10" fill="#1f1f1f"/>
+  <rect x="90" y="115" width="220" height="20" fill="#2a2a2a"/>
+
+  <!-- Piano legs (simple 3 legs) -->
+  <rect x="90" y="170" width="20" height="10" fill="#1a1a1a"/>
+  <rect x="150" y="170" width="20" height="10" fill="#1a1a1a"/>
+  <rect x="210" y="170" width="20" height="10" fill="#1a1a1a"/>
+  <rect x="270" y="170" width="20" height="10" fill="#1a1a1a"/>
+  <rect x="330" y="170" width="20" height="10" fill="#1a1a1a"/>
+
+  <!-- Keys -->
+  <!-- White keys -->
+  <rect x="105" y="55" width="35" height="80" rx="3" fill="#e8d5b0"/>
+  <rect x="145" y="55" width="35" height="80" rx="3" fill="#e8d5b0"/>
+  <rect x="185" y="55" width="35" height="80" rx="3" fill="#e8d5b0"/>
+  <rect x="225" y="55" width="35" height="80" rx="3" fill="#e8d5b0"/>
+  <rect x="265" y="55" width="35" height="80" rx="3" fill="#e8d5b0"/>
+  <rect x="305" y="55" width="35" height="80" rx="3" fill="#e8d5b0"/>
+  <rect x="345" y="55" width="35" height="80" rx="3" fill="#e8d5b0"/>
+
+  <!-- Black keys (simplified front rows) -->
+  <rect x="130" y="30" width="18" height="45" fill="#1a1a1a"/>
+  <rect x="170" y="30" width="18" height="45" fill="#1a1a1a"/>
+  <rect x="210" y="30" width="18" height="45" fill="#1a1a1a"/>
+  <rect x="250" y="30" width="18" height="45" fill="#1a1a1a"/>
+  <rect x="290" y="30" width="18" height="45" fill="#1a1a1a"/>
+
+  <!-- Cat head (cute cartoon style) -->
+  <!-- Face -->
+  <ellipse cx="190" cy="105" rx="45" ry="55" fill="#f4c2c2"/>
+
+  <!-- Ears -->
+  <path d="M140 60 Q130 40 155 60" fill="#f4c2c2"/>
+  <path d="M235 60 Q245 40 220 60" fill="#f4c2c2"/>
+
+  <!-- Inner ears -->
+  <path d="M145 65 Q140 50 150 65" fill="#f8d9d9"/>
+  <path d="M230 65 Q235 50 225 65" fill="#f8d9d9"/>
+
+  <!-- Eyes -->
+  <!-- Left eye -->
+  <ellipse cx="165" cy="110" rx="10" ry="15" fill="#3c2a1f"/>
+  <ellipse cx="170" cy="108" rx="4" ry="6" fill="#fff"/>
+  <!-- Left pupil -->
+  <ellipse cx="172" cy="108" rx="2" ry="3" fill="#000"/>
+  <!-- Left highlight -->
+  <ellipse cx="168" cy="105" rx="1.5" ry="2" fill="#fff"/>
+
+  <!-- Right eye -->
+  <ellipse cx="215" cy="110" rx="10" ry="15" fill="#3c2a1f"/>
+  <ellipse cx="220" cy="108" rx="4" ry="6" fill="#fff"/>
+  <!-- Right pupil -->
+  <ellipse cx="222" cy="108" rx="2" ry="3" fill="#000"/>
+  <!-- Right highlight -->
+  <ellipse cx="218" cy="105" rx="1.5" ry="2" fill="#fff"/>
+
+  <!-- Nose -->
+  <ellipse cx="190" cy="115" rx="8" ry="10" fill="#3c2a1f"/>
+
+  <!-- Mouth (curved smile) -->
+  <path d="M175 130 Q190 140 205 130" stroke="#3c2a1f" stroke-width="3" fill="none"/>
+
+  <!-- Front paws (on keys) -->
+  <!-- Left front paw -->
+  <ellipse cx="130" cy="155" rx="22" ry="18" fill="#f4c2c2"/>
+  <!-- Right front paw -->
+  <ellipse cx="170" cy="155" rx="22" ry="18" fill="#f4c2c2"/>
+  <!-- Left back paw (slightly lower) -->
+  <ellipse cx="235" cy="175" rx="25" ry="20" fill="#f4c2c2"/>
+  <!-- Right back paw (slightly lower) -->
+  <ellipse cx="290" cy="175" rx="25" ry="20" fill="#f4c2c2"/>
+
+  <!-- Tail -->
+  <path d="M260 160 Q280 140 320 130 Q350 120 370 150 Q355 160 340 155" fill="none" stroke="#f4c2c2" stroke-width="12" stroke-linecap="round"/>
+  <path d="M265 165 Q285 145 325 135 Q355 125 375 155 Q360 165 345 160" fill="none" stroke="#f8d9d9" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Whiskers -->
+  <path d="M145 125 Q100 118 95 135" stroke="#3c2a1f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M145 130 Q100 125 95 140" stroke="#3c2a1f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M145 135 Q100 132 95 145" stroke="#3c2a1f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M145 140 Q100 138 95 150" stroke="#3c2a1f" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Whiskers -->
+  <path d="M235 125 Q280 118 285 135" stroke="#3c2a1f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M235 130 Q280 125 285 140" stroke="#3c2a1f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M235 135 Q280 132 285 145" stroke="#3c2a1f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M235 140 Q280 138 285 150" stroke="#3c2a1f" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Tiny bow on tail (decorative) -->
+  <ellipse cx="315" cy="145" rx="6" ry="10" fill="#f4c2c2"/>
+  <ellipse cx="312" cy="145" rx="4" ry="8" fill="#c26a7a" transform="rotate(45 315 145)"/>
+
+  <!-- Tiny musical notes floating near piano -->
+  <text x="120" y="90" font-size="18" fill="#3c2a1f" font-family="Arial" font-weight="bold">♪</text>
+  <text x="340" y="75" font-size="16" fill="#3c2a1f" font-family="Arial" font-weight="bold">♫</text>
+  <text x="260" y="50" font-size="14" fill="#3c2a1f" font-family="Arial" font-weight="bold">♩</text>
+</svg>

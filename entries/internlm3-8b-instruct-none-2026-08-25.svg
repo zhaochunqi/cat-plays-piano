@@ -1,0 +1,27 @@
+<svg height="400px" width="400px" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="40,150 60,10 200,40 260,10 240,150" style="fill:limegreen;stroke:black;stroke-width:2;opacity:1">
+    <circle cx="120" cy="60" r="10" style="fill:black" />
+  </polygon>
+
+  <!-- The piano keyboard -->
+  <rect x="175" y="120" width="100" height="20" style="fill:rosybrown;stroke:darkbrown;stroke-width:2" />
+
+  <!-- The cat -->
+  <rect x="35" y="320" width="70" height="70" style="fill:orange;stroke:brown;stroke-width:2;opacity:1">
+    <circle cx="75" cy="55" r="5" style="fill:brown" />
+    <line x1="60" y1="350" x2="60" y2="390" style="stroke:brown;stroke-width:2" />
+  </rect>
+  <circle x="225" y="320" r="30" style="fill:gray" stroke="brown" stroke-width="2" />
+
+  <circle x="37" y="270" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+  <circle x="37" y="287" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+  <circle x="37" y="304" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+  <circle x="37" y="321" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+  <circle x="37" y="338" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+
+  <circle x="287" y="320" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+  <circle x="287" y="298" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+  <circle x="287" y="315" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+  <circle x="287" y="332" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+  <circle x="287" y="349" r="7" style="fill:black" stroke="brown" stroke-width="2"/>
+</svg>

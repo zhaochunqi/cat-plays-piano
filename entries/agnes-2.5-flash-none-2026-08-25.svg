@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pianoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="catGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9966;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f4f8"/>
+  
+  <!-- Floor -->
+  <ellipse cx="400" cy="520" rx="380" ry="60" fill="#d4c5b0" opacity="0.6"/>
+
+  <!-- Piano Shadow -->
+  <ellipse cx="450" cy="500" rx="220" ry="30" fill="#b8a99a" opacity="0.5"/>
+
+  <!-- Grand Piano -->
+  <g id="piano">
+    <!-- Piano Body -->
+    <path d="M 200 380 
+             Q 180 380 160 400 
+             Q 120 450 120 500 
+             Q 120 540 180 540 
+             L 680 540 
+             Q 720 540 720 500 
+             Q 720 450 680 400 
+             Q 650 380 600 380 
+             Z" 
+          fill="url(#pianoGrad)" stroke="#111" stroke-width="3"/>
+    
+    <!-- Piano Lid (Open) -->
+    <path d="M 200 380 
+             Q 220 280 350 260 
+             Q 480 240 550 280 
+             L 600 380 
+             Z" 
+          fill="#1a1a1a" stroke="#333" stroke-width="2"/>
+    
+    <!-- Gold Trim on Piano -->
+    <path d="M 140 420 Q 400 400 700 420" 
+          fill="none" stroke="#d4af37" stroke-width="4" opacity="0.8"/>
+    <path d="M 140 500 Q 400 480 700 500" 
+          fill="none" stroke="#d4af37" stroke-width="4" opacity="0.8"/>
+
+    <!-- Keyboard Area -->
+    <rect x="150" y="380" width="550" height="60" fill="#2a2a2a" stroke="#111" stroke-width="2"/>
+    
+    <!-- White Keys -->
+    <g id="white-keys">
+      <rect x="160" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="190" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="220" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="250" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="280" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="310" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="340" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="370" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="400" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="430" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="460" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="490" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="520" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="550" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="580" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="610" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="640" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+      <rect x="670" y="385" width="28" height="50" fill="#fffff0" stroke="#ccc" stroke-width="1"/>
+    </g>
+    
+    <!-- Black Keys -->
+    <g id="black-keys">
+      <rect x="175" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="205" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="265" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="295" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="325" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="385" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="415" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="475" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="505" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="535" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="595" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="625" y="385" width="18" height="32" fill="#111" rx="2"/>
+      <rect x="655" y="385" width="18" height="32" fill="#111" rx="2"/>
+    </g>
+
+    <!-- Piano Legs -->
+    <path d="M 220 540 L 200 580 L 230 580 Z" fill="#1a1a1a" stroke="#111"/>
+    <path d="M 580 540 L 570 580 L 600 580 Z" fill="#1a1a1a" stroke="#111"/>
+
+    <!-- Music Stand -->
+    <rect x="280" y="220" width="240" height="40" fill="#3a3a3a" stroke="#222" stroke-width="2" rx="3"/>
+    <!-- Sheet Music -->
+    <rect x="290" y="225" width="220" height="30" fill="#fff" rx="2"/>
+    <!-- Music Notes -->
+    <circle cx="310" cy="240" r="4" fill="#333"/>
+    <circle cx="340" cy="235" r="4" fill="#333"/>
+    <circle cx="370" cy="242" r="4" fill="#333"/>
+    <circle cx="400" cy="238" r="4" fill="#333"/>
+    <circle cx="430" cy="240" r="4" fill="#333"/>
+    <line x1="314" y1="240" x2="430" y2="240" stroke="#333" stroke-width="1.5"/>
+  </g>
+
+  <!-- Stool -->
+  <g id="stool">
+    <ellipse cx="280" cy="480" rx="50" ry="15" fill="#5c4033" stroke="#3e2723" stroke-width="2"/>
+    <rect x="240" y="480" width="10" height="60" fill="#4a3020" stroke="#2e1a10" stroke-width="1"/>
+    <rect x="290" y="480" width="10" height="60" fill="#4a3020" stroke="#2e1a10" stroke-width="1"/>
+    <rect x="235" y="535" width="70" height="8" fill="#3e2723" rx="2"/>
+  </g>
+
+  <!-- Cat -->
+  <g id="cat">
+    <!-- Tail -->
+    <path d="M 330 420 
+             Q 380 400 400 350 
+             Q 410 320 390 300" 
+          fill="none" stroke="#ff9966" stroke-width="18" stroke-linecap="round"/>
+    
+    <!-- Back Legs -->
+    <ellipse cx="310" cy="460" rx="25" ry="35" fill="url(#catGrad)" stroke="#e65100" stroke-width="2" transform="rotate(15 310 460)"/>
+    
+    <!-- Body -->
+    <ellipse cx="280" cy="400" rx="55" ry="65" fill="url(#catGrad)" stroke="#e65100" stroke-width="2"/>
+    
+    <!-- Front Legs -->
+    <rect x="230" y="420" width="20" height="60" rx="10" fill="url(#catGrad)" stroke="#e65100" stroke-width="2"/>
+    <rect x="260" y="420" width="20" height="60" rx="10" fill="url(#catGrad)" stroke="#e65100" stroke-width="2"/>
+    
+    <!-- Paws on Keys -->
+    <ellipse cx="225" cy="390" rx="12" ry="8" fill="#ffccbc" stroke="#e65100" stroke-width="1"/>
+    <ellipse cx="255" cy="390" rx="12" ry="8" fill="#ffccbc" stroke="#e65100" stroke-width="1"/>
+    
+    <!-- Head -->
+    <circle cx="280" cy="310" r="45" fill="url(#catGrad)" stroke="#e65100" stroke-width="2"/>
+    
+    <!-- Ears -->
+    <path d="M 245 280 L 230 240 L 265 265 Z" fill="url(#catGrad)" stroke="#e65100" stroke-width="2"/>
+    <path d="M 315 280 L 330 240 L 295 265 Z" fill="url(#catGrad)" stroke="#e65100" stroke-width="2"/>
+    <!-- Inner Ears -->
+    <path d="M 248 275 L 238 248 L 260 268 Z" fill="#ffccbc"/>
+    <path d="M 312 275 L 322 248 L 300 268 Z" fill="#ffccbc"/>
+    
+    <!-- Face Details -->
+    <!-- Eyes -->
+    <ellipse cx="260" cy="305" rx="8" ry="12" fill="#fff"/>
+    <circle cx="262" cy="305" r="6" fill="#2e7d32"/>
+    <circle cx="262" cy="305" r="3" fill="#000"/>
+    <ellipse cx="300" cy="305" rx="8" ry="12" fill="#fff"/>
+    <circle cx="298" cy="305" r="6" fill="#2e7d32"/>
+    <circle cx="298" cy="305" r="3" fill="#000"/>
+    
+    <!-- Nose -->
+    <polygon points="275,325 285,325 280,332" fill="#ff8a80"/>
+    
+    <!-- Mouth -->
+    <path d="M 280 332 Q 275 340 265 338" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 280 332 Q 285 340 295 338" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Whiskers -->
+    <line x1="240" y1="320" x2="210" y2="315" stroke="#333" stroke-width="1.5"/>
+    <line x1="240" y1="330" x2="210" y2="335" stroke="#333" stroke-width="1.5"/>
+    <line x1="320" y1="320" x2="350" y2="315" stroke="#333" stroke-width="1.5"/>
+    <line x1="320" y1="330" x2="350" y2="335" stroke="#333" stroke-width="1.5"/>
+
+    <!-- Stripes on Head -->
+    <path d="M 265 275 L 275 285 M 295 275 L 285 285 M 280 270 L 280 280" 
+          stroke="#e65100" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Musical Notes Floating -->
+  <g id="music-notes" opacity="0.8">
+    <text x="150" y="200" font-family="serif" font-size="40" fill="#d35400">♪</text>
+    <text x="120" y="250" font-family="serif" font-size="30" fill="#e67e22">♫</text>
+    <text x="180" y="280" font-family="serif" font-size="25" fill="#f39c12">♩</text>
+    <text x="650" y="180" font-family="serif" font-size="35" fill="#d35400">♬</text>
+    <text x="680" y="230" font-family="serif" font-size="25" fill="#e67e22">♪</text>
+  </g>
+</svg>

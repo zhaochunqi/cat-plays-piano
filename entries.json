@@ -180,9 +180,9 @@
         "file": "entries/deepseek-v4-pro-deep-2026-08-25.svg"
     },
     {
-        "model": "sonnet-5-medium",
-        "thinking": "none",
+        "model": "sonnet-5",
+        "thinking": "medium",
         "date": "2026-08-25",
-        "file": "entries/sonnet-5-medium-none-2026-08-25.svg"
+        "file": "entries/sonnet-5-medium-2026-08-25.svg"
     }
 ]

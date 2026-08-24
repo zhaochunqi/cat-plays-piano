@@ -12,6 +12,19 @@
     "order": 1
   },
   {
+    "file": "entries/grok-4.6-none-2026-08-25.svg",
+    "note": "橘色虎斑猫戴领结坐立式钢琴前弹奏，双爪明确落在琴键（含按下键高亮），房间暖光+飘动音符；渐变/投影/肉垫细节丰富，立体感强。",
+    "animated": true,
+    "scores": {
+      "cat": 10,
+      "piano": 9,
+      "playing": 10,
+      "scene": 8,
+      "detail": 9
+    },
+    "order": 2
+  },
+  {
     "file": "entries/gemini-3.1-pro-none-2026-08-25.svg",
     "note": "猫坐琴凳弹三角钢琴，姿态正确，红毯与飘落音符点缀，构图干净完整。",
     "scores": {
@@ -21,7 +34,7 @@
       "scene": 8,
       "detail": 8
     },
-    "order": 2
+    "order": 3
   },
   {
     "file": "entries/claude-sonnet-5-max-2026-08-25.svg",
@@ -33,7 +46,7 @@
       "scene": 9,
       "detail": 8
     },
-    "order": 3
+    "order": 4
   },
   {
     "file": "entries/glm-5.3-high-2026-08-25.svg",
@@ -45,7 +58,7 @@
       "scene": 8,
       "detail": 7
     },
-    "order": 5.5
+    "order": 5
   },
   {
     "file": "entries/deepseek-v4-pro-deep-2026-08-25.svg",
@@ -53,35 +66,11 @@
     "scores": {
       "cat": 8,
       "piano": 9,
-      "playing": 7,
-      "scene": 9,
-      "detail": 8
-    },
-    "order": 5
-  },
-  {
-    "file": "entries/deepseek-flash-v4-deep-2026-08-25.svg",
-    "note": "戴礼帽领结的猫坐琴凳，有乐谱音符，但钢琴偏小且爪子未明确落在琴键。",
-    "scores": {
-      "cat": 9,
-      "piano": 6,
       "playing": 6,
-      "scene": 7,
+      "scene": 9,
       "detail": 8
     },
     "order": 6
-  },
-  {
-    "file": "entries/gemini-3-flash-preview-high-2026-08-25.svg",
-    "note": "猫坐琴凳在立式钢琴前，有乐谱盆栽细节；爪子与琴键关系含糊。",
-    "scores": {
-      "cat": 8,
-      "piano": 8,
-      "playing": 7,
-      "scene": 9,
-      "detail": 8
-    },
-    "order": 7
   },
   {
     "file": "entries/qwen3.8-max-thinking-2026-08-25.svg",
@@ -93,42 +82,54 @@
       "scene": 7,
       "detail": 9
     },
+    "order": 7
+  },
+  {
+    "file": "entries/gemini-3-flash-preview-high-2026-08-25.svg",
+    "note": "猫坐琴凳在立式钢琴前，有乐谱盆栽细节；爪子与琴键关系含糊。",
+    "scores": {
+      "cat": 8,
+      "piano": 8,
+      "playing": 5,
+      "scene": 9,
+      "detail": 8
+    },
     "order": 8
   },
   {
-    "file": "entries/kimi-k3-medium-2026-08-25.svg",
-    "note": "猫圆润可爱、表情生动，但坐在键盘上而非弹奏，场景较简。",
-    "scores": {
-      "cat": 9,
-      "piano": 5,
-      "playing": 4,
-      "scene": 5,
-      "detail": 6
-    },
-    "order": 9
-  },
-  {
-    "file": "entries/nemotron-3-ultra-free-none-2026-08-25.svg",
-    "note": "钢琴结构完整，但猫坐在琴盖上爪子没碰琴键，脸部略似松鼠。",
+    "file": "entries/glm-5-turbo-medium-2026-08-25.svg",
+    "note": "夜景立式钢琴，猫坐琴凳爪在琴键上，姿态正确；造型偏简。",
     "animated": true,
     "scores": {
-      "cat": 6,
+      "cat": 8,
       "piano": 8,
-      "playing": 4,
-      "scene": 6,
-      "detail": 6
+      "playing": 9,
+      "scene": 7,
+      "detail": 5
     },
-    "order": 10
+    "order": 9
   },
   {
     "file": "entries/agnes-2.0-flash-none-2026-08-25.svg",
     "note": "猫趴在立式钢琴后爪子搭键，夜景氛围好，THE PIANO CAT 点题。",
     "scores": {
       "cat": 8,
-      "piano": 7,
-      "playing": 7,
+      "piano": 8,
+      "playing": 5,
       "scene": 8,
       "detail": 6
+    },
+    "order": 10
+  },
+  {
+    "file": "entries/sonnet-5-medium-2026-08-25.svg",
+    "note": "猫坐琴凳在立式钢琴前，姿态接近弹奏；细节量一般。",
+    "scores": {
+      "cat": 8,
+      "piano": 8,
+      "playing": 6,
+      "scene": 6,
+      "detail": 5
     },
     "order": 11
   },
@@ -138,36 +139,23 @@
     "scores": {
       "cat": 7,
       "piano": 8,
-      "playing": 5,
+      "playing": 4,
       "scene": 8,
       "detail": 6
     },
     "order": 12
   },
   {
-    "file": "entries/hy3-high-2026-08-25.svg",
-    "note": "猫坐琴凳爪子搭键、弹奏姿态正确，有乐谱与音符；钢琴只有键盘板缺琴身。",
+    "file": "entries/deepseek-flash-v4-deep-2026-08-25.svg",
+    "note": "戴礼帽领结的猫坐琴凳，有乐谱音符，但钢琴偏小且爪子未明确落在琴键。",
     "scores": {
       "cat": 9,
       "piano": 5,
-      "playing": 9,
-      "scene": 6,
-      "detail": 6
+      "playing": 4,
+      "scene": 7,
+      "detail": 8
     },
     "order": 13
-  },
-  {
-    "file": "entries/glm-5-turbo-medium-2026-08-25.svg",
-    "note": "夜景立式钢琴，猫坐琴凳爪在琴键上，姿态正确；造型偏简。",
-    "animated": true,
-    "scores": {
-      "cat": 8,
-      "piano": 7,
-      "playing": 8,
-      "scene": 7,
-      "detail": 5
-    },
-    "order": 14
   },
   {
     "file": "entries/agnes-2.5-flash-none-2026-08-25.svg",
@@ -175,11 +163,72 @@
     "scores": {
       "cat": 7,
       "piano": 7,
-      "playing": 7,
+      "playing": 5,
+      "scene": 6,
+      "detail": 6
+    },
+    "order": 14
+  },
+  {
+    "file": "entries/nemotron-3-ultra-free-none-2026-08-25.svg",
+    "note": "钢琴结构完整，但猫坐在琴盖上爪子没碰琴键，脸部略似松鼠。",
+    "animated": true,
+    "scores": {
+      "cat": 6,
+      "piano": 8,
+      "playing": 3,
       "scene": 6,
       "detail": 6
     },
     "order": 15
+  },
+  {
+    "file": "entries/hy3-high-2026-08-25.svg",
+    "note": "圆头棕色生物更似鼠/仓鼠而非猫，前爪搭在键盘上但无明确弹奏姿态；钢琴有琴身、键盘与谱架，结构基本完整。",
+    "scores": {
+      "cat": 4,
+      "piano": 7,
+      "playing": 5,
+      "scene": 6,
+      "detail": 6
+    },
+    "order": 16
+  },
+  {
+    "file": "entries/kimi-k3-medium-2026-08-25.svg",
+    "note": "猫圆润可爱、表情生动，但坐在键盘上而非弹奏，场景较简。",
+    "scores": {
+      "cat": 9,
+      "piano": 5,
+      "playing": 3,
+      "scene": 5,
+      "detail": 6
+    },
+    "order": 17
+  },
+  {
+    "file": "entries/gemma-4-31b-none-2026-08-25.svg",
+    "note": "猫坐琴凳在立式钢琴前；造型扁平，细节一般。",
+    "scores": {
+      "cat": 6,
+      "piano": 7,
+      "playing": 5,
+      "scene": 5,
+      "detail": 4
+    },
+    "order": 18
+  },
+  {
+    "file": "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg",
+    "note": "猫趴在钢琴上爪子搭在键盘，造型尚可；构图简单。",
+    "scores": {
+      "cat": 7,
+      "piano": 6,
+      "playing": 5,
+      "scene": 5,
+      "detail": 4
+    },
+    "order": 19
   },
   {
     "file": "entries/LongCat-2.0-deep-2026-08-25.svg",
@@ -187,71 +236,11 @@
     "scores": {
       "cat": 7,
       "piano": 6,
-      "playing": 5,
-      "scene": 5,
-      "detail": 5
-    },
-    "order": 16
-  },
-  {
-    "file": "entries/grok-build-0.1-none-2026-08-25.svg",
-    "note": "猫侧身伸爪够琴键，有动态感；钢琴只剩键盘与背板，场景极简。",
-    "scores": {
-      "cat": 7,
-      "piano": 4,
-      "playing": 6,
-      "scene": 4,
-      "detail": 5
-    },
-    "order": 17
-  },
-  {
-    "file": "entries/grok-4.5-none-2026-08-25.svg",
-    "note": "猫坐琴凳在键盘后，表情生动胡须清晰；但爪子没碰琴键，钢琴只有键盘板。",
-    "scores": {
-      "cat": 8,
-      "piano": 4,
       "playing": 4,
       "scene": 5,
-      "detail": 6
-    },
-    "order": 18
-  },
-  {
-    "file": "entries/ox-alpha-free-high-2026-08-24.svg",
-    "note": "猫坐在键盘上，表情可爱；非弹奏姿态，场景极简。",
-    "scores": {
-      "cat": 8,
-      "piano": 3,
-      "playing": 3,
-      "scene": 4,
-      "detail": 5
-    },
-    "order": 19
-  },
-  {
-    "file": "entries/sonnet-5-medium-2026-08-25.svg",
-    "note": "猫坐琴凳在立式钢琴前，姿态接近弹奏；细节量一般。",
-    "scores": {
-      "cat": 8,
-      "piano": 7,
-      "playing": 7,
-      "scene": 6,
       "detail": 5
     },
     "order": 20
-  },
-  {
-    "file": "entries/gpt-4o-none-2026-08-25.svg",
-    "note": "猫坐琴凳在键盘板后，构图干净；无琴身，爪子未触键。",
-    "scores": {
-      "cat": 8,
-      "piano": 4,
-      "playing": 4,
-      "scene": 5,
-      "detail": 5
-    },
-    "order": 21
   },
   {
     "file": "entries/LongCat-2.0-none-2026-08-25.svg",
@@ -263,43 +252,43 @@
       "scene": 5,
       "detail": 4
     },
+    "order": 21
+  },
+  {
+    "file": "entries/grok-4.5-none-2026-08-25.svg",
+    "note": "猫坐琴凳在键盘后，表情生动胡须清晰；但爪子没碰琴键，钢琴只有键盘板。",
+    "scores": {
+      "cat": 8,
+      "piano": 4,
+      "playing": 3,
+      "scene": 5,
+      "detail": 6
+    },
     "order": 22
   },
   {
-    "file": "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg",
-    "note": "猫趴在钢琴上爪子搭在键盘，造型尚可；构图简单。",
+    "file": "entries/grok-build-0.1-none-2026-08-25.svg",
+    "note": "猫侧身伸爪够琴键，有动态感；钢琴只剩键盘与背板，场景极简。",
     "scores": {
       "cat": 7,
-      "piano": 6,
-      "playing": 6,
-      "scene": 5,
-      "detail": 4
+      "piano": 4,
+      "playing": 5,
+      "scene": 4,
+      "detail": 5
     },
     "order": 23
   },
   {
-    "file": "entries/gpt-4.1-none-2026-08-25.svg",
-    "note": "猫在键盘板后，构图极简，细节少。",
+    "file": "entries/gpt-4o-none-2026-08-25.svg",
+    "note": "猫坐琴凳在键盘板后，构图干净；无琴身，爪子未触键。",
     "scores": {
-      "cat": 7,
-      "piano": 3,
+      "cat": 8,
+      "piano": 4,
       "playing": 3,
-      "scene": 4,
-      "detail": 4
+      "scene": 5,
+      "detail": 5
     },
     "order": 24
-  },
-  {
-    "file": "entries/gemma-4-31b-none-2026-08-25.svg",
-    "note": "猫坐琴凳在立式钢琴前；造型扁平，细节一般。",
-    "scores": {
-      "cat": 6,
-      "piano": 7,
-      "playing": 6,
-      "scene": 5,
-      "detail": 4
-    },
-    "order": 25
   },
   {
     "file": "entries/glm-4.5-flash-none-2026-08-25.svg",
@@ -311,7 +300,31 @@
       "scene": 4,
       "detail": 3
     },
+    "order": 25
+  },
+  {
+    "file": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "note": "猫坐在键盘上，表情可爱；非弹奏姿态，场景极简。",
+    "scores": {
+      "cat": 8,
+      "piano": 3,
+      "playing": 2,
+      "scene": 4,
+      "detail": 5
+    },
     "order": 26
+  },
+  {
+    "file": "entries/gpt-4.1-none-2026-08-25.svg",
+    "note": "猫在键盘板后，构图极简，细节少。",
+    "scores": {
+      "cat": 7,
+      "piano": 3,
+      "playing": 2,
+      "scene": 4,
+      "detail": 4
+    },
+    "order": 27
   },
   {
     "file": "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
@@ -319,35 +332,47 @@
     "scores": {
       "cat": 5,
       "piano": 4,
-      "playing": 4,
+      "playing": 3,
       "scene": 4,
       "detail": 3
     },
-    "order": 27
+    "order": 28
   },
   {
-    "file": "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg",
-    "note": "猫脸与钢琴分离悬浮，结构错乱。",
+    "file": "entries/glm-4.6v-flash-none-2026-08-25.svg",
+    "note": "猫头探出钢琴顶盖，琴身比例失调。",
     "scores": {
-      "cat": 4,
+      "cat": 5,
       "piano": 4,
-      "playing": 3,
+      "playing": 2,
       "scene": 3,
       "detail": 3
     },
-    "order": 28
+    "order": 29
+  },
+  {
+    "file": "entries/glm-4.7-flash-none-2026-08-25.svg",
+    "note": "灰色猫在钢琴旁，造型抽象，细节少。",
+    "scores": {
+      "cat": 4,
+      "piano": 4,
+      "playing": 2,
+      "scene": 3,
+      "detail": 3
+    },
+    "order": 30
   },
   {
     "file": "entries/nemotron-3-super-free-none-2026-08-25.svg",
     "note": "猫趴在键盘板上，造型扁平；无钢琴身体。",
     "scores": {
       "cat": 5,
-      "piano": 2,
-      "playing": 4,
+      "piano": 3,
+      "playing": 2,
       "scene": 3,
       "detail": 3
     },
-    "order": 29
+    "order": 31
   },
   {
     "file": "entries/laguna-xs-2.1-free-none-2026-08-25.svg",
@@ -355,33 +380,9 @@
     "scores": {
       "cat": 3,
       "piano": 4,
-      "playing": 3,
-      "scene": 3,
-      "detail": 3
-    },
-    "order": 30
-  },
-  {
-    "file": "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
-    "note": "Meow! 文字代替画面，猫与钢琴比例失调。",
-    "scores": {
-      "cat": 4,
-      "piano": 3,
       "playing": 2,
       "scene": 3,
-      "detail": 2
-    },
-    "order": 31
-  },
-  {
-    "file": "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg",
-    "note": "猫挂在钢琴侧边，结构混乱。",
-    "scores": {
-      "cat": 4,
-      "piano": 3,
-      "playing": 3,
-      "scene": 3,
-      "detail": 2
+      "detail": 3
     },
     "order": 32
   },
@@ -391,59 +392,11 @@
     "scores": {
       "cat": 3,
       "piano": 4,
-      "playing": 3,
+      "playing": 2,
       "scene": 3,
       "detail": 3
     },
     "order": 33
-  },
-  {
-    "file": "entries/grok-chat-fast-none-2026-08-25.svg",
-    "note": "粉色猫脸趴在琴键上，构图混乱。",
-    "scores": {
-      "cat": 3,
-      "piano": 4,
-      "playing": 3,
-      "scene": 3,
-      "detail": 2
-    },
-    "order": 34
-  },
-  {
-    "file": "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg",
-    "note": "粉色团块在键盘后，猫特征仅剩耳朵。",
-    "scores": {
-      "cat": 3,
-      "piano": 3,
-      "playing": 2,
-      "scene": 3,
-      "detail": 2
-    },
-    "order": 35
-  },
-  {
-    "file": "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg",
-    "note": "线稿涂鸦，猫与钢琴难以辨认。",
-    "scores": {
-      "cat": 2,
-      "piano": 2,
-      "playing": 2,
-      "scene": 2,
-      "detail": 2
-    },
-    "order": 36
-  },
-  {
-    "file": "entries/qwen3-8b-none-2026-08-25.svg",
-    "note": "猫头悬浮在琴键上，无身体，结构崩坏。",
-    "scores": {
-      "cat": 3,
-      "piano": 3,
-      "playing": 2,
-      "scene": 2,
-      "detail": 2
-    },
-    "order": 37
   },
   {
     "file": "entries/qwen3-4b-none-2026-08-25.svg",
@@ -453,6 +406,54 @@
       "piano": 4,
       "playing": 2,
       "scene": 2,
+      "detail": 2
+    },
+    "order": 34
+  },
+  {
+    "file": "entries/grok-chat-fast-none-2026-08-25.svg",
+    "note": "粉色猫脸趴在琴键上，构图混乱。",
+    "scores": {
+      "cat": 3,
+      "piano": 4,
+      "playing": 2,
+      "scene": 3,
+      "detail": 2
+    },
+    "order": 35
+  },
+  {
+    "file": "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg",
+    "note": "猫脸与钢琴分离悬浮，结构错乱。",
+    "scores": {
+      "cat": 4,
+      "piano": 3,
+      "playing": 1,
+      "scene": 3,
+      "detail": 3
+    },
+    "order": 36
+  },
+  {
+    "file": "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
+    "note": "Meow! 文字代替画面，猫与钢琴比例失调。",
+    "scores": {
+      "cat": 4,
+      "piano": 3,
+      "playing": 1,
+      "scene": 3,
+      "detail": 2
+    },
+    "order": 37
+  },
+  {
+    "file": "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg",
+    "note": "猫挂在钢琴侧边，结构混乱。",
+    "scores": {
+      "cat": 4,
+      "piano": 3,
+      "playing": 1,
+      "scene": 3,
       "detail": 2
     },
     "order": 38
@@ -470,52 +471,40 @@
     "order": 39
   },
   {
-    "file": "entries/glm-4.6v-flash-none-2026-08-25.svg",
-    "note": "猫头探出钢琴顶盖，琴身比例失调。",
+    "file": "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg",
+    "note": "粉色团块在键盘后，猫特征仅剩耳朵。",
     "scores": {
-      "cat": 5,
-      "piano": 4,
-      "playing": 3,
+      "cat": 3,
+      "piano": 3,
+      "playing": 1,
       "scene": 3,
-      "detail": 3
+      "detail": 2
     },
     "order": 40
   },
   {
-    "file": "entries/glm-4.7-flash-none-2026-08-25.svg",
-    "note": "灰色猫在钢琴旁，造型抽象，细节少。",
+    "file": "entries/qwen3-8b-none-2026-08-25.svg",
+    "note": "猫头悬浮在琴键上，无身体，结构崩坏。",
     "scores": {
-      "cat": 4,
-      "piano": 4,
-      "playing": 3,
-      "scene": 3,
-      "detail": 3
+      "cat": 3,
+      "piano": 3,
+      "playing": 1,
+      "scene": 2,
+      "detail": 2
     },
     "order": 41
   },
   {
-    "file": "entries/glm-4-9b-chat-none-2026-08-25.svg",
-    "note": "只有一个头和黑色方块，无钢琴结构。",
+    "file": "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg",
+    "note": "线稿涂鸦，猫与钢琴难以辨认。",
     "scores": {
-      "cat": 3,
-      "piano": 1,
+      "cat": 2,
+      "piano": 2,
       "playing": 1,
       "scene": 2,
-      "detail": 1
+      "detail": 2
     },
     "order": 42
-  },
-  {
-    "file": "entries/qwen2-7b-instruct-none-2026-08-25.svg",
-    "note": "粉色圆+几条线，无法辨认猫和钢琴。",
-    "scores": {
-      "cat": 1,
-      "piano": 1,
-      "playing": 1,
-      "scene": 1,
-      "detail": 1
-    },
-    "order": 43
   },
   {
     "file": "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg",
@@ -527,7 +516,31 @@
       "scene": 2,
       "detail": 1
     },
+    "order": 43
+  },
+  {
+    "file": "entries/glm-4-9b-chat-none-2026-08-25.svg",
+    "note": "只有一个头和黑色方块，无钢琴结构。",
+    "scores": {
+      "cat": 3,
+      "piano": 1,
+      "playing": 0,
+      "scene": 2,
+      "detail": 1
+    },
     "order": 44
+  },
+  {
+    "file": "entries/qwen2-7b-instruct-none-2026-08-25.svg",
+    "note": "粉色圆+几条线，无法辨认猫和钢琴。",
+    "scores": {
+      "cat": 1,
+      "piano": 1,
+      "playing": 0,
+      "scene": 1,
+      "detail": 1
+    },
+    "order": 45
   },
   {
     "file": "entries/internlm3-8b-instruct-none-2026-08-25.svg",
@@ -539,19 +552,6 @@
       "scene": 1,
       "detail": 0
     },
-    "order": 45
-  },
-  {
-    "file": "entries/grok-4.6-none-2026-08-25.svg",
-    "note": "橘色虎斑猫戴领结坐立式钢琴前弹奏，双爪明确落在琴键（含按下键高亮），房间暖光+飘动音符；渐变/投影/肉垫细节丰富，立体感强。",
-    "animated": true,
-    "scores": {
-      "cat": 10,
-      "piano": 9,
-      "playing": 10,
-      "scene": 8,
-      "detail": 9
-    },
-    "order": 1.5
+    "order": 46
   }
 ]

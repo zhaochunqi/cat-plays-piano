@@ -1,13 +1,15 @@
 ---
 name: cat-plays-piano
-description: 给 cat-plays-piano 画廊仓库添加新条目：用固定 prompt「Generate an SVG of a cat playing a piano.」跑目标模型/思考级别，产出纯 SVG 存入 entries/ 并更新 entries.json，本地验证后 commit + push。触发：给 cat-plays-piano 加条目 / 加个模型的猫弹钢琴 / 跑一下某模型 thinking level 对比 / cat-plays-piano 新条目。
+description: 给 cat-plays-piano 画廊仓库添加新条目：用固定 prompt「Generate an SVG of a cat playing a piano.」跑目标模型/思考级别，产出纯 SVG 存入 entries/ 并更新 entries.json，可选更新 rankings.json 效果排名，本地验证后 commit + push。触发：给 cat-plays-piano 加条目 / 加个模型的猫弹钢琴 / 跑一下某模型 thinking level 对比 / cat-plays-piano 新条目 / 重新排名画廊。
 ---
 
 # cat-plays-piano — 添加画廊新条目
 
-**核心事实**：本 skill 就在本仓库内（`.agents/skills/cat-plays-piano/`），固定 prompt
+**核心事实**：仓库在 `~/ghq/github.com/zhaochunqi/cat-plays-piano`，固定 prompt
 **逐字**是 `Generate an SVG of a cat playing a piano.`（不要润色、不要加要求）。
-entries.json 是唯一数据源，页面自动渲染；只展示作品，不写任何评分或评判。
+`entries.json` 是作品数据源（页面自动渲染）；`rankings.json` 是效果排行榜
+（按效果顺序的文件名数组，带 `entries/` 前缀），页面加载后按它动态排序，
+榜首常驻首页首展位。
 
 ## 启动前 5 秒
 
@@ -32,15 +34,22 @@ entries.json 是唯一数据源，页面自动渲染；只展示作品，不写�
      "file": "entries/ox-alpha-free-high-2026-08-24.svg" }
    ```
 
-4. **验证**（全过才算完）：
+4. **排名（可选）**：用户要求排名/更新榜单时，把新作品渲染成图逐张目测
+   （headless Chrome 截图联系表即可），按效果（猫的还原度、钢琴结构、
+   构图细节）插入 `rankings.json` 合适位置；不要求排名就追加到末尾，
+   页面对不在榜内的条目自动垫底。注意文件名要带 `entries/` 前缀，
+   与 entries.json 的 `file` 字段完全一致。
+5. **验证**（全过才算完）：
    - `python3 -c "import xml.dom.minidom; xml.dom.minidom.parse('<file>')"` — SVG 是合法 XML。
    - `python3 -m json.tool entries.json > /dev/null` — JSON 合法。
+   - 改过 rankings.json 时：`python3 -m json.tool rankings.json > /dev/null`。
    - `python3 -m http.server 8741` + curl 三个 200：`/`、`/entries.json`、新 svg 路径，然后关掉 server。
-5. **提交**：`git add -A && git commit`，message 形如
+6. **提交**：`git add -A && git commit`，message 形如
    `feat: add <model>-<thinking> entry`；push 到 main（GitHub Pages 自动发布）。
 
 ## 边界
 
-- 不改 prompt、不打分、不加主观评语；卡片元数据只有 model / thinking / date。
+- 不改 prompt、不加主观评语；卡片元数据只有 No.N / model / thinking / date。
+- 排名只进 rankings.json，不写进 entries.json、不标在 SVG 里。
 - SVG 内容不做"美化"或二次编辑——原样收录各模型的产出，歪了也是数据。
 - 生成失败或模型拒答：跳过并在汇报里说明，不留半成品文件。

@@ -630,7 +630,13 @@
 
     <script>
       (function () {
-        var THINK_LABELS = { none: "直接生成", high: "深度思考", medium: "中度思考", deep: "深度思考", extend: "扩展思考" };
+        var THINK_LABELS = {
+          none: "直接生成",
+          high: "深度思考",
+          medium: "中度思考",
+          deep: "深度思考",
+          extend: "扩展思考",
+        };
         // 排名数据在 rankings.json（按效果顺序的文件名数组），加载后动态排序；
         // 缺失或新条目不在榜内时按 entries.json 原顺序垫底。
         var rankOf = {};
@@ -675,7 +681,8 @@
 
           var meta = document.createElement("p");
           meta.className = "gallery-meta";
-          meta.textContent = "No." + rank + " · " + thinkLabel(e.thinking) + " · " + e.date;
+          meta.textContent =
+            "No." + rank + " · " + thinkLabel(e.thinking) + " · " + e.date;
 
           card.append(badge, btn, name, meta);
           return card;
@@ -706,8 +713,12 @@
             "模型 " + t.dataset.model + " 生成的猫弹钢琴画作（放大视图）";
           document.getElementById("viewer-title").textContent = t.dataset.model;
           document.getElementById("viewer-meta").textContent =
-            "No." + t.closest(".gallery-card").dataset.rank + " · " +
-            t.dataset.thinkLabel + " · " + t.dataset.date;
+            "No." +
+            t.closest(".gallery-card").dataset.rank +
+            " · " +
+            t.dataset.thinkLabel +
+            " · " +
+            t.dataset.date;
         }
 
         // 筛选：事件委托，卡片异步渲染后依然有效
@@ -763,7 +774,7 @@
             })
             .catch(function () {
               return [];
-            })
+            }),
         ])
           .then(function (results) {
             var data = results[0];

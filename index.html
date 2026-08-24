@@ -283,10 +283,30 @@
         }
       }
       .gallery-card {
+        position: relative;
         padding: 14px;
         display: flex;
         flex-direction: column;
         gap: 12px;
+      }
+      .rank-badge {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        z-index: 1;
+        min-width: 34px;
+        padding: 3px 8px;
+        background: var(--fg);
+        color: var(--bg);
+        border-radius: 999px;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .gallery-card[data-rank="1"] .rank-badge {
+        background: var(--accent);
+        color: var(--surface);
       }
       .gallery-thumb {
         display: block;
@@ -484,8 +504,7 @@
             <p class="lead">
               同一个 prompt——「Generate an SVG of a cat playing a
               piano.」——喂给一个又一个语言模型，每一幅都是它们亲手写下的 SVG
-              代码。作品列表直接读取仓库的
-              entries.json，新作品一提交就会出现在这里。
+              代码。全部作品经视觉对比后按效果排名，榜首常驻首展位；新作品一提交就会出现在这里。
             </p>
             <div class="hero-cta">
               <a class="btn btn-primary" href="#gallery">进入画廊</a>
@@ -527,12 +546,12 @@
         </div>
       </section>
 
-      <section class="section" data-od-id="gallery">
+      <section class="section" id="gallery" data-od-id="gallery">
         <div class="container stack" style="gap: 32px">
           <div class="row-between" style="flex-wrap: wrap; gap: 20px">
             <div>
-              <p class="eyebrow">THE COLLECTION</p>
-              <h2>全部作品</h2>
+              <p class="eyebrow">THE RANKING</p>
+              <h2>效果排行榜</h2>
             </div>
             <div
               class="filter-bar"
@@ -611,7 +630,10 @@
 
     <script>
       (function () {
-        var THINK_LABELS = { none: "直接生成", high: "深度思考" };
+        var THINK_LABELS = { none: "直接生成", high: "深度思考", medium: "中度思考", deep: "深度思考", extend: "扩展思考" };
+        // 排名数据在 rankings.json（按效果顺序的文件名数组），加载后动态排序；
+        // 缺失或新条目不在榜内时按 entries.json 原顺序垫底。
+        var rankOf = {};
         var grid = document.getElementById("gallery-grid");
         var bar = document.querySelector(".filter-bar");
         var visible = [];
@@ -622,10 +644,16 @@
         }
 
         function makeCard(e, i) {
+          var rank = rankOf[e.file] || 1e9;
           var card = document.createElement("article");
           card.className = "card gallery-card";
           card.dataset.think = e.thinking;
+          card.dataset.rank = rank;
           card.setAttribute("data-od-id", "gallery-card-" + i);
+
+          var badge = document.createElement("span");
+          badge.className = "rank-badge";
+          badge.textContent = rank;
 
           var btn = document.createElement("button");
           btn.type = "button";
@@ -647,16 +675,16 @@
 
           var meta = document.createElement("p");
           meta.className = "gallery-meta";
-          meta.textContent = thinkLabel(e.thinking) + " · " + e.date;
+          meta.textContent = "No." + rank + " · " + thinkLabel(e.thinking) + " · " + e.date;
 
-          card.append(btn, name, meta);
+          card.append(badge, btn, name, meta);
           return card;
         }
 
         function applyFilter(v) {
           grid.querySelectorAll(".gallery-card").forEach(function (c) {
             c.style.display =
-              v === "all" || c.dataset.think === v ? "" : "none";
+              v === "all" || thinkLabel(c.dataset.think) === v ? "" : "none";
           });
           syncVisible();
         }
@@ -678,6 +706,7 @@
             "模型 " + t.dataset.model + " 生成的猫弹钢琴画作（放大视图）";
           document.getElementById("viewer-title").textContent = t.dataset.model;
           document.getElementById("viewer-meta").textContent =
+            "No." + t.closest(".gallery-card").dataset.rank + " · " +
             t.dataset.thinkLabel + " · " + t.dataset.date;
         }
 
@@ -722,13 +751,30 @@
           if (e.target === dlg) dlg.close();
         });
 
-        // 实时数据源：全部数字与筛选按钮都由 entries.json 现算
-        fetch("entries.json")
-          .then(function (r) {
+        // 实时数据源：entries.json 提供作品，rankings.json 提供效果排名
+        Promise.all([
+          fetch("entries.json").then(function (r) {
             if (!r.ok) throw new Error(r.status);
             return r.json();
-          })
-          .then(function (data) {
+          }),
+          fetch("rankings.json")
+            .then(function (r) {
+              return r.ok ? r.json() : [];
+            })
+            .catch(function () {
+              return [];
+            })
+        ])
+          .then(function (results) {
+            var data = results[0];
+            rankOf = {};
+            results[1].forEach(function (f, i) {
+              rankOf[f] = i + 1;
+            });
+            // 按效果排行榜排序；不在榜内的条目保持原顺序垫底
+            data.sort(function (a, b) {
+              return (rankOf[a.file] || 1e9) - (rankOf[b.file] || 1e9);
+            });
             grid.replaceChildren.apply(grid, data.map(makeCard));
             // 筛选按钮全量由数据现算：全部 + 实际出现的 thinking 级别
             function makeFilter(value, label, pressed) {
@@ -742,25 +788,17 @@
             }
             var levels = [];
             data.forEach(function (e) {
-              if (levels.indexOf(e.thinking) < 0) levels.push(e.thinking);
+              // 按标签去重：high/deep 都显示「深度思考」，共用一个筛选按钮
+              var l = thinkLabel(e.thinking);
+              if (levels.indexOf(l) < 0) levels.push(l);
             });
             bar.replaceChildren(makeFilter("all", "全部", true));
-            levels.forEach(function (t) {
-              bar.appendChild(makeFilter(t, thinkLabel(t), false));
+            levels.forEach(function (l) {
+              bar.appendChild(makeFilter(l, l, false));
             });
             syncVisible();
-            // 首展位跟随数据源：最新日期优先，同日取深度思考
-            var latest = data
-              .slice()
-              .sort(function (a, b) {
-                // 升序排列后 .pop() 取最新；同日把 high 排在后面供 pop 选中
-                return a.date === b.date
-                  ? (a.thinking !== "none") - (b.thinking !== "none")
-                  : a.date < b.date
-                    ? -1
-                    : 1;
-              })
-              .pop();
+            // 首展位 = 榜首作品
+            var latest = data[0];
             var heroImg = document.getElementById("hero-img");
             heroImg.onload = function () {
               heroImg.hidden = false;
@@ -774,14 +812,13 @@
                 "首展作品加载失败";
             };
             heroImg.src = latest.file;
-            heroImg.alt = "首展作品：" + latest.model + " 绘制的猫弹钢琴";
+            heroImg.alt = "榜首作品：" + latest.model + " 绘制的猫弹钢琴";
             document.getElementById("hero-cap").textContent =
-              "首展 · " +
+              "榜首 No.1 · " +
               latest.model +
               "（" +
               thinkLabel(latest.thinking) +
-              "）· " +
-              latest.date;
+              "）";
           })
           .catch(function () {
             var p = document.createElement("p");

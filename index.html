@@ -97,6 +97,7 @@
         .then((r) => r.json())
         .then((entries) => {
           const g = document.getElementById("gallery");
+          g.replaceChildren();
           if (!entries.length) {
             const empty = el("div", "", "暂无条目");
             empty.id = "status";

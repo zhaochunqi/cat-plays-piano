@@ -196,5 +196,11 @@
         "thinking": "medium",
         "date": "2026-08-25",
         "file": "entries/kimi-k3-medium-2026-08-25.svg"
+    },
+    {
+        "model": "claude-sonnet-5",
+        "thinking": "max",
+        "date": "2026-08-25",
+        "file": "entries/claude-sonnet-5-max-2026-08-25.svg"
     }
 ]

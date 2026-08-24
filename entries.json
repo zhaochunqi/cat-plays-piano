@@ -178,5 +178,11 @@
         "thinking": "deep",
         "date": "2026-08-25",
         "file": "entries/deepseek-v4-pro-deep-2026-08-25.svg"
+    },
+    {
+        "model": "sonnet-5-medium",
+        "thinking": "none",
+        "date": "2026-08-25",
+        "file": "entries/sonnet-5-medium-none-2026-08-25.svg"
     }
 ]

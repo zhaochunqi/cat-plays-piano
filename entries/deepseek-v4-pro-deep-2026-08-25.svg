@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </radialGradient>
+
+    <!-- Piano Body Gradient -->
+    <linearGradient id="pianoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+
+    <!-- Cat Body Gradient -->
+    <radialGradient id="catGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2c2c2c"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </radialGradient>
+
+    <!-- Keyboard Pattern -->
+    <pattern id="keys" width="154" height="50" patternUnits="userSpaceOnUse">
+      <!-- White Keys -->
+      <rect x="0" y="0" width="20" height="50" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1"/>
+      <rect x="22" y="0" width="20" height="50" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1"/>
+      <rect x="44" y="0" width="20" height="50" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1"/>
+      <rect x="66" y="0" width="20" height="50" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1"/>
+      <rect x="88" y="0" width="20" height="50" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1"/>
+      <rect x="110" y="0" width="20" height="50" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1"/>
+      <rect x="132" y="0" width="22" height="50" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1"/>
+
+      <!-- Black Keys -->
+      <rect x="14" y="0" width="16" height="30" fill="#111111" rx="2"/>
+      <rect x="36" y="0" width="16" height="30" fill="#111111" rx="2"/>
+      <rect x="80" y="0" width="16" height="30" fill="#111111" rx="2"/>
+      <rect x="102" y="0" width="16" height="30" fill="#111111" rx="2"/>
+      <rect x="124" y="0" width="16" height="30" fill="#111111" rx="2"/>
+    </pattern>
+
+    <!-- Musical Note 1 (Eighth Note) -->
+    <g id="note1">
+      <ellipse cx="10" cy="20" rx="8" ry="6" fill="#F1C40F" transform="rotate(-20 10 20)"/>
+      <line x1="18" y1="20" x2="18" y2="-10" stroke="#F1C40F" stroke-width="3"/>
+      <path d="M 18 -10 Q 28 -5 30 5" fill="none" stroke="#F1C40F" stroke-width="3"/>
+    </g>
+
+    <!-- Musical Note 2 (Beamed Note) -->
+    <g id="note2">
+      <ellipse cx="10" cy="25" rx="8" ry="6" fill="#F1C40F" transform="rotate(-20 10 25)"/>
+      <ellipse cx="40" cy="15" rx="8" ry="6" fill="#F1C40F" transform="rotate(-20 40 15)"/>
+      <line x1="18" y1="25" x2="18" y2="-5" stroke="#F1C40F" stroke-width="3"/>
+      <line x1="48" y1="15" x2="48" y2="-15" stroke="#F1C40F" stroke-width="3"/>
+      <polygon points="18,-5 48,-15 48,-5 18,5" fill="#F1C40F"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Stage Floor Shadow -->
+  <ellipse cx="400" cy="550" rx="350" ry="40" fill="#000000" opacity="0.4"/>
+
+  <!-- Lighting / Spotlight Effect -->
+  <polygon points="400,0 200,600 600,600" fill="#FFFFFF" opacity="0.04"/>
+
+  <!-- ================= PIANO ================= -->
+  <!-- Piano Legs -->
+  <rect x="240" y="400" width="25" height="120" rx="5" fill="#111111"/>
+  <rect x="725" y="400" width="25" height="120" rx="5" fill="#111111"/>
+
+  <!-- Piano Pedals -->
+  <rect x="260" y="530" width="30" height="12" rx="2" fill="#D4AF37"/>
+  <rect x="310" y="530" width="30" height="12" rx="2" fill="#D4AF37"/>
+  <rect x="360" y="530" width="30" height="12" rx="2" fill="#D4AF37"/>
+
+  <!-- Piano Body -->
+  <rect x="230" y="200" width="520" height="200" rx="10" fill="url(#pianoGrad)" stroke="#333333" stroke-width="2"/>
+
+  <!-- Piano Inner Panel Detail -->
+  <rect x="245" y="215" width="490" height="185" rx="5" fill="#181818"/>
+
+  <!-- Music Rack -->
+  <rect x="310" y="175" width="280" height="25" rx="5" fill="#111111"/>
+
+  <!-- Sheet Music -->
+  <g transform="rotate(-8 360 150)">
+    <rect x="360" y="145" width="100" height="130" fill="#FFFFFF" rx="3"/>
+    <!-- Staff Lines -->
+    <line x1="370" y1="170" x2="450" y2="160" stroke="#BDC3C7" stroke-width="1.5"/>
+    <line x1="370" y1="180" x2="450" y2="170" stroke="#BDC3C7" stroke-width="1.5"/>
+    <line x1="370" y1="190" x2="450" y2="180" stroke="#BDC3C7" stroke-width="1.5"/>
+    <line x1="370" y1="200" x2="450" y2="190" stroke="#BDC3C7" stroke-width="1.5"/>
+    <line x1="370" y1="210" x2="450" y2="200" stroke="#BDC3C7" stroke-width="1.5"/>
+
+    <!-- Dummy Notes on Sheet -->
+    <ellipse cx="385" cy="185" rx="4" ry="3" fill="#111"/>
+    <line x1="389" y1="185" x2="389" y2="175" stroke="#111" stroke-width="1.5"/>
+    <ellipse cx="405" cy="195" rx="4" ry="3" fill="#111"/>
+    <line x1="409" y1="195" x2="409" y2="185" stroke="#111" stroke-width="1.5"/>
+    <ellipse cx="425" cy="175" rx="4" ry="3" fill="#111"/>
+    <line x1="429" y1="175" x2="429" y2="165" stroke="#111" stroke-width="1.5"/>
+  </g>
+
+  <!-- Keyboard Base -->
+  <rect x="220" y="395" width="540" height="60" rx="4" fill="#1A1A1A"/>
+
+  <!-- Felt Strip (Gold) -->
+  <rect x="220" y="395" width="540" height="6" fill="#D4AF37" rx="2"/>
+
+  <!-- Keyboard Keys (Using Pattern) -->
+  <rect x="220" y="400" width="540" height="50" fill="url(#keys)" rx="2"/>
+
+  <!-- ================= STOOL ================= -->
+  <!-- Stool Legs -->
+  <rect x="100" y="420" width="15" height="100" rx="3" fill="#3E2723"/>
+  <rect x="185" y="420" width="15" height="100" rx="3" fill="#3E2723"/>
+
+  <!-- Stool Crossbar -->
+  <rect x="100" y="470" width="100" height="15" rx="3" fill="#3E2723"/>
+
+  <!-- Stool Seat -->
+  <rect x="85" y="400" width="130" height="20" rx="6" fill="#5D4037"/>
+  <rect x="80" y="385" width="140" height="15" rx="7" fill="#8B4513"/>
+
+  <!-- ================= CAT ================= -->
+  <!-- Cat Tail -->
+  <path d="M 130 380 Q 30 420 40 280 Q 50 180 110 200" fill="none" stroke="#1A1A1A" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- Cat Body -->
+  <ellipse cx="180" cy="320" rx="70" ry="90" fill="url(#catGrad)"/>
+
+  <!-- Cat Chest/Belly (Tuxedo White Marking) -->
+  <ellipse cx="210" cy="330" rx="45" ry="70" fill="#FFFFFF"/>
+
+  <!-- Cat Left Arm (Background, reaching to keys) -->
+  <path d="M 150 380 Q 230 460 350 440" fill="none" stroke="#1A1A1A" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- Cat Left Paw (Background) -->
+  <ellipse cx="350" cy="440" rx="16" ry="12" fill="#FFFFFF" stroke="#999999" stroke-width="2"/>
+
+  <!-- Cat Head -->
+  <circle cx="250" cy="220" r="50" fill="#1A1A1A"/>
+
+  <!-- Cat Ears -->
+  <!-- Left Ear -->
+  <polygon points="215,190 200,130 240,175" fill="#1A1A1A"/>
+  <!-- Inner Left Ear -->
+  <polygon points="215,185 205,145 235,175" fill="#FFB6C1"/>
+
+  <!-- Right Ear -->
+  <polygon points="270,180 300,120 305,185" fill="#1A1A1A"/>
+  <!-- Inner Right Ear -->
+  <polygon points="275,180 295,135 300,180" fill="#FFB6C1"/>
+
+  <!-- Cat Face Details -->
+  <!-- Muzzle -->
+  <ellipse cx="280" cy="235" rx="20" ry="15" fill="#FFFFFF"/>
+
+  <!-- Nose -->
+  <polygon points="285,230 280,235 290,235" fill="#FFB6C1"/>
+
+  <!-- Eyes -->
+  <ellipse cx="265" cy="215" rx="8" ry="12" fill="#F1C40F"/>
+  <ellipse cx="295" cy="215" rx="8" ry="12" fill="#F1C40F"/>
+
+  <!-- Pupils -->
+  <ellipse cx="268" cy="215" rx="3" ry="8" fill="#000000"/>
+  <ellipse cx="298" cy="215" rx="3" ry="8" fill="#000000"/>
+
+  <!-- Whiskers -->
+  <line x1="275" y1="235" x2="235" y2="230" stroke="#CCCCCC" stroke-width="2"/>
+  <line x1="275" y1="240" x2="235" y2="245" stroke="#CCCCCC" stroke-width="2"/>
+  <line x1="290" y1="235" x2="330" y2="230" stroke="#CCCCCC" stroke-width="2"/>
+  <line x1="290" y1="240" x2="330" y2="245" stroke="#CCCCCC" stroke-width="2"/>
+
+  <!-- Cat Right Arm (Foreground, playing the keys) -->
+  <path d="M 200 400 Q 300 480 390 450" fill="none" stroke="#1A1A1A" stroke-width="25" stroke-linecap="round"/>
+
+  <!-- Cat Right Paw (Foreground) -->
+  <ellipse cx="390" cy="450" rx="18" ry="14" fill="#FFFFFF" stroke="#999999" stroke-width="2"/>
+
+  <!-- Cat Cheek Blush (Cute detail) -->
+  <ellipse cx="255" cy="230" rx="6" ry="4" fill="#FFB6C1" opacity="0.6"/>
+  <ellipse cx="305" cy="230" rx="6" ry="4" fill="#FFB6C1" opacity="0.6"/>
+
+  <!-- ================= MUSICAL NOTES ================= -->
+  <g transform="translate(320, 140) scale(1.5)"><use href="#note1"/></g>
+  <g transform="translate(480, 100) scale(1.2)"><use href="#note2"/></g>
+  <g transform="translate(620, 160) scale(1.8)"><use href="#note1"/></g>
+  <g transform="translate(420, 60) scale(1)"><use href="#note2"/></g>
+  <g transform="translate(180, 90) scale(0.8)"><use href="#note1"/></g>
+  <g transform="translate(560, 40) scale(1.3)"><use href="#note2"/></g>
+
+</svg>

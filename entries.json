@@ -172,5 +172,11 @@
         "thinking": "deep",
         "date": "2026-08-25",
         "file": "entries/deepseek-flash-v4-deep-2026-08-25.svg"
+    },
+    {
+        "model": "deepseek-v4-pro",
+        "thinking": "deep",
+        "date": "2026-08-25",
+        "file": "entries/deepseek-v4-pro-deep-2026-08-25.svg"
     }
 ]

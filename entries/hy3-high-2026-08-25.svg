@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480">
+  <!-- 背景 -->
+  <rect width="640" height="480" fill="#2b2d42"/>
+  <rect y="360" width="640" height="120" fill="#1a1b2a"/>
+
+  <!-- 飘动的音符 -->
+  <g fill="#ffd166" opacity="0.9">
+    <g transform="translate(470,70)">
+      <ellipse cx="0" cy="22" rx="9" ry="6.5" transform="rotate(-20 0 22)"/>
+      <rect x="7" y="-12" width="3.5" height="34"/>
+      <path d="M10.5 -12 q16 6 12 22 q-2 -12 -12 -14 z"/>
+    </g>
+    <g transform="translate(540,130) scale(0.8)">
+      <ellipse cx="0" cy="22" rx="9" ry="6.5" transform="rotate(-20 0 22)"/>
+      <rect x="7" y="-12" width="3.5" height="34"/>
+      <path d="M10.5 -12 q16 6 12 22 q-2 -12 -12 -14 z"/>
+    </g>
+    <g transform="translate(120,90) scale(0.7)">
+      <ellipse cx="0" cy="22" rx="9" ry="6.5" transform="rotate(-20 0 22)"/>
+      <rect x="7" y="-12" width="3.5" height="34"/>
+      <path d="M10.5 -12 q16 6 12 22 q-2 -12 -12 -14 z"/>
+    </g>
+  </g>
+
+  <!-- 钢琴主体 -->
+  <!-- 琴身 -->
+  <rect x="120" y="250" width="400" height="150" rx="8" fill="#3d405b"/>
+  <rect x="120" y="250" width="400" height="22" rx="8" fill="#4a4e69"/>
+  <!-- 谱架 -->
+  <rect x="150" y="150" width="340" height="70" rx="6" fill="#4a4e69"/>
+  <rect x="165" y="160" width="310" height="50" rx="4" fill="#f2e9e4"/>
+  <!-- 谱架上的五线谱 -->
+  <g stroke="#9a8c98" stroke-width="1.5">
+    <line x1="180" y1="170" x2="460" y2="170"/>
+    <line x1="180" y1="178" x2="460" y2="178"/>
+    <line x1="180" y1="186" x2="460" y2="186"/>
+    <line x1="180" y1="194" x2="460" y2="194"/>
+    <line x1="180" y1="202" x2="460" y2="202"/>
+  </g>
+  <g fill="#22223b">
+    <circle cx="220" cy="186" r="4"/>
+    <circle cx="255" cy="178" r="4"/>
+    <circle cx="290" cy="194" r="4"/>
+    <circle cx="325" cy="186" r="4"/>
+    <circle cx="360" cy="178" r="4"/>
+  </g>
+
+  <!-- 键盘 -->
+  <rect x="135" y="290" width="370" height="46" rx="4" fill="#fff8f0"/>
+  <!-- 黑键 -->
+  <g fill="#22223b">
+    <rect x="160" y="290" width="14" height="28"/>
+    <rect x="190" y="290" width="14" height="28"/>
+    <rect x="250" y="290" width="14" height="28"/>
+    <rect x="280" y="290" width="14" height="28"/>
+    <rect x="310" y="290" width="14" height="28"/>
+    <rect x="370" y="290" width="14" height="28"/>
+    <rect x="400" y="290" width="14" height="28"/>
+    <rect x="460" y="290" width="14" height="28"/>
+  </g>
+  <!-- 白键分隔线 -->
+  <g stroke="#cdc4bd" stroke-width="1">
+    <line x1="155" y1="290" x2="155" y2="336"/>
+    <line x1="185" y1="290" x2="185" y2="336"/>
+    <line x1="215" y1="290" x2="215" y2="336"/>
+    <line x1="245" y1="290" x2="245" y2="336"/>
+    <line x1="275" y1="290" x2="275" y2="336"/>
+    <line x1="305" y1="290" x2="305" y2="336"/>
+    <line x1="335" y1="290" x2="335" y2="336"/>
+    <line x1="365" y1="290" x2="365" y2="336"/>
+    <line x1="395" y1="290" x2="395" y2="336"/>
+    <line x1="425" y1="290" x2="425" y2="336"/>
+    <line x1="455" y1="290" x2="455" y2="336"/>
+    <line x1="485" y1="290" x2="485" y2="336"/>
+  </g>
+
+  <!-- 钢琴凳 -->
+  <rect x="250" y="400" width="140" height="14" rx="3" fill="#6d597a"/>
+  <rect x="262" y="414" width="10" height="40" fill="#6d597a"/>
+  <rect x="368" y="414" width="10" height="40" fill="#6d597a"/>
+
+  <!-- 猫 -->
+  <g>
+    <!-- 尾巴 -->
+    <path d="M250 400 q-50 -10 -60 -50 q-4 -22 14 -30 q14 8 8 26 q-10 26 38 38 z" fill="#9c6644"/>
+    <!-- 身体 -->
+    <ellipse cx="320" cy="370" rx="62" ry="50" fill="#b5835a"/>
+    <!-- 后爪 -->
+    <ellipse cx="290" cy="405" rx="20" ry="12" fill="#9c6644"/>
+    <ellipse cx="360" cy="405" rx="20" ry="12" fill="#9c6644"/>
+
+    <!-- 头 -->
+    <g>
+      <!-- 耳朵 -->
+      <path d="M268 300 L258 262 L300 288 Z" fill="#b5835a"/>
+      <path d="M372 300 L382 262 L340 288 Z" fill="#b5835a"/>
+      <path d="M272 296 L266 276 L292 290 Z" fill="#e0a899"/>
+      <path d="M368 296 L374 276 L348 290 Z" fill="#e0a899"/>
+      <!-- 脸 -->
+      <circle cx="320" cy="318" r="46" fill="#c08e63"/>
+      <!-- 眼睛 -->
+      <ellipse cx="302" cy="314" rx="7" ry="10" fill="#2b2d42"/>
+      <ellipse cx="338" cy="314" rx="7" ry="10" fill="#2b2d42"/>
+      <circle cx="304" cy="311" r="2.2" fill="#fff"/>
+      <circle cx="340" cy="311" r="2.2" fill="#fff"/>
+      <!-- 鼻子 -->
+      <path d="M315 326 L325 326 L320 333 Z" fill="#e07a5f"/>
+      <!-- 嘴 -->
+      <path d="M320 333 q-8 10 -16 6 M320 333 q8 10 16 6" stroke="#5c3d2e" stroke-width="2" fill="none"/>
+      <!-- 胡须 -->
+      <g stroke="#e8dcc8" stroke-width="1.5">
+        <line x1="280" y1="324" x2="248" y2="318"/>
+        <line x1="280" y1="330" x2="248" y2="332"/>
+        <line x1="360" y1="324" x2="392" y2="318"/>
+        <line x1="360" y1="330" x2="392" y2="332"/>
+      </g>
+    </g>
+
+    <!-- 前爪（搭在琴键上） -->
+    <ellipse cx="270" cy="332" rx="16" ry="11" fill="#d6a577" transform="rotate(-8 270 332)"/>
+    <ellipse cx="372" cy="332" rx="16" ry="11" fill="#d6a577" transform="rotate(8 372 332)"/>
+    <!-- 爪垫条纹 -->
+    <g stroke="#9c6644" stroke-width="1.2">
+      <line x1="264" y1="326" x2="262" y2="338"/>
+      <line x1="270" y1="325" x2="270" y2="339"/>
+      <line x1="276" y1="326" x2="278" y2="338"/>
+      <line x1="366" y1="326" x2="364" y2="338"/>
+      <line x1="372" y1="325" x2="372" y2="339"/>
+      <line x1="378" y1="326" x2="380" y2="338"/>
+    </g>
+  </g>
+</svg>

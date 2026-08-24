@@ -250,5 +250,11 @@
         "thinking": "thinking",
         "date": "2026-08-25",
         "file": "entries/qwen3.8-max-thinking-2026-08-25.svg"
+    },
+    {
+        "model": "hy3",
+        "thinking": "high",
+        "date": "2026-08-25",
+        "file": "entries/hy3-high-2026-08-25.svg"
     }
 ]

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <title>Cat Playing Piano</title>
+  <desc>A cute orange cat sitting on a bench and playing a grand piano, with musical notes floating around.</desc>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f5e6d3"/>
+
+  <!-- Floor -->
+  <rect x="0" y="500" width="800" height="100" fill="#c4a574"/>
+  <line x1="0" y1="500" x2="800" y2="500" stroke="#8b6b4a" stroke-width="2"/>
+
+  <!-- Piano -->
+  <g id="piano">
+    <!-- Piano body -->
+    <path d="M 200 380 L 200 420 L 600 420 L 600 380 Q 400 340 200 380 Z" fill="#1a1a1a" stroke="#000" stroke-width="2"/>
+
+    <!-- Piano lid -->
+    <path d="M 200 380 Q 400 340 600 380" stroke="#2a2a2a" stroke-width="4" fill="none"/>
+
+    <!-- Piano legs -->
+    <rect x="220" y="420" width="20" height="40" fill="#1a1a1a"/>
+    <rect x="560" y="420" width="20" height="40" fill="#1a1a1a"/>
+    <rect x="390" y="420" width="20" height="40" fill="#1a1a1a"/>
+
+    <!-- Keys -->
+    <rect x="250" y="380" width="300" height="30" fill="#fff" stroke="#000" stroke-width="1"/>
+
+    <!-- Black keys -->
+    <rect x="270" y="370" width="12" height="20" fill="#000"/>
+    <rect x="295" y="370" width="12" height="20" fill="#000"/>
+    <rect x="320" y="370" width="12" height="20" fill="#000"/>
+    <rect x="370" y="370" width="12" height="20" fill="#000"/>
+    <rect x="395" y="370" width="12" height="20" fill="#000"/>
+    <rect x="420" y="370" width="12" height="20" fill="#000"/>
+    <rect x="470" y="370" width="12" height="20" fill="#000"/>
+    <rect x="495" y="370" width="12" height="20" fill="#000"/>
+    <rect x="520" y="370" width="12" height="20" fill="#000"/>
+  </g>
+
+  <!-- Bench -->
+  <g id="bench">
+    <rect x="300" y="450" width="200" height="20" fill="#8b4513" stroke="#5c2e0a" stroke-width="1"/>
+    <rect x="310" y="470" width="10" height="50" fill="#8b4513" stroke="#5c2e0a" stroke-width="1"/>
+    <rect x="480" y="470" width="10" height="50" fill="#8b4513" stroke="#5c2e0a" stroke-width="1"/>
+  </g>
+
+  <!-- Cat -->
+  <g id="cat">
+    <!-- Tail -->
+    <path d="M 440 420 Q 480 430 470 460" stroke="#ff8c00" stroke-width="12" fill="none" stroke-linecap="round"/>
+
+    <!-- Body -->
+    <ellipse cx="400" cy="420" rx="40" ry="30" fill="#ff8c00" stroke="#e67300" stroke-width="2"/>
+
+    <!-- Head -->
+    <circle cx="400" cy="380" r="25" fill="#ff8c00" stroke="#e67300" stroke-width="2"/>
+
+    <!-- Ears -->
+    <polygon points="380,360 390,340 400,360" fill="#ff8c00" stroke="#e67300" stroke-width="2"/>
+    <polygon points="400,360 410,340 420,360" fill="#ff8c00" stroke="#e67300" stroke-width="2"/>
+
+    <!-- Inner ears -->
+    <polygon points="382,358 390,345 398,358" fill="#ffb6c1"/>
+    <polygon points="402,358 410,345 418,358" fill="#ffb6c1"/>
+
+    <!-- Eyes -->
+    <ellipse cx="390" cy="375" rx="5" ry="8" fill="#000"/>
+    <ellipse cx="410" cy="375" rx="5" ry="8" fill="#000"/>
+
+    <!-- Eye highlights -->
+    <circle cx="392" cy="373" r="2" fill="#fff"/>
+    <circle cx="412" cy="373" r="2" fill="#fff"/>
+
+    <!-- Nose -->
+    <polygon points="395,385 405,385 400,390" fill="#ffb6c1"/>
+
+    <!-- Mouth -->
+    <path d="M 400 390 Q 395 395 390 390" stroke="#000" stroke-width="1" fill="none"/>
+    <path d="M 400 390 Q 405 395 410 390" stroke="#000" stroke-width="1" fill="none"/>
+
+    <!-- Whiskers -->
+    <line x1="370" y1="385" x2="395" y2="385" stroke="#000" stroke-width="1"/>
+    <line x1="370" y1="390" x2="395" y2="390" stroke="#000" stroke-width="1"/>
+    <line x1="370" y1="395" x2="395" y2="395" stroke="#000" stroke-width="1"/>
+    <line x1="405" y1="385" x2="430" y2="385" stroke="#000" stroke-width="1"/>
+    <line x1="405" y1="390" x2="430" y2="390" stroke="#000" stroke-width="1"/>
+    <line x1="405" y1="395" x2="430" y2="395" stroke="#000" stroke-width="1"/>
+
+    <!-- Front legs -->
+    <line x1="380" y1="440" x2="350" y2="390" stroke="#ff8c00" stroke-width="15" stroke-linecap="round"/>
+    <line x1="420" y1="440" x2="450" y2="390" stroke="#ff8c00" stroke-width="15" stroke-linecap="round"/>
+
+    <!-- Paws on keys -->
+    <circle cx="350" cy="390" r="8" fill="#ff8c00" stroke="#e67300" stroke-width="1"/>
+    <circle cx="450" cy="390" r="8" fill="#ff8c00" stroke="#e67300" stroke-width="1"/>
+  </g>
+
+  <!-- Musical notes -->
+  <g id="music-notes" fill="#000">
+    <!-- Note 1 -->
+    <circle cx="300" cy="250" r="6"/>
+    <line x1="306" y1="250" x2="306" y2="220" stroke="#000" stroke-width="2"/>
+
+    <!-- Note 2 -->
+    <circle cx="500" cy="230" r="6"/>
+    <line x1="506" y1="230" x2="506" y2="200" stroke="#000" stroke-width="2"/>
+
+    <!-- Note 3 -->
+    <circle cx="250" cy="200" r="5"/>
+    <line x1="255" y1="200" x2="255" y2="175" stroke="#000" stroke-width="2"/>
+
+    <!-- Note 4 -->
+    <circle cx="550" cy="180" r="5"/>
+    <line x1="555" y1="180" x2="555" y2="155" stroke="#000" stroke-width="2"/>
+  </g>
+
+  <!-- Simple shadow under piano -->
+  <ellipse cx="400" cy="460" rx="200" ry="10" fill="rgba(0,0,0,0.2)"/>
+</svg>

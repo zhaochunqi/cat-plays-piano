@@ -163,8 +163,14 @@
     },
     {
         "model": "LongCat-2.0",
-        "thinking": "none",
+        "thinking": "deep",
         "date": "2026-08-25",
-        "file": "entries/LongCat-2.0-none-2026-08-25.svg"
+        "file": "entries/LongCat-2.0-deep-2026-08-25.svg"
+    },
+    {
+        "model": "deepseek-flash-v4",
+        "thinking": "deep",
+        "date": "2026-08-25",
+        "file": "entries/deepseek-flash-v4-deep-2026-08-25.svg"
     }
 ]

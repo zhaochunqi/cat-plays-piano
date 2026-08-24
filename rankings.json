@@ -1,47 +1,182 @@
 [
-  "entries/gemini-3.1-pro-extend-2026-08-25.svg",
-  "entries/gemini-3.1-pro-none-2026-08-25.svg",
-  "entries/qwen3.8-max-thinking-2026-08-25.svg",
-  "entries/claude-sonnet-5-max-2026-08-25.svg",
-  "entries/glm-5.3-high-2026-08-25.svg",
-  "entries/deepseek-v4-pro-deep-2026-08-25.svg",
-  "entries/deepseek-flash-v4-deep-2026-08-25.svg",
-  "entries/kimi-k3-medium-2026-08-25.svg",
-  "entries/nemotron-3-ultra-free-none-2026-08-25.svg",
-  "entries/agnes-2.0-flash-none-2026-08-25.svg",
-  "entries/minimax-m3-none-2026-08-25.svg",
-  "entries/hy3-high-2026-08-25.svg",
-  "entries/glm-5-turbo-medium-2026-08-25.svg",
-  "entries/agnes-2.5-flash-none-2026-08-25.svg",
-  "entries/LongCat-2.0-deep-2026-08-25.svg",
-  "entries/grok-build-0.1-none-2026-08-25.svg",
-  "entries/gemini-3-flash-preview-high-2026-08-25.svg",
-  "entries/grok-4.5-none-2026-08-25.svg",
-  "entries/ox-alpha-free-high-2026-08-24.svg",
-  "entries/gpt-4o-none-2026-08-25.svg",
-  "entries/sonnet-5-medium-2026-08-25.svg",
-  "entries/LongCat-2.0-none-2026-08-25.svg",
-  "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg",
-  "entries/gpt-4.1-none-2026-08-25.svg",
-  "entries/gemma-4-31b-none-2026-08-25.svg",
-  "entries/glm-4.5-flash-none-2026-08-25.svg",
-  "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
-  "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg",
-  "entries/nemotron-3-super-free-none-2026-08-25.svg",
-  "entries/laguna-xs-2.1-free-none-2026-08-25.svg",
-  "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
-  "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg",
-  "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg",
-  "entries/grok-chat-fast-none-2026-08-25.svg",
-  "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg",
-  "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg",
-  "entries/qwen3-8b-none-2026-08-25.svg",
-  "entries/qwen3-4b-none-2026-08-25.svg",
-  "entries/huatuogpt-o1-7b-none-2026-08-25.svg",
-  "entries/glm-4.6v-flash-none-2026-08-25.svg",
-  "entries/glm-4.7-flash-none-2026-08-25.svg",
-  "entries/glm-4-9b-chat-none-2026-08-25.svg",
-  "entries/qwen2-7b-instruct-none-2026-08-25.svg",
-  "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg",
-  "entries/internlm3-8b-instruct-none-2026-08-25.svg"
+  {
+    "file": "entries/gemini-3.1-pro-extend-2026-08-25.svg",
+    "note": "夜景三角钢琴+烛光+地毯，猫坐琴凳弹奏姿态正确，氛围与细节最完整。"
+  },
+  {
+    "file": "entries/gemini-3.1-pro-none-2026-08-25.svg",
+    "note": "猫坐琴凳弹三角钢琴，姿态正确，红毯与飘落音符点缀，构图干净完整。"
+  },
+  {
+    "file": "entries/qwen3.8-max-thinking-2026-08-25.svg",
+    "note": "立式钢琴结构完整（琴身/琴腿/乐谱），猫形态准确（胡须/条纹/铃铛），构图细节丰富。"
+  },
+  {
+    "file": "entries/claude-sonnet-5-max-2026-08-25.svg",
+    "note": "温馨室内景，猫在三角钢琴前姿态正确，窗户/盆栽/地毯氛围好。"
+  },
+  {
+    "file": "entries/glm-5.3-high-2026-08-25.svg",
+    "note": "三角钢琴+琴凳弹奏姿态正确，条纹/胡须/月光星空细节丰富。"
+  },
+  {
+    "file": "entries/deepseek-v4-pro-deep-2026-08-25.svg",
+    "note": "夜色氛围佳，猫趴在钢琴上爪子搭在琴键，乐谱音符齐全；趴姿非标准坐姿弹奏。"
+  },
+  {
+    "file": "entries/deepseek-flash-v4-deep-2026-08-25.svg",
+    "note": "戴礼帽领结的猫坐琴凳，有乐谱音符，但钢琴偏小且爪子未明确落在琴键。"
+  },
+  {
+    "file": "entries/kimi-k3-medium-2026-08-25.svg",
+    "note": "猫圆润可爱、表情生动，但坐在键盘上而非弹奏，场景较简。"
+  },
+  {
+    "file": "entries/nemotron-3-ultra-free-none-2026-08-25.svg",
+    "note": "钢琴结构完整，但猫坐在琴盖上爪子没碰琴键，脸部略似松鼠。"
+  },
+  {
+    "file": "entries/agnes-2.0-flash-none-2026-08-25.svg",
+    "note": "猫趴在立式钢琴后爪子搭键，夜景氛围好，THE PIANO CAT 点题。"
+  },
+  {
+    "file": "entries/minimax-m3-none-2026-08-25.svg",
+    "note": "暖色场景完整（立式钢琴琴身/琴腿/音符/光斑），但猫坐琴前爪子未碰琴键。"
+  },
+  {
+    "file": "entries/hy3-high-2026-08-25.svg",
+    "note": "猫坐琴凳爪子搭键、弹奏姿态正确，有乐谱与音符；钢琴只有键盘板缺琴身。"
+  },
+  {
+    "file": "entries/glm-5-turbo-medium-2026-08-25.svg",
+    "note": "夜景立式钢琴，猫坐琴凳爪在琴键上，姿态正确；造型偏简。"
+  },
+  {
+    "file": "entries/agnes-2.5-flash-none-2026-08-25.svg",
+    "note": "猫趴在钢琴上爪子搭键，有琴腿乐谱，构图尚可；猫脸略呆。"
+  },
+  {
+    "file": "entries/LongCat-2.0-deep-2026-08-25.svg",
+    "note": "猫在立式钢琴后探身，构图简单，钢琴细节少。"
+  },
+  {
+    "file": "entries/grok-build-0.1-none-2026-08-25.svg",
+    "note": "猫侧身伸爪够琴键，有动态感；钢琴只剩键盘与背板，场景极简。"
+  },
+  {
+    "file": "entries/gemini-3-flash-preview-high-2026-08-25.svg",
+    "note": "猫坐琴凳在立式钢琴前，有乐谱盆栽细节；爪子与琴键关系含糊。"
+  },
+  {
+    "file": "entries/grok-4.5-none-2026-08-25.svg",
+    "note": "猫坐琴凳在键盘后，表情生动胡须清晰；但爪子没碰琴键，钢琴只有键盘板。"
+  },
+  {
+    "file": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "note": "猫坐在键盘上，表情可爱；非弹奏姿态，场景极简。"
+  },
+  {
+    "file": "entries/gpt-4o-none-2026-08-25.svg",
+    "note": "猫坐琴凳在键盘板后，构图干净；无琴身，爪子未触键。"
+  },
+  {
+    "file": "entries/sonnet-5-medium-2026-08-25.svg",
+    "note": "猫坐琴凳在立式钢琴前，姿态接近弹奏；细节量一般。"
+  },
+  {
+    "file": "entries/LongCat-2.0-none-2026-08-25.svg",
+    "note": "猫在深色钢琴后，构图简单，细节少。"
+  },
+  {
+    "file": "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg",
+    "note": "猫趴在钢琴上爪子搭在键盘，造型尚可；构图简单。"
+  },
+  {
+    "file": "entries/gpt-4.1-none-2026-08-25.svg",
+    "note": "猫在键盘板后，构图极简，细节少。"
+  },
+  {
+    "file": "entries/gemma-4-31b-none-2026-08-25.svg",
+    "note": "猫坐琴凳在立式钢琴前；造型扁平，细节一般。"
+  },
+  {
+    "file": "entries/glm-4.5-flash-none-2026-08-25.svg",
+    "note": "猫在钢琴前，造型极简，几乎无细节。"
+  },
+  {
+    "file": "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
+    "note": "灰猫趴在琴键上，构图简单，猫脸含糊。"
+  },
+  {
+    "file": "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg",
+    "note": "猫脸与钢琴分离悬浮，结构错乱。"
+  },
+  {
+    "file": "entries/nemotron-3-super-free-none-2026-08-25.svg",
+    "note": "猫趴在键盘板上，造型扁平；无钢琴身体。"
+  },
+  {
+    "file": "entries/laguna-xs-2.1-free-none-2026-08-25.svg",
+    "note": "猫在钢琴旁姿态扭曲，解剖结构崩坏。"
+  },
+  {
+    "file": "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
+    "note": "Meow! 文字代替画面，猫与钢琴比例失调。"
+  },
+  {
+    "file": "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg",
+    "note": "猫挂在钢琴侧边，结构混乱。"
+  },
+  {
+    "file": "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg",
+    "note": "粉色团状猫趴在钢琴上，几乎无猫特征。"
+  },
+  {
+    "file": "entries/grok-chat-fast-none-2026-08-25.svg",
+    "note": "粉色猫脸趴在琴键上，构图混乱。"
+  },
+  {
+    "file": "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg",
+    "note": "粉色团块在键盘后，猫特征仅剩耳朵。"
+  },
+  {
+    "file": "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg",
+    "note": "线稿涂鸦，猫与钢琴难以辨认。"
+  },
+  {
+    "file": "entries/qwen3-8b-none-2026-08-25.svg",
+    "note": "猫头悬浮在琴键上，无身体，结构崩坏。"
+  },
+  {
+    "file": "entries/qwen3-4b-none-2026-08-25.svg",
+    "note": "猫嵌在琴身里，比例错乱。"
+  },
+  {
+    "file": "entries/huatuogpt-o1-7b-none-2026-08-25.svg",
+    "note": "灰色圆头+倒三角脸，与钢琴无交互，结构错误。"
+  },
+  {
+    "file": "entries/glm-4.6v-flash-none-2026-08-25.svg",
+    "note": "猫头探出钢琴顶盖，琴身比例失调。"
+  },
+  {
+    "file": "entries/glm-4.7-flash-none-2026-08-25.svg",
+    "note": "灰色猫在钢琴旁，造型抽象，细节少。"
+  },
+  {
+    "file": "entries/glm-4-9b-chat-none-2026-08-25.svg",
+    "note": "只有一个头和黑色方块，无钢琴结构。"
+  },
+  {
+    "file": "entries/qwen2-7b-instruct-none-2026-08-25.svg",
+    "note": "粉色圆+几条线，无法辨认猫和钢琴。"
+  },
+  {
+    "file": "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg",
+    "note": "一排模糊矩形+小猫剪影，结构崩坏。"
+  },
+  {
+    "file": "entries/internlm3-8b-instruct-none-2026-08-25.svg",
+    "note": "绿色多边形+橙色方块，完全跑题。"
+  }
 ]

@@ -5,7 +5,7 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
 
 线上地址：<https://zhaochunqi.github.io/cat-plays-piano/>
 
-只展示作品，不做评分或主观评判。
+作品按效果排序（`rankings.json`），点击图片放大可查看该作品的效果评测理由。
 
 ## 如何添加新条目
 
@@ -30,5 +30,6 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
 | `thinking` | 思考级别 `off` / `low` / `medium` / `high` / `xhigh` / `max`，不支持则 `null` |
 | `date` | 生成日期 `YYYY-MM-DD` |
 | `file` | 相对仓库根的路径 |
+| `note` | 效果评测理由（一句话，点击作品放大时展示） |
 
 同一模型支持多个思考级别时，每个级别各生成一份，页面内并排对比。

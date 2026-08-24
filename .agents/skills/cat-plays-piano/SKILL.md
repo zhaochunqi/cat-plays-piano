@@ -50,6 +50,6 @@ description: 给 cat-plays-piano 画廊仓库添加新条目：用固定 prompt�
 ## 边界
 
 - 不改 prompt、不加主观评语；卡片元数据只有 No.N / model / thinking / date。
-- 排名只进 rankings.json，不写进 entries.json、不标在 SVG 里。
+- 排名与评测理由只进 rankings.json（`[{file, note}]`），不写进 entries.json、不标在 SVG 里。
 - SVG 内容不做"美化"或二次编辑——原样收录各模型的产出，歪了也是数据。
 - 生成失败或模型拒答：跳过并在汇报里说明，不留半成品文件。

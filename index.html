@@ -603,6 +603,7 @@
         <div style="min-width: 0">
           <p class="viewer-title" id="viewer-title"></p>
           <p class="viewer-meta" id="viewer-meta"></p>
+          <p class="viewer-meta" id="viewer-note" style="max-width: 480px"></p>
         </div>
         <div class="row" style="gap: 8px">
           <button
@@ -637,9 +638,11 @@
           deep: "深度思考",
           extend: "扩展思考",
         };
-        // 排名数据在 rankings.json（按效果顺序的文件名数组），加载后动态排序；
+        // 排名数据在 rankings.json（按效果顺序的 {file, note} 数组），加载后动态排序；
+        // note 为该作品的效果评测理由，点击图片放大时展示。
         // 缺失或新条目不在榜内时按 entries.json 原顺序垫底。
         var rankOf = {};
+        var noteOf = {};
         var grid = document.getElementById("gallery-grid");
         var bar = document.querySelector(".filter-bar");
         var visible = [];
@@ -719,6 +722,10 @@
             t.dataset.thinkLabel +
             " · " +
             t.dataset.date;
+          var note = noteOf[t.dataset.src] || "";
+          var noteEl = document.getElementById("viewer-note");
+          noteEl.textContent = note;
+          noteEl.style.display = note ? "" : "none";
         }
 
         // 筛选：事件委托，卡片异步渲染后依然有效
@@ -779,8 +786,11 @@
           .then(function (results) {
             var data = results[0];
             rankOf = {};
-            results[1].forEach(function (f, i) {
+            noteOf = {};
+            results[1].forEach(function (item, i) {
+              var f = item.file || item;
               rankOf[f] = i + 1;
+              noteOf[f] = item.note || "";
             });
             // 按效果排行榜排序；不在榜内的条目保持原顺序垫底
             data.sort(function (a, b) {

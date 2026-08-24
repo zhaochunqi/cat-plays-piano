@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGradient" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#FDFEFE" />
+      <stop offset="60%" stop-color="#EAEDED" />
+      <stop offset="100%" stop-color="#D5D8DC" />
+    </radialGradient>
+
+    <!-- Rug Gradient -->
+    <radialGradient id="rugGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#C0392B" />
+      <stop offset="90%" stop-color="#922B21" />
+      <stop offset="100%" stop-color="#7B241C" />
+    </radialGradient>
+
+    <!-- Piano Polish Gradient -->
+    <linearGradient id="pianoBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2C2C2C" />
+      <stop offset="10%" stop-color="#1A1A1A" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+
+    <!-- Sparkle -->
+    <g id="sparkle">
+      <path d="M0,-8 Q0,0 8,0 Q0,0 0,8 Q0,0 -8,0 Q0,0 0,-8 Z" fill="#F1C40F" />
+    </g>
+
+    <!-- Musical Notes -->
+    <g id="eighth-note">
+      <ellipse cx="10" cy="10" rx="7" ry="5" fill="#2C3E50" transform="rotate(-20 10 10)"/>
+      <line x1="16" y1="8" x2="16" y2="-20" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M 15 -18 Q 30 -10, 25 5 Q 22 -3, 15 -3 Z" fill="#2C3E50"/>
+    </g>
+
+    <g id="beamed-note">
+      <ellipse cx="0" cy="10" rx="7" ry="5" fill="#2C3E50" transform="rotate(-20 0 10)"/>
+      <ellipse cx="25" cy="5" rx="7" ry="5" fill="#2C3E50" transform="rotate(-20 25 5)"/>
+      <line x1="6" y1="8" x2="6" y2="-20" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="31" y1="3" x2="31" y2="-25" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="5,-18 32,-23 32,-17 5,-12" fill="#2C3E50"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)" />
+
+  <!-- Floor Line -->
+  <line x1="0" y1="460" x2="800" y2="460" stroke="#BDC3C7" stroke-width="2" />
+
+  <!-- Rug -->
+  <ellipse cx="400" cy="475" rx="320" ry="45" fill="url(#rugGradient)" opacity="0.9" />
+  <ellipse cx="400" cy="475" rx="335" ry="52" fill="none" stroke="#E67E22" stroke-width="2" stroke-dasharray="5,5" opacity="0.6"/>
+
+  <!-- Magic Musical Swirls -->
+  <path d="M 450 250 C 450 120, 750 150, 650 30 C 550 -50, 250 50, 300 150 C 350 250, 200 150, 150 50" fill="none" stroke="#F1C40F" stroke-width="2" stroke-dasharray="15 10" opacity="0.4" />
+  <path d="M 420 260 C 420 180, 550 220, 600 100 C 650 -20, 400 -20, 350 100" fill="none" stroke="#9B59B6" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.4" />
+
+  <!-- ================= PIANO ================= -->
+  <g id="piano">
+    <!-- Far Back Leg -->
+    <rect x="250" y="280" width="12" height="180" fill="#0A0A0A" rx="2" />
+    <ellipse cx="256" cy="460" rx="10" ry="4" fill="#D4AF37" />
+
+    <!-- Piano Inner Frame (Gold) -->
+    <polygon points="120,240 400,240 370,225 140,225" fill="#B8860B" />
+    <line x1="145" y1="230" x2="360" y2="230" stroke="#555" stroke-width="1" />
+    <line x1="140" y1="235" x2="380" y2="235" stroke="#555" stroke-width="1" />
+
+    <!-- Open Lid -->
+    <polygon points="110,245 420,50 435,55 120,250" fill="#151515" />
+    <!-- Lid Reflection -->
+    <polygon points="125,240 400,65 410,70 140,245" fill="#333" opacity="0.3"/>
+
+    <!-- Lid Prop Stick -->
+    <line x1="330" y1="240" x2="360" y2="105" stroke="#111" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Piano Main Body -->
+    <path d="M 100 245 C 160 245, 410 245, 430 245 L 430 300 C 380 325, 200 330, 100 290 Z" fill="url(#pianoBody)" />
+
+    <!-- Body Highlights -->
+    <path d="M 110 252 C 160 252, 400 252, 420 252" fill="none" stroke="#444" stroke-width="2" opacity="0.5"/>
+    <path d="M 110 285 C 200 320, 370 315, 420 295" fill="none" stroke="#000" stroke-width="4" opacity="0.8"/>
+
+    <!-- Pedal Lyre Box -->
+    <rect x="280" y="300" width="14" height="140" fill="#151515" />
+    <rect x="270" y="440" width="34" height="8" fill="#151515" rx="3"/>
+    <!-- Pedals -->
+    <rect x="275" y="448" width="6" height="15" fill="#D4AF37" rx="2" transform="rotate(15 275 448)"/>
+    <rect x="284" y="448" width="6" height="15" fill="#D4AF37" rx="2"/>
+    <rect x="293" y="448" width="6" height="15" fill="#D4AF37" rx="2" transform="rotate(-15 293 448)"/>
+
+    <!-- Front Leg (Left) -->
+    <rect x="180" y="300" width="16" height="175" fill="url(#pianoBody)" rx="3" />
+    <polygon points="175,300 200,300 196,330 180,330" fill="#050505"/><!-- Leg cap -->
+    <ellipse cx="188" cy="475" rx="12" ry="5" fill="#D4AF37" />
+
+    <!-- Front Leg (Right, near keyboard) -->
+    <rect x="400" y="295" width="16" height="180" fill="url(#pianoBody)" rx="3" />
+    <polygon points="395,295 420,295 416,325 400,325" fill="#050505"/><!-- Leg cap -->
+    <ellipse cx="408" cy="475" rx="12" ry="5" fill="#D4AF37" />
+
+    <!-- Keyboard Block -->
+    <polygon points="420,240 450,245 445,260 415,255" fill="#151515" />
+
+    <!-- Keys (3D representation) -->
+    <polygon points="415,238 475,242 465,252 405,248" fill="#FDFEFE" />
+    <polygon points="405,248 465,252 460,255 405,251" fill="#D5D8DC" /><!-- Key fronts -->
+
+    <!-- Black Keys (Lines for scale) -->
+    <line x1="412" y1="239" x2="435" y2="246" stroke="#111" stroke-width="2"/>
+    <line x1="418" y1="239" x2="442" y2="247" stroke="#111" stroke-width="2"/>
+    <line x1="428" y1="240" x2="450" y2="248" stroke="#111" stroke-width="2"/>
+    <line x1="434" y1="240" x2="456" y2="249" stroke="#111" stroke-width="2"/>
+    <line x1="440" y1="241" x2="462" y2="250" stroke="#111" stroke-width="2"/>
+
+    <!-- Music Stand -->
+    <polygon points="360,240 330,160 350,155 380,240" fill="#151515" />
+    <!-- Sheet Music -->
+    <g transform="rotate(-15 340 170)">
+      <rect x="330" y="150" width="45" height="65" fill="#FDFEFE" rx="2" />
+      <rect x="333" y="153" width="39" height="59" fill="none" stroke="#BDC3C7" stroke-width="0.5"/>
+      <line x1="335" y1="165" x2="370" y2="165" stroke="#333" stroke-width="1"/>
+      <line x1="335" y1="170" x2="370" y2="170" stroke="#333" stroke-width="1"/>
+      <line x1="335" y1="175" x2="370" y2="175" stroke="#333" stroke-width="1"/>
+
+      <line x1="335" y1="190" x2="370" y2="190" stroke="#333" stroke-width="1"/>
+      <line x1="335" y1="195" x2="370" y2="195" stroke="#333" stroke-width="1"/>
+      <line x1="335" y1="200" x2="370" y2="200" stroke="#333" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- ================= CAT AND BENCH ================= -->
+
+  <!-- Bench Back Leg -->
+  <rect x="650" y="320" width="12" height="150" fill="#3E2723" rx="2" />
+
+  <!-- Cat Tail (Wrapping behind bench) -->
+  <path d="M 640 310 C 720 330, 750 420, 680 460 C 650 475, 620 465, 630 440" fill="none" stroke="#E67E22" stroke-width="18" stroke-linecap="round" />
+  <!-- Tail Stripes -->
+  <path d="M 672 350 L 690 355 M 685 380 L 702 380 M 680 415 L 695 410 M 650 455 L 660 440" stroke="#D35400" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Bench Front Leg -->
+  <rect x="560" y="330" width="14" height="145" fill="#4E342E" rx="2" />
+  <rect x="620" y="325" width="14" height="150" fill="#4E342E" rx="2" />
+
+  <!-- Bench Cushion -->
+  <rect x="530" y="310" width="130" height="25" fill="#8E44AD" rx="6" />
+  <rect x="530" y="310" width="130" height="10" fill="#9B59B6" rx="6" /><!-- Cushion highlight -->
+
+  <!-- Bench Knobs/Details -->
+  <circle cx="567" cy="330" r="4" fill="#D4AF37"/>
+  <circle cx="627" cy="330" r="4" fill="#D4AF37"/>
+
+  <!-- Cat Body -->
+  <g id="cat">
+    <!-- Hind Leg / Hip -->
+    <ellipse cx="615" cy="280" rx="45" ry="40" fill="#E67E22" />
+    <path d="M 610 250 C 650 250, 650 310, 610 310" fill="none" stroke="#D35400" stroke-width="5" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- Torso -->
+    <ellipse cx="590" cy="225" rx="38" ry="55" fill="#E67E22" transform="rotate(-15 590 225)" />
+
+    <!-- Belly (White/Lighter) -->
+    <ellipse cx="575" cy="235" rx="22" ry="45" fill="#FAD7A1" transform="rotate(-15 575 235)" />
+
+    <!-- Far Arm (Left) -->
+    <path d="M 570 195 Q 520 220, 465 238 L 460 248 Q 510 245, 550 215 Z" fill="#D35400" />
+    <!-- Far Paw (White) -->
+    <ellipse cx="463" cy="242" rx="10" ry="7" fill="#FDFEFE" transform="rotate(-10 463 242)"/>
+
+    <!-- Near Arm (Right) -->
+    <path d="M 590 200 Q 530 225, 475 242 L 470 253 Q 530 250, 580 225 Z" fill="#E67E22" />
+    <!-- Near Paw (White) -->
+    <ellipse cx="473" cy="247" rx="10" ry="7" fill="#FDFEFE" transform="rotate(-10 473 247)"/>
+
+    <!-- Head Base -->
+    <circle cx="560" cy="150" r="38" fill="#E67E22" />
+
+    <!-- Far Ear -->
+    <polygon points="535,125 515,85 555,110" fill="#D35400" />
+    <!-- Near Ear -->
+    <polygon points="565,115 575,70 600,115" fill="#E67E22" />
+    <polygon points="572,110 577,85 592,110" fill="#FAD7A1" /><!-- Inner Ear -->
+
+    <!-- Cat Face Details -->
+    <!-- Snout / Cheeks -->
+    <ellipse cx="535" cy="162" rx="16" ry="12" fill="#FAD7A1" />
+    <ellipse cx="545" cy="165" rx="14" ry="11" fill="#FAD7A1" />
+
+    <!-- Nose -->
+    <circle cx="525" cy="158" r="4.5" fill="#E74C3C" />
+
+    <!-- Mouth -->
+    <path d="M 525 162 Q 530 170, 535 168 Q 540 172, 545 165" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Eyes (Closed in blissful concentration) -->
+    <path d="M 533 145 Q 543 140, 552 147" fill="none" stroke="#2C3E50" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Whiskers -->
+    <line x1="530" y1="165" x2="490" y2="158" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="532" y1="170" x2="492" y2="168" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="535" y1="175" x2="495" y2="178" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Red Bowtie -->
+    <g transform="translate(562, 192)">
+      <polygon points="0,0 -16,-12 -16,12" fill="#C0392B" />
+      <polygon points="0,0 16,-12 16,12" fill="#C0392B" />
+      <circle cx="0" cy="0" r="5" fill="#E74C3C" />
+    </g>
+
+    <!-- Cat Stripes (Head) -->
+    <path d="M 550 115 L 555 130 M 560 112 L 565 128 M 570 115 L 575 130" stroke="#D35400" stroke-width="3" stroke-linecap="round"/>
+    <!-- Cat Stripes (Back) -->
+    <path d="M 622 200 L 610 220 M 627 215 L 615 235 M 628 235 L 615 255" stroke="#D35400" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- ================= MAGIC & MUSIC ================= -->
+  <!-- Sparkles -->
+  <use href="#sparkle" x="380" y="100" transform="scale(0.8)" />
+  <use href="#sparkle" x="480" y="200" transform="scale(1.2)" />
+  <use href="#sparkle" x="520" y="50" transform="scale(0.6)" />
+  <use href="#sparkle" x="660" y="120" transform="scale(0.9)" />
+  <use href="#sparkle" x="250" y="120" transform="scale(0.7)" />
+
+  <!-- Notes on the Swirl -->
+  <use href="#eighth-note" x="430" y="160" />
+  <use href="#beamed-note" x="480" y="90" transform="rotate(15 480 90)" />
+  <use href="#eighth-note" x="580" y="60" transform="rotate(-15 580 60)"/>
+  <use href="#beamed-note" x="650" y="130" transform="rotate(25 650 130)" />
+  <use href="#eighth-note" x="320" y="60" transform="rotate(10 320 60)"/>
+  <use href="#beamed-note" x="220" y="150" transform="rotate(-20 220 150)"/>
+  <use href="#eighth-note" x="370" y="210" transform="scale(0.8) rotate(-10 370 210)"/>
+
+</svg>

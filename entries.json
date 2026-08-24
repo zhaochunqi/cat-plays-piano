@@ -214,5 +214,11 @@
         "thinking": "none",
         "date": "2026-08-25",
         "file": "entries/grok-4.5-none-2026-08-25.svg"
+    },
+    {
+        "model": "gemini-3.1-pro",
+        "thinking": "extend",
+        "date": "2026-08-25",
+        "file": "entries/gemini-3.1-pro-extend-2026-08-25.svg"
     }
 ]

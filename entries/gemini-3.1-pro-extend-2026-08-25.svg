@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Lighting and Gradients -->
+    <radialGradient id="candleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.6" />
+    </radialGradient>
+
+    <linearGradient id="magicSwirl" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#fcd34d" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Music Notes Reusables -->
+    <g id="eighth">
+      <ellipse cx="0" cy="0" rx="5" ry="3.5" fill="#fcd34d" transform="rotate(-20)" />
+      <line x1="4" y1="0" x2="4" y2="-22" stroke="#fcd34d" stroke-width="1.5" />
+      <path d="M 4 -22 C 12 -22, 16 -15, 16 -5 C 13 -10, 8 -10, 4 -12" fill="#fcd34d" />
+    </g>
+
+    <g id="sixteenth">
+      <ellipse cx="0" cy="0" rx="5" ry="3.5" fill="#fcd34d" transform="rotate(-20)" />
+      <ellipse cx="16" cy="-4" rx="5" ry="3.5" fill="#fcd34d" transform="rotate(-20 16 -4)" />
+      <line x1="4" y1="0" x2="4" y2="-24" stroke="#fcd34d" stroke-width="1.5" />
+      <line x1="20" y1="-4" x2="20" y2="-28" stroke="#fcd34d" stroke-width="1.5" />
+      <polygon points="3,-24 20,-28 20,-23 3,-19" fill="#fcd34d" />
+      <polygon points="3,-18 20,-22 20,-17 3,-13" fill="#fcd34d" />
+    </g>
+
+    <path id="star" d="M0,-5 L1,-1 L5,0 L1,1 L0,5 L-1,1 L-5,0 L-1,-1 Z" fill="#fcd34d" />
+  </defs>
+
+  <!-- Background Room -->
+  <rect x="0" y="0" width="800" height="600" fill="#1e1b26" />
+
+  <!-- Window & Night Sky -->
+  <g id="window">
+    <rect x="80" y="60" width="300" height="230" fill="#0f172a" rx="8" stroke="#111827" stroke-width="10"/>
+    <circle cx="170" cy="130" r="32" fill="#fef08a" />
+    <!-- Moon Craters -->
+    <circle cx="160" cy="120" r="6" fill="#fde047" opacity="0.6" />
+    <circle cx="182" cy="142" r="4" fill="#fde047" opacity="0.6" />
+    <circle cx="155" cy="140" r="7" fill="#fde047" opacity="0.5" />
+    <!-- Stars -->
+    <circle cx="280" cy="100" r="1.5" fill="#fff" opacity="0.8" />
+    <circle cx="330" cy="170" r="2" fill="#fff" opacity="0.6" />
+    <circle cx="240" cy="220" r="1.5" fill="#fff" opacity="0.7" />
+    <circle cx="210" cy="90" r="2" fill="#fff" opacity="0.9" />
+    <circle cx="120" cy="240" r="1" fill="#fff" opacity="0.5" />
+    <circle cx="340" cy="120" r="1.5" fill="#fff" opacity="0.8" />
+    <!-- Window Sill -->
+    <rect x="70" y="290" width="320" height="12" fill="#334155" rx="4" />
+  </g>
+
+  <!-- Floor and Rug -->
+  <g id="floor">
+    <rect x="0" y="450" width="800" height="150" fill="#2a1b24" />
+    <rect x="0" y="440" width="800" height="10" fill="#150d12" />
+    <ellipse cx="400" cy="525" rx="350" ry="60" fill="#592330" />
+    <ellipse cx="400" cy="525" rx="335" ry="50" fill="#8b3a4a" />
+    <!-- Ambient Floor Shadow -->
+    <ellipse cx="400" cy="530" rx="280" ry="30" fill="#000" opacity="0.4" />
+  </g>
+
+  <!-- Piano Back Elements -->
+  <g id="piano-back">
+    <!-- Back Left Leg -->
+    <rect x="180" y="380" width="16" height="135" fill="#050505" />
+    <circle cx="188" cy="515" r="6" fill="#d4af37" />
+    <!-- Middle Leg -->
+    <rect x="280" y="380" width="16" height="140" fill="#0a0a0a" />
+    <circle cx="288" cy="520" r="6" fill="#d4af37" />
+    <!-- Prop Stick -->
+    <line x1="280" y1="320" x2="210" y2="210" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+    <!-- Open Lid -->
+    <path d="M 320 320 L 120 150 L 135 140 L 335 320 Z" fill="#0a0a0a" />
+    <path d="M 320 320 L 120 150 L 125 145 L 325 320 Z" fill="#222" />
+  </g>
+
+  <!-- Piano Main Body -->
+  <g id="piano-body">
+    <path d="M 120 320 L 480 320 L 480 355 C 350 415, 160 405, 120 355 Z" fill="#111" />
+    <path d="M 120 320 L 480 320 L 480 325 C 350 325, 160 325, 120 325 Z" fill="#333" />
+
+    <!-- Pedal Lyre -->
+    <rect x="330" y="390" width="6" height="90" fill="#111" />
+    <rect x="344" y="390" width="6" height="90" fill="#111" />
+    <rect x="325" y="475" width="30" height="15" fill="#050505" />
+    <rect x="330" y="485" width="6" height="15" rx="3" fill="#d4af37" />
+    <rect x="344" y="485" width="6" height="15" rx="3" fill="#d4af37" />
+  </g>
+
+  <!-- Keyboard and Sheet Music -->
+  <g id="piano-keyboard">
+    <!-- Keyboard Base -->
+    <rect x="470" y="320" width="80" height="25" fill="#1a1a1a" rx="2"/>
+    <!-- White Keys -->
+    <rect x="475" y="315" width="70" height="7" fill="#f8f9fa" stroke="#495057" stroke-width="0.5" />
+    <path d="M 480 315 v 7 M 485 315 v 7 M 490 315 v 7 M 495 315 v 7
+             M 500 315 v 7 M 505 315 v 7 M 510 315 v 7 M 515 315 v 7
+             M 520 315 v 7 M 525 315 v 7 M 530 315 v 7 M 535 315 v 7
+             M 540 315 v 7 M 545 315 v 7" stroke="#ced4da" stroke-width="1" />
+    <!-- Black Keys -->
+    <path d="M 482 315 v 4 M 487 315 v 4 M 497 315 v 4 M 502 315 v 4
+             M 507 315 v 4 M 517 315 v 4 M 522 315 v 4 M 532 315 v 4
+             M 537 315 v 4" stroke="#212529" stroke-width="2.5" />
+
+    <!-- Music Stand -->
+    <polygon points="380,240 410,230 450,320 400,320" fill="#151515" />
+    <!-- Sheet Music -->
+    <polygon points="390,250 410,240 440,315 415,315" fill="#fdfbf7" />
+    <path d="M 395 260 L 412 253 M 398 270 L 417 263 M 401 280 L 422 273
+             M 404 290 L 427 283 M 407 300 L 432 293" stroke="#999" stroke-width="1" />
+  </g>
+
+  <!-- Piano Foreground Elements -->
+  <g id="piano-front">
+    <!-- Front Leg -->
+    <rect x="440" y="350" width="18" height="175" fill="#1a1a1a" />
+    <circle cx="449" cy="525" r="7" fill="#d4af37" />
+    <!-- Candle -->
+    <polygon points="360,320 380,320 375,305 365,305" fill="#d4af37" />
+    <rect x="367" y="275" width="6" height="30" fill="#fdfbf7" rx="2" />
+    <path d="M 370 275 Q 365 265 370 260 Q 375 265 370 275" fill="#f39c12" />
+    <!-- Candle Glow -->
+    <circle cx="370" cy="265" r="45" fill="url(#candleGlow)" pointer-events="none"/>
+  </g>
+
+  <!-- Bench -->
+  <g id="bench">
+    <!-- Back Leg -->
+    <rect x="595" y="400" width="12" height="120" fill="#050505" />
+    <!-- Seat -->
+    <rect x="570" y="390" width="110" height="15" rx="3" fill="#111" />
+    <!-- Cushion -->
+    <rect x="572" y="378" width="106" height="12" rx="4" fill="#8b3a4a" />
+    <!-- Front Leg -->
+    <rect x="655" y="400" width="12" height="125" fill="#1a1a1a" />
+  </g>
+
+  <!-- Cat -->
+  <g id="cat">
+    <!-- Tail (Wraps behind bench) -->
+    <path d="M 660 380 Q 740 400 700 480 Q 670 530 630 490" stroke="#e67e22" stroke-width="16" stroke-linecap="round" fill="none" />
+
+    <!-- Back Arm (Reaching for keys, behind body) -->
+    <path d="M 610 290 Q 560 280 515 315" stroke="#d35400" stroke-width="16" stroke-linecap="round" fill="none" />
+    <circle cx="515" cy="315" r="8" fill="#fff" />
+
+    <!-- Left Ear (Back) -->
+    <polygon points="595,225 615,215 620,195" fill="#d35400" />
+
+    <!-- Torso -->
+    <ellipse cx="620" cy="320" rx="42" ry="65" transform="rotate(-15 620 320)" fill="#e67e22" />
+
+    <!-- Tabby Stripes on Back -->
+    <path d="M 650 280 Q 660 285 660 295" stroke="#d35400" stroke-width="4" stroke-linecap="round" fill="none" />
+    <path d="M 655 310 Q 665 315 662 325" stroke="#d35400" stroke-width="4" stroke-linecap="round" fill="none" />
+    <path d="M 648 340 Q 658 345 650 355" stroke="#d35400" stroke-width="4" stroke-linecap="round" fill="none" />
+
+    <!-- Belly/Chest White -->
+    <ellipse cx="600" cy="300" rx="18" ry="35" transform="rotate(-25 600 300)" fill="#fff" />
+
+    <!-- Front Leg (Sitting) -->
+    <ellipse cx="635" cy="355" rx="25" ry="35" transform="rotate(-25 635 355)" fill="#e67e22" />
+    <ellipse cx="615" cy="380" rx="18" ry="10" fill="#fff" />
+
+    <!-- Head -->
+    <circle cx="580" cy="240" r="32" fill="#e67e22" />
+
+    <!-- Tabby Stripes on Head -->
+    <path d="M 575 210 L 577 225 L 580 210 Z" fill="#d35400" />
+    <path d="M 583 210 L 582 225 L 586 210 Z" fill="#d35400" />
+
+    <!-- Right Ear (Front) -->
+    <polygon points="565,215 585,210 575,180" fill="#e67e22" />
+    <polygon points="570,212 580,210 576,188" fill="#f5b7b1" />
+
+    <!-- Snout & Face Details -->
+    <ellipse cx="560" cy="250" rx="18" ry="14" fill="#fff" />
+    <circle cx="545" cy="248" r="4" fill="#e74c3c" />
+
+    <!-- Closed Blissful Eye -->
+    <path d="M 555 235 Q 562 230 568 235" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+    <!-- Mouth -->
+    <path d="M 545 255 Q 552 262 558 255" stroke="#111" stroke-width="1.5" stroke-linecap="round" fill="none" />
+
+    <!-- Whiskers -->
+    <path d="M 555 248 Q 525 240 510 242" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none" />
+    <path d="M 555 253 Q 525 255 505 255" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none" />
+    <path d="M 555 258 Q 525 270 510 268" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none" />
+
+    <!-- Teal Bowtie -->
+    <path d="M 588 285 L 575 275 L 575 295 Z" fill="#00adb5" />
+    <path d="M 588 285 L 601 275 L 601 295 Z" fill="#00adb5" />
+    <circle cx="588" cy="285" r="4" fill="#00adb5" />
+    <circle cx="588" cy="285" r="2" fill="#008c93" />
+
+    <!-- Front Arm -->
+    <path d="M 615 315 Q 570 305 530 320" stroke="#e67e22" stroke-width="18" stroke-linecap="round" fill="none" />
+    <circle cx="530" cy="320" r="9" fill="#fff" />
+  </g>
+
+  <!-- Magic Music Notes -->
+  <g id="magic-music">
+    <path d="M 480 300 C 450 150, 650 150, 550 50" fill="none" stroke="url(#magicSwirl)" stroke-width="3" stroke-dasharray="6, 8" stroke-linecap="round" />
+
+    <!-- Floating Notes -->
+    <use href="#eighth" x="480" y="240" transform="rotate(-15 480 240)" />
+    <use href="#sixteenth" x="530" y="160" transform="rotate(10 530 160)" />
+    <use href="#eighth" x="490" y="100" transform="rotate(-25 490 100)" />
+    <use href="#sixteenth" x="570" y="70" transform="rotate(20 570 70)" />
+
+    <!-- Sparkles -->
+    <use href="#star" x="460" y="270" transform="scale(0.8)" />
+    <use href="#star" x="510" y="200" transform="scale(1.2)" />
+    <use href="#star" x="550" y="120" />
+    <use href="#star" x="500" y="60" transform="scale(0.9)" />
+    <use href="#star" x="600" y="90" transform="scale(1.5)" />
+    <use href="#star" x="540" y="210" transform="scale(0.6)" />
+    <use href="#star" x="470" y="150" transform="scale(0.7)" />
+  </g>
+
+  <!-- Foreground Vignette Overlay for Depth -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#vignette)" pointer-events="none" />
+</svg>

@@ -256,5 +256,17 @@
         "thinking": "high",
         "date": "2026-08-25",
         "file": "entries/hy3-high-2026-08-25.svg"
+    },
+    {
+        "model": "glm-5.3",
+        "thinking": "high",
+        "date": "2026-08-25",
+        "file": "entries/glm-5.3-high-2026-08-25.svg"
+    },
+    {
+        "model": "minimax-m3",
+        "thinking": "none",
+        "date": "2026-08-25",
+        "file": "entries/minimax-m3-none-2026-08-25.svg"
     }
 ]

@@ -1,0 +1,282 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde8c4"/>
+      <stop offset="1" stop-color="#f6c98a"/>
+    </linearGradient>
+    <linearGradient id="pianoBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a1a0a"/>
+      <stop offset="1" stop-color="#180703"/>
+    </linearGradient>
+    <linearGradient id="pianoLid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a2e15"/>
+      <stop offset="1" stop-color="#2a1208"/>
+    </linearGradient>
+    <linearGradient id="catFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb866"/>
+      <stop offset="0.6" stop-color="#f49038"/>
+      <stop offset="1" stop-color="#d9701e"/>
+    </linearGradient>
+    <linearGradient id="benchWood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7a4a25"/>
+      <stop offset="1" stop-color="#4a2812"/>
+    </linearGradient>
+    <radialGradient id="floor" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0" stop-color="#d4a472"/>
+      <stop offset="1" stop-color="#a87a4a"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- Wall accent: soft circle (window light) -->
+  <circle cx="660" cy="120" r="60" fill="#fff4d6" opacity="0.6"/>
+
+  <!-- Floor -->
+  <rect y="500" width="800" height="100" fill="url(#floor)"/>
+  <line x1="0" y1="500" x2="800" y2="500" stroke="#7a5530" stroke-width="2" opacity="0.5"/>
+
+  <!-- ============== PIANO ============== -->
+  <!-- Piano back panel / lid -->
+  <rect x="80" y="220" width="640" height="40" rx="6" fill="url(#pianoLid)"/>
+  <rect x="100" y="210" width="600" height="14" rx="4" fill="#6a3818"/>
+  <!-- gold detail -->
+  <rect x="380" y="216" width="40" height="3" fill="#e8c060"/>
+
+  <!-- Piano main body -->
+  <rect x="80" y="260" width="640" height="240" rx="10" fill="url(#pianoBody)"/>
+
+  <!-- Brand plate -->
+  <rect x="340" y="275" width="120" height="22" rx="3" fill="#2a1208" stroke="#e8c060" stroke-width="1"/>
+  <text x="400" y="291" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#e8c060" font-style="italic">Meowzart</text>
+
+  <!-- Keys panel background (the inset where keys live) -->
+  <rect x="100" y="310" width="600" height="170" fill="#f8f1de" stroke="#1a0a05" stroke-width="2"/>
+
+  <!-- White keys (14 of them) -->
+  <g>
+    <rect x="102" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="144" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="186" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="228" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="270" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="312" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="354" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="396" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="438" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="480" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="522" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="564" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="606" y="312" width="42" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+    <rect x="648" y="312" width="52" height="166" fill="#fdfaf0" stroke="#1a0a05" stroke-width="1.2"/>
+  </g>
+
+  <!-- Subtle key shadows -->
+  <g opacity="0.15" fill="#000">
+    <rect x="102" y="465" width="42" height="13"/>
+    <rect x="144" y="465" width="42" height="13"/>
+    <rect x="186" y="465" width="42" height="13"/>
+    <rect x="228" y="465" width="42" height="13"/>
+    <rect x="270" y="465" width="42" height="13"/>
+    <rect x="312" y="465" width="42" height="13"/>
+    <rect x="354" y="465" width="42" height="13"/>
+    <rect x="396" y="465" width="42" height="13"/>
+    <rect x="438" y="465" width="42" height="13"/>
+    <rect x="480" y="465" width="42" height="13"/>
+    <rect x="522" y="465" width="42" height="13"/>
+    <rect x="564" y="465" width="42" height="13"/>
+    <rect x="606" y="465" width="42" height="13"/>
+    <rect x="648" y="465" width="52" height="13"/>
+  </g>
+
+  <!-- Black keys (grouped in 2s and 3s) -->
+  <g fill="#0a0301" stroke="#000" stroke-width="0.5">
+    <!-- 1st group: 2 black keys -->
+    <rect x="167" y="312" width="22" height="100" rx="1"/>
+    <rect x="209" y="312" width="22" height="100" rx="1"/>
+    <!-- 2nd group: 3 black keys -->
+    <rect x="293" y="312" width="22" height="100" rx="1"/>
+    <rect x="335" y="312" width="22" height="100" rx="1"/>
+    <rect x="377" y="312" width="22" height="100" rx="1"/>
+    <!-- 3rd group: 2 black keys -->
+    <rect x="461" y="312" width="22" height="100" rx="1"/>
+    <rect x="503" y="312" width="22" height="100" rx="1"/>
+    <!-- 4th group: 3 black keys -->
+    <rect x="587" y="312" width="22" height="100" rx="1"/>
+    <rect x="629" y="312" width="22" height="100" rx="1"/>
+    <rect x="671" y="312" width="22" height="100" rx="1"/>
+  </g>
+
+  <!-- Black key highlights -->
+  <g fill="#fff" opacity="0.1">
+    <rect x="167" y="312" width="3" height="100"/>
+    <rect x="209" y="312" width="3" height="100"/>
+    <rect x="293" y="312" width="3" height="100"/>
+    <rect x="335" y="312" width="3" height="100"/>
+    <rect x="377" y="312" width="3" height="100"/>
+    <rect x="461" y="312" width="3" height="100"/>
+    <rect x="503" y="312" width="3" height="100"/>
+    <rect x="587" y="312" width="3" height="100"/>
+    <rect x="629" y="312" width="3" height="100"/>
+    <rect x="671" y="312" width="3" height="100"/>
+  </g>
+
+  <!-- Piano legs -->
+  <rect x="100" y="500" width="20" height="20" fill="#1a0a05"/>
+  <rect x="680" y="500" width="20" height="20" fill="#1a0a05"/>
+  <rect x="90" y="500" width="40" height="6" fill="#1a0a05"/>
+  <rect x="670" y="500" width="40" height="6" fill="#1a0a05"/>
+
+  <!-- ============== BENCH ============== -->
+  <ellipse cx="400" cy="508" rx="120" ry="10" fill="#000" opacity="0.25"/>
+  <rect x="280" y="478" width="240" height="22" rx="6" fill="url(#benchWood)"/>
+  <rect x="280" y="478" width="240" height="6" rx="3" fill="#a06840"/>
+  <rect x="295" y="500" width="14" height="50" fill="#3a1f0a"/>
+  <rect x="491" y="500" width="14" height="50" fill="#3a1f0a"/>
+
+  <!-- ============== CAT ============== -->
+  <g filter="url(#softShadow)">
+    <!-- Tail (behind body) -->
+    <path d="M 460 430 Q 540 410 560 350 Q 575 290 545 240 Q 530 220 510 235"
+          stroke="url(#catFur)" stroke-width="26" fill="none" stroke-linecap="round"/>
+    <!-- Tail stripes -->
+    <g stroke="#c66a18" stroke-width="3" fill="none" opacity="0.7">
+      <path d="M 470 425 Q 478 420 485 415"/>
+      <path d="M 510 410 Q 518 405 525 395"/>
+      <path d="M 545 360 Q 552 350 553 340"/>
+      <path d="M 555 300 Q 552 290 545 280"/>
+      <path d="M 535 250 Q 530 240 522 235"/>
+    </g>
+
+    <!-- Body -->
+    <ellipse cx="400" cy="430" rx="85" ry="65" fill="url(#catFur)"/>
+    <!-- Body stripes -->
+    <g stroke="#c66a18" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.75">
+      <path d="M 340 395 Q 345 415 335 445"/>
+      <path d="M 370 388 Q 375 415 365 450"/>
+      <path d="M 400 385 Q 405 415 395 452"/>
+      <path d="M 430 388 Q 435 415 425 450"/>
+      <path d="M 460 395 Q 465 415 455 445"/>
+    </g>
+
+    <!-- Chest tuft -->
+    <ellipse cx="400" cy="395" rx="35" ry="25" fill="#ffd9a8" opacity="0.7"/>
+
+    <!-- Head -->
+    <ellipse cx="400" cy="295" rx="72" ry="65" fill="url(#catFur)"/>
+
+    <!-- Ears -->
+    <path d="M 348 250 L 365 195 L 395 245 Z" fill="url(#catFur)"/>
+    <path d="M 452 250 L 435 195 L 405 245 Z" fill="url(#catFur)"/>
+    <path d="M 354 245 L 367 210 L 388 242 Z" fill="#ffb380"/>
+    <path d="M 446 245 L 433 210 L 412 242 Z" fill="#ffb380"/>
+
+    <!-- Eyes -->
+    <ellipse cx="375" cy="295" rx="11" ry="15" fill="#fff"/>
+    <ellipse cx="425" cy="295" rx="11" ry="15" fill="#fff"/>
+    <ellipse cx="375" cy="297" rx="9" ry="13" fill="#3a8a3a"/>
+    <ellipse cx="425" cy="297" rx="9" ry="13" fill="#3a8a3a"/>
+    <ellipse cx="375" cy="297" rx="3" ry="11" fill="#0a1a0a"/>
+    <ellipse cx="425" cy="297" rx="3" ry="11" fill="#0a1a0a"/>
+    <circle cx="377" cy="291" r="2.5" fill="#fff"/>
+    <circle cx="427" cy="291" r="2.5" fill="#fff"/>
+
+    <!-- Nose -->
+    <path d="M 392 318 L 408 318 L 400 327 Z" fill="#d96b6b"/>
+    <ellipse cx="400" cy="320" rx="1.5" ry="1" fill="#7a2a2a"/>
+
+    <!-- Mouth -->
+    <path d="M 400 327 Q 400 335 392 338" stroke="#3a1f0f" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 400 327 Q 400 335 408 338" stroke="#3a1f0f" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Whiskers -->
+    <g stroke="#3a1f0f" stroke-width="1.2" stroke-linecap="round" fill="none">
+      <line x1="335" y1="320" x2="370" y2="322"/>
+      <line x1="335" y1="328" x2="370" y2="326"/>
+      <line x1="335" y1="336" x2="370" y2="330"/>
+      <line x1="465" y1="320" x2="430" y2="322"/>
+      <line x1="465" y1="328" x2="430" y2="326"/>
+      <line x1="465" y1="336" x2="430" y2="330"/>
+    </g>
+
+    <!-- Cheek blush -->
+    <ellipse cx="350" cy="320" rx="10" ry="5" fill="#ff9080" opacity="0.5"/>
+    <ellipse cx="450" cy="320" rx="10" ry="5" fill="#ff9080" opacity="0.5"/>
+
+    <!-- Front legs / paws on keys -->
+    <ellipse cx="345" cy="410" rx="20" ry="28" fill="url(#catFur)"/>
+    <ellipse cx="455" cy="410" rx="20" ry="28" fill="url(#catFur)"/>
+    <!-- Paw beans (touching the keys) -->
+    <ellipse cx="345" cy="430" rx="20" ry="14" fill="#f49038"/>
+    <ellipse cx="455" cy="430" rx="20" ry="14" fill="#f49038"/>
+    <ellipse cx="345" cy="430" rx="18" ry="12" fill="#ffd9a8" opacity="0.6"/>
+    <ellipse cx="455" cy="430" rx="18" ry="12" fill="#ffd9a8" opacity="0.6"/>
+    <!-- Toe lines -->
+    <g stroke="#c66a18" stroke-width="1.2" fill="none" stroke-linecap="round">
+      <line x1="335" y1="426" x2="335" y2="436"/>
+      <line x1="345" y1="428" x2="345" y2="440"/>
+      <line x1="355" y1="426" x2="355" y2="436"/>
+      <line x1="445" y1="426" x2="445" y2="436"/>
+      <line x1="455" y1="428" x2="455" y2="440"/>
+      <line x1="465" y1="426" x2="465" y2="436"/>
+    </g>
+
+    <!-- Leg stripes -->
+    <g stroke="#c66a18" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7">
+      <path d="M 335 395 Q 338 405 333 415"/>
+      <path d="M 355 395 Q 358 405 353 415"/>
+      <path d="M 445 395 Q 448 405 443 415"/>
+      <path d="M 465 395 Q 468 405 463 415"/>
+    </g>
+  </g>
+
+  <!-- Highlight on cat's head -->
+  <ellipse cx="378" cy="260" rx="20" ry="10" fill="#fff" opacity="0.25"/>
+
+  <!-- ============== MUSIC NOTES ============== -->
+  <g fill="#5a3a8c">
+    <!-- Note 1 -->
+    <g transform="translate(150, 130) rotate(-10)">
+      <ellipse cx="0" cy="0" rx="13" ry="9"/>
+      <rect x="10" y="-45" width="3.5" height="45" rx="1"/>
+      <path d="M 13.5 -45 Q 38 -38 32 -15 Q 28 -28 13.5 -22 Z"/>
+    </g>
+    <!-- Note 2 (beamed pair) -->
+    <g transform="translate(580, 80)">
+      <ellipse cx="0" cy="20" rx="11" ry="8"/>
+      <ellipse cx="40" cy="20" rx="11" ry="8"/>
+      <rect x="8" y="-20" width="3" height="40" rx="1"/>
+      <rect x="48" y="-20" width="3" height="40" rx="1"/>
+      <path d="M 8 -20 L 51 -25 L 51 -18 L 8 -13 Z"/>
+    </g>
+    <!-- Note 3 (eighth) -->
+    <g transform="translate(680, 200) rotate(8)">
+      <ellipse cx="0" cy="0" rx="10" ry="7"/>
+      <rect x="7" y="-35" width="3" height="35" rx="1"/>
+      <path d="M 10 -35 Q 28 -30 24 -12" stroke="#5a3a8c" stroke-width="3" fill="none"/>
+    </g>
+    <!-- Small sparkle notes -->
+    <g transform="translate(220, 60)">
+      <ellipse cx="0" cy="0" rx="7" ry="5"/>
+      <rect x="5" y="-25" width="2" height="25" rx="1"/>
+    </g>
+    <g transform="translate(490, 200)">
+      <ellipse cx="0" cy="0" rx="8" ry="6"/>
+      <rect x="6" y="-30" width="2.5" height="30" rx="1"/>
+    </g>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#e8c060" opacity="0.85">
+    <path d="M 280 100 L 283 108 L 291 111 L 283 114 L 280 122 L 277 114 L 269 111 L 277 108 Z"/>
+    <path d="M 600 180 L 602 186 L 608 188 L 602 190 L 600 196 L 598 190 L 592 188 L 598 186 Z"/>
+    <path d="M 120 240 L 122 245 L 127 247 L 122 249 L 120 254 L 118 249 L 113 247 L 118 245 Z"/>
+  </g>
+</svg>

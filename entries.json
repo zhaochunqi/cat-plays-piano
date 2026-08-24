@@ -238,5 +238,17 @@
         "thinking": "none",
         "date": "2026-08-25",
         "file": "entries/laguna-xs-2.1-free-none-2026-08-25.svg"
+    },
+    {
+        "model": "nemotron-3-ultra-free",
+        "thinking": "none",
+        "date": "2026-08-25",
+        "file": "entries/nemotron-3-ultra-free-none-2026-08-25.svg"
+    },
+    {
+        "model": "qwen3.8-max",
+        "thinking": "thinking",
+        "date": "2026-08-25",
+        "file": "entries/qwen3.8-max-thinking-2026-08-25.svg"
     }
 ]

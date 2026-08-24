@@ -9,7 +9,7 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
 
 ## 如何添加新条目
 
-优先用全局 skill `cat-plays-piano`（定义在 [zhaochunqi/skills](https://github.com/zhaochunqi/skills) 仓库）。
+优先用本仓库自带的 skill `.agents/skills/cat-plays-piano/SKILL.md`。
 手动流程：
 
 1. 用目标模型（及思考级别）跑固定 prompt，拿到纯 SVG。

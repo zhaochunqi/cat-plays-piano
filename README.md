@@ -5,7 +5,7 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
 
 线上地址：<https://zhaochunqi.github.io/cat-plays-piano/>
 
-作品按效果排序（`rankings.json`），点击图片放大可查看该作品的效果评测理由。
+作品按 `rankings.json` 的 `order` 键排序；点击图片放大可查看该作品的效果评测理由（note），以及五维评分雷达图（猫 / 钢琴 / 演奏 / 场景 / 细节，各 0–10）。
 
 ## 如何添加新条目
 
@@ -20,9 +20,13 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
    { "model": "…", "thinking": "…", "date": "YYYY-MM-DD", "file": "entries/…" }
    ```
 
-4. commit + push。
+4. 在 `rankings.json` 追加一条 `{ "file", "note", "scores", "order" }`（见下「数据约定」）。
+
+5. commit + push。
 
 ## 数据约定
+
+### `entries.json`（每条作品元信息）
 
 | 字段 | 说明 |
 | --- | --- |
@@ -30,6 +34,16 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
 | `thinking` | 思考级别 `off` / `low` / `medium` / `high` / `xhigh` / `max`，不支持则 `null` |
 | `date` | 生成日期 `YYYY-MM-DD` |
 | `file` | 相对仓库根的路径 |
+
+### `rankings.json`（排序与评分）
+
+| 字段 | 说明 |
+| --- | --- |
+| `file` | 对应 `entries.json` 的 `file` |
 | `note` | 效果评测理由（一句话，点击作品放大时展示） |
+| `scores` | 五维评分 `{ cat, piano, playing, scene, detail }`，各 0–10；仅用于放大视图的雷达图展示，**不参与排序** |
+| `order` | fractional 排序键，升序越小越靠前（No.1）；改排名只改此值即可（插在中间写 `15.37`），无需手动挪数组、无需脚本 |
+
+不在 `rankings.json` 榜单内的条目，页面排序时垫底。
 
 同一模型支持多个思考级别时，每个级别各生成一份，页面内并排对比。

@@ -1,55 +1,93 @@
 ---
 name: cat-plays-piano
-description: 给 cat-plays-piano 画廊仓库添加新条目：用固定 prompt「Generate an SVG of a cat playing a piano.」跑目标模型/思考级别，产出纯 SVG 存入 entries/ 并更新 entries.json，可选更新 rankings.json 效果排名，本地验证后 commit + push。触发：给 cat-plays-piano 加条目 / 加个模型的猫弹钢琴 / 跑一下某模型 thinking level 对比 / cat-plays-piano 新条目 / 重新排名画廊。
+description: >
+  用于维护 cat-plays-piano（LLM SVG 对比画廊）项目的技能。固定 prompt 为
+  "Generate an SVG of a cat playing a piano."，收集各模型/思考级别的产出，
+  经 GitHub Pages 并排展示并按效果排名。在以下场景使用：新增条目、修改
+  rankings.json（排序/评分）、调整 index.html 的画廊或放大视图、调试雷达图、
+  本地预览。编码了 rankings.json 的 {file, note, scores, order} 约定与
+  fractional indexing 排序规则。
 ---
 
-# cat-plays-piano — 添加画廊新条目
+# cat-plays-piano
 
-**核心事实**：仓库在 `~/ghq/github.com/zhaochunqi/cat-plays-piano`，固定 prompt
-**逐字**是 `Generate an SVG of a cat playing a piano.`（不要润色、不要加要求）。
-`entries.json` 是作品数据源（页面自动渲染）；`rankings.json` 是效果排行榜
-（按效果顺序的文件名数组，带 `entries/` 前缀），页面加载后按它动态排序，
-榜首常驻首页首展位。
+LLM 产出对比画廊。固定 prompt，收集不同模型（及思考级别）的纯 SVG 产出，
+按模型分组并排展示，并带主观效果评测与五维雷达图。
 
-## 启动前 5 秒
+线上：<https://zhaochunqi.github.io/cat-plays-piano/>
 
-1. 确认用户给了目标 **model ID** 和 **thinking level**（可能多个级别，都要生成）。
-2. 确认能访问该 model：pi 里对应 provider/model 可用（不确定先问，别猜 ID）。
-3. `cd ~/ghq/github.com/zhaochunqi/cat-plays-piano && git pull --ff-only`，保持干净起点。
+## 固定 prompt（一字不改）
 
-## 流程
+```
+Generate an SVG of a cat playing a piano.
+```
 
-1. **生成**：用 pi-subagents 起 child（指定 `model` 与 thinking level），task 就是逐字
-   prompt，并要求「输出且仅输出 `<svg>…</svg>` 源码」。同一模型多个思考级别 → 每个
-   级别各起一个 child，可并行。
-2. **落盘**：child 返回的源码存为
-   `entries/<model>-<thinking>-<date>.svg`
-   - model 用 pi 的 modelId 原样（如 `ox-alpha-free`），`/` 替换成 `-`。
-   - 模型不支持思考级别时用 `none`。
-   - date 取当天 `YYYY-MM-DD`。
-3. **更新 entries.json**：追加一条（保持数组、合法 JSON）：
+## 新增一条目
 
+1. 用目标模型（及思考级别）跑上面固定 prompt，拿到**纯 SVG**。
+2. 存为 `entries/<model>-<thinking>-<date>.svg`；模型不支持思考级别时用 `none`。
+3. 在 `entries.json` 追加：
    ```json
-   { "model": "ox-alpha-free", "thinking": "high", "date": "2026-08-24",
-     "file": "entries/ox-alpha-free-high-2026-08-24.svg" }
+   { "model": "…", "thinking": "…", "date": "YYYY-MM-DD", "file": "entries/…" }
    ```
+4. 在 `rankings.json` 追加一条（见下）。
+5. commit + push（GitHub Pages 自动构建）。
 
-4. **排名（可选）**：用户要求排名/更新榜单时，把新作品渲染成图逐张目测
-   （headless Chrome 截图联系表即可），按效果（猫的还原度、钢琴结构、
-   构图细节）插入 `rankings.json` 合适位置；不要求排名就追加到末尾，
-   页面对不在榜内的条目自动垫底。注意文件名要带 `entries/` 前缀，
-   与 entries.json 的 `file` 字段完全一致。
-5. **验证**（全过才算完）：
-   - `python3 -c "import xml.dom.minidom; xml.dom.minidom.parse('<file>')"` — SVG 是合法 XML。
-   - `python3 -m json.tool entries.json > /dev/null` — JSON 合法。
-   - 改过 rankings.json 时：`python3 -m json.tool rankings.json > /dev/null`。
-   - `python3 -m http.server 8741` + curl 三个 200：`/`、`/entries.json`、新 svg 路径，然后关掉 server。
-6. **提交**：`git add -A && git commit`，message 形如
-   `feat: add <model>-<thinking> entry`；push 到 main（GitHub Pages 自动发布）。
+## rankings.json 约定（核心）
 
-## 边界
+每条对象：
 
-- 不改 prompt、不加主观评语；卡片元数据只有 No.N / model / thinking / date。
-- 排名与评测理由只进 rankings.json（`[{file, note}]`），不写进 entries.json、不标在 SVG 里。
-- SVG 内容不做"美化"或二次编辑——原样收录各模型的产出，歪了也是数据。
-- 生成失败或模型拒答：跳过并在汇报里说明，不留半成品文件。
+```json
+{
+  "file": "entries/<model>-<thinking>-<date>.svg",
+  "note": "一句话效果评测理由，放大视图展示",
+  "scores": { "cat": 0, "piano": 0, "playing": 0, "scene": 0, "detail": 0 },
+  "order": 1
+}
+```
+
+- **`order`**：fractional 排序键，升序越小越靠前（No.1）。改排名只改这一个值，
+  无需手动挪数组、无需脚本。插在中间写小数即可，例如插在 #15 与 #16 之间写 `15.37`。
+- **`scores`**：五维各 0–10，仅用于放大视图的 Dota 风格雷达图展示，**不参与排序**。
+  维度含义：`cat`=猫、`piano`=钢琴、`playing`=演奏姿态、`scene`=场景氛围、`detail`=细节。
+- **`note`**：点击作品放大时展示的评测理由，保留原样不擅自改写。
+- 不在 `rankings.json` 榜单内的条目，页面排序时垫底（order 视为无穷大）。
+
+## index.html 行为
+
+- 排序：`order` 升序；缺失 order 的条目垫底。
+- 放大视图（`setViewer`）：展示 note + 五维雷达图（`radarSVG()`）+ 综合评分 `total/50`。
+- 雷达图为内联 SVG，无外部依赖。
+
+## 本地预览
+
+项目根目录运行：
+
+```bash
+python3 -m http.server 8123
+```
+
+访问 <http://127.0.0.1:8123/>。
+
+## 可视化核查（给人眼用）
+
+模型自身无法直接看图。需要肉眼比对时，用已装在**隔离 node 工作区**
+（非项目仓库）的 `@resvg/resvg-js` 把 `entries/*.svg` 渲染成 PNG：
+
+```bash
+cd ~/.workbuddy/binaries/node/workspace
+npm ls @resvg/resvg-js   # 确认已装
+# 用 resvg 的 JS API 把每个 svg 输出为 png，再交给用户看
+```
+
+脚本一律放 `/tmp` 或隔离工作区，**不要提交进仓库**。
+
+## 坑（避免回归）
+
+- **雷达图标签裁切**：`radarSVG` 把轴标签放在半径 `R+14`（中心 110,110），
+  右侧「钢琴/演奏」与左侧「场景/细节」会超出默认 `0 0 220 220` viewBox 被静默裁掉。
+  必须用够宽的 viewBox，例如 `"-40 -40 300 300"`（width/height 240），
+  并按 x 相对中心选 `text-anchor`（start/middle/end）。改雷达图时务必先算标签包围盒。
+- **仓库干净**：所有工具/迁移脚本留在 `/tmp` 或 `~/.workbuddy` 隔离区，仓库只保留
+  `index.html`、`entries.json`、`rankings.json`、`entries/`、`README.md` 等源文件。
+- **prompt 不变**：固定 prompt 是项目对比的基础，不要为"更好看"而改写。

@@ -48,6 +48,7 @@ Generate an SVG of a cat playing a piano.
 
 - **`order`**：fractional 排序键，升序越小越靠前（No.1）。改排名只改这一个值，
   无需手动挪数组、无需脚本。插在中间写小数即可，例如插在 #15 与 #16 之间写 `15.37`。
+- **`animated`**：可选布尔；`true` 表示 SVG 含动画（CSS `@keyframes` / SMIL `<animate>`）。画廊卡片与放大视图显示「▶ 动画」徽章，仅作标注、不影响排序与评分。
 - **`scores`**：五维各 0–10，仅用于放大视图的 Dota 风格雷达图展示，**不参与排序**。
   维度含义：`cat`=猫、`piano`=钢琴、`playing`=演奏姿态、`scene`=场景氛围、`detail`=细节。
 - **`note`**：点击作品放大时展示的评测理由，保留原样不擅自改写。

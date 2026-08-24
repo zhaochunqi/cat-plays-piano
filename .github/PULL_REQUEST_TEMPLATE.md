@@ -25,7 +25,7 @@
 
 - [ ] `entries/<model>-<thinking>-<date>.svg` 已放入 `entries/`
 - [ ] `entries.json` 已追加一条 `{ "model", "thinking", "date", "file" }`
-- [ ] `rankings.json` 已追加一条 `{ "file", "note", "scores", "order" }`
+- [ ] `rankings.json` 已追加一条 `{ "file", "note", "scores", "order" }`（含动画作品加 `"animated": true`）
 - [ ] 固定 prompt `Generate an SVG of a cat playing a piano.` 未改动
 - [ ] 未带入任何工具脚本（仅提交源文件）
 

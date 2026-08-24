@@ -154,5 +154,11 @@
     "thinking": "none",
     "date": "2026-08-25",
     "file": "entries/qwen3-8b-none-2026-08-25.svg"
+  },
+  {
+    "model": "LongCat-2.0",
+    "thinking": "none",
+    "date": "2026-08-25",
+    "file": "entries/LongCat-2.0-none-2026-08-25.svg"
   }
 ]

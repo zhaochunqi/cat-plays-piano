@@ -190,5 +190,11 @@
         "thinking": "medium",
         "date": "2026-08-25",
         "file": "entries/glm-5-turbo-medium-2026-08-25.svg"
+    },
+    {
+        "model": "kimi-k3",
+        "thinking": "medium",
+        "date": "2026-08-25",
+        "file": "entries/kimi-k3-medium-2026-08-25.svg"
     }
 ]

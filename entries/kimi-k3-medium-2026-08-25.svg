@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  <ellipse cx="200" cy="290" rx="180" ry="20" fill="#16213e"/>
+
+  <!-- Piano body -->
+  <rect x="60" y="150" width="280" height="90" rx="8" fill="#0d0d0d"/>
+  <rect x="60" y="150" width="280" height="14" rx="6" fill="#2b2b2b"/>
+  <!-- Music stand -->
+  <rect x="150" y="115" width="100" height="8" rx="3" fill="#2b2b2b"/>
+  <!-- Sheet music -->
+  <rect x="158" y="90" width="84" height="30" rx="3" fill="#f5f0e6"/>
+  <circle cx="172" cy="102" r="2.5" fill="#333"/><line x1="175" y1="102" x2="175" y2="110" stroke="#333" stroke-width="1.2"/>
+  <circle cx="188" cy="108" r="2.5" fill="#333"/><line x1="191" y1="108" x2="191" y2="116" stroke="#333" stroke-width="1.2"/>
+  <circle cx="204" cy="100" r="2.5" fill="#333"/><line x1="207" y1="100" x2="207" y2="108" stroke="#333" stroke-width="1.2"/>
+  <circle cx="220" cy="106" r="2.5" fill="#333"/><line x1="223" y1="106" x2="223" y2="114" stroke="#333" stroke-width="1.2"/>
+
+  <!-- Keys: white -->
+  <g>
+    <rect x="75" y="190" width="24" height="55" fill="#fff" stroke="#ccc"/>
+    <rect x="99" y="190" width="24" height="55" fill="#fff" stroke="#ccc"/>
+    <rect x="123" y="190" width="24" height="55" fill="#fff" stroke="#ccc"/>
+    <rect x="147" y="190" width="24" height="55" fill="#fff" stroke="#ccc"/>
+    <rect x="171" y="190" width="24" height="55" fill="#eee" stroke="#ccc"/>
+    <rect x="195" y="190" width="24" height="55" fill="#fff" stroke="#ccc"/>
+    <rect x="219" y="190" width="24" height="55" fill="#fff" stroke="#ccc"/>
+    <rect x="243" y="190" width="24" height="55" fill="#eee" stroke="#ccc"/>
+    <rect x="267" y="190" width="24" height="55" fill="#fff" stroke="#ccc"/>
+    <rect x="291" y="190" width="24" height="55" fill="#fff" stroke="#ccc"/>
+  </g>
+  <!-- Keys: black -->
+  <g fill="#111">
+    <rect x="93" y="190" width="12" height="32" rx="2"/>
+    <rect x="117" y="190" width="12" height="32" rx="2"/>
+    <rect x="165" y="190" width="12" height="32" rx="2"/>
+    <rect x="189" y="190" width="12" height="32" rx="2"/>
+    <rect x="213" y="190" width="12" height="32" rx="2"/>
+    <rect x="261" y="190" width="12" height="32" rx="2"/>
+    <rect x="285" y="190" width="12" height="32" rx="2"/>
+  </g>
+
+  <!-- Cat body -->
+  <ellipse cx="200" cy="150" rx="55" ry="45" fill="#e8934f"/>
+  <ellipse cx="200" cy="165" rx="35" ry="25" fill="#f7c896"/>
+  <!-- Stripes -->
+  <path d="M155 140 q8 -6 16 0" stroke="#c96f2e" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M229 140 q8 -6 16 0" stroke="#c96f2e" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Tail -->
+  <path d="M145 165 q-30 10 -25 45 q2 12 14 10" stroke="#e8934f" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M120 210 q2 12 14 10" stroke="#c96f2e" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="8 10"/>
+
+  <!-- Head -->
+  <circle cx="200" cy="85" r="42" fill="#e8934f"/>
+  <!-- Ears -->
+  <path d="M168 62 L158 30 L188 48 Z" fill="#e8934f"/>
+  <path d="M232 62 L242 30 L212 48 Z" fill="#e8934f"/>
+  <path d="M170 56 L164 38 L182 48 Z" fill="#f7b9a1"/>
+  <path d="M230 56 L236 38 L218 48 Z" fill="#f7b9a1"/>
+  <!-- Head stripes -->
+  <path d="M192 48 q0 -8 0 -12 M200 48 q0 -9 0 -14 M208 48 q0 -8 0 -12" stroke="#c96f2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Eyes (happy closed) -->
+  <path d="M175 82 q8 -10 16 0" stroke="#5a3210" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M209 82 q8 -10 16 0" stroke="#5a3210" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- Nose & mouth -->
+  <path d="M196 94 L204 94 L200 99 Z" fill="#e06666"/>
+  <path d="M200 99 q0 5 -7 6 M200 99 q0 5 7 6" stroke="#5a3210" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Whiskers -->
+  <line x1="160" y1="92" x2="132" y2="88" stroke="#fff" stroke-width="1.5" opacity="0.8"/>
+  <line x1="160" y1="98" x2="134" y2="100" stroke="#fff" stroke-width="1.5" opacity="0.8"/>
+  <line x1="240" y1="92" x2="268" y2="88" stroke="#fff" stroke-width="1.5" opacity="0.8"/>
+  <line x1="240" y1="98" x2="266" y2="100" stroke="#fff" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Paws on keys -->
+  <ellipse cx="181" cy="192" rx="13" ry="11" fill="#f7c896"/>
+  <ellipse cx="255" cy="192" rx="13" ry="11" fill="#f7c896"/>
+  <path d="M175 188 l0 6 M181 188 l0 7 M187 188 l0 6" stroke="#d9a06b" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M249 188 l0 6 M255 188 l0 7 M261 188 l0 6" stroke="#d9a06b" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Music notes -->
+  <g fill="#ffd166">
+    <circle cx="120" cy="70" r="5"/>
+    <line x1="125" y1="70" x2="125" y2="45" stroke="#ffd166" stroke-width="3"/>
+    <circle cx="290" cy="60" r="5"/>
+    <line x1="295" y1="60" x2="295" y2="35" stroke="#ffd166" stroke-width="3"/>
+    <circle cx="315" cy="110" r="4"/>
+    <line x1="319" y1="110" x2="319" y2="90" stroke="#ffd166" stroke-width="2.5"/>
+  </g>
+</svg>

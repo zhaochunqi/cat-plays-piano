@@ -220,5 +220,11 @@
         "thinking": "extend",
         "date": "2026-08-25",
         "file": "entries/gemini-3.1-pro-extend-2026-08-25.svg"
+    },
+    {
+        "model": "nemotron-3-nano-omni-free",
+        "thinking": "none",
+        "date": "2026-08-25",
+        "file": "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg"
     }
 ]

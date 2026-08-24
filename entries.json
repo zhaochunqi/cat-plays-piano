@@ -268,5 +268,11 @@
         "thinking": "none",
         "date": "2026-08-25",
         "file": "entries/minimax-m3-none-2026-08-25.svg"
+    },
+    {
+        "model": "grok-4.6",
+        "thinking": "none",
+        "date": "2026-08-25",
+        "file": "entries/grok-4.6-none-2026-08-25.svg"
     }
 ]

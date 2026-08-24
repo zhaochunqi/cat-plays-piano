@@ -310,6 +310,7 @@
       }
       .gallery-thumb {
         display: block;
+        position: relative;
         width: 100%;
         aspect-ratio: 4 / 3;
         padding: 0;
@@ -321,6 +322,20 @@
       .gallery-thumb:focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 2px;
+      }
+      .anim-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 2;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 600;
+        background: var(--accent);
+        color: var(--surface);
+        pointer-events: none;
       }
       .gallery-thumb img {
         width: 100%;
@@ -391,6 +406,7 @@
         background: color-mix(in oklch, var(--fg) 55%, transparent);
       }
       .viewer-img-wrap {
+        position: relative;
         padding: 20px 20px 0;
       }
       .viewer-img-wrap img {
@@ -598,6 +614,7 @@
     <dialog class="viewer" id="viewer" aria-label="作品放大查看">
       <div class="viewer-img-wrap">
         <img id="viewer-img" alt="" />
+        <span id="viewer-anim" class="anim-badge" hidden>▶ 动画</span>
       </div>
       <div style="display: flex; justify-content: center; padding: 2px 20px 0">
         <div id="viewer-radar"></div>
@@ -651,6 +668,7 @@
         var noteOf = {};
         var noteOfScores = {};
         var orderOf = {};
+        var animatedOf = {};
         var DIM_KEYS = ["cat", "piano", "playing", "scene", "detail"];
         var DIM_LABELS = { cat: "猫", piano: "钢琴", playing: "演奏", scene: "场景", detail: "细节" };
         var grid = document.getElementById("gallery-grid");
@@ -738,6 +756,12 @@
           img.loading = "lazy";
           img.alt = "模型 " + e.model + " 绘制的猫弹钢琴画作";
           btn.appendChild(img);
+          if (animatedOf[e.file]) {
+            var animBadge = document.createElement("span");
+            animBadge.className = "anim-badge";
+            animBadge.textContent = "▶ 动画";
+            btn.appendChild(animBadge);
+          }
 
           var name = document.createElement("p");
           name.className = "gallery-name";
@@ -776,6 +800,8 @@
           document.getElementById("viewer-img").alt =
             "模型 " + t.dataset.model + " 生成的猫弹钢琴画作（放大视图）";
           document.getElementById("viewer-title").textContent = t.dataset.model;
+          document.getElementById("viewer-anim").hidden =
+            !animatedOf[t.dataset.src];
           document.getElementById("viewer-meta").textContent =
             "No." +
             t.closest(".gallery-card").dataset.rank +
@@ -871,6 +897,7 @@
               orderOf[f] = typeof item.order === "number" ? item.order : null;
               noteOf[f] = item.note || "";
               noteOfScores[f] = item.scores || null;
+              animatedOf[f] = !!item.animated;
             });
             // 按 order 升序排序；缺失 order 的条目垫底
             data.sort(function (a, b) {

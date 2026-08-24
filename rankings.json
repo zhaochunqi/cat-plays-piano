@@ -110,6 +110,7 @@
   {
     "file": "entries/nemotron-3-ultra-free-none-2026-08-25.svg",
     "note": "钢琴结构完整，但猫坐在琴盖上爪子没碰琴键，脸部略似松鼠。",
+    "animated": true,
     "scores": {
       "cat": 6,
       "piano": 8,
@@ -158,6 +159,7 @@
   {
     "file": "entries/glm-5-turbo-medium-2026-08-25.svg",
     "note": "夜景立式钢琴，猫坐琴凳爪在琴键上，姿态正确；造型偏简。",
+    "animated": true,
     "scores": {
       "cat": 8,
       "piano": 7,
@@ -538,5 +540,18 @@
       "detail": 0
     },
     "order": 45
+  },
+  {
+    "file": "entries/grok-4.6-none-2026-08-25.svg",
+    "note": "橘色虎斑猫戴领结坐立式钢琴前弹奏，双爪明确落在琴键（含按下键高亮），房间暖光+飘动音符；渐变/投影/肉垫细节丰富，立体感强。",
+    "animated": true,
+    "scores": {
+      "cat": 10,
+      "piano": 9,
+      "playing": 10,
+      "scene": 8,
+      "detail": 9
+    },
+    "order": 1.5
   }
 ]

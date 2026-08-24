@@ -599,11 +599,15 @@
       <div class="viewer-img-wrap">
         <img id="viewer-img" alt="" />
       </div>
+      <div style="display: flex; justify-content: center; padding: 2px 20px 0">
+        <div id="viewer-radar"></div>
+      </div>
       <div class="viewer-foot">
         <div style="min-width: 0">
           <p class="viewer-title" id="viewer-title"></p>
           <p class="viewer-meta" id="viewer-meta"></p>
           <p class="viewer-meta" id="viewer-note" style="max-width: 480px"></p>
+          <p class="viewer-meta" id="viewer-total" style="max-width: 480px"></p>
         </div>
         <div class="row" style="gap: 8px">
           <button
@@ -638,15 +642,72 @@
           deep: "深度思考",
           extend: "扩展思考",
         };
-        // 排名数据在 rankings.json（按效果顺序的 {file, note} 数组），加载后动态排序；
-        // note 为该作品的效果评测理由，点击图片放大时展示。
+        // 排名数据在 rankings.json，每条为 {file, note, scores, order}：
+        //  - order 为 fractional 排序键，升序越小越靠前（No.1）；改一个数即可重排，无需手动调整数组顺序
+        //  - scores 为五维展示分（猫/钢琴/演奏/场景/细节，各 0-10），仅用于雷达图，不参与排序
+        //  - note 为效果评测理由，点击图片放大时展示
         // 缺失或新条目不在榜内时按 entries.json 原顺序垫底。
         var rankOf = {};
         var noteOf = {};
+        var noteOfScores = {};
+        var orderOf = {};
+        var DIM_KEYS = ["cat", "piano", "playing", "scene", "detail"];
+        var DIM_LABELS = { cat: "猫", piano: "钢琴", playing: "演奏", scene: "场景", detail: "细节" };
         var grid = document.getElementById("gallery-grid");
         var bar = document.querySelector(".filter-bar");
         var visible = [];
         var cur = -1;
+
+        // Dota 风格五维雷达图（仅展示 scores，排序由 order 决定）
+        function radarSVG(scores) {
+          var N = DIM_KEYS.length, cx = 110, cy = 110, R = 80;
+          function pt(i, r) {
+            var a = (-90 + i * (360 / N)) * Math.PI / 180;
+            return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+          }
+          var parts = [];
+          [2, 4, 6, 8, 10].forEach(function (lvl) {
+            var pts = [];
+            for (var i = 0; i < N; i++) {
+              var p = pt(i, (R * lvl) / 10);
+              pts.push(p[0].toFixed(1) + "," + p[1].toFixed(1));
+            }
+            parts.push(
+              '<polygon points="' + pts.join(" ") + '" fill="none" stroke="#e8e5df" stroke-width="1"/>'
+            );
+          });
+          for (var i = 0; i < N; i++) {
+            var p = pt(i, R);
+            parts.push(
+              '<line x1="' + cx + '" y1="' + cy + '" x2="' + p[0].toFixed(1) +
+              '" y2="' + p[1].toFixed(1) + '" stroke="#e8e5df" stroke-width="1"/>'
+            );
+          }
+          var d = [];
+          for (var i = 0; i < N; i++) {
+            var v = Number(scores[DIM_KEYS[i]]) || 0;
+            var p = pt(i, (R * v) / 10);
+            d.push(p[0].toFixed(1) + "," + p[1].toFixed(1));
+          }
+          parts.push(
+            '<polygon points="' + d.join(" ") +
+            '" fill="rgba(201,100,66,0.18)" stroke="#c96442" stroke-width="2" stroke-linejoin="round"/>'
+          );
+          for (var i = 0; i < N; i++) {
+            var p = pt(i, R + 14);
+            var anchor = p[0] < cx - 5 ? "end" : p[0] > cx + 5 ? "start" : "middle";
+            var v = Number(scores[DIM_KEYS[i]]) || 0;
+            parts.push(
+              '<text x="' + p[0].toFixed(1) + '" y="' + (p[1] + 4).toFixed(1) +
+              '" text-anchor="' + anchor + '" font-size="11" fill="#6b6964" font-family="ui-monospace, monospace">' +
+              DIM_LABELS[DIM_KEYS[i]] + " " + v + "</text>"
+            );
+          }
+          return (
+            '<svg viewBox="-40 -40 300 300" width="240" height="240" role="img" aria-label="维度评分雷达图">' +
+            parts.join("") + "</svg>"
+          );
+        }
 
         function thinkLabel(t) {
           return THINK_LABELS[t] || "thinking: " + t;
@@ -726,6 +787,21 @@
           var noteEl = document.getElementById("viewer-note");
           noteEl.textContent = note;
           noteEl.style.display = note ? "" : "none";
+          // 维度雷达图 + 综合评分
+          var sc = noteOfScores[t.dataset.src];
+          var radarEl = document.getElementById("viewer-radar");
+          if (sc) {
+            radarEl.innerHTML = radarSVG(sc);
+            var total = DIM_KEYS.reduce(function (s, k) {
+              return s + (Number(sc[k]) || 0);
+            }, 0);
+            var totalEl = document.getElementById("viewer-total");
+            totalEl.textContent = "综合评分 " + total + " / 50";
+            totalEl.style.display = "";
+          } else {
+            radarEl.innerHTML = "";
+            document.getElementById("viewer-total").style.display = "none";
+          }
         }
 
         // 筛选：事件委托，卡片异步渲染后依然有效
@@ -787,14 +863,24 @@
             var data = results[0];
             rankOf = {};
             noteOf = {};
-            results[1].forEach(function (item, i) {
+            noteOfScores = {};
+            orderOf = {};
+            // order 为 fractional 排序键，升序越小越靠前
+            results[1].forEach(function (item) {
               var f = item.file || item;
-              rankOf[f] = i + 1;
+              orderOf[f] = typeof item.order === "number" ? item.order : null;
               noteOf[f] = item.note || "";
+              noteOfScores[f] = item.scores || null;
             });
-            // 按效果排行榜排序；不在榜内的条目保持原顺序垫底
+            // 按 order 升序排序；缺失 order 的条目垫底
             data.sort(function (a, b) {
-              return (rankOf[a.file] || 1e9) - (rankOf[b.file] || 1e9);
+              var ka = orderOf[a.file] == null ? 1e9 : orderOf[a.file];
+              var kb = orderOf[b.file] == null ? 1e9 : orderOf[b.file];
+              return ka - kb;
+            });
+            // 排序后回填名次（No.），含不在榜内的条目
+            data.forEach(function (e, i) {
+              rankOf[e.file] = i + 1;
             });
             grid.replaceChildren.apply(grid, data.map(makeCard));
             // 筛选按钮全量由数据现算：全部 + 实际出现的 thinking 级别

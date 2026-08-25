@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎹 猫弹钢琴 - 双盲对比评测</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text2: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --orange: #d29922;
+    --card: #21262d;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-size: 20px; font-weight: 600; }
+  .header h1 span { color: var(--accent); }
+  .header-nav { display: flex; gap: 12px; align-items: center; }
+  .header-nav a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .header-nav a:hover { color: var(--text); background: var(--card); }
+  #syncBtn { color: var(--green) !important; border: 1px solid var(--green); }
+  #syncBtn:hover { background: rgba(63,185,80,0.15) !important; }
+  .save-status {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .save-status.ok { color: var(--green); background: rgba(63,185,80,0.12); }
+  .save-status.warn { color: var(--orange); background: rgba(210,153,34,0.12); }
+  .header-nav a.active { color: var(--accent); background: rgba(88,166,255,0.1); }
+
+  /* Main */
+  .main { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+  /* Mode Tabs */
+  .mode-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .mode-tab {
+    padding: 10px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text2);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.15s;
+  }
+  .mode-tab:hover { border-color: var(--accent); color: var(--text); }
+  .mode-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* Battle Arena */
+  .battle-arena {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .battle-card {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+  .battle-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .battle-card.selected-left { border-color: var(--green); box-shadow: 0 0 20px rgba(63,185,80,0.3); }
+  .battle-card.selected-right { border-color: var(--red); box-shadow: 0 0 20px rgba(248,81,73,0.3); }
+  
+  .card-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    background: #000;
+    display: block;
+  }
+  .card-info {
+    padding: 16px;
+  }
+  .card-model {
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 4px;
+    font-family: 'SF Mono', Monaco, monospace;
+  }
+  .card-model.revealed { color: var(--accent); }
+  .card-blind-label {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .vs-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .vs-badge {
+    background: linear-gradient(135deg, var(--accent), #a371f7);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 20px;
+  }
+  .round-info { font-size: 13px; color: var(--text2); }
+
+  /* Vote Buttons */
+  .vote-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .vote-hint {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text2);
+    margin: 0 0 4px;
+  }
+  .vote-btn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .vote-btn-left { background: rgba(63,185,80,0.15); color: var(--green); border: 2px solid var(--green); }
+  .vote-btn-left:hover { background: var(--green); color: #fff; }
+  .vote-btn-right { background: rgba(248,81,73,0.15); color: var(--red); border: 2px solid var(--red); }
+  .vote-btn-right:hover { background: var(--red); color: #fff; }
+  .vote-btn-draw { background: rgba(210,153,34,0.15); color: var(--orange); border: 2px solid var(--orange); }
+  .vote-btn-draw:hover { background: var(--orange); color: #fff; }
+  .vote-btn-bad { background: rgba(248,81,73,0.15); color: var(--red); border: 2px solid var(--red); }
+  .vote-btn-bad:hover { background: var(--red); color: #fff; }
+  .vote-btn-skip { background: var(--card); color: var(--text2); border: 2px solid var(--border); }
+  .vote-btn-skip:hover { background: var(--border); color: var(--text); }
+  .vote-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* Stats Panel */
+  .stats-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+  .stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .stats-header h2 { font-size: 18px; }
+  .stats-actions { display: flex; gap: 8px; }
+  .stats-btn {
+    padding: 8px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text2);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.15s;
+  }
+  .stats-btn:hover { border-color: var(--accent); color: var(--text); }
+
+  .stats-grid {
+    display: block;
+  }
+
+  /* ELO Bar Chart */
+  .chart-row {
+    display: grid;
+    grid-template-columns: 34px minmax(150px, 220px) 1fr auto;
+    grid-template-areas: "rank name track meta";
+    align-items: center;
+    gap: 12px;
+    padding: 9px 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .chart-row:last-child { border-bottom: none; }
+  .chart-rank { grid-area: rank; color: var(--text2); font-variant-numeric: tabular-nums; font-size: 13px; text-align: right; }
+  .chart-name {
+    grid-area: name;
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 12px;
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .chart-track {
+    grid-area: track;
+    position: relative;
+    height: 22px;
+    background: var(--border);
+    border-radius: 5px;
+  }
+  .chart-bar {
+    height: 100%;
+    border-radius: 5px;
+    min-width: 4px;
+    transition: width 0.4s ease;
+  }
+  .chart-elo {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
+  }
+  .chart-meta {
+    grid-area: meta;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text2);
+    white-space: nowrap;
+  }
+  .chart-wdl { font-variant-numeric: tabular-nums; }
+  .chart-wdl b { color: var(--green); font-weight: 600; }
+  .chart-wdl i { color: var(--orange); font-style: normal; font-weight: 600; }
+  .chart-wdl s { color: var(--red); text-decoration: none; font-weight: 600; }
+  .chart-winrate { color: var(--text); font-variant-numeric: tabular-nums; }
+  .chart-rd { opacity: 0.8; }
+  @media (max-width: 768px) {
+    .chart-row {
+      grid-template-columns: 28px 1fr;
+      grid-template-areas: "rank name" "track track" "meta meta";
+      row-gap: 6px;
+    }
+    .chart-meta { flex-wrap: wrap; }
+  }
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--card);
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .stat-name { 
+    font-family: 'SF Mono', Monaco, monospace; 
+    font-size: 12px; 
+    color: var(--text2);
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .stat-scores { display: flex; gap: 12px; align-items: center; }
+  .stat-score { 
+    display: flex; 
+    align-items: center; 
+    gap: 4px; 
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .stat-win { color: var(--green); }
+  .stat-loss { color: var(--red); }
+  .stat-draw { color: var(--orange); }
+  .stat-rate { color: var(--accent); font-size: 13px; }
+  .stat-rd { font-size: 11px; color: var(--text2); opacity: 0.8; }
+  .stat-bad { font-size: 11px; color: var(--orange); }
+  .conf-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .stat-bar {
+    width: 80px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .stat-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s;
+  }
+
+  /* Progress */
+  .progress-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text2);
+  }
+  .progress-bar-bg {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #a371f7);
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+  .cred-summary {
+    margin-top: 10px;
+    font-size: 12px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* History Table */
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .history-table th,
+  .history-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .history-table th { color: var(--text2); font-weight: 500; font-size: 12px; text-transform: uppercase; }
+  .history-table tr:hover { background: var(--card); }
+  .result-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .result-win { background: rgba(63,185,80,0.15); color: var(--green); }
+  .result-loss { background: rgba(248,81,73,0.15); color: var(--red); }
+  .result-draw { background: rgba(210,153,34,0.15); color: var(--orange); }
+
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text2);
+  }
+  .empty-state-icon { font-size: 48px; margin-bottom: 16px; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .battle-arena { grid-template-columns: 1fr; }
+    .vs-divider { flex-direction: row; padding: 16px 0; }
+    .battle-card { max-width: 400px; margin: 0 auto; }
+    .vote-btn { padding: 12px 20px; font-size: 14px; flex: 1; min-width: 120px; }
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Reveal Animation */
+  @keyframes revealPop {
+    0% { transform: scale(0.9); opacity: 0; }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .reveal-anim { animation: revealPop 0.3s ease-out; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎹 <span>Cat Plays Piano</span> · 双盲对比评测</h1>
+  <div class="header-nav">
+    <a href="index.html" target="_blank">📊 排行榜</a>
+    <a id="exportBtn">📤 导出数据</a>
+    <a id="syncBtn">📥 下载排名</a>
+    <span id="saveStatus" class="save-status">🔄 连接中…</span>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Progress -->
+  <div class="progress-section">
+    <div class="progress-header">
+      <span>评测进度</span>
+      <span id="progressText">0 / 0 对局</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+    </div>
+    <div class="cred-summary" id="credSummary"></div>
+  </div>
+
+  <!-- Mode Tabs -->
+  <div class="mode-tabs" id="modeTabs">
+    <button class="mode-tab active" data-mode="smart">⚖️ 智能调度</button>
+    <button class="mode-tab" data-mode="random">🎲 随机配对</button>
+    <button class="mode-tab" data-mode="adjacent">📋 相邻作品 (0v1, 2v3...)</button>
+    <button class="mode-tab" data-mode="unrated">⭐ 未评测对局</button>
+    <button class="mode-tab" data-mode="custom">🎯 自选对比</button>
+    <button class="mode-tab" data-mode="rematch">🔄 重测对局</button>
+  </div>
+
+  <!-- Battle Arena -->
+  <div class="battle-arena" id="battleArena">
+    <div class="battle-card" id="cardLeft" onclick="selectCard('left')">
+      <img class="card-image" id="imgLeft" src="" alt="左侧作品">
+      <div class="card-info">
+        <div class="card-model blind" id="modelLeft">作品 A</div>
+      </div>
+    </div>
+    <div class="vs-divider">
+      <div class="vs-badge">VS</div>
+      <div class="round-info" id="roundInfo">第 1 局</div>
+    </div>
+    <div class="battle-card" id="cardRight" onclick="selectCard('right')">
+      <img class="card-image" id="imgRight" src="" alt="右侧作品">
+      <div class="card-info">
+        <div class="card-model blind" id="modelRight">作品 B</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vote Buttons -->
+  <div class="vote-section" id="voteSection">
+    <p class="vote-hint">👆 点击作品直接投票 · 拿不准再选下面</p>
+    <button class="vote-btn vote-btn-draw" onclick="vote('draw')">
+      🤝 平局
+    </button>
+    <button class="vote-btn vote-btn-bad" onclick="vote('both-bad')">
+      💩 都挺烂
+    </button>
+    <button class="vote-btn vote-btn-skip" onclick="vote('skip')">
+      ⏭️ 跳过
+    </button>
+  </div>
+
+  <!-- Statistics -->
+  <div class="stats-panel" id="statsPanel">
+    <div class="stats-header">
+      <h2>📊 评测统计</h2>
+      <div class="stats-actions">
+        <button class="stats-btn" onclick="showTab('leaderboard')">排行榜</button>
+        <button class="stats-btn" onclick="showTab('history')">历史记录</button>
+        <button class="stats-btn" onclick="clearStats()" style="color: var(--red);">清空数据</button>
+      </div>
+    </div>
+    
+    <div id="tabLeaderboard">
+      <div class="stats-grid" id="statsGrid"></div>
+    </div>
+    
+    <div id="tabHistory" style="display:none;">
+      <table class="history-table" id="historyTable">
+        <thead><tr><th>#</th><th>作品 A</th><th>作品 B</th><th>结果</th><th>时间</th></tr></thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ===== Data =====
+const ENTRIES = [
+  { file: "entries/gemini-3.1-pro-extend-2026-08-25.svg", model: "Gemini 2.5 Pro (extend)" },
+  { file: "entries/grok-4.6-none-2026-08-25.svg", model: "Grok 4.6 (none)" },
+  { file: "entries/gemini-3.1-pro-none-2026-08-25.svg", model: "Gemini 2.5 Pro (none)" },
+  { file: "entries/claude-sonnet-5-max-2026-08-25.svg", model: "Claude Sonnet 5 (max)" },
+  { file: "entries/glm-5.3-high-2026-08-25.svg", model: "GLM 5.3 (high)" },
+  { file: "entries/deepseek-v4-pro-deep-2026-08-25.svg", model: "DeepSeek V4 Pro (deep)" },
+  { file: "entries/qwen3.8-max-thinking-2026-08-25.svg", model: "Qwen3.8 Max (thinking)" },
+  { file: "entries/gemini-3-flash-preview-high-2026-08-25.svg", model: "Gemini 3 Flash Preview (high)" },
+  { file: "entries/glm-5-turbo-medium-2026-08-25.svg", model: "GLM 5 Turbo (medium)" },
+  { file: "entries/agnes-2.0-flash-none-2026-08-25.svg", model: "Agnes 2.0 Flash (none)" },
+  { file: "entries/sonnet-5-medium-2026-08-25.svg", model: "Claude Sonnet 5 (medium)" },
+  { file: "entries/minimax-m3-none-2026-08-25.svg", model: "MiniMax M3 (none)" },
+  { file: "entries/deepseek-flash-v4-deep-2026-08-25.svg", model: "DeepSeek Flash V4 (deep)" },
+  { file: "entries/agnes-2.5-flash-none-2026-08-25.svg", model: "Agnes 2.5 Flash (none)" },
+  { file: "entries/nemotron-3-ultra-free-none-2026-08-25.svg", model: "Nemotron 3 Ultra (free)" },
+  { file: "entries/hy3-high-2026-08-25.svg", model: "HY3 (high)" },
+  { file: "entries/kimi-k3-medium-2026-08-25.svg", model: "Kimi K3 (medium)" },
+  { file: "entries/gemma-4-31b-none-2026-08-25.svg", model: "Gemma 4 31B (none)" },
+  { file: "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg", model: "NV Nemotron 3 Super 120B" },
+  { file: "entries/LongCat-2.0-deep-2026-08-25.svg", model: "LongCat 2.0 (deep)" },
+  { file: "entries/LongCat-2.0-none-2026-08-25.svg", model: "LongCat 2.0 (none)" },
+  { file: "entries/grok-4.5-none-2026-08-25.svg", model: "Grok 4.5 (none)" },
+  { file: "entries/grok-build-0.1-none-2026-08-25.svg", model: "Grok Build 0.1 (none)" },
+  { file: "entries/gpt-4o-none-2026-08-25.svg", model: "GPT-4o (none)" },
+  { file: "entries/glm-4.5-flash-none-2026-08-25.svg", model: "GLM 4.5 Flash (none)" },
+  { file: "entries/ox-alpha-free-high-2026-08-24.svg", model: "OX Alpha (free/high)" },
+  { file: "entries/gpt-4.1-none-2026-08-25.svg", model: "GPT-4.1 (none)" },
+  { file: "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg", model: "Dots Studio Dots 3 Note" },
+  { file: "entries/glm-4.6v-flash-none-2026-08-25.svg", model: "GLM 4.6V Flash (none)" },
+  { file: "entries/glm-4.7-flash-none-2026-08-25.svg", model: "GLM 4.7 Flash (none)" },
+  { file: "entries/nemotron-3-super-free-none-2026-08-25.svg", model: "Nemotron 3 Super (free)" },
+  { file: "entries/laguna-xs-2.1-free-none-2026-08-25.svg", model: "Laguna XS 2.1 (free)" },
+  { file: "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg", model: "Poolside Laguna S 2.1 (free)" },
+  { file: "entries/qwen3-4b-none-2026-08-25.svg", model: "Qwen3 4B (none)" },
+  { file: "entries/grok-chat-fast-none-2026-08-25.svg", model: "Grok Chat Fast (none)" },
+  { file: "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg", model: "Poolside Laguna XS 2.1 (free)" },
+  { file: "entries/cohere-north-mini-code-free-none-2026-08-25.svg", model: "Cohere North Mini Code" },
+  { file: "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg", model: "Liquid LFM 2.5 2.6B (free)" },
+  { file: "entries/huatuogpt-o1-7b-none-2026-08-25.svg", model: "HuatuoGPT O1 7B (none)" },
+  { file: "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg", model: "Nemotron 3 Nano Omni (free)" },
+  { file: "entries/qwen3-8b-none-2026-08-25.svg", model: "Qwen3 8B (none)" },
+  { file: "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg", model: "NV Nemotron 3 Nano 30B" },
+  { file: "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg", model: "DS R1 Distill Qwen 7B" },
+  { file: "entries/glm-4-9b-chat-none-2026-08-25.svg", model: "GLM 4 9B Chat (none)" },
+  { file: "entries/qwen2-7b-instruct-none-2026-08-25.svg", model: "Qwen2 7B Instruct (none)" },
+  { file: "entries/internlm3-8b-instruct-none-2026-08-25.svg", model: "InternLM3 8B Instruct" },
+];
+
+// ===== State =====
+let state = {
+  mode: 'smart',
+  leftIdx: -1,
+  rightIdx: -1,
+  round: 0,
+  totalPairs: 0,
+  voted: false,
+  history: [],
+  stats: {}, // { idx: { wins, losses, draws, elo } }
+};
+
+// Load from localStorage
+function loadState() {
+  try {
+    const saved = localStorage.getItem('cpp_battle_state');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      state.history = parsed.history || [];
+      state.stats = parsed.stats || {};
+      state.round = parsed.round || 0;
+      // Recalculate ELO from history if needed
+      recalcStats();
+    }
+  } catch(e) {}
+}
+
+function saveState() {
+  try {
+    localStorage.setItem('cpp_battle_state', JSON.stringify({
+      history: state.history,
+      stats: state.stats,
+      round: state.round
+    }));
+  } catch(e) {}
+}
+
+// ===== Pairing Generators =====
+function generateRandomPair() {
+  const total = ENTRIES.length;
+  let a = Math.floor(Math.random() * total);
+  let b = Math.floor(Math.random() * total);
+  while (b === a) b = Math.floor(Math.random() * total);
+  return [a, b];
+}
+
+function generateAdjacentPair() {
+  // Generate pairs like (0,1), (2,3), (4,5)...
+  // Track which adjacent pairs we've done
+  const doneSet = new Set(state.history.filter(h => h.mode === 'adjacent').map(h => `${Math.min(h.a,h.b)}-${Math.max(h.a,h.b)}`));
+  const totalPairs = Math.floor(ENTRIES.length / 2);
+  
+  for (let i = 0; i < totalPairs; i++) {
+    const key = `${i*2}-${i*2+1}`;
+    if (!doneSet.has(key)) return [i*2, i*2+1];
+  }
+  // All done, restart
+  return [0, 1];
+}
+
+function generateUnratedPair() {
+  // Find pairs that haven't been rated at all
+  const ratedPairs = new Set();
+  state.history.forEach(h => {
+    ratedPairs.add(`${Math.min(h.a,h.b)}-${Math.max(h.a,h.b)}`);
+    ratedPairs.add(`${Math.max(h.a,h.b)}-${Math.min(h.a,h.b)}`);
+  });
+  
+  for (let attempts = 0; attempts < 500; attempts++) {
+    const [a, b] = generateRandomPair();
+    const key = `${Math.min(a,b)}-${Math.max(a,b)}`;
+    if (!ratedPairs.has(key)) return [a, b];
+  }
+  return generateRandomPair(); // fallback
+}
+
+function generateRematchPair() {
+  // Pick a random past match to redo
+  if (state.history.length === 0) return generateRandomPair();
+  const past = state.history[Math.floor(Math.random() * state.history.length)];
+  return [past.a, past.b];
+}
+
+function generateCustomPair() {
+  // For now, just use random; could add selector UI later
+  return generateRandomPair();
+}
+
+// 智能调度：在未评测过的对局里，挑「双方出场次数之和最小」的一对。
+// 原理：ELO 可信度取决于每个模型是否都有足够场次；贪心地把最缺场次的模型
+// 优先配对、并尽量不重复已评对局，能用最少场次把 46 个模型都推到 ≥MIN_GAMES。
+function generateSmartPair() {
+  const n = ENTRIES.length;
+  const involve = new Array(n).fill(0);
+  const judged = new Set();
+  state.history.forEach(h => {
+    if (typeof h.a === 'number' && typeof h.b === 'number') {
+      involve[h.a]++;
+      involve[h.b]++;
+      judged.add(`${Math.min(h.a, h.b)}-${Math.max(h.a, h.b)}`);
+    }
+  });
+  let best = null, bestSum = Infinity;
+  for (let a = 0; a < n; a++) {
+    for (let b = a + 1; b < n; b++) {
+      if (judged.has(`${a}-${b}`)) continue;
+      const s = involve[a] + involve[b];
+      if (s < bestSum) { bestSum = s; best = [a, b]; }
+    }
+  }
+  if (best) return best;
+  // 所有无序对都已评测过 → 退化为随机，保证仍可继续评测
+  return generateRandomPair();
+}
+
+// ===== Core Logic =====
+function newRound() {
+  state.voted = false;
+  
+  switch (state.mode) {
+    case 'smart': [state.leftIdx, state.rightIdx] = generateSmartPair(); break;
+    case 'random': [state.leftIdx, state.rightIdx] = generateRandomPair(); break;
+    case 'adjacent': [state.leftIdx, state.rightIdx] = generateAdjacentPair(); break;
+    case 'unrated': [state.leftIdx, state.rightIdx] = generateUnratedPair(); break;
+    case 'custom': [state.leftIdx, state.rightIdx] = generateCustomPair(); break;
+    case 'rematch': [state.leftIdx, state.rightIdx] = generateRematchPair(); break;
+  }
+  
+  state.round++;
+  renderBattle();
+  updateProgress();
+}
+
+function renderBattle() {
+  const left = ENTRIES[state.leftIdx];
+  const right = ENTRIES[state.rightIdx];
+  
+  document.getElementById('imgLeft').src = left.file;
+  document.getElementById('imgRight').src = right.file;
+  document.getElementById('modelLeft').textContent = '作品 A';
+  document.getElementById('modelLeft').className = 'card-model blind';
+  document.getElementById('modelRight').textContent = '作品 B';
+  document.getElementById('modelRight').className = 'card-model blind';
+  document.getElementById('roundInfo').textContent = `第 ${state.round} 局`;
+  
+  // Reset card styles
+  document.getElementById('cardLeft').className = 'battle-card';
+  document.getElementById('cardRight').className = 'battle-card';
+  
+  // Enable vote buttons
+  document.querySelectorAll('.vote-btn').forEach(b => b.disabled = false);
+}
+
+function selectCard(side) {
+  if (state.voted) return;
+  // 点卡片即直接投票（一步到位）
+  document.getElementById(side === 'left' ? 'cardLeft' : 'cardRight')
+    .className = `battle-card selected-${side}`;
+  vote(side);
+}
+
+function vote(result) {
+  if (state.voted) return;
+  state.voted = true;
+  
+  const left = ENTRIES[state.leftIdx];
+  const right = ENTRIES[state.rightIdx];
+  
+  // Record
+  const record = {
+    round: state.round,
+    mode: state.mode,
+    a: state.leftIdx,
+    b: state.rightIdx,
+    aModel: left.model,
+    bModel: right.model,
+    result: result, // 'left', 'right', 'draw', 'both-bad', 'skip'
+    time: new Date().toISOString()
+  };
+  
+  if (result !== 'skip') {
+    state.history.push(record);
+    
+    // Update stats
+    if (!state.stats[state.leftIdx]) initStats(state.leftIdx);
+    if (!state.stats[state.rightIdx]) initStats(state.rightIdx);
+    
+    if (result === 'left') {
+      state.stats[state.leftIdx].wins++;
+      state.stats[state.rightIdx].losses++;
+      exchangeElo(state.leftIdx, state.rightIdx, 1);
+    } else if (result === 'right') {
+      state.stats[state.rightIdx].wins++;
+      state.stats[state.leftIdx].losses++;
+      exchangeElo(state.rightIdx, state.leftIdx, 1);
+    } else if (result === 'both-bad') {
+      // 都挺烂：双方都扣固定惩罚，沉到很后面（相对顺序不变）
+      state.stats[state.leftIdx].bad++;
+      state.stats[state.rightIdx].bad++;
+      applyBadPenalty(state.leftIdx);
+      applyBadPenalty(state.rightIdx);
+    } else {
+      state.stats[state.leftIdx].draws++;
+      state.stats[state.rightIdx].draws++;
+      exchangeElo(state.leftIdx, state.rightIdx, 0.5);
+    }
+  }
+  
+  // Reveal models
+  revealModels(left.model, right.model);
+  
+  // Disable buttons
+  document.querySelectorAll('.vote-btn').forEach(b => b.disabled = true);
+  
+  // Save & update UI
+  saveState();
+  renderStats();
+  
+  // Auto-persist to server (if running) — no manual sync needed
+  saveVoteToServer(left.file, right.file, result);
+  
+  // Auto advance after delay
+  setTimeout(newRound, 1500);
+}
+
+function revealModels(leftModel, rightModel) {
+  const elLeft = document.getElementById('modelLeft');
+  const elRight = document.getElementById('modelRight');
+  elLeft.textContent = `🅰️ ${leftModel}`;
+  elLeft.className = 'card-model revealed reveal-anim';
+  elRight.textContent = `🅱️ ${rightModel}`;
+  elRight.className = 'card-model revealed reveal-anim';
+}
+
+// ===== ELO System =====
+// 「都挺烂」是绝对差评，不能用相对 ELO 表达，用固定惩罚把双方都往下压。
+const BAD_PENALTY = 100;
+
+function initStats(idx) {
+  state.stats[idx] = { wins: 0, losses: 0, draws: 0, bad: 0, elo: 1000 };
+}
+
+function applyBadPenalty(idx) {
+  if (!state.stats[idx]) initStats(idx);
+  state.stats[idx].elo = Math.round(state.stats[idx].elo - BAD_PENALTY);
+}
+
+function recalcStats() {
+  // Initialize missing entries
+  ENTRIES.forEach((_, i) => {
+    if (!state.stats[i]) initStats(i);
+  });
+}
+
+function expectedElo(a, b) {
+  return 1 / (1 + Math.pow(10, (b - a) / 400));
+}
+
+function exchangeElo(winnerIdx, loserIdx, score) {
+  if (!state.stats[winnerIdx]) initStats(winnerIdx);
+  if (!state.stats[loserIdx]) initStats(loserIdx);
+  
+  const eloW = state.stats[winnerIdx].elo;
+  const eloL = state.stats[loserIdx].elo;
+  const eW = expectedElo(eloW, eloL);
+  const eL = expectedElo(eloL, eloW);
+  const k = 32;
+  
+  state.stats[winnerIdx].elo = Math.round(eloW + k * (score - eW));
+  state.stats[loserIdx].elo = Math.round(eloL + k * ((1 - score) - eL));
+}
+
+// ===== UI Rendering =====
+function updateProgress() {
+  // 参战数 = 历史对局里出现过的「不同模型」数量（权威来源，来自服务端重建的 history），
+  // 并合并本地 stats 中已有战绩的模型，避免 localStorage / 服务端状态不同步时少算。
+  const seen = new Set();
+  const decisive = new Set();
+  state.history.forEach(h => {
+    if (h.a != null) seen.add(h.a);
+    if (h.b != null) seen.add(h.b);
+    // 有效对战 = 有胜负/平局结果（排除「都挺烂」「跳过」）
+    if (h.result && h.result !== 'both-bad' && h.result !== 'skip') {
+      if (h.a != null) decisive.add(h.a);
+      if (h.b != null) decisive.add(h.b);
+    }
+  });
+  ENTRIES.forEach((_, i) => {
+    const st = state.stats[i];
+    if (st && (st.wins + st.losses + st.draws) > 0) { seen.add(i); decisive.add(i); }
+  });
+  const battled = seen.size;
+  const pct = ENTRIES.length > 0 ? (battled / ENTRIES.length) * 100 : 0;
+
+  document.getElementById('progressText').textContent = `已参战 ${battled} / ${ENTRIES.length} 个模型 · 有效对战 ${decisive.size} 个 · 共 ${state.history.length} 场对局`;
+  document.getElementById('progressBar').style.width = `${pct}%`;
+
+  // Credibility summary
+  let totalGames = 0;
+  let lowConf = 0;
+  ENTRIES.forEach((_, i) => {
+    const s = state.stats[i];
+    if (s) {
+      const g = s.wins + s.losses + s.draws;
+      totalGames += g;
+      if (g < MIN_GAMES) lowConf++;
+    }
+  });
+  const avg = ENTRIES.length > 0 ? (totalGames / ENTRIES.length) : 0;
+  const enough = lowConf <= ENTRIES.length * 0.3;
+  const credEl = document.getElementById('credSummary');
+  credEl.innerHTML = `
+    <span style="color: var(--text2);">平均每模型 <b style="color: ${avg >= MIN_GAMES ? 'var(--green)' : 'var(--orange)'}">${avg.toFixed(1)}</b> 局</span>
+    <span style="color: var(--text2);">·</span>
+    <span style="color: ${enough ? 'var(--green)' : 'var(--red)'};">
+      ${enough ? '✅ 数据充足' : `⚠️ ${lowConf} 个模型对局不足`}
+    </span>
+    <span style="color: var(--text2);">· 建议每模型 ≥ ${MIN_GAMES} 局</span>
+  `;
+}
+
+function getTotalPairs() {
+  switch (state.mode) {
+    case 'adjacent': return Math.floor(ENTRIES.length / 2);
+    default: return (ENTRIES.length * (ENTRIES.length - 1)) / 2;
+  }
+}
+
+// ===== Confidence helper =====
+// ELO needs enough games to be statistically meaningful.
+// RD (Rating Deviation) heuristic: fewer games = higher uncertainty.
+const MIN_GAMES = 10; // recommended minimum games per model for "high confidence"
+
+function getConfidence(total) {
+  if (total === 0) return { level: 'none', label: '未评', color: 'var(--text2)', rd: 350 };
+  if (total < 5) return { level: 'low', label: '低', color: 'var(--red)', rd: Math.round(350 / Math.sqrt(1 + total / 5)) };
+  if (total < MIN_GAMES) return { level: 'mid', label: '中', color: 'var(--orange)', rd: Math.round(350 / Math.sqrt(1 + total / 5)) };
+  return { level: 'high', label: '高', color: 'var(--green)', rd: Math.round(350 / Math.sqrt(1 + total / 5)) };
+}
+
+function renderStats() {
+  recalcStats();
+  
+  const all = ENTRIES.map((e, i) => ({ ...e, idx: i, ...(state.stats[i] || { wins: 0, losses: 0, draws: 0, elo: 1000 }) }));
+  const elos = all.map(r => r.elo);
+  const lo = Math.min(...elos), hi = Math.max(...elos);
+  const span = (hi - lo) || 1;
+  const sorted = all.slice().sort((a, b) => b.elo - a.elo);
+
+  const grid = document.getElementById('statsGrid');
+  grid.innerHTML = sorted.map((entry, rank) => {
+    const total = entry.wins + entry.losses + entry.draws;
+    const winRate = total > 0 ? Math.round((entry.wins / total) * 100) : 0;
+    const widthPct = Math.max(4, Math.min(100, Math.round((entry.elo - lo) / span * 92 + 4)));
+    const conf = getConfidence(total);
+    const eloLabel = total === 0 ? entry.elo + '*' : entry.elo;
+    return `
+      <div class="chart-row">
+        <div class="chart-rank">#${rank + 1}</div>
+        <div class="chart-name" title="${entry.model}">${entry.model}</div>
+        <div class="chart-track">
+          <div class="chart-bar" style="width: ${widthPct}%; background: ${conf.color};" title="ELO ${entry.elo} · 置信度 ${conf.label}"></div>
+          <span class="chart-elo" title="ELO 分数（* 为未参战默认 1000）">${eloLabel}</span>
+        </div>
+        <div class="chart-meta">
+          <span class="conf-badge" style="color: ${conf.color}; border-color: ${conf.color};" title="置信度: ${conf.label} · 建议每模型 ≥ ${MIN_GAMES} 局">${conf.label}</span>
+          <span class="chart-wdl"><b>${entry.wins}W</b> <i>${entry.draws}D</i> <s>${entry.losses}L</s></span>
+          <span class="chart-winrate">胜率 ${total > 0 ? winRate + '%' : '—'}</span>
+          <span class="chart-rd">±${conf.rd}</span>
+          ${entry.bad > 0 ? `<span class="stat-bad" title="被标记为「都挺烂」的次数">💩${entry.bad}</span>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+  
+  // Render history
+  const tbody = document.getElementById('historyBody');
+  const recent = [...state.history].reverse().slice(0, 50);
+  tbody.innerHTML = recent.map((h, i) => {
+    let badge, label;
+    if (h.result === 'left') { badge = 'result-win'; label = 'A 胜'; }
+    else if (h.result === 'right') { badge = 'result-loss'; label = 'B 胜'; }
+    else if (h.result === 'draw') { badge = 'result-draw'; label = '平局'; }
+    else { badge = ''; label = '跳过'; }
+    
+    return `<tr>
+      <td>${state.history.length - i}</td>
+      <td style="font-family:monospace;font-size:11px;">${h.aModel.substring(0, 20)}</td>
+      <td style="font-family:monospace;font-size:11px;">${h.bModel.substring(0, 20)}</td>
+      <td><span class="result-badge ${badge}">${label}</span></td>
+      <td style="color:var(--text2);font-size:12px;">${new Date(h.time).toLocaleTimeString()}</td>
+    </tr>`;
+  }).join('');
+}
+
+function showTab(tab) {
+  document.getElementById('tabLeaderboard').style.display = tab === 'leaderboard' ? '' : 'none';
+  document.getElementById('tabHistory').style.display = tab === 'history' ? '' : 'none';
+}
+
+function clearStats() {
+  if (!confirm('确定要清空所有评测数据吗？此操作不可恢复。')) return;
+  localStorage.removeItem('cpp_battle_state');
+  state.history = [];
+  state.stats = {};
+  state.round = 0;
+  renderStats();
+  updateProgress();
+  newRound();
+}
+
+// ===== Server Auto-Save =====
+// 当通过 `just serve` 启动本地服务器时，每次投票自动 POST 到 /api/vote，
+// 服务器会重算 ELO 并写入 rankings.json，无需手动点「同步排名」。
+let serverAvailable = false;
+
+function updateSaveStatus() {
+  const el = document.getElementById('saveStatus');
+  if (!el) return;
+  if (serverAvailable) {
+    el.textContent = '🟢 已连接 · 投票自动保存';
+    el.className = 'save-status ok';
+  } else {
+    el.textContent = '🟡 本地模式 · 仅存浏览器';
+    el.className = 'save-status warn';
+  }
+}
+
+async function checkServer() {
+  try {
+    const r = await fetch('/api/health', { cache: 'no-store' });
+    serverAvailable = r.ok;
+  } catch {
+    serverAvailable = false;
+  }
+  updateSaveStatus();
+}
+
+async function saveVoteToServer(leftFile, rightFile, result) {
+  if (!serverAvailable) return;
+  try {
+    const r = await fetch('/api/vote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        leftFile, rightFile, result,
+        mode: state.mode,
+        leftIdx: state.leftIdx,
+        rightIdx: state.rightIdx,
+        time: new Date().toISOString()
+      })
+    });
+    if (!r.ok) throw new Error('vote save failed');
+    const data = await r.json();
+    if (data.stats) applyServerStats(data.stats);
+  } catch {
+    serverAvailable = false;
+    updateSaveStatus();
+  }
+}
+
+function applyServerStats(serverStats) {
+  // serverStats: { file: {wins, losses, draws, bad, elo} }
+  ENTRIES.forEach((e, i) => {
+    const s = serverStats[e.file];
+    if (s) state.stats[i] = { wins: s.wins, losses: s.losses, draws: s.draws, bad: s.bad || 0, elo: s.elo };
+  });
+  saveState();
+  renderStats();
+  updateProgress();
+}
+
+async function loadServerState() {
+  try {
+    const r = await fetch('/api/state', { cache: 'no-store' });
+    if (!r.ok) return;
+    const data = await r.json();
+    if (data.stats) applyServerStats(data.stats);
+    // 重建历史：进度条 / 未评测对局 / 重测 都依赖它
+    if (Array.isArray(data.votes)) {
+      const idxByFile = {};
+      ENTRIES.forEach((e, i) => idxByFile[e.file] = i);
+      const hist = [];
+      let maxRound = 0;
+      for (const v of data.votes) {
+        const a = idxByFile[v.leftFile], b = idxByFile[v.rightFile];
+        if (a === undefined || b === undefined) continue;
+        const rec = {
+          round: v.round || (hist.length + 1),
+          mode: v.mode || 'random',
+          a, b,
+          aModel: ENTRIES[a].model,
+          bModel: ENTRIES[b].model,
+          result: v.result,
+          time: v.time || new Date().toISOString()
+        };
+        hist.push(rec);
+        if (rec.round > maxRound) maxRound = rec.round;
+      }
+      state.history = hist;
+      state.round = maxRound + 1;
+      saveState();
+      updateProgress();
+    }
+  } catch { /* ignore — fall back to localStorage */ }
+}
+
+// ===== Export =====
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const data = {
+    exportTime: new Date().toISOString(),
+    totalRounds: state.history.length,
+    entries: ENTRIES.length,
+    rankings: ENTRIES.map((e, i) => ({
+      model: e.model,
+      file: e.file,
+      ...(state.stats[i] || { wins: 0, losses: 0, draws: 0, elo: 1000 })
+    })).sort((a, b) => b.elo - a.elo),
+    history: state.history
+  };
+  
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `cat-piano-battle-${Date.now()}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+// ===== Sync to Rankings =====
+document.getElementById('syncBtn').addEventListener('click', async () => {
+  // Check if there are any meaningful votes
+  const votedCount = Object.keys(state.stats).filter(i => {
+    const s = state.stats[i];
+    return s && (s.wins > 0 || s.losses > 0);
+  }).length;
+
+  if (votedCount === 0 && state.history.length === 0) {
+    alert('还没有任何评测数据，请先进行一些对比投票后再同步。');
+    return;
+  }
+
+  try {
+    // Fetch current rankings.json to preserve notes/scores
+    const resp = await fetch('rankings.json');
+    if (!resp.ok) throw new Error('无法读取 rankings.json');
+    const rankings = await resp.json();
+
+    // Build file -> elo lookup from battle state
+    const eloMap = {};
+    ENTRIES.forEach((e, i) => {
+      const stats = state.stats[i] || { wins: 0, losses: 0, draws: 0, elo: 1000 };
+      eloMap[e.file] = stats;
+    });
+
+    // ===== Confidence gate =====
+    // Warn if too many models have insufficient games
+    let lowConfCount = 0;
+    let totalGames = 0;
+    ENTRIES.forEach((e, i) => {
+      const s = state.stats[i];
+      if (s) {
+        const games = s.wins + s.losses + s.draws;
+        totalGames += games;
+        if (games < MIN_GAMES) lowConfCount++;
+      }
+    });
+    const avgGames = ENTRIES.length > 0 ? (totalGames / ENTRIES.length).toFixed(1) : 0;
+    
+    if (lowConfCount > ENTRIES.length * 0.3) {
+      const proceed = confirm(
+        `⚠️ 数据量不足，排名可能不稳定\n\n` +
+        `• 平均每模型对局数: ${avgGames} (建议 ≥ ${MIN_GAMES})\n` +
+        `• 对局数不足的模型: ${lowConfCount} / ${ENTRIES.length}\n\n` +
+        `ELO 分数在样本少时波动很大，建议继续评测后再同步。\n` +
+        `仍要同步吗？`
+      );
+      if (!proceed) return;
+    }
+
+    // Sort rankings by ELO desc (entries without ELO data stay at bottom with elo=1000)
+    const ranked = rankings.map(entry => ({
+      ...entry,
+      _elo: eloMap[entry.file] ? eloMap[entry.file].elo : 1000,
+      _stats: eloMap[entry.file] || null
+    })).sort((a, b) => b._elo - a._elo);
+
+    // 保留 order（策展顺序），不把它重写成 ELO 名次；仅更新 battleStats
+    ranked.forEach((entry, i) => {
+      // Attach battle stats as metadata
+      if (entry._stats) {
+        const g = entry._stats.wins + entry._stats.losses + entry._stats.draws;
+        const conf = getConfidence(g);
+        entry.battleStats = {
+          elo: entry._elo,
+          rd: conf.rd,
+          confidence: conf.level,
+          games: g,
+          wins: entry._stats.wins,
+          losses: entry._stats.losses,
+          draws: entry._stats.draws,
+          syncedAt: new Date().toISOString()
+        };
+      }
+      // Clean up temp fields
+      delete entry._elo;
+      delete entry._stats;
+    });
+
+    const blob = new Blob([JSON.stringify(ranked, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'rankings.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    alert(`✅ 对战统计已同步！\n\n基于 ${state.history.length} 轮投票结果，${ranked.length} 个模型已附上 ELO 分数与战绩（order 策展顺序保持不变）。\n\n请用下载的文件替换项目中的 rankings.json，刷新首页即可看到实时排名。`);
+  } catch (err) {
+    console.error('Sync failed:', err);
+    // Fallback: generate without fetching original rankings
+    const eloMap = {};
+    ENTRIES.forEach((e, i) => {
+      eloMap[e.file] = state.stats[i] || { wins: 0, losses: 0, draws: 0, elo: 1000 };
+    });
+    const ranked = ENTRIES.map(e => ({
+      file: e.file,
+      note: '', // Will need manual merge
+      scores: { cat: 0, piano: 0, playing: 0, scene: 0, detail: 0 },
+      order: 0,
+      _elo: eloMap[e.file].elo,
+      _stats: eloMap[e.file]
+    })).sort((a, b) => b._elo - a._elo);
+
+    ranked.forEach((entry, i) => {
+      entry.order = i + 1;
+      if (entry._stats) {
+        entry.battleStats = { elo: entry._elo, wins: entry._stats.wins, losses: entry._stats.losses, draws: entry._stats.draws };
+      }
+      delete entry._elo;
+      delete entry._stats;
+    });
+
+    const blob = new Blob([JSON.stringify(ranked, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'rankings-elo-only.json';
+    a.click();
+    URL.revokeObjectURL(url);
+
+    alert('⚠️ 无法读取原始 rankings.json，已生成仅含 ELO 排名的文件。\n建议在本地服务器（python3 -m http.server）上运行以启用完整同步。');
+  }
+});
+
+// ===== Mode Switching =====
+document.getElementById('modeTabs').addEventListener('click', (e) => {
+  if (e.target.classList.contains('mode-tab')) {
+    document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+    e.target.classList.add('active');
+    state.mode = e.target.dataset.mode;
+    newRound();
+  }
+});
+
+// ===== Init =====
+loadState();
+renderStats();
+updateProgress();
+newRound();
+
+// 连接本地服务器（若通过 `just serve` 启动，则自动从服务器恢复评测状态）
+checkServer().then(loadServerState);
+
+</script>
+</body>
+</html>

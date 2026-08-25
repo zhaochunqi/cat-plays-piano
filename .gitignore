@@ -1,2 +1,6 @@
 .pi/
 .workbuddy/
+
+# Python
+__pycache__/
+*.pyc

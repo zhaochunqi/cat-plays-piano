@@ -391,6 +391,47 @@
         outline-offset: 2px;
       }
 
+      .sort-bar {
+        display: flex;
+        gap: var(--gap-xs);
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .sort-btn {
+        padding: 7px 16px;
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 13px;
+        cursor: pointer;
+        transition:
+          color 0.15s ease,
+          background 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .sort-btn:hover { color: var(--fg); border-color: var(--fg); }
+      .sort-btn[aria-pressed="true"] {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .sort-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      .elo-badge {
+        display: inline-block;
+        margin: 0 4px 4px 0;
+        padding: 2px 8px;
+        font-size: 11px;
+        font-family: var(--font-mono);
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+      }
+      .elo-badge.conf-high { background: rgba(63,185,80,0.14); color: var(--green, #3fb950); border-color: transparent; }
+      .elo-badge.conf-mid  { background: rgba(210,153,34,0.14); color: var(--orange, #d29922); border-color: transparent; }
+      .elo-badge.conf-low  { background: rgba(248,81,73,0.12); color: var(--red, #f85149); border-color: transparent; }
+
       /* ─── viewer dialog ────────────────────────────────────────────── */
       dialog.viewer {
         border: 0;
@@ -575,6 +616,10 @@
               role="group"
               aria-label="按生成方式筛选"
             ></div>
+            <div class="sort-bar" id="sort-bar" role="group" aria-label="排序方式">
+              <button type="button" class="sort-btn" data-sort="elo" aria-pressed="true">⚔️ 对战 ELO</button>
+              <button type="button" class="sort-btn" data-sort="curated" aria-pressed="false">✋ 策展顺序</button>
+            </div>
           </div>
           <div class="gallery-grid" id="gallery-grid">
             <p class="meta" id="gallery-status">正在加载作品…</p>
@@ -671,6 +716,12 @@
         var animatedOf = {};
         var DIM_KEYS = ["cat", "piano", "playing", "scene", "detail"];
         var DIM_LABELS = { cat: "猫", piano: "钢琴", playing: "演奏", scene: "场景", detail: "细节" };
+        // 实时对战排序相关状态
+        var battleStatsOf = {};
+        var sortMode = "elo"; // 'elo' = 实时对战 ELO 降序；'curated' = 原策展 order
+        var galleryData = [];
+        var currentRankItems = [];
+        var lastRankSig = "";
         var grid = document.getElementById("gallery-grid");
         var bar = document.querySelector(".filter-bar");
         var visible = [];
@@ -731,6 +782,10 @@
           return THINK_LABELS[t] || "thinking: " + t;
         }
 
+        function confLabel(c) {
+          return c === "high" ? "高可信" : c === "mid" ? "中可信" : "低可信";
+        }
+
         function makeCard(e, i) {
           var rank = rankOf[e.file] || 1e9;
           var card = document.createElement("article");
@@ -742,6 +797,19 @@
           var badge = document.createElement("span");
           badge.className = "rank-badge";
           badge.textContent = rank;
+
+          var bs = battleStatsOf[e.file];
+          var eloBadge = null;
+          if (bs && (bs.games > 0 || bs.bad > 0)) {
+            eloBadge = document.createElement("span");
+            eloBadge.className = "elo-badge conf-" + (bs.confidence || "low");
+            eloBadge.textContent =
+              "ELO " + Math.round(bs.elo) +
+              " · " + confLabel(bs.confidence) +
+              " · " + bs.wins + "胜" + bs.losses + "负" +
+              (bs.draws ? " " + bs.draws + "平" : "") +
+              (bs.bad ? " · 💩" + bs.bad : "");
+          }
 
           var btn = document.createElement("button");
           btn.type = "button";
@@ -772,7 +840,9 @@
           meta.textContent =
             "No." + rank + " · " + thinkLabel(e.thinking) + " · " + e.date;
 
-          card.append(badge, btn, name, meta);
+          card.append(badge);
+          if (eloBadge) card.append(eloBadge);
+          card.append(btn, name, meta);
           return card;
         }
 
@@ -871,6 +941,69 @@
           if (e.target === dlg) dlg.close();
         });
 
+
+        function loadRanking(rankItems) {
+          currentRankItems = rankItems || [];
+          rankOf = {}; noteOf = {}; noteOfScores = {}; orderOf = {}; battleStatsOf = {};
+          currentRankItems.forEach(function (item) {
+            var f = item.file || item;
+            orderOf[f] = typeof item.order === "number" ? item.order : null;
+            noteOf[f] = item.note || "";
+            noteOfScores[f] = item.scores || null;
+            animatedOf[f] = !!item.animated;
+            if (item.battleStats) battleStatsOf[f] = item.battleStats;
+          });
+          // 默认按对战 ELO 降序（实时）；可切回策展 order
+          galleryData.sort(function (a, b) {
+            if (sortMode === "elo") {
+              var ea = battleStatsOf[a.file], eb = battleStatsOf[b.file];
+              var ka = ea ? ea.elo : -1e9, kb = eb ? eb.elo : -1e9;
+              if (ka !== kb) return kb - ka; // ELO 高者靠前
+              var oa = orderOf[a.file] == null ? 1e9 : orderOf[a.file];
+              var ob = orderOf[b.file] == null ? 1e9 : orderOf[b.file];
+              return oa - ob; // 同分按策展序兜底
+            }
+            var ka2 = orderOf[a.file] == null ? 1e9 : orderOf[a.file];
+            var kb2 = orderOf[b.file] == null ? 1e9 : orderOf[b.file];
+            return ka2 - kb2;
+          });
+          galleryData.forEach(function (e, i) { rankOf[e.file] = i + 1; });
+          grid.replaceChildren.apply(grid, galleryData.map(makeCard));
+          function makeFilter(value, label, pressed) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "filter-btn";
+            b.dataset.filter = value;
+            b.setAttribute("aria-pressed", pressed ? "true" : "false");
+            b.textContent = label;
+            return b;
+          }
+          var levels = [];
+          galleryData.forEach(function (e) {
+            var l = thinkLabel(e.thinking);
+            if (levels.indexOf(l) < 0) levels.push(l);
+          });
+          bar.replaceChildren(makeFilter("all", "全部", true));
+          levels.forEach(function (l) { bar.appendChild(makeFilter(l, l, false)); });
+          syncVisible();
+          var latest = galleryData[0];
+          var heroImg = document.getElementById("hero-img");
+          heroImg.onload = function () {
+            heroImg.hidden = false;
+            var hint = document.getElementById("hero-loading");
+            if (hint) hint.remove();
+          };
+          heroImg.onerror = function () {
+            var hint = document.getElementById("hero-loading");
+            if (hint) hint.textContent = "首展暂时无法加载";
+            document.getElementById("hero-cap").textContent = "首展作品加载失败";
+          };
+          heroImg.src = latest.file;
+          heroImg.alt = "榜首作品：" + latest.model + " 绘制的猫弹钢琴";
+          document.getElementById("hero-cap").textContent =
+            "榜首 No.1 · " + latest.model + "（" + thinkLabel(latest.thinking) + "）";
+        }
+
         // 实时数据源：entries.json 提供作品，rankings.json 提供效果排名
         Promise.all([
           fetch("entries.json").then(function (r) {
@@ -885,75 +1018,37 @@
               return [];
             }),
         ])
-          .then(function (results) {
-            var data = results[0];
-            rankOf = {};
-            noteOf = {};
-            noteOfScores = {};
-            orderOf = {};
-            // order 为 fractional 排序键，升序越小越靠前
-            results[1].forEach(function (item) {
-              var f = item.file || item;
-              orderOf[f] = typeof item.order === "number" ? item.order : null;
-              noteOf[f] = item.note || "";
-              noteOfScores[f] = item.scores || null;
-              animatedOf[f] = !!item.animated;
+                  .then(function (results) {
+          galleryData = results[0];
+          loadRanking(results[1]);
+          if (!window.__sortBound) {
+            window.__sortBound = true;
+            var sortBar = document.getElementById("sort-bar");
+            if (sortBar) sortBar.addEventListener("click", function (e) {
+              var b = e.target.closest(".sort-btn");
+              if (!b) return;
+              sortMode = b.dataset.sort;
+              sortBar.querySelectorAll(".sort-btn").forEach(function (x) {
+                x.setAttribute("aria-pressed", x === b ? "true" : "false");
+              });
+              loadRanking(currentRankItems);
             });
-            // 按 order 升序排序；缺失 order 的条目垫底
-            data.sort(function (a, b) {
-              var ka = orderOf[a.file] == null ? 1e9 : orderOf[a.file];
-              var kb = orderOf[b.file] == null ? 1e9 : orderOf[b.file];
-              return ka - kb;
-            });
-            // 排序后回填名次（No.），含不在榜内的条目
-            data.forEach(function (e, i) {
-              rankOf[e.file] = i + 1;
-            });
-            grid.replaceChildren.apply(grid, data.map(makeCard));
-            // 筛选按钮全量由数据现算：全部 + 实际出现的 thinking 级别
-            function makeFilter(value, label, pressed) {
-              var b = document.createElement("button");
-              b.type = "button";
-              b.className = "filter-btn";
-              b.dataset.filter = value;
-              b.setAttribute("aria-pressed", pressed ? "true" : "false");
-              b.textContent = label;
-              return b;
-            }
-            var levels = [];
-            data.forEach(function (e) {
-              // 按标签去重：high/deep 都显示「深度思考」，共用一个筛选按钮
-              var l = thinkLabel(e.thinking);
-              if (levels.indexOf(l) < 0) levels.push(l);
-            });
-            bar.replaceChildren(makeFilter("all", "全部", true));
-            levels.forEach(function (l) {
-              bar.appendChild(makeFilter(l, l, false));
-            });
-            syncVisible();
-            // 首展位 = 榜首作品
-            var latest = data[0];
-            var heroImg = document.getElementById("hero-img");
-            heroImg.onload = function () {
-              heroImg.hidden = false;
-              var hint = document.getElementById("hero-loading");
-              if (hint) hint.remove();
-            };
-            heroImg.onerror = function () {
-              var hint = document.getElementById("hero-loading");
-              if (hint) hint.textContent = "首展暂时无法加载";
-              document.getElementById("hero-cap").textContent =
-                "首展作品加载失败";
-            };
-            heroImg.src = latest.file;
-            heroImg.alt = "榜首作品：" + latest.model + " 绘制的猫弹钢琴";
-            document.getElementById("hero-cap").textContent =
-              "榜首 No.1 · " +
-              latest.model +
-              "（" +
-              thinkLabel(latest.thinking) +
-              "）";
-          })
+            setInterval(function () {
+              if (sortMode !== "elo") return;
+              fetch("/api/state", { cache: "no-store" })
+                .then(function (r) { return r.ok ? r.json() : null; })
+                .then(function (d) {
+                  if (d && Array.isArray(d.rankings) && d.rankings.length) {
+                    var sig = d.rankings.map(function (x) {
+                      return x.file + ":" + Math.round((x.battleStats || {}).elo || 0);
+                    }).join("|");
+                    if (sig !== lastRankSig) { lastRankSig = sig; loadRanking(d.rankings); }
+                  }
+                })
+                .catch(function () {});
+            }, 5000);
+          }
+        })
           .catch(function () {
             var p = document.createElement("p");
             p.className = "meta";

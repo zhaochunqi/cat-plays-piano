@@ -187,6 +187,39 @@
   .vote-btn-skip:hover { background: var(--border); color: var(--text); }
   .vote-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
+  /* Undo Bar (appears after voting, within the undo window) */
+  .undo-bar {
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 6px;
+    padding: 10px 16px;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px rgba(88,166,255,0.12);
+    animation: undoPop 0.18s ease-out;
+  }
+  @keyframes undoPop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .undo-bar.show { display: flex; }
+  .undo-text { font-size: 14px; color: var(--text); }
+  .undo-text b { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .undo-btn {
+    padding: 9px 20px;
+    border: 2px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .undo-btn:hover { filter: brightness(1.1); }
+  .undo-btn:active { transform: scale(0.97); }
+
   /* Stats Panel */
   .stats-panel {
     background: var(--surface);
@@ -537,6 +570,10 @@
     <button class="vote-btn vote-btn-skip" onclick="vote('skip')">
       ⏭️ 跳过
     </button>
+    <div class="undo-bar" id="undoBar">
+      <span class="undo-text">已记录，<b id="undoCount">5</b> 秒内可撤销</span>
+      <button class="undo-btn" onclick="undoVote()">↩ 撤销这一票</button>
+    </div>
   </div>
 
   <!-- Statistics -->
@@ -628,6 +665,7 @@ let state = {
   round: 0,
   totalPairs: 0,
   voted: false,
+  lastSkipped: null, // [a, b] 上一对跳过的对局，避免立刻重复出现
   history: [],
   stats: {}, // { idx: { wins, losses, draws, elo } }
 };
@@ -738,16 +776,26 @@ function generateSmartPair() {
 // ===== Core Logic =====
 function newRound() {
   state.voted = false;
-  
+
+  let pair;
   switch (state.mode) {
-    case 'smart': [state.leftIdx, state.rightIdx] = generateSmartPair(); break;
-    case 'random': [state.leftIdx, state.rightIdx] = generateRandomPair(); break;
-    case 'adjacent': [state.leftIdx, state.rightIdx] = generateAdjacentPair(); break;
-    case 'unrated': [state.leftIdx, state.rightIdx] = generateUnratedPair(); break;
-    case 'custom': [state.leftIdx, state.rightIdx] = generateCustomPair(); break;
-    case 'rematch': [state.leftIdx, state.rightIdx] = generateRematchPair(); break;
+    case 'smart': pair = generateSmartPair(); break;
+    case 'random': pair = generateRandomPair(); break;
+    case 'adjacent': pair = generateAdjacentPair(); break;
+    case 'unrated': pair = generateUnratedPair(); break;
+    case 'custom': pair = generateCustomPair(); break;
+    case 'rematch': pair = generateRematchPair(); break;
+    default: pair = generateSmartPair();
   }
-  
+
+  // 避免跳过同一对后立刻又出现（尽力而为）
+  if (state.lastSkipped &&
+      pair[0] === state.lastSkipped[0] && pair[1] === state.lastSkipped[1]) {
+    pair = generateRandomPair();
+  }
+
+  state.leftIdx = pair[0];
+  state.rightIdx = pair[1];
   state.round++;
   renderBattle();
   updateProgress();
@@ -783,66 +831,83 @@ function selectCard(side) {
 
 function vote(result) {
   if (state.voted) return;
-  state.voted = true;
-  
   const left = ENTRIES[state.leftIdx];
   const right = ENTRIES[state.rightIdx];
-  
-  // Record
-  const record = {
-    round: state.round,
-    mode: state.mode,
-    a: state.leftIdx,
-    b: state.rightIdx,
-    aModel: left.model,
-    bModel: right.model,
-    result: result, // 'left', 'right', 'draw', 'both-bad', 'skip'
-    time: new Date().toISOString()
-  };
-  
-  if (result !== 'skip') {
-    state.history.push(record);
-    
-    // Update stats
-    if (!state.stats[state.leftIdx]) initStats(state.leftIdx);
-    if (!state.stats[state.rightIdx]) initStats(state.rightIdx);
-    
-    if (result === 'left') {
-      state.stats[state.leftIdx].wins++;
-      state.stats[state.rightIdx].losses++;
-      exchangeElo(state.leftIdx, state.rightIdx, 1);
-    } else if (result === 'right') {
-      state.stats[state.rightIdx].wins++;
-      state.stats[state.leftIdx].losses++;
-      exchangeElo(state.rightIdx, state.leftIdx, 1);
-    } else if (result === 'both-bad') {
-      // 都挺烂：双方都扣固定惩罚，沉到很后面（相对顺序不变）
-      state.stats[state.leftIdx].bad++;
-      state.stats[state.rightIdx].bad++;
-      applyBadPenalty(state.leftIdx);
-      applyBadPenalty(state.rightIdx);
-    } else {
-      state.stats[state.leftIdx].draws++;
-      state.stats[state.rightIdx].draws++;
-      exchangeElo(state.leftIdx, state.rightIdx, 0.5);
-    }
+  // 防御：若还没生成对局（leftIdx 仍为 -1），直接换新一对，不抛错
+  if (!left || !right) { newRound(); return; }
+
+  // —— 跳过：不揭示、不记录、立即换一对，避免“点了没反应 / 锁死 1.5 秒” ——
+  if (result === 'skip') {
+    state.voted = true;
+    document.querySelectorAll('.vote-btn').forEach(b => b.disabled = true);
+    state.lastSkipped = [state.leftIdx, state.rightIdx];
+    setTimeout(newRound, 350);
+    return;
   }
-  
+
+  state.voted = true;
+
+  // —— 撤销支持：投票前先快照双方统计，并共用同一个时间戳（本地与服务器一致，DELETE 才能精准命中那条） ——
+  if (!state.stats[state.leftIdx]) initStats(state.leftIdx);
+  if (!state.stats[state.rightIdx]) initStats(state.rightIdx);
+  const voteTime = new Date().toISOString();
+  const undoSnap = {
+    record: {
+      round: state.round,
+      mode: state.mode,
+      a: state.leftIdx,
+      b: state.rightIdx,
+      aModel: left.model,
+      bModel: right.model,
+      result: result,
+      time: voteTime
+    },
+    beforeLeft: { ...state.stats[state.leftIdx] },
+    beforeRight: { ...state.stats[state.rightIdx] },
+    leftIdx: state.leftIdx,
+    rightIdx: state.rightIdx,
+    voteTime
+  };
+
+  // Record
+  state.history.push(undoSnap.record);
+
+  // Update stats
+  if (result === 'left') {
+    state.stats[state.leftIdx].wins++;
+    state.stats[state.rightIdx].losses++;
+    exchangeElo(state.leftIdx, state.rightIdx, 1);
+  } else if (result === 'right') {
+    state.stats[state.rightIdx].wins++;
+    state.stats[state.leftIdx].losses++;
+    exchangeElo(state.rightIdx, state.leftIdx, 1);
+  } else if (result === 'both-bad') {
+    // 都挺烂：双方都扣固定惩罚，沉到很后面（相对顺序不变）
+    state.stats[state.leftIdx].bad++;
+    state.stats[state.rightIdx].bad++;
+    applyBadPenalty(state.leftIdx);
+    applyBadPenalty(state.rightIdx);
+  } else {
+    state.stats[state.leftIdx].draws++;
+    state.stats[state.rightIdx].draws++;
+    exchangeElo(state.leftIdx, state.rightIdx, 0.5);
+  }
+
   // Reveal models
   revealModels(left.model, right.model);
-  
+
   // Disable buttons
   document.querySelectorAll('.vote-btn').forEach(b => b.disabled = true);
-  
+
   // Save & update UI
   saveState();
   renderStats();
-  
+
   // Auto-persist to server (if running) — no manual sync needed
-  saveVoteToServer(left.file, right.file, result);
-  
-  // Auto advance after delay
-  setTimeout(newRound, 1500);
+  saveVoteToServer(left.file, right.file, result, voteTime);
+
+  // 展示撤销条 + 倒计时；窗口内未撤销则自动进入下一局
+  showUndoBar(undoSnap);
 }
 
 function revealModels(leftModel, rightModel) {
@@ -852,6 +917,90 @@ function revealModels(leftModel, rightModel) {
   elLeft.className = 'card-model revealed reveal-anim';
   elRight.textContent = `🅱️ ${rightModel}`;
   elRight.className = 'card-model revealed reveal-anim';
+}
+
+// ===== 撤销（投票后短暂窗口内可反悔） =====
+const UNDO_SECONDS = 5;
+
+function showUndoBar(snap) {
+  state._undo = snap;
+  const bar = document.getElementById('undoBar');
+  const countEl = document.getElementById('undoCount');
+  bar.classList.add('show');
+  let remain = UNDO_SECONDS;
+  countEl.textContent = remain;
+  state._undoTimer = setInterval(() => {
+    remain -= 1;
+    countEl.textContent = Math.max(remain, 0);
+    if (remain <= 0) {
+      clearInterval(state._undoTimer);
+      commitVote(); // 窗口结束，正式进入下一局
+    }
+  }, 1000);
+  // 兜底：总时长到达后若仍未撤销，自动推进（防止计时器异常导致卡住）
+  state._undoHardTimer = setTimeout(() => {
+    if (state._undo) commitVote();
+  }, UNDO_SECONDS * 1000 + 300);
+}
+
+function hideUndoBar() {
+  document.getElementById('undoBar').classList.remove('show');
+}
+
+// 窗口结束 / 未撤销：清除撤销上下文并进入下一局
+function commitVote() {
+  if (state._undoTimer) clearInterval(state._undoTimer);
+  if (state._undoHardTimer) clearTimeout(state._undoHardTimer);
+  hideUndoBar();
+  state._undo = null;
+  newRound();
+}
+
+function undoVote() {
+  if (!state._undo) return;
+  // 1) 清掉计时器与撤销条
+  if (state._undoTimer) clearInterval(state._undoTimer);
+  if (state._undoHardTimer) clearTimeout(state._undoHardTimer);
+  hideUndoBar();
+
+  const snap = state._undo;
+  // 2) 回滚本地统计快照
+  state.stats[snap.leftIdx] = snap.beforeLeft;
+  state.stats[snap.rightIdx] = snap.beforeRight;
+  // 3) 移除刚写入的 history 记录（投票时 push 的最后一条）
+  if (state.history.length && state.history[state.history.length - 1] === snap.record) {
+    state.history.pop();
+  } else {
+    const i = state.history.findIndex(h => h.time === snap.voteTime); // 兜底：按时间匹配
+    if (i >= 0) state.history.splice(i, 1);
+  }
+  state._undo = null;
+
+  // 4) 重新展示同一对（回到盲评态、按钮可用），让用户可以重新正确投票
+  state.voted = false;
+  renderBattle();
+  saveState();
+  renderStats();
+  updateProgress();
+
+  // 5) 通知服务器删除该条投票并重算
+  deleteVoteOnServer(snap.voteTime);
+}
+
+async function deleteVoteOnServer(time) {
+  if (!serverAvailable) return;
+  try {
+    const r = await fetch('/api/vote/delete', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ time })
+    });
+    if (!r.ok) throw new Error('vote delete failed');
+    const data = await r.json();
+    if (data.stats) applyServerStats(data.stats);
+  } catch {
+    // 服务器不可达不影响本地撤销；下次刷新会以服务器为准
+  }
 }
 
 // ===== ELO System =====
@@ -1121,7 +1270,7 @@ async function checkServer() {
   updateSaveStatus();
 }
 
-async function saveVoteToServer(leftFile, rightFile, result) {
+async function saveVoteToServer(leftFile, rightFile, result, voteTime) {
   if (!serverAvailable) return;
   try {
     const r = await fetch('/api/vote', {
@@ -1132,7 +1281,7 @@ async function saveVoteToServer(leftFile, rightFile, result) {
         mode: state.mode,
         leftIdx: state.leftIdx,
         rightIdx: state.rightIdx,
-        time: new Date().toISOString()
+        time: voteTime
       })
     });
     if (!r.ok) throw new Error('vote save failed');

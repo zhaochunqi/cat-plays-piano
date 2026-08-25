@@ -124,6 +124,19 @@ def apply_vote(payload):
     return stats, len(votes)
 
 
+def delete_vote(payload):
+    """撤销：按 time 命中并移除该条投票，重算 ELO 与排名。"""
+    rankings = load_json(RANKINGS_PATH, [])
+    votes = load_json(VOTES_PATH, [])
+    t = payload.get("time")
+    new_votes = [v for v in votes if v.get("time") != t]
+    removed = len(votes) - len(new_votes)
+    save_json(VOTES_PATH, new_votes)
+    stats = compute_state(rankings, new_votes)
+    regenerate_rankings(rankings, stats)
+    return stats, len(new_votes), removed
+
+
 def utcnow():
     return datetime.now(timezone.utc).isoformat()
 
@@ -175,6 +188,20 @@ class Handler(SimpleHTTPRequestHandler):
             except Exception as ex:  # noqa
                 return self._send_json({"error": str(ex)}, 500)
             self._send_json({"ok": True, "votes": count, "stats": stats})
+        elif self.path.split("?")[0] == "/api/vote/delete":
+            length = int(self.headers.get("Content-Length", 0))
+            raw = self.rfile.read(length)
+            try:
+                payload = json.loads(raw.decode("utf-8"))
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                return self._send_json({"error": "bad json"}, 400)
+            if not payload.get("time"):
+                return self._send_json({"error": "missing time"}, 400)
+            try:
+                stats, count, removed = delete_vote(payload)
+            except Exception as ex:  # noqa
+                return self._send_json({"error": str(ex)}, 500)
+            self._send_json({"ok": True, "removed": removed, "votes": count, "stats": stats})
         else:
             self._send_json({"error": "not found"}, 404)
 

@@ -9,7 +9,6 @@
       "scene": 9,
       "detail": 8
     },
-    "order": 8,
     "battleStats": {
       "elo": 1129,
       "rd": 184,
@@ -32,7 +31,6 @@
       "scene": 10,
       "detail": 9
     },
-    "order": 1,
     "battleStats": {
       "elo": 1100,
       "rd": 184,
@@ -55,7 +53,6 @@
       "scene": 8,
       "detail": 8
     },
-    "order": 3,
     "battleStats": {
       "elo": 1078,
       "rd": 184,
@@ -79,7 +76,6 @@
       "scene": 8,
       "detail": 9
     },
-    "order": 2,
     "battleStats": {
       "elo": 1063,
       "rd": 184,
@@ -102,7 +98,6 @@
       "scene": 8,
       "detail": 7
     },
-    "order": 5,
     "battleStats": {
       "elo": 1042,
       "rd": 184,
@@ -126,7 +121,6 @@
       "scene": 6,
       "detail": 6
     },
-    "order": 15,
     "battleStats": {
       "elo": 1024,
       "rd": 184,
@@ -150,7 +144,6 @@
       "scene": 7,
       "detail": 8
     },
-    "order": 9,
     "battleStats": {
       "elo": 1021,
       "rd": 184,
@@ -173,7 +166,6 @@
       "scene": 6,
       "detail": 6
     },
-    "order": 16,
     "battleStats": {
       "elo": 1015,
       "rd": 184,
@@ -196,7 +188,6 @@
       "scene": 7,
       "detail": 9
     },
-    "order": 7,
     "battleStats": {
       "elo": 1004,
       "rd": 184,
@@ -219,7 +210,6 @@
       "scene": 6,
       "detail": 6
     },
-    "order": 14,
     "battleStats": {
       "elo": 990,
       "rd": 184,
@@ -242,7 +232,6 @@
       "scene": 8,
       "detail": 6
     },
-    "order": 12,
     "battleStats": {
       "elo": 980,
       "rd": 184,
@@ -265,7 +254,6 @@
       "scene": 6,
       "detail": 5
     },
-    "order": 11,
     "battleStats": {
       "elo": 965,
       "rd": 184,
@@ -288,7 +276,6 @@
       "scene": 9,
       "detail": 8
     },
-    "order": 4,
     "battleStats": {
       "elo": 945,
       "rd": 184,
@@ -311,7 +298,6 @@
       "scene": 7,
       "detail": 8
     },
-    "order": 13,
     "battleStats": {
       "elo": 938,
       "rd": 184,
@@ -334,7 +320,6 @@
       "scene": 9,
       "detail": 8
     },
-    "order": 6,
     "battleStats": {
       "elo": 929,
       "rd": 184,
@@ -357,7 +342,6 @@
       "scene": 8,
       "detail": 6
     },
-    "order": 10,
     "battleStats": {
       "elo": 914,
       "rd": 184,
@@ -380,7 +364,6 @@
       "scene": 5,
       "detail": 6
     },
-    "order": 17,
     "battleStats": {
       "elo": 777,
       "rd": 196,
@@ -403,7 +386,6 @@
       "scene": 4,
       "detail": 5
     },
-    "order": 26,
     "battleStats": {
       "elo": 720,
       "rd": 209,
@@ -426,7 +408,6 @@
       "scene": 5,
       "detail": 4
     },
-    "order": 21,
     "battleStats": {
       "elo": 655,
       "rd": 202,
@@ -449,7 +430,6 @@
       "scene": 5,
       "detail": 6
     },
-    "order": 22,
     "battleStats": {
       "elo": 575,
       "rd": 226,
@@ -472,7 +452,6 @@
       "scene": 5,
       "detail": 5
     },
-    "order": 20,
     "battleStats": {
       "elo": 507,
       "rd": 217,
@@ -495,7 +474,6 @@
       "scene": 5,
       "detail": 4
     },
-    "order": 18,
     "battleStats": {
       "elo": 490,
       "rd": 217,
@@ -518,7 +496,6 @@
       "scene": 4,
       "detail": 5
     },
-    "order": 23,
     "battleStats": {
       "elo": 482,
       "rd": 226,
@@ -541,7 +518,6 @@
       "scene": 1,
       "detail": 0
     },
-    "order": 46,
     "battleStats": {
       "elo": 346,
       "rd": 236,
@@ -564,7 +540,6 @@
       "scene": 1,
       "detail": 1
     },
-    "order": 45,
     "battleStats": {
       "elo": 332,
       "rd": 226,
@@ -587,7 +562,6 @@
       "scene": 5,
       "detail": 4
     },
-    "order": 19,
     "battleStats": {
       "elo": 311,
       "rd": 226,
@@ -610,7 +584,6 @@
       "scene": 3,
       "detail": 3
     },
-    "order": 32,
     "battleStats": {
       "elo": 277,
       "rd": 247,
@@ -633,7 +606,6 @@
       "scene": 2,
       "detail": 1
     },
-    "order": 44,
     "battleStats": {
       "elo": 273,
       "rd": 247,
@@ -656,7 +628,6 @@
       "scene": 5,
       "detail": 5
     },
-    "order": 24,
     "battleStats": {
       "elo": 262,
       "rd": 236,
@@ -679,7 +650,6 @@
       "scene": 4,
       "detail": 4
     },
-    "order": 27,
     "battleStats": {
       "elo": 186,
       "rd": 261,
@@ -702,7 +672,6 @@
       "scene": 2,
       "detail": 1
     },
-    "order": 43,
     "battleStats": {
       "elo": 174,
       "rd": 261,
@@ -725,7 +694,6 @@
       "scene": 4,
       "detail": 3
     },
-    "order": 28,
     "battleStats": {
       "elo": 142,
       "rd": 277,
@@ -748,7 +716,6 @@
       "scene": 2,
       "detail": 2
     },
-    "order": 41,
     "battleStats": {
       "elo": 100,
       "rd": 277,
@@ -771,7 +738,6 @@
       "scene": 2,
       "detail": 2
     },
-    "order": 42,
     "battleStats": {
       "elo": 92,
       "rd": 277,
@@ -794,7 +760,6 @@
       "scene": 4,
       "detail": 3
     },
-    "order": 25,
     "battleStats": {
       "elo": 78,
       "rd": 277,
@@ -817,7 +782,6 @@
       "scene": 3,
       "detail": 2
     },
-    "order": 40,
     "battleStats": {
       "elo": 55,
       "rd": 296,
@@ -840,7 +804,6 @@
       "scene": 3,
       "detail": 2
     },
-    "order": 37,
     "battleStats": {
       "elo": 22,
       "rd": 296,
@@ -863,7 +826,6 @@
       "scene": 3,
       "detail": 2
     },
-    "order": 38,
     "battleStats": {
       "elo": 18,
       "rd": 296,
@@ -886,7 +848,6 @@
       "scene": 3,
       "detail": 3
     },
-    "order": 33,
     "battleStats": {
       "elo": 5,
       "rd": 296,
@@ -909,7 +870,6 @@
       "scene": 2,
       "detail": 2
     },
-    "order": 34,
     "battleStats": {
       "elo": -16,
       "rd": 296,
@@ -932,7 +892,6 @@
       "scene": 3,
       "detail": 3
     },
-    "order": 31,
     "battleStats": {
       "elo": -84,
       "rd": 320,
@@ -955,7 +914,6 @@
       "scene": 3,
       "detail": 3
     },
-    "order": 36,
     "battleStats": {
       "elo": -100,
       "rd": 350,
@@ -978,7 +936,6 @@
       "scene": 3,
       "detail": 3
     },
-    "order": 29,
     "battleStats": {
       "elo": -101,
       "rd": 320,
@@ -1001,7 +958,6 @@
       "scene": 3,
       "detail": 2
     },
-    "order": 39,
     "battleStats": {
       "elo": -102,
       "rd": 296,
@@ -1024,7 +980,6 @@
       "scene": 3,
       "detail": 3
     },
-    "order": 30,
     "battleStats": {
       "elo": -104,
       "rd": 320,
@@ -1047,7 +1002,6 @@
       "scene": 3,
       "detail": 2
     },
-    "order": 35,
     "battleStats": {
       "elo": -109,
       "rd": 320,

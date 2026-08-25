@@ -427,6 +427,46 @@
     100% { transform: scale(1); opacity: 1; }
   }
   .reveal-anim { animation: revealPop 0.3s ease-out; }
+
+  /* ===== Insight cards (top of leaderboard) ===== */
+  .insight-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .insight-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 78px;
+    justify-content: center;
+  }
+  .insight-label {
+    font-size: 12px;
+    color: var(--text2);
+    letter-spacing: .04em;
+  }
+  .insight-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.25;
+    word-break: break-word;
+  }
+  .insight-sub {
+    font-size: 12px;
+    color: var(--text2);
+  }
+  .insight-empty {
+    font-size: 14px;
+    color: var(--text2);
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -511,6 +551,11 @@
     </div>
     
     <div id="tabLeaderboard">
+      <div class="insight-row" id="insightRow">
+        <div class="insight-card" id="insightTop"></div>
+        <div class="insight-card" id="insightUpset"></div>
+        <div class="insight-card" id="insightCred"></div>
+      </div>
       <div class="stats-grid" id="statsGrid"></div>
     </div>
     
@@ -923,6 +968,7 @@ function renderStats() {
   const lo = Math.min(...elos), hi = Math.max(...elos);
   const span = (hi - lo) || 1;
   const sorted = all.slice().sort((a, b) => b.elo - a.elo);
+  renderInsights(all, sorted);
 
   const grid = document.getElementById('statsGrid');
   grid.innerHTML = sorted.map((entry, rank) => {
@@ -967,6 +1013,69 @@ function renderStats() {
       <td style="color:var(--text2);font-size:12px;">${new Date(h.time).toLocaleTimeString()}</td>
     </tr>`;
   }).join('');
+}
+
+
+function renderInsights(all, sorted) {
+  // 1. 最强模型（ELO 最高且至少有过对战）
+  const top = sorted[0];
+  const topTotal = top.wins + top.losses + top.draws;
+  const topEl = document.getElementById('insightTop');
+  if (topTotal === 0) {
+    topEl.innerHTML = '<div class="insight-label">👑 最强模型</div><div class="insight-empty">暂无对战数据</div>';
+  } else {
+    topEl.innerHTML = '<div class="insight-label">👑 最强模型</div>'
+      + '<div class="insight-value">' + top.model + '</div>'
+      + '<div class="insight-sub">ELO ' + top.elo + ' · ' + top.wins + '胜' + top.losses + '负' + top.draws + '平</div>';
+  }
+
+  // 2. 最大冷门：重放对局，找「低分爆冷胜高分」的最大分差
+  const eloMap = {};
+  ENTRIES.forEach((_, i) => { eloMap[i] = 1000; });
+  const hist = state.history || [];
+  let best = null;
+  hist.forEach(h => {
+    if (h.result === 'both-bad') {
+      eloMap[h.a] = Math.round(eloMap[h.a] - BAD_PENALTY);
+      eloMap[h.b] = Math.round(eloMap[h.b] - BAD_PENALTY);
+      return;
+    }
+    if (h.result !== 'left' && h.result !== 'right') return;
+    const w = h.result === 'left' ? h.a : h.b;
+    const l = h.result === 'left' ? h.b : h.a;
+    const eW = eloMap[w], eL = eloMap[l];
+    if (eW < eL) {
+      const margin = eL - eW;
+      if (!best || margin > best.margin) best = { w: w, l: l, margin: margin };
+    }
+    const eWin = 1 / (1 + Math.pow(10, (eL - eW) / 400));
+    const eLose = 1 / (1 + Math.pow(10, (eW - eL) / 400));
+    const k = 32;
+    eloMap[w] = Math.round(eW + k * (1 - eWin));
+    eloMap[l] = Math.round(eL + k * (0 - eLose));
+  });
+  const upsetEl = document.getElementById('insightUpset');
+  if (!best) {
+    upsetEl.innerHTML = '<div class="insight-label">🔥 最大冷门</div><div class="insight-empty">暂无爆冷记录</div>';
+  } else {
+    const wm = ENTRIES[best.w].model, lm = ENTRIES[best.l].model;
+    upsetEl.innerHTML = '<div class="insight-label">🔥 最大冷门</div>'
+      + '<div class="insight-value">' + wm + ' 爆冷胜 ' + lm + '</div>'
+      + '<div class="insight-sub">赛前分差 ' + best.margin + ' 分</div>';
+  }
+
+  // 3. 数据可信度：高置信（≥ MIN_GAMES 局）模型占比 + 场均
+  let high = 0, totalGames = 0;
+  all.forEach(r => {
+    const g = r.wins + r.losses + r.draws;
+    totalGames += g;
+    if (g >= MIN_GAMES) high++;
+  });
+  const avg = all.length ? (totalGames / all.length) : 0;
+  const credEl = document.getElementById('insightCred');
+  credEl.innerHTML = '<div class="insight-label">📈 数据可信度</div>'
+    + '<div class="insight-value">' + high + ' / ' + all.length + ' 高置信</div>'
+    + '<div class="insight-sub">场均 ' + avg.toFixed(1) + ' 局 · 建议 ≥ ' + MIN_GAMES + '</div>';
 }
 
 function showTab(tab) {
@@ -1162,7 +1271,7 @@ document.getElementById('syncBtn').addEventListener('click', async () => {
       _stats: eloMap[entry.file] || null
     })).sort((a, b) => b._elo - a._elo);
 
-    // 保留 order（策展顺序），不把它重写成 ELO 名次；仅更新 battleStats
+    // 不再写入 order（单一 ELO 排名），仅更新 battleStats
     ranked.forEach((entry, i) => {
       // Attach battle stats as metadata
       if (entry._stats) {
@@ -1194,7 +1303,7 @@ document.getElementById('syncBtn').addEventListener('click', async () => {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
-    alert(`✅ 对战统计已同步！\n\n基于 ${state.history.length} 轮投票结果，${ranked.length} 个模型已附上 ELO 分数与战绩（order 策展顺序保持不变）。\n\n请用下载的文件替换项目中的 rankings.json，刷新首页即可看到实时排名。`);
+    alert(`✅ 对战统计已同步！\n\n基于 ${state.history.length} 轮投票结果，${ranked.length} 个模型已附上 ELO 分数与战绩。\n\n请用下载的文件替换项目中的 rankings.json，刷新首页即可看到实时排名。`);
   } catch (err) {
     console.error('Sync failed:', err);
     // Fallback: generate without fetching original rankings
@@ -1206,13 +1315,11 @@ document.getElementById('syncBtn').addEventListener('click', async () => {
       file: e.file,
       note: '', // Will need manual merge
       scores: { cat: 0, piano: 0, playing: 0, scene: 0, detail: 0 },
-      order: 0,
       _elo: eloMap[e.file].elo,
       _stats: eloMap[e.file]
     })).sort((a, b) => b._elo - a._elo);
 
     ranked.forEach((entry, i) => {
-      entry.order = i + 1;
       if (entry._stats) {
         entry.battleStats = { elo: entry._elo, wins: entry._stats.wins, losses: entry._stats.losses, draws: entry._stats.draws };
       }

@@ -391,33 +391,6 @@
         outline-offset: 2px;
       }
 
-      .sort-bar {
-        display: flex;
-        gap: var(--gap-xs);
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      .sort-btn {
-        padding: 7px 16px;
-        background: transparent;
-        color: var(--muted);
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        font-size: 13px;
-        cursor: pointer;
-        transition:
-          color 0.15s ease,
-          background 0.15s ease,
-          border-color 0.15s ease;
-      }
-      .sort-btn:hover { color: var(--fg); border-color: var(--fg); }
-      .sort-btn[aria-pressed="true"] {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-      }
-      .sort-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
       .elo-badge {
         display: inline-block;
         margin: 0 4px 4px 0;
@@ -616,10 +589,6 @@
               role="group"
               aria-label="按生成方式筛选"
             ></div>
-            <div class="sort-bar" id="sort-bar" role="group" aria-label="排序方式">
-              <button type="button" class="sort-btn" data-sort="elo" aria-pressed="true">⚔️ 对战 ELO</button>
-              <button type="button" class="sort-btn" data-sort="curated" aria-pressed="false">✋ 策展顺序</button>
-            </div>
           </div>
           <div class="gallery-grid" id="gallery-grid">
             <p class="meta" id="gallery-status">正在加载作品…</p>
@@ -704,21 +673,24 @@
           deep: "深度思考",
           extend: "扩展思考",
         };
-        // 排名数据在 rankings.json，每条为 {file, note, scores, order}：
-        //  - order 为 fractional 排序键，升序越小越靠前（No.1）；改一个数即可重排，无需手动调整数组顺序
+        // 排名数据在 rankings.json，每条为 {file, note, scores, animated, battleStats}：
+        //  - 画廊单一按「对战 ELO」排名（battleStats.elo 降序），不再有人工策展序
+        //  - ELO 差距 > ELO_BAND 时纯按 ELO；差距更小时用胜率(wins/(wins+losses+draws))掰开，
+        //    胜率相同再比胜场，最后按文件名稳定兜底 —— 这样 12 胜 0 负 的强模型不会被 11 胜 1 负但吃更强对手的模型压在后面
         //  - scores 为五维展示分（猫/钢琴/演奏/场景/细节，各 0-10），仅用于雷达图，不参与排序
         //  - note 为效果评测理由，点击图片放大时展示
+        //  - animated 为可选布尔，标记该作品 SVG 含动画
+        //  - battleStats 为对战 ELO 派生数据，由本地评测服务器生成，不参与画廊排序（画廊排序由 ELO + 胜率次级键决定）
         // 缺失或新条目不在榜内时按 entries.json 原顺序垫底。
         var rankOf = {};
         var noteOf = {};
         var noteOfScores = {};
-        var orderOf = {};
         var animatedOf = {};
         var DIM_KEYS = ["cat", "piano", "playing", "scene", "detail"];
         var DIM_LABELS = { cat: "猫", piano: "钢琴", playing: "演奏", scene: "场景", detail: "细节" };
         // 实时对战排序相关状态
         var battleStatsOf = {};
-        var sortMode = "elo"; // 'elo' = 实时对战 ELO 降序；'curated' = 原策展 order
+        var ELO_BAND = 40; // ELO 差距在此以内视为「咬得很紧」，改比胜率
         var galleryData = [];
         var currentRankItems = [];
         var lastRankSig = "";
@@ -727,7 +699,7 @@
         var visible = [];
         var cur = -1;
 
-        // Dota 风格五维雷达图（仅展示 scores，排序由 order 决定）
+        // Dota 风格五维雷达图（仅展示 scores，不参与排序）
         function radarSVG(scores) {
           var N = DIM_KEYS.length, cx = 110, cy = 110, R = 80;
           function pt(i, r) {
@@ -786,6 +758,12 @@
           return c === "high" ? "高可信" : c === "mid" ? "中可信" : "低可信";
         }
 
+        function winRate(bs) {
+          if (!bs) return -1;
+          var g = bs.wins + bs.losses + bs.draws;
+          return g > 0 ? bs.wins / g : -1;
+        }
+
         function makeCard(e, i) {
           var rank = rankOf[e.file] || 1e9;
           var card = document.createElement("article");
@@ -841,8 +819,9 @@
             "No." + rank + " · " + thinkLabel(e.thinking) + " · " + e.date;
 
           card.append(badge);
-          if (eloBadge) card.append(eloBadge);
           card.append(btn, name, meta);
+          // ELO 徽章放缩略图下方，避免被左上角绝对定位的序号徽章遮挡
+          if (eloBadge) card.append(eloBadge);
           return card;
         }
 
@@ -944,28 +923,24 @@
 
         function loadRanking(rankItems) {
           currentRankItems = rankItems || [];
-          rankOf = {}; noteOf = {}; noteOfScores = {}; orderOf = {}; battleStatsOf = {};
+          rankOf = {}; noteOf = {}; noteOfScores = {}; battleStatsOf = {};
           currentRankItems.forEach(function (item) {
             var f = item.file || item;
-            orderOf[f] = typeof item.order === "number" ? item.order : null;
             noteOf[f] = item.note || "";
             noteOfScores[f] = item.scores || null;
             animatedOf[f] = !!item.animated;
             if (item.battleStats) battleStatsOf[f] = item.battleStats;
           });
-          // 默认按对战 ELO 降序（实时）；可切回策展 order
+          // 单一 ELO 排名：差距 > ELO_BAND 纯按 ELO；差距小用胜率掰开，再比胜场，最后文件名兜底
           galleryData.sort(function (a, b) {
-            if (sortMode === "elo") {
-              var ea = battleStatsOf[a.file], eb = battleStatsOf[b.file];
-              var ka = ea ? ea.elo : -1e9, kb = eb ? eb.elo : -1e9;
-              if (ka !== kb) return kb - ka; // ELO 高者靠前
-              var oa = orderOf[a.file] == null ? 1e9 : orderOf[a.file];
-              var ob = orderOf[b.file] == null ? 1e9 : orderOf[b.file];
-              return oa - ob; // 同分按策展序兜底
-            }
-            var ka2 = orderOf[a.file] == null ? 1e9 : orderOf[a.file];
-            var kb2 = orderOf[b.file] == null ? 1e9 : orderOf[b.file];
-            return ka2 - kb2;
+            var ea = battleStatsOf[a.file], eb = battleStatsOf[b.file];
+            var ka = ea ? ea.elo : -1e9, kb = eb ? eb.elo : -1e9;
+            if (Math.abs(ka - kb) > ELO_BAND) return kb - ka; // 大差距：纯 ELO 降序
+            var wa = winRate(ea), wb = winRate(eb);
+            if (wa !== wb) return wb - wa; // 胜率高的靠前（咬得很紧时按统治力排）
+            var wina = ea ? ea.wins : 0, winb = eb ? eb.wins : 0;
+            if (wina !== winb) return winb - wina; // 胜率相同比胜场
+            return a.file < b.file ? -1 : 1; // 稳定兜底
           });
           galleryData.forEach(function (e, i) { rankOf[e.file] = i + 1; });
           grid.replaceChildren.apply(grid, galleryData.map(makeCard));
@@ -1023,18 +998,7 @@
           loadRanking(results[1]);
           if (!window.__sortBound) {
             window.__sortBound = true;
-            var sortBar = document.getElementById("sort-bar");
-            if (sortBar) sortBar.addEventListener("click", function (e) {
-              var b = e.target.closest(".sort-btn");
-              if (!b) return;
-              sortMode = b.dataset.sort;
-              sortBar.querySelectorAll(".sort-btn").forEach(function (x) {
-                x.setAttribute("aria-pressed", x === b ? "true" : "false");
-              });
-              loadRanking(currentRankItems);
-            });
             setInterval(function () {
-              if (sortMode !== "elo") return;
               fetch("/api/state", { cache: "no-store" })
                 .then(function (r) { return r.ok ? r.json() : null; })
                 .then(function (d) {

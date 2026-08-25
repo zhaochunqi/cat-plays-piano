@@ -4,7 +4,7 @@
 每次投票自动：
   1. 追加到 votes.json（原始投票记录，可审计）
   2. 重算所有模型的 ELO 分数
-  3. 按 ELO 降序重写 rankings.json（保留 note / scores，仅更新 order + battleStats）
+  3. 按 ELO 降序附 battleStats 写回 rankings.json（不再写入 order，排名为单一 ELO 口径）
 
 纯静态 file:// 无法写文件，所以需要一个本地服务器来做自动持久化。
 启动：just serve  →  http://localhost:8123/battle.html
@@ -91,7 +91,7 @@ def confidence(games):
 
 
 def regenerate_rankings(rankings, stats):
-    """按 ELO 降序分配 order，附 battleStats，写回 rankings.json。"""
+    """按 ELO 降序附 battleStats，写回 rankings.json（不再写入 order）。"""
     enriched = []
     for e in rankings:
         s = stats.get(e["file"], {"wins": 0, "losses": 0, "draws": 0, "elo": 1000})
@@ -108,11 +108,7 @@ def regenerate_rankings(rankings, stats):
     enriched.sort(key=lambda x: x[1], reverse=True)
     out = []
     for i, (e, _) in enumerate(enriched):
-        # order 是「策展顺序」手动排序键，默认保留不动；
-        # 只有 rankings.json 里完全没有 order 的新条目才给默认序。
-        # ELO 只写入 battleStats.elo，不污染 order。
-        if "order" not in e:
-            e["order"] = i + 1
+        # 排名为单一 ELO 口径，不再写入人工 order 键
         out.append(e)
     save_json(RANKINGS_PATH, out)
     return out

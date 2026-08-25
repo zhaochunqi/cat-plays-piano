@@ -5,7 +5,7 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
 
 线上地址：<https://zhaochunqi.github.io/cat-plays-piano/>
 
-作品按 `rankings.json` 的 `order` 键排序；点击图片放大可查看该作品的效果评测理由（note），以及五维评分雷达图（猫 / 钢琴 / 演奏 / 场景 / 细节，各 0–10）。
+作品默认按**对战 ELO**（`rankings.json` 的 `battleStats.elo`，由本地评测产生）降序排列；ELO 差距很小时用胜率（wins/(wins+losses+draws)）作次级排序键掰开，确保「赢得多且赢强敌」的模型排在前面。点击图片放大可查看该作品的效果评测理由（note），以及五维评分雷达图（猫 / 钢琴 / 演奏 / 场景 / 细节，各 0–10）。
 
 ## 如何添加新条目
 
@@ -20,7 +20,7 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
    { "model": "…", "thinking": "…", "date": "YYYY-MM-DD", "file": "entries/…" }
    ```
 
-4. 在 `rankings.json` 追加一条 `{ "file", "note", "scores", "order" }`（见下「数据约定」）。
+4. 在 `rankings.json` 追加一条 `{ "file", "note", "scores" }`（见下「数据约定」；`battleStats` 无需手写，跑本地评测后自动生成）。
 
 5. commit + push。
 
@@ -65,7 +65,7 @@ PR 标题建议与 commit message 一致，描述里贴一句 `note`（效果评
 | 字段 | 说明 |
 | --- | --- |
 | `model` | 模型 ID，如 `ox-alpha-free` |
-| `thinking` | 思考级别 `off` / `low` / `medium` / `high` / `xhigh` / `max`，不支持则 `null` |
+| `thinking` | 思考级别：`off` / `low` / `medium` / `high` / `max`，以及 `extend` / `deep` 等厂商自定义级别；**模型不支持思考时用 `none`**（不是 `null`） |
 | `date` | 生成日期 `YYYY-MM-DD` |
 | `file` | 相对仓库根的路径 |
 
@@ -76,14 +76,14 @@ PR 标题建议与 commit message 一致，描述里贴一句 `note`（效果评
 | `file` | 对应 `entries.json` 的 `file` |
 | `note` | 效果评测理由（一句话，点击作品放大时展示） |
 | `scores` | 五维评分 `{ cat, piano, playing, scene, detail }`，各 0–10；仅用于放大视图的雷达图展示，**不参与排序** |
-| `order` | fractional 排序键，升序越小越靠前（No.1）；改排名只改此值即可（插在中间写 `15.37`），无需手动挪数组、无需脚本 |
 | `animated` | 可选布尔；为 `true` 时该作品 SVG 含动画（CSS/SMIL），画廊卡片与放大视图显示「▶ 动画」徽章 |
+| `battleStats` | 由本地评测服务器（`just serve`）从 `votes.json` 重算的 ELO 对战数据 `{elo, rd, confidence, games, wins, losses, draws, bad, syncedAt}`；**是画廊的唯一排序来源**（ELO 差距 > 40 时纯按 ELO，差距更小改比胜率），属本地评测产物，**无需手工维护** |
 
 不在 `rankings.json` 榜单内的条目，页面排序时垫底。
 
 ## 评分标准
 
-五维各 0–10，**仅用于放大视图的雷达图展示，不参与排序**（排序由 `order` 决定）。核心原则：这一题的判分锚点是「猫到底有没有在弹钢琴」——**`playing` 是排序的「地板」而非「天花板」**：猫没真正在钢琴前弹奏，再好看也不能排到头部；但只要演奏成立，猫的可爱度、构图、配色、细节完成度（即真正的「看图审美」）就是合法的拉开差距的依据，不应被「在不在弹」这一条掩盖。
+五维各 0–10，**仅用于放大视图的雷达图展示，不参与排序**（画廊排序由 ELO + 胜率次级键决定，五维分本身不介入）。核心原则：这一题的判分锚点是「猫到底有没有在弹钢琴」——**`playing` 是排序的「地板」而非「天花板」**：猫没真正在钢琴前弹奏，再好看也不能排到头部；但只要演奏成立，猫的可爱度、构图、配色、细节完成度（即真正的「看图审美」）就是合法的拉开差距的依据，不应被「在不在弹」这一条掩盖。
 
 | 维度 | 判定要点 | 分段参考 |
 | --- | --- | --- |
@@ -98,5 +98,31 @@ PR 标题建议与 commit message 一致，描述里贴一句 `note`（效果评
 > **几何护栏（姿态协调）**：`playing` 不只看「爪子挨着键」，关键看猫是否呈**正常的弹钢琴姿势**——面向键盘、坐在琴凳/琴前、双爪自然落在键上、身体位置能顺理成章够到琴键（不要求绝对居中，略偏位可接受，但姿态必须读得出「在弹琴」）。坐侧面、身子转向别处却伸手去够正前方的键、或爪子悬空在键上方 20px+，都不算正常弹奏，应落在 4–5 档；若坐侧面且伸手够正面键（位置与姿势明显冲突），`playing` 更应压到 ≤3。判分前务必用 resvg 渲染成 PNG 肉眼核对坐标（见 skill）。
 
 > **看图审美不可忽略**：`cat` / `scene` / `detail` 衡量的是「画得好不好看」，这是本画廊的核心乐趣，不是可有可无。`playing` 锚定排序地板，但头部作品的名次主要由这三维的审美水准区分。给「好看且确实在弹」的作品打高分、与「丑但勉强在弹」拉开差距，是正确且必要的。
+
+## 对战评测（ELO 排行）
+
+仓库内置一套**双盲成对投票 + ELO** 排行榜，这是画廊的**唯一**排名口径。每次投票都会重算全部模型的 ELO，并据此排序：
+
+- **ELO 主导**：ELO 差距 > 40（`ELO_BAND`）时纯按 ELO 降序。
+- **胜率次级键**：ELO 差距 ≤ 40（「咬得很紧」）时，改用胜率 `wins/(wins+losses+draws)` 掰开；胜率相同比胜场，最后按文件名稳定兜底。
+
+ELO 起点 1000、K=32；一张投票判为「都烂（both-bad）」时双方各扣 100 分。置信度徽章只看打了多少场（<5 低 / <10 中 / ≥10 高），**仅用于徽章颜色，不参与排序**。
+
+相关文件：
+
+| 文件 | 作用 |
+| --- | --- |
+| `battle.html` | 投票 UI：左右并排两张作品，四选一（左胜 / 右胜 / 平局 / 都烂） |
+| `votes.json` | 原始投票记录，可审计 |
+| `server.py` | 本地评测服务器：每次投票自动追加 `votes.json`、重算全部模型 ELO、把 `battleStats` 写回 `rankings.json` |
+| `justfile` | `just serve`（起服务器并打开 `battle.html`）、`just backup`、`just reset`（清空 `votes.json`） |
+
+启动与投票：
+
+```bash
+just serve          # 或：uv run server.py  →  http://localhost:8123/battle.html
+```
+
+> 注意：GitHub Pages 上的是**静态画廊**，只读取 `rankings.json`；`battleStats.elo` 必须本地跑 `just serve` 产生，不会随 Pages 自动生成。投票经 `server.py` 的 `POST /api/vote` 写入，`GET /api/state` 返回当前 ELO 与历史，供 `battle.html` 恢复进度。详见 `server.py` 文件头注释。
 
 同一模型支持多个思考级别时，每个级别各生成一份，页面内并排对比。

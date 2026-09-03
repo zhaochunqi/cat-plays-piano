@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f6ead8"/>
+  <rect y="245" width="400" height="55" fill="#c99e74"/>
+  <line x1="0" y1="245" x2="400" y2="245" stroke="#a97d57" stroke-width="2"/>
+
+  <!-- Piano body -->
+  <rect x="215" y="55" width="150" height="192" rx="3" fill="#4a2b16"/>
+  <rect x="228" y="70" width="124" height="70" rx="2" fill="#5e3a20"/>
+  <rect x="210" y="45" width="160" height="12" rx="2" fill="#5e3a20"/>
+  <rect x="228" y="185" width="124" height="50" rx="2" fill="#5e3a20"/>
+  <!-- Pedals -->
+  <rect x="270" y="238" width="10" height="9" rx="2" fill="#d9b25a"/>
+  <rect x="290" y="238" width="10" height="9" rx="2" fill="#d9b25a"/>
+
+  <!-- Sheet music -->
+  <g transform="rotate(-6 262 108)">
+    <rect x="240" y="82" width="44" height="54" fill="#fffdf7" stroke="#ddd"/>
+    <g stroke="#555" stroke-width="1">
+      <line x1="245" y1="92" x2="279" y2="92"/>
+      <line x1="245" y1="97" x2="279" y2="97"/>
+      <line x1="245" y1="102" x2="279" y2="102"/>
+      <line x1="245" y1="107" x2="279" y2="107"/>
+      <line x1="245" y1="112" x2="279" y2="112"/>
+      <line x1="245" y1="122" x2="279" y2="122"/>
+      <line x1="245" y1="127" x2="279" y2="127"/>
+    </g>
+    <ellipse cx="252" cy="100" rx="2.5" ry="1.8" fill="#333"/>
+    <ellipse cx="264" cy="95" rx="2.5" ry="1.8" fill="#333"/>
+    <ellipse cx="273" cy="105" rx="2.5" ry="1.8" fill="#333"/>
+  </g>
+
+  <!-- Keyboard shelf -->
+  <rect x="158" y="146" width="62" height="34" rx="2" fill="#4a2b16"/>
+  <rect x="166" y="176" width="9" height="71" fill="#4a2b16"/>
+  <!-- Keys -->
+  <rect x="160" y="148" width="60" height="22" fill="#fffef8"/>
+  <g stroke="#bbb" stroke-width="1">
+    <line x1="167" y1="148" x2="167" y2="170"/>
+    <line x1="174" y1="148" x2="174" y2="170"/>
+    <line x1="181" y1="148" x2="181" y2="170"/>
+    <line x1="188" y1="148" x2="188" y2="170"/>
+    <line x1="195" y1="148" x2="195" y2="170"/>
+    <line x1="202" y1="148" x2="202" y2="170"/>
+    <line x1="209" y1="148" x2="209" y2="170"/>
+    <line x1="216" y1="148" x2="216" y2="170"/>
+  </g>
+  <g fill="#222">
+    <rect x="165" y="148" width="4" height="13"/>
+    <rect x="172" y="148" width="4" height="13"/>
+    <rect x="186" y="148" width="4" height="13"/>
+    <rect x="193" y="148" width="4" height="13"/>
+    <rect x="200" y="148" width="4" height="13"/>
+    <rect x="214" y="148" width="4" height="13"/>
+  </g>
+
+  <!-- Stool -->
+  <rect x="88" y="200" width="6" height="47" fill="#7a4b2a"/>
+  <rect x="122" y="200" width="6" height="47" fill="#7a4b2a"/>
+  <ellipse cx="108" cy="199" rx="38" ry="9" fill="#8d5a34"/>
+  <rect x="70" y="192" width="76" height="8" rx="4" fill="#a86b3e"/>
+
+  <!-- Cat tail -->
+  <path d="M75 185 C 45 175, 30 140, 50 118" fill="none" stroke="#e8943e" stroke-width="11" stroke-linecap="round"/>
+  <path d="M55 132 C 48 126, 47 122, 50 118" fill="none" stroke="#c2712a" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- Far arm -->
+  <path d="M112 150 C 140 148, 160 148, 185 154" fill="none" stroke="#d2812f" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="188" cy="156" rx="8" ry="5" fill="#d2812f"/>
+
+  <!-- Cat body -->
+  <ellipse cx="100" cy="165" rx="32" ry="40" fill="#f2a04a"/>
+  <ellipse cx="96" cy="188" rx="24" ry="15" fill="#f2a04a"/>
+  <ellipse cx="108" cy="170" rx="16" ry="26" fill="#fbe0bf"/>
+  <!-- Body stripes -->
+  <g stroke="#c8702a" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M78 140 Q 86 146 82 156"/>
+    <path d="M72 158 Q 80 164 76 174"/>
+    <path d="M76 178 Q 84 184 80 192"/>
+  </g>
+
+  <!-- Near arm -->
+  <path d="M120 148 C 140 154, 152 158, 170 160" fill="none" stroke="#f2a04a" stroke-width="13" stroke-linecap="round"/>
+  <ellipse cx="173" cy="161" rx="9" ry="5.5" fill="#f2a04a"/>
+  <g stroke="#c8702a" stroke-width="1.5" stroke-linecap="round">
+    <line x1="170" y1="158" x2="170" y2="164"/>
+    <line x1="174" y1="157" x2="174" y2="164"/>
+    <line x1="178" y1="158" x2="178" y2="164"/>
+  </g>
+
+  <!-- Head -->
+  <polygon points="96,98 98,66 120,86" fill="#f2a04a"/>
+  <polygon points="128,84 140,58 146,92" fill="#f2a04a"/>
+  <polygon points="100,94 102,74 116,88" fill="#f5b7c1"/>
+  <polygon points="131,86 139,66 143,90" fill="#f5b7c1"/>
+  <circle cx="120" cy="110" r="27" fill="#f2a04a"/>
+  <!-- Head stripes -->
+  <g stroke="#c8702a" stroke-width="3.5" stroke-linecap="round" fill="none">
+    <path d="M114 88 L 116 96"/>
+    <path d="M122 86 L 122 95"/>
+    <path d="M130 88 L 128 96"/>
+  </g>
+  <!-- Muzzle -->
+  <ellipse cx="132" cy="121" rx="11" ry="8" fill="#fbe0bf"/>
+  <!-- Eyes -->
+  <ellipse cx="113" cy="108" rx="5" ry="6" fill="#fff"/>
+  <ellipse cx="131" cy="107" rx="5" ry="6" fill="#fff"/>
+  <ellipse cx="114" cy="109" rx="3" ry="4.5" fill="#2a5d3a"/>
+  <ellipse cx="132" cy="108" rx="3" ry="4.5" fill="#2a5d3a"/>
+  <circle cx="115" cy="107" r="1.2" fill="#fff"/>
+  <circle cx="133" cy="106" r="1.2" fill="#fff"/>
+  <!-- Nose & mouth -->
+  <polygon points="134,115 140,115 137,119" fill="#e0707f"/>
+  <path d="M137 119 Q 137 123 133 123 M137 119 Q 137 123 141 123" fill="none" stroke="#7a4b2a" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Whiskers -->
+  <g stroke="#7a4b2a" stroke-width="1" stroke-linecap="round">
+    <line x1="141" y1="118" x2="158" y2="114"/>
+    <line x1="141" y1="122" x2="158" y2="124"/>
+    <line x1="126" y1="120" x2="108" y2="118"/>
+    <line x1="126" y1="124" x2="108" y2="128"/>
+  </g>
+
+  <!-- Floating music notes -->
+  <g fill="#333" stroke="#333" stroke-width="2" stroke-linecap="round">
+    <ellipse cx="200" cy="112" rx="5" ry="3.5" transform="rotate(-20 200 112)"/>
+    <line x1="204.5" y1="111" x2="204.5" y2="90"/>
+    <path d="M204.5 90 Q 214 94 210 104" fill="none"/>
+  </g>
+  <g fill="#333" stroke="#333" stroke-width="2" stroke-linecap="round">
+    <ellipse cx="180" cy="80" rx="5" ry="3.5" transform="rotate(-20 180 80)"/>
+    <ellipse cx="198" cy="76" rx="5" ry="3.5" transform="rotate(-20 198 76)"/>
+    <line x1="184.5" y1="79" x2="184.5" y2="58"/>
+    <line x1="202.5" y1="75" x2="202.5" y2="54"/>
+    <line x1="184.5" y1="58" x2="202.5" y2="54"/>
+  </g>
+  <g fill="#333" stroke="#333" stroke-width="2" stroke-linecap="round">
+    <ellipse cx="160" cy="118" rx="4.5" ry="3" transform="rotate(-20 160 118)"/>
+    <line x1="164" y1="117" x2="164" y2="100"/>
+    <path d="M164 100 Q 172 103 169 111" fill="none"/>
+  </g>
+</svg>

@@ -274,5 +274,11 @@
         "thinking": "none",
         "date": "2026-08-25",
         "file": "entries/grok-4.6-none-2026-08-25.svg"
+    },
+    {
+        "model": "claude-fable-5.1",
+        "thinking": "high",
+        "date": "2026-09-04",
+        "file": "entries/claude-fable-5.1-high-2026-09-04.svg"
     }
 ]

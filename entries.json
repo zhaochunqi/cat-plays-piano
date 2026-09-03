@@ -280,5 +280,17 @@
         "thinking": "high",
         "date": "2026-09-04",
         "file": "entries/claude-fable-5.1-high-2026-09-04.svg"
+    },
+    {
+        "model": "mistral-large-3",
+        "thinking": "none",
+        "date": "2026-09-04",
+        "file": "entries/mistral-large-3-none-2026-09-04.svg"
+    },
+    {
+        "model": "aurelia",
+        "thinking": "none",
+        "date": "2026-09-04",
+        "file": "entries/aurelia-none-2026-09-04.svg"
     }
 ]

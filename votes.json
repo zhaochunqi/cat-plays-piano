@@ -3811,5 +3811,302 @@
     "leftIdx": 27,
     "rightIdx": 16,
     "time": "2026-09-03T16:54:45.746Z"
+  },
+  {
+    "leftFile": "entries/gemini-3-flash-preview-high-2026-08-25.svg",
+    "rightFile": "entries/LongCat-2.0-deep-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 7,
+    "rightIdx": 19,
+    "time": "2026-09-03T18:34:03.047Z"
+  },
+  {
+    "leftFile": "entries/glm-5-turbo-medium-2026-08-25.svg",
+    "rightFile": "entries/grok-build-0.1-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 8,
+    "rightIdx": 22,
+    "time": "2026-09-03T18:34:28.336Z"
+  },
+  {
+    "leftFile": "entries/agnes-2.0-flash-none-2026-08-25.svg",
+    "rightFile": "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 9,
+    "rightIdx": 18,
+    "time": "2026-09-03T18:34:47.636Z"
+  },
+  {
+    "leftFile": "entries/agnes-2.5-flash-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-4o-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 13,
+    "rightIdx": 23,
+    "time": "2026-09-03T18:34:55.527Z"
+  },
+  {
+    "leftFile": "entries/hy3-high-2026-08-25.svg",
+    "rightFile": "entries/gpt-4.1-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 15,
+    "rightIdx": 26,
+    "time": "2026-09-03T18:35:03.714Z"
+  },
+  {
+    "leftFile": "entries/glm-4.5-flash-none-2026-08-25.svg",
+    "rightFile": "entries/grok-chat-fast-none-2026-08-25.svg",
+    "result": "both-bad",
+    "mode": "smart",
+    "leftIdx": 24,
+    "rightIdx": 34,
+    "time": "2026-09-03T18:35:11.935Z"
+  },
+  {
+    "leftFile": "entries/glm-4.6v-flash-none-2026-08-25.svg",
+    "rightFile": "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
+    "result": "both-bad",
+    "mode": "smart",
+    "leftIdx": 28,
+    "rightIdx": 36,
+    "time": "2026-09-03T18:35:21.651Z"
+  },
+  {
+    "leftFile": "entries/glm-4.7-flash-none-2026-08-25.svg",
+    "rightFile": "entries/glm-4-9b-chat-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 29,
+    "rightIdx": 43,
+    "time": "2026-09-03T18:35:29.258Z"
+  },
+  {
+    "leftFile": "entries/nemotron-3-super-free-none-2026-08-25.svg",
+    "rightFile": "entries/qwen2-7b-instruct-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 30,
+    "rightIdx": 44,
+    "time": "2026-09-03T18:35:35.607Z"
+  },
+  {
+    "leftFile": "entries/qwen3-4b-none-2026-08-25.svg",
+    "rightFile": "entries/internlm3-8b-instruct-none-2026-08-25.svg",
+    "result": "both-bad",
+    "mode": "smart",
+    "leftIdx": 33,
+    "rightIdx": 45,
+    "time": "2026-09-03T18:36:19.914Z"
+  },
+  {
+    "leftFile": "entries/grok-4.6-none-2026-08-25.svg",
+    "rightFile": "entries/laguna-xs-2.1-free-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 1,
+    "rightIdx": 31,
+    "time": "2026-09-03T18:36:29.586Z"
+  },
+  {
+    "leftFile": "entries/claude-sonnet-5-max-2026-08-25.svg",
+    "rightFile": "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 3,
+    "rightIdx": 39,
+    "time": "2026-09-03T18:36:36.517Z"
+  },
+  {
+    "leftFile": "entries/glm-5.3-high-2026-08-25.svg",
+    "rightFile": "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 4,
+    "rightIdx": 18,
+    "time": "2026-09-03T18:36:43.324Z"
+  },
+  {
+    "leftFile": "entries/deepseek-v4-pro-deep-2026-08-25.svg",
+    "rightFile": "entries/grok-4.5-none-2026-08-25.svg",
+    "result": "draw",
+    "mode": "smart",
+    "leftIdx": 5,
+    "rightIdx": 21,
+    "time": "2026-09-03T18:36:57.368Z"
+  },
+  {
+    "leftFile": "entries/qwen3.8-max-thinking-2026-08-25.svg",
+    "rightFile": "entries/LongCat-2.0-deep-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 6,
+    "rightIdx": 19,
+    "time": "2026-09-03T18:37:04.756Z"
+  },
+  {
+    "leftFile": "entries/gemini-3-flash-preview-high-2026-08-25.svg",
+    "rightFile": "entries/grok-build-0.1-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 7,
+    "rightIdx": 22,
+    "time": "2026-09-03T18:37:12.574Z"
+  },
+  {
+    "leftFile": "entries/glm-5-turbo-medium-2026-08-25.svg",
+    "rightFile": "entries/nemotron-3-ultra-free-none-2026-08-25.svg",
+    "result": "draw",
+    "mode": "smart",
+    "leftIdx": 8,
+    "rightIdx": 14,
+    "time": "2026-09-03T18:37:23.906Z"
+  },
+  {
+    "leftFile": "entries/agnes-2.0-flash-none-2026-08-25.svg",
+    "rightFile": "entries/LongCat-2.0-none-2026-08-25.svg",
+    "result": "draw",
+    "mode": "smart",
+    "leftIdx": 9,
+    "rightIdx": 20,
+    "time": "2026-09-03T18:37:40.306Z"
+  },
+  {
+    "leftFile": "entries/sonnet-5-medium-2026-08-25.svg",
+    "rightFile": "entries/gpt-4o-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 10,
+    "rightIdx": 23,
+    "time": "2026-09-03T18:38:03.990Z"
+  },
+  {
+    "leftFile": "entries/minimax-m3-none-2026-08-25.svg",
+    "rightFile": "entries/glm-4.5-flash-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 11,
+    "rightIdx": 24,
+    "time": "2026-09-03T18:38:11.387Z"
+  },
+  {
+    "leftFile": "entries/agnes-2.5-flash-none-2026-08-25.svg",
+    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 13,
+    "rightIdx": 25,
+    "time": "2026-09-03T18:38:24.607Z"
+  },
+  {
+    "leftFile": "entries/hy3-high-2026-08-25.svg",
+    "rightFile": "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 15,
+    "rightIdx": 27,
+    "time": "2026-09-03T18:38:32.107Z"
+  },
+  {
+    "leftFile": "entries/gpt-4.1-none-2026-08-25.svg",
+    "rightFile": "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg",
+    "result": "both-bad",
+    "mode": "smart",
+    "leftIdx": 26,
+    "rightIdx": 39,
+    "time": "2026-09-03T18:38:42.824Z"
+  },
+  {
+    "leftFile": "entries/glm-4.6v-flash-none-2026-08-25.svg",
+    "rightFile": "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 28,
+    "rightIdx": 37,
+    "time": "2026-09-03T18:39:02.740Z"
+  },
+  {
+    "leftFile": "entries/glm-4.7-flash-none-2026-08-25.svg",
+    "rightFile": "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg",
+    "result": "both-bad",
+    "mode": "smart",
+    "leftIdx": 29,
+    "rightIdx": 41,
+    "time": "2026-09-03T18:39:09.936Z"
+  },
+  {
+    "leftFile": "entries/nemotron-3-super-free-none-2026-08-25.svg",
+    "rightFile": "entries/huatuogpt-o1-7b-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 30,
+    "rightIdx": 38,
+    "time": "2026-09-03T18:39:16.866Z"
+  },
+  {
+    "leftFile": "entries/laguna-xs-2.1-free-none-2026-08-25.svg",
+    "rightFile": "entries/qwen3-8b-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 31,
+    "rightIdx": 40,
+    "time": "2026-09-03T18:39:24.287Z"
+  },
+  {
+    "leftFile": "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg",
+    "rightFile": "entries/internlm3-8b-instruct-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 32,
+    "rightIdx": 45,
+    "time": "2026-09-03T18:39:31.652Z"
+  },
+  {
+    "leftFile": "entries/grok-chat-fast-none-2026-08-25.svg",
+    "rightFile": "entries/qwen2-7b-instruct-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 34,
+    "rightIdx": 44,
+    "time": "2026-09-03T18:39:39.238Z"
+  },
+  {
+    "leftFile": "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
+    "rightFile": "entries/glm-4-9b-chat-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 36,
+    "rightIdx": 43,
+    "time": "2026-09-03T18:39:46.464Z"
+  },
+  {
+    "leftFile": "entries/gemini-3.1-pro-extend-2026-08-25.svg",
+    "rightFile": "entries/qwen3-4b-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 0,
+    "rightIdx": 33,
+    "time": "2026-09-03T18:39:53.874Z"
+  },
+  {
+    "leftFile": "entries/gemini-3.1-pro-none-2026-08-25.svg",
+    "rightFile": "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 2,
+    "rightIdx": 35,
+    "time": "2026-09-03T18:40:08.133Z"
+  },
+  {
+    "leftFile": "entries/grok-4.6-none-2026-08-25.svg",
+    "rightFile": "entries/minimax-m3-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 1,
+    "rightIdx": 11,
+    "time": "2026-09-03T18:40:17.464Z"
   }
 ]

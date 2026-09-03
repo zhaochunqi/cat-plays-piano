@@ -608,56 +608,69 @@
 
 <script>
 // ===== Data =====
-const ENTRIES = [
-  { file: "entries/gemini-3.1-pro-extend-2026-08-25.svg", model: "Gemini 2.5 Pro (extend)" },
-  { file: "entries/grok-4.6-none-2026-08-25.svg", model: "Grok 4.6 (none)" },
-  { file: "entries/gemini-3.1-pro-none-2026-08-25.svg", model: "Gemini 2.5 Pro (none)" },
-  { file: "entries/claude-sonnet-5-max-2026-08-25.svg", model: "Claude Sonnet 5 (max)" },
-  { file: "entries/glm-5.3-high-2026-08-25.svg", model: "GLM 5.3 (high)" },
-  { file: "entries/deepseek-v4-pro-deep-2026-08-25.svg", model: "DeepSeek V4 Pro (deep)" },
-  { file: "entries/qwen3.8-max-thinking-2026-08-25.svg", model: "Qwen3.8 Max (thinking)" },
-  { file: "entries/gemini-3-flash-preview-high-2026-08-25.svg", model: "Gemini 3 Flash Preview (high)" },
-  { file: "entries/glm-5-turbo-medium-2026-08-25.svg", model: "GLM 5 Turbo (medium)" },
-  { file: "entries/agnes-2.0-flash-none-2026-08-25.svg", model: "Agnes 2.0 Flash (none)" },
-  { file: "entries/sonnet-5-medium-2026-08-25.svg", model: "Claude Sonnet 5 (medium)" },
-  { file: "entries/minimax-m3-none-2026-08-25.svg", model: "MiniMax M3 (none)" },
-  { file: "entries/deepseek-flash-v4-deep-2026-08-25.svg", model: "DeepSeek Flash V4 (deep)" },
-  { file: "entries/agnes-2.5-flash-none-2026-08-25.svg", model: "Agnes 2.5 Flash (none)" },
-  { file: "entries/nemotron-3-ultra-free-none-2026-08-25.svg", model: "Nemotron 3 Ultra (free)" },
-  { file: "entries/hy3-high-2026-08-25.svg", model: "HY3 (high)" },
-  { file: "entries/kimi-k3-medium-2026-08-25.svg", model: "Kimi K3 (medium)" },
-  { file: "entries/gemma-4-31b-none-2026-08-25.svg", model: "Gemma 4 31B (none)" },
-  { file: "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg", model: "NV Nemotron 3 Super 120B" },
-  { file: "entries/LongCat-2.0-deep-2026-08-25.svg", model: "LongCat 2.0 (deep)" },
-  { file: "entries/LongCat-2.0-none-2026-08-25.svg", model: "LongCat 2.0 (none)" },
-  { file: "entries/grok-4.5-none-2026-08-25.svg", model: "Grok 4.5 (none)" },
-  { file: "entries/grok-build-0.1-none-2026-08-25.svg", model: "Grok Build 0.1 (none)" },
-  { file: "entries/gpt-4o-none-2026-08-25.svg", model: "GPT-4o (none)" },
-  { file: "entries/glm-4.5-flash-none-2026-08-25.svg", model: "GLM 4.5 Flash (none)" },
-  { file: "entries/ox-alpha-free-high-2026-08-24.svg", model: "OX Alpha (free/high)" },
-  { file: "entries/gpt-4.1-none-2026-08-25.svg", model: "GPT-4.1 (none)" },
-  { file: "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg", model: "Dots Studio Dots 3 Note" },
-  { file: "entries/glm-4.6v-flash-none-2026-08-25.svg", model: "GLM 4.6V Flash (none)" },
-  { file: "entries/glm-4.7-flash-none-2026-08-25.svg", model: "GLM 4.7 Flash (none)" },
-  { file: "entries/nemotron-3-super-free-none-2026-08-25.svg", model: "Nemotron 3 Super (free)" },
-  { file: "entries/laguna-xs-2.1-free-none-2026-08-25.svg", model: "Laguna XS 2.1 (free)" },
-  { file: "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg", model: "Poolside Laguna S 2.1 (free)" },
-  { file: "entries/qwen3-4b-none-2026-08-25.svg", model: "Qwen3 4B (none)" },
-  { file: "entries/grok-chat-fast-none-2026-08-25.svg", model: "Grok Chat Fast (none)" },
-  { file: "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg", model: "Poolside Laguna XS 2.1 (free)" },
-  { file: "entries/cohere-north-mini-code-free-none-2026-08-25.svg", model: "Cohere North Mini Code" },
-  { file: "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg", model: "Liquid LFM 2.5 2.6B (free)" },
-  { file: "entries/huatuogpt-o1-7b-none-2026-08-25.svg", model: "HuatuoGPT O1 7B (none)" },
-  { file: "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg", model: "Nemotron 3 Nano Omni (free)" },
-  { file: "entries/qwen3-8b-none-2026-08-25.svg", model: "Qwen3 8B (none)" },
-  { file: "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg", model: "NV Nemotron 3 Nano 30B" },
-  { file: "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg", model: "DS R1 Distill Qwen 7B" },
-  { file: "entries/glm-4-9b-chat-none-2026-08-25.svg", model: "GLM 4 9B Chat (none)" },
-  { file: "entries/qwen2-7b-instruct-none-2026-08-25.svg", model: "Qwen2 7B Instruct (none)" },
-  { file: "entries/internlm3-8b-instruct-none-2026-08-25.svg", model: "InternLM3 8B Instruct" },
-  { file: "entries/claude-fable-5.1-high-2026-09-04.svg", model: "Claude Fable 5.1 (high)" },
-  { file: "entries/mistral-large-3-none-2026-09-04.svg", model: "Mistral Large 3 (none)" },
-  { file: "entries/aurelia-none-2026-09-04.svg", model: "Aurelia (none)" },
+// ENTRIES 从 entries.json 动态加载（该文件按约定只追加、不重排，下标因此稳定），
+// 新增条目自动进入对战池，无需再改本文件。
+let ENTRIES = [];
+
+async function loadEntries() {
+  const r = await fetch('entries.json', { cache: 'no-store' });
+  if (!r.ok) throw new Error('entries.json ' + r.status);
+  const items = await r.json();
+  ENTRIES = items.map(e => ({
+    file: e.file,
+    model: e.thinking ? `${e.model} (${e.thinking})` : e.model,
+  }));
+}
+
+// 旧版硬编码名单（下标 0..45），仅用于把老用户 localStorage 里按旧下标
+// 记录的 history/stats 迁移到 entries.json 顺序；标记迁移完成后不再使用。
+const LEGACY_ENTRY_FILES = [
+  "entries/gemini-3.1-pro-extend-2026-08-25.svg",
+  "entries/grok-4.6-none-2026-08-25.svg",
+  "entries/gemini-3.1-pro-none-2026-08-25.svg",
+  "entries/claude-sonnet-5-max-2026-08-25.svg",
+  "entries/glm-5.3-high-2026-08-25.svg",
+  "entries/deepseek-v4-pro-deep-2026-08-25.svg",
+  "entries/qwen3.8-max-thinking-2026-08-25.svg",
+  "entries/gemini-3-flash-preview-high-2026-08-25.svg",
+  "entries/glm-5-turbo-medium-2026-08-25.svg",
+  "entries/agnes-2.0-flash-none-2026-08-25.svg",
+  "entries/sonnet-5-medium-2026-08-25.svg",
+  "entries/minimax-m3-none-2026-08-25.svg",
+  "entries/deepseek-flash-v4-deep-2026-08-25.svg",
+  "entries/agnes-2.5-flash-none-2026-08-25.svg",
+  "entries/nemotron-3-ultra-free-none-2026-08-25.svg",
+  "entries/hy3-high-2026-08-25.svg",
+  "entries/kimi-k3-medium-2026-08-25.svg",
+  "entries/gemma-4-31b-none-2026-08-25.svg",
+  "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg",
+  "entries/LongCat-2.0-deep-2026-08-25.svg",
+  "entries/LongCat-2.0-none-2026-08-25.svg",
+  "entries/grok-4.5-none-2026-08-25.svg",
+  "entries/grok-build-0.1-none-2026-08-25.svg",
+  "entries/gpt-4o-none-2026-08-25.svg",
+  "entries/glm-4.5-flash-none-2026-08-25.svg",
+  "entries/ox-alpha-free-high-2026-08-24.svg",
+  "entries/gpt-4.1-none-2026-08-25.svg",
+  "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
+  "entries/glm-4.6v-flash-none-2026-08-25.svg",
+  "entries/glm-4.7-flash-none-2026-08-25.svg",
+  "entries/nemotron-3-super-free-none-2026-08-25.svg",
+  "entries/laguna-xs-2.1-free-none-2026-08-25.svg",
+  "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg",
+  "entries/qwen3-4b-none-2026-08-25.svg",
+  "entries/grok-chat-fast-none-2026-08-25.svg",
+  "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg",
+  "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
+  "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg",
+  "entries/huatuogpt-o1-7b-none-2026-08-25.svg",
+  "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg",
+  "entries/qwen3-8b-none-2026-08-25.svg",
+  "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg",
+  "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg",
+  "entries/glm-4-9b-chat-none-2026-08-25.svg",
+  "entries/qwen2-7b-instruct-none-2026-08-25.svg",
+  "entries/internlm3-8b-instruct-none-2026-08-25.svg",
 ];
 
 // ===== State =====
@@ -673,9 +686,38 @@ let state = {
   stats: {}, // { idx: { wins, losses, draws, elo } }
 };
 
+// 一次性迁移：旧版按硬编码下标记录 history/stats，按「旧下标 → 文件 → 新下标」映射。
+function migrateLegacyState() {
+  const raw = localStorage.getItem('cpp_battle_state');
+  if (!raw) return;
+  let saved;
+  try { saved = JSON.parse(raw); } catch { return; }
+  if (!saved || saved.entriesSource === 'entries.json') return;
+  const fileToNew = {};
+  ENTRIES.forEach((e, i) => { fileToNew[e.file] = i; });
+  const remap = (i) => {
+    const f = LEGACY_ENTRY_FILES[i];
+    return f !== undefined ? fileToNew[f] : undefined;
+  };
+  saved.history = (saved.history || []).map(h => {
+    const a = remap(h.a), b = remap(h.b);
+    if (a === undefined || b === undefined) return null;
+    return { ...h, a, b, aModel: ENTRIES[a].model, bModel: ENTRIES[b].model };
+  }).filter(Boolean);
+  const stats = {};
+  Object.entries(saved.stats || {}).forEach(([k, v]) => {
+    const ni = remap(Number(k));
+    if (ni !== undefined) stats[ni] = v;
+  });
+  saved.stats = stats;
+  saved.entriesSource = 'entries.json';
+  localStorage.setItem('cpp_battle_state', JSON.stringify(saved));
+}
+
 // Load from localStorage
 function loadState() {
   try {
+    migrateLegacyState();
     const saved = localStorage.getItem('cpp_battle_state');
     if (saved) {
       const parsed = JSON.parse(saved);
@@ -691,6 +733,7 @@ function loadState() {
 function saveState() {
   try {
     localStorage.setItem('cpp_battle_state', JSON.stringify({
+      entriesSource: 'entries.json',
       history: state.history,
       stats: state.stats,
       round: state.round
@@ -778,6 +821,7 @@ function generateSmartPair() {
 
 // ===== Core Logic =====
 function newRound() {
+  if (!ENTRIES.length) return; // entries.json 尚未加载完成
   state.voted = false;
 
   let pair;
@@ -1502,13 +1546,22 @@ document.getElementById('modeTabs').addEventListener('click', (e) => {
 });
 
 // ===== Init =====
-loadState();
-renderStats();
-updateProgress();
-newRound();
+(async () => {
+  try {
+    await loadEntries();
+  } catch (err) {
+    document.getElementById('progressText').textContent =
+      '⚠️ entries.json 加载失败，无法开始评测';
+    return;
+  }
+  loadState();
+  renderStats();
+  updateProgress();
+  newRound();
 
-// 连接本地服务器（若通过 `just serve` 启动，则自动从服务器恢复评测状态）
-checkServer().then(loadServerState);
+  // 连接本地服务器（若通过 `just serve` 启动，则自动从服务器恢复评测状态）
+  checkServer().then(loadServerState);
+})();
 
 </script>
 </body>

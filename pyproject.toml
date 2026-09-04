@@ -2,7 +2,7 @@
 name = "cat-plays-piano-eval"
 version = "0.1.0"
 description = "本地评测服务器 — cat-plays-piano 双盲对比（每次投票自动写入 rankings.json）"
-requires-python = ">=3.11"
+requires-python = ">=3.14.7"
 dependencies = []
 
 [tool.uv]

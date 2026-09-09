@@ -10,15 +10,15 @@
       "detail": 8
     },
     "battleStats": {
-      "elo": 1164,
-      "rd": 145,
+      "elo": 1169,
+      "rd": 143,
       "confidence": "high",
-      "games": 24,
-      "wins": 22,
+      "games": 25,
+      "wins": 23,
       "losses": 1,
       "draws": 1,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288697+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487353+00:00"
     }
   },
   {
@@ -40,7 +40,7 @@
       "losses": 0,
       "draws": 1,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288713+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487368+00:00"
     }
   },
   {
@@ -62,7 +62,7 @@
       "losses": 2,
       "draws": 0,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288716+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487371+00:00"
     }
   },
   {
@@ -85,7 +85,29 @@
       "losses": 3,
       "draws": 0,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288719+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487372+00:00"
+    }
+  },
+  {
+    "file": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "note": "橘猫坐琴凳，双爪明确落在白键上，立式钢琴配乐谱、踏板与暖色房间，完成度高。",
+    "scores": {
+      "cat": 9,
+      "piano": 8,
+      "playing": 9,
+      "scene": 9,
+      "detail": 9
+    },
+    "battleStats": {
+      "elo": 1080,
+      "rd": 175,
+      "confidence": "high",
+      "games": 15,
+      "wins": 15,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "syncedAt": "2026-09-09T17:05:30.487374+00:00"
     }
   },
   {
@@ -107,7 +129,7 @@
       "losses": 4,
       "draws": 2,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288721+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487376+00:00"
     }
   },
   {
@@ -130,7 +152,7 @@
       "losses": 3,
       "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288724+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487378+00:00"
     }
   },
   {
@@ -144,15 +166,15 @@
       "detail": 7
     },
     "battleStats": {
-      "elo": 1035,
-      "rd": 209,
-      "confidence": "mid",
-      "games": 9,
-      "wins": 9,
-      "losses": 0,
+      "elo": 1018,
+      "rd": 171,
+      "confidence": "high",
+      "games": 16,
+      "wins": 15,
+      "losses": 1,
       "draws": 0,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288726+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487379+00:00"
     }
   },
   {
@@ -167,15 +189,15 @@
       "detail": 6
     },
     "battleStats": {
-      "elo": 1014,
-      "rd": 148,
+      "elo": 1000,
+      "rd": 145,
       "confidence": "high",
-      "games": 23,
+      "games": 24,
       "wins": 14,
-      "losses": 2,
+      "losses": 3,
       "draws": 7,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288728+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487381+00:00"
     }
   },
   {
@@ -197,7 +219,7 @@
       "losses": 6,
       "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288730+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487383+00:00"
     }
   },
   {
@@ -211,15 +233,15 @@
       "detail": 6
     },
     "battleStats": {
-      "elo": 985,
-      "rd": 148,
+      "elo": 973,
+      "rd": 145,
       "confidence": "high",
-      "games": 23,
+      "games": 24,
       "wins": 13,
-      "losses": 4,
+      "losses": 5,
       "draws": 6,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288733+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487384+00:00"
     }
   },
   {
@@ -241,7 +263,7 @@
       "losses": 6,
       "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288735+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487386+00:00"
     }
   },
   {
@@ -263,7 +285,7 @@
       "losses": 7,
       "draws": 4,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288737+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487387+00:00"
     }
   },
   {
@@ -277,15 +299,37 @@
       "detail": 8
     },
     "battleStats": {
-      "elo": 946,
-      "rd": 217,
-      "confidence": "mid",
-      "games": 8,
-      "wins": 3,
-      "losses": 4,
-      "draws": 1,
+      "elo": 927,
+      "rd": 175,
+      "confidence": "high",
+      "games": 15,
+      "wins": 8,
+      "losses": 5,
+      "draws": 2,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288739+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487389+00:00"
+    }
+  },
+  {
+    "file": "entries/agnes-2.5-flash-none-2026-08-25.svg",
+    "note": "猫趴在钢琴上爪子搭键，有琴腿乐谱，构图尚可；猫脸略呆。",
+    "scores": {
+      "cat": 7,
+      "piano": 7,
+      "playing": 5,
+      "scene": 6,
+      "detail": 6
+    },
+    "battleStats": {
+      "elo": 917,
+      "rd": 145,
+      "confidence": "high",
+      "games": 24,
+      "wins": 12,
+      "losses": 3,
+      "draws": 9,
+      "bad": 1,
+      "syncedAt": "2026-09-09T17:05:30.487391+00:00"
     }
   },
   {
@@ -307,51 +351,7 @@
       "losses": 9,
       "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-03T18:48:46.288741+00:00"
-    }
-  },
-  {
-    "file": "entries/agnes-2.5-flash-none-2026-08-25.svg",
-    "note": "猫趴在钢琴上爪子搭键，有琴腿乐谱，构图尚可；猫脸略呆。",
-    "scores": {
-      "cat": 7,
-      "piano": 7,
-      "playing": 5,
-      "scene": 6,
-      "detail": 6
-    },
-    "battleStats": {
-      "elo": 903,
-      "rd": 148,
-      "confidence": "high",
-      "games": 23,
-      "wins": 11,
-      "losses": 3,
-      "draws": 9,
-      "bad": 1,
-      "syncedAt": "2026-09-03T18:48:46.288743+00:00"
-    }
-  },
-  {
-    "file": "entries/mistral-large-3-none-2026-09-04.svg",
-    "note": "圆头橘猫直接坐在键盘上，肚皮压住中部琴键，左右爪搭在键上并有蓝色按键高亮；钢琴是无琴腿的黑色键盘座，背景仅两枚音符，构图对称可爱但读不出正常弹奏坐姿。",
-    "scores": {
-      "cat": 7,
-      "piano": 5,
-      "playing": 5,
-      "scene": 4,
-      "detail": 5
-    },
-    "battleStats": {
-      "elo": 876,
-      "rd": 226,
-      "confidence": "mid",
-      "games": 7,
-      "wins": 4,
-      "losses": 1,
-      "draws": 2,
-      "bad": 1,
-      "syncedAt": "2026-09-03T18:48:46.288745+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487392+00:00"
     }
   },
   {
@@ -373,7 +373,7 @@
       "losses": 6,
       "draws": 9,
       "bad": 1,
-      "syncedAt": "2026-09-03T18:48:46.288747+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487394+00:00"
     }
   },
   {
@@ -387,15 +387,15 @@
       "detail": 8
     },
     "battleStats": {
-      "elo": 812,
-      "rd": 151,
+      "elo": 805,
+      "rd": 148,
       "confidence": "high",
-      "games": 22,
+      "games": 23,
       "wins": 6,
-      "losses": 9,
+      "losses": 10,
       "draws": 7,
       "bad": 1,
-      "syncedAt": "2026-09-03T18:48:46.288749+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487397+00:00"
     }
   },
   {
@@ -409,15 +409,37 @@
       "detail": 6
     },
     "battleStats": {
-      "elo": 801,
-      "rd": 148,
+      "elo": 786,
+      "rd": 143,
       "confidence": "high",
-      "games": 23,
+      "games": 25,
       "wins": 6,
-      "losses": 7,
-      "draws": 10,
+      "losses": 8,
+      "draws": 11,
       "bad": 1,
-      "syncedAt": "2026-09-03T18:48:46.288751+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487396+00:00"
+    }
+  },
+  {
+    "file": "entries/mistral-large-3-none-2026-09-04.svg",
+    "note": "圆头橘猫直接坐在键盘上，肚皮压住中部琴键，左右爪搭在键上并有蓝色按键高亮；钢琴是无琴腿的黑色键盘座，背景仅两枚音符，构图对称可爱但读不出正常弹奏坐姿。",
+    "scores": {
+      "cat": 7,
+      "piano": 5,
+      "playing": 5,
+      "scene": 4,
+      "detail": 5
+    },
+    "battleStats": {
+      "elo": 747,
+      "rd": 184,
+      "confidence": "high",
+      "games": 13,
+      "wins": 7,
+      "losses": 4,
+      "draws": 2,
+      "bad": 2,
+      "syncedAt": "2026-09-09T17:05:30.487399+00:00"
     }
   },
   {
@@ -439,7 +461,7 @@
       "losses": 12,
       "draws": 3,
       "bad": 2,
-      "syncedAt": "2026-09-03T18:48:46.288753+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487401+00:00"
     }
   },
   {
@@ -453,15 +475,15 @@
       "detail": 5
     },
     "battleStats": {
-      "elo": 696,
-      "rd": 153,
+      "elo": 714,
+      "rd": 148,
       "confidence": "high",
-      "games": 21,
-      "wins": 14,
-      "losses": 7,
+      "games": 23,
+      "wins": 15,
+      "losses": 8,
       "draws": 0,
       "bad": 3,
-      "syncedAt": "2026-09-03T18:48:46.288755+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487402+00:00"
     }
   },
   {
@@ -475,15 +497,15 @@
       "detail": 6
     },
     "battleStats": {
-      "elo": 619,
-      "rd": 163,
+      "elo": 617,
+      "rd": 160,
       "confidence": "high",
-      "games": 18,
+      "games": 19,
       "wins": 8,
-      "losses": 4,
+      "losses": 5,
       "draws": 6,
       "bad": 5,
-      "syncedAt": "2026-09-03T18:48:46.288758+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487403+00:00"
     }
   },
   {
@@ -505,7 +527,7 @@
       "losses": 9,
       "draws": 5,
       "bad": 4,
-      "syncedAt": "2026-09-03T18:48:46.288760+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487405+00:00"
     }
   },
   {
@@ -527,7 +549,7 @@
       "losses": 8,
       "draws": 3,
       "bad": 6,
-      "syncedAt": "2026-09-03T18:48:46.288762+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487406+00:00"
     }
   },
   {
@@ -541,15 +563,15 @@
       "detail": 4
     },
     "battleStats": {
-      "elo": 370,
-      "rd": 163,
+      "elo": 369,
+      "rd": 160,
       "confidence": "high",
-      "games": 18,
+      "games": 19,
       "wins": 4,
-      "losses": 10,
+      "losses": 11,
       "draws": 4,
       "bad": 6,
-      "syncedAt": "2026-09-03T18:48:46.288764+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487408+00:00"
     }
   },
   {
@@ -563,15 +585,15 @@
       "detail": 5
     },
     "battleStats": {
-      "elo": 301,
+      "elo": 201,
       "rd": 167,
       "confidence": "high",
       "games": 17,
       "wins": 5,
       "losses": 8,
       "draws": 4,
-      "bad": 7,
-      "syncedAt": "2026-09-03T18:48:46.288767+00:00"
+      "bad": 8,
+      "syncedAt": "2026-09-09T17:05:30.487410+00:00"
     }
   },
   {
@@ -586,14 +608,14 @@
     },
     "battleStats": {
       "elo": 178,
-      "rd": 171,
+      "rd": 167,
       "confidence": "high",
-      "games": 16,
+      "games": 17,
       "wins": 3,
-      "losses": 10,
+      "losses": 11,
       "draws": 3,
       "bad": 8,
-      "syncedAt": "2026-09-03T18:48:46.288769+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487411+00:00"
     }
   },
   {
@@ -615,7 +637,7 @@
       "losses": 7,
       "draws": 1,
       "bad": 9,
-      "syncedAt": "2026-09-03T18:48:46.288771+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487413+00:00"
     }
   },
   {
@@ -629,15 +651,15 @@
       "detail": 0
     },
     "battleStats": {
-      "elo": 119,
-      "rd": 167,
+      "elo": 118,
+      "rd": 163,
       "confidence": "high",
-      "games": 17,
+      "games": 18,
       "wins": 0,
-      "losses": 17,
+      "losses": 18,
       "draws": 0,
       "bad": 7,
-      "syncedAt": "2026-09-03T18:48:46.288774+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487414+00:00"
     }
   },
   {
@@ -659,7 +681,7 @@
       "losses": 12,
       "draws": 1,
       "bad": 9,
-      "syncedAt": "2026-09-03T18:48:46.288776+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487416+00:00"
     }
   },
   {
@@ -674,14 +696,14 @@
     },
     "battleStats": {
       "elo": 99,
-      "rd": 175,
+      "rd": 171,
       "confidence": "high",
-      "games": 15,
+      "games": 16,
       "wins": 5,
-      "losses": 8,
+      "losses": 9,
       "draws": 2,
       "bad": 9,
-      "syncedAt": "2026-09-03T18:48:46.288778+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487417+00:00"
     }
   },
   {
@@ -696,14 +718,14 @@
     },
     "battleStats": {
       "elo": 2,
-      "rd": 184,
+      "rd": 180,
       "confidence": "high",
-      "games": 13,
+      "games": 14,
       "wins": 6,
-      "losses": 5,
+      "losses": 6,
       "draws": 2,
       "bad": 11,
-      "syncedAt": "2026-09-03T18:48:46.288780+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487419+00:00"
     }
   },
   {
@@ -718,14 +740,14 @@
     },
     "battleStats": {
       "elo": -5,
-      "rd": 180,
+      "rd": 175,
       "confidence": "high",
-      "games": 14,
+      "games": 15,
       "wins": 1,
-      "losses": 10,
+      "losses": 11,
       "draws": 3,
       "bad": 10,
-      "syncedAt": "2026-09-03T18:48:46.288782+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487420+00:00"
     }
   },
   {
@@ -740,14 +762,14 @@
     },
     "battleStats": {
       "elo": -57,
-      "rd": 175,
+      "rd": 171,
       "confidence": "high",
-      "games": 15,
+      "games": 16,
       "wins": 0,
-      "losses": 15,
+      "losses": 16,
       "draws": 0,
       "bad": 9,
-      "syncedAt": "2026-09-03T18:48:46.288784+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487422+00:00"
     }
   },
   {
@@ -762,14 +784,14 @@
     },
     "battleStats": {
       "elo": -64,
-      "rd": 180,
+      "rd": 175,
       "confidence": "high",
-      "games": 14,
+      "games": 15,
       "wins": 0,
-      "losses": 14,
+      "losses": 15,
       "draws": 0,
       "bad": 10,
-      "syncedAt": "2026-09-03T18:48:46.288786+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487423+00:00"
     }
   },
   {
@@ -784,14 +806,14 @@
     },
     "battleStats": {
       "elo": -67,
-      "rd": 175,
+      "rd": 171,
       "confidence": "high",
-      "games": 15,
+      "games": 16,
       "wins": 0,
-      "losses": 15,
+      "losses": 16,
       "draws": 0,
       "bad": 9,
-      "syncedAt": "2026-09-03T18:48:46.288788+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487425+00:00"
     }
   },
   {
@@ -806,14 +828,14 @@
     },
     "battleStats": {
       "elo": -216,
-      "rd": 196,
+      "rd": 190,
       "confidence": "high",
-      "games": 11,
+      "games": 12,
       "wins": 4,
-      "losses": 6,
+      "losses": 7,
       "draws": 1,
       "bad": 13,
-      "syncedAt": "2026-09-03T18:48:46.288790+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487427+00:00"
     }
   },
   {
@@ -828,14 +850,14 @@
     },
     "battleStats": {
       "elo": -241,
-      "rd": 190,
+      "rd": 184,
       "confidence": "high",
-      "games": 12,
+      "games": 13,
       "wins": 1,
-      "losses": 11,
+      "losses": 12,
       "draws": 0,
       "bad": 12,
-      "syncedAt": "2026-09-03T18:48:46.288792+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487428+00:00"
     }
   },
   {
@@ -857,7 +879,7 @@
       "losses": 3,
       "draws": 0,
       "bad": 14,
-      "syncedAt": "2026-09-03T18:48:46.288794+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487429+00:00"
     }
   },
   {
@@ -872,14 +894,14 @@
     },
     "battleStats": {
       "elo": -270,
-      "rd": 196,
+      "rd": 190,
       "confidence": "high",
-      "games": 11,
+      "games": 12,
       "wins": 2,
-      "losses": 9,
+      "losses": 10,
       "draws": 0,
       "bad": 13,
-      "syncedAt": "2026-09-03T18:48:46.288796+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487431+00:00"
     }
   },
   {
@@ -894,14 +916,14 @@
     },
     "battleStats": {
       "elo": -328,
-      "rd": 196,
+      "rd": 190,
       "confidence": "high",
-      "games": 11,
+      "games": 12,
       "wins": 0,
-      "losses": 11,
+      "losses": 12,
       "draws": 0,
       "bad": 13,
-      "syncedAt": "2026-09-03T18:48:46.288797+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487433+00:00"
     }
   },
   {
@@ -916,14 +938,14 @@
     },
     "battleStats": {
       "elo": -360,
-      "rd": 209,
-      "confidence": "mid",
-      "games": 9,
+      "rd": 202,
+      "confidence": "high",
+      "games": 10,
       "wins": 1,
-      "losses": 7,
+      "losses": 8,
       "draws": 1,
       "bad": 14,
-      "syncedAt": "2026-09-03T18:48:46.288799+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487434+00:00"
     }
   },
   {
@@ -938,14 +960,14 @@
     },
     "battleStats": {
       "elo": -424,
-      "rd": 202,
+      "rd": 196,
       "confidence": "high",
-      "games": 10,
+      "games": 11,
       "wins": 0,
-      "losses": 10,
+      "losses": 11,
       "draws": 0,
       "bad": 14,
-      "syncedAt": "2026-09-03T18:48:46.288801+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487436+00:00"
     }
   },
   {
@@ -960,14 +982,14 @@
     },
     "battleStats": {
       "elo": -437,
-      "rd": 202,
+      "rd": 196,
       "confidence": "high",
-      "games": 10,
+      "games": 11,
       "wins": 0,
-      "losses": 10,
+      "losses": 11,
       "draws": 0,
       "bad": 14,
-      "syncedAt": "2026-09-03T18:48:46.288804+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487437+00:00"
     }
   },
   {
@@ -982,14 +1004,14 @@
     },
     "battleStats": {
       "elo": -464,
-      "rd": 217,
+      "rd": 209,
       "confidence": "mid",
-      "games": 8,
+      "games": 9,
       "wins": 2,
-      "losses": 6,
+      "losses": 7,
       "draws": 0,
       "bad": 15,
-      "syncedAt": "2026-09-03T18:48:46.288805+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487439+00:00"
     }
   },
   {
@@ -1004,14 +1026,14 @@
     },
     "battleStats": {
       "elo": -524,
-      "rd": 209,
-      "confidence": "mid",
-      "games": 9,
+      "rd": 202,
+      "confidence": "high",
+      "games": 10,
       "wins": 0,
-      "losses": 9,
+      "losses": 10,
       "draws": 0,
       "bad": 15,
-      "syncedAt": "2026-09-03T18:48:46.288808+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487441+00:00"
     }
   },
   {
@@ -1026,14 +1048,14 @@
     },
     "battleStats": {
       "elo": -549,
-      "rd": 226,
+      "rd": 217,
       "confidence": "mid",
-      "games": 7,
+      "games": 8,
       "wins": 2,
-      "losses": 5,
+      "losses": 6,
       "draws": 0,
       "bad": 16,
-      "syncedAt": "2026-09-03T18:48:46.288810+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487442+00:00"
     }
   },
   {
@@ -1048,14 +1070,14 @@
     },
     "battleStats": {
       "elo": -583,
-      "rd": 217,
+      "rd": 209,
       "confidence": "mid",
-      "games": 8,
+      "games": 9,
       "wins": 1,
-      "losses": 7,
+      "losses": 8,
       "draws": 0,
       "bad": 16,
-      "syncedAt": "2026-09-03T18:48:46.288812+00:00"
+      "syncedAt": "2026-09-09T17:05:30.487444+00:00"
     }
   },
   {
@@ -1070,25 +1092,14 @@
     },
     "battleStats": {
       "elo": -775,
-      "rd": 236,
+      "rd": 226,
       "confidence": "mid",
-      "games": 6,
+      "games": 7,
       "wins": 1,
-      "losses": 5,
+      "losses": 6,
       "draws": 0,
       "bad": 18,
-      "syncedAt": "2026-09-03T18:48:46.288814+00:00"
-    }
-  },
-  {
-    "file": "entries/gpt-6-astra-medium-2026-09-10.svg",
-    "note": "橘猫坐琴凳，双爪明确落在白键上，立式钢琴配乐谱、踏板与暖色房间，完成度高。",
-    "scores": {
-      "cat": 9,
-      "piano": 8,
-      "playing": 9,
-      "scene": 9,
-      "detail": 9
+      "syncedAt": "2026-09-09T17:05:30.487445+00:00"
     }
   }
 ]

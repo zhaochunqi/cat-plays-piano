@@ -4423,5 +4423,311 @@
     "leftIdx": 24,
     "rightIdx": 46,
     "time": "2026-09-03T18:48:46.259Z"
+  },
+  {
+    "leftFile": "entries/mistral-large-3-none-2026-09-04.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 47,
+    "rightIdx": 49,
+    "time": "2026-09-09T16:59:24.417Z"
+  },
+  {
+    "leftFile": "entries/aurelia-none-2026-09-04.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 48,
+    "rightIdx": 49,
+    "time": "2026-09-09T16:59:30.596Z"
+  },
+  {
+    "leftFile": "entries/claude-fable-5.1-high-2026-09-04.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 46,
+    "rightIdx": 49,
+    "time": "2026-09-09T16:59:38.584Z"
+  },
+  {
+    "leftFile": "entries/deepseek-flash-v4-deep-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 28,
+    "rightIdx": 49,
+    "time": "2026-09-09T16:59:44.698Z"
+  },
+  {
+    "leftFile": "entries/grok-4.5-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 35,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:00:01.774Z"
+  },
+  {
+    "leftFile": "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 37,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:00:45.937Z"
+  },
+  {
+    "leftFile": "entries/nemotron-3-ultra-free-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 40,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:00:52.335Z"
+  },
+  {
+    "leftFile": "entries/hy3-high-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 42,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:00:58.339Z"
+  },
+  {
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 0,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:01:21.100Z"
+  },
+  {
+    "leftFile": "entries/agnes-2.0-flash-none-2026-08-25.svg",
+    "rightFile": "entries/aurelia-none-2026-09-04.svg",
+    "result": "draw",
+    "mode": "smart",
+    "leftIdx": 1,
+    "rightIdx": 48,
+    "time": "2026-09-09T17:01:35.582Z"
+  },
+  {
+    "leftFile": "entries/agnes-2.5-flash-none-2026-08-25.svg",
+    "rightFile": "entries/mistral-large-3-none-2026-09-04.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 2,
+    "rightIdx": 47,
+    "time": "2026-09-09T17:01:54.282Z"
+  },
+  {
+    "leftFile": "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 3,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:02:20.095Z"
+  },
+  {
+    "leftFile": "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg",
+    "rightFile": "entries/claude-fable-5.1-high-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 4,
+    "rightIdx": 46,
+    "time": "2026-09-09T17:02:27.903Z"
+  },
+  {
+    "leftFile": "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
+    "rightFile": "entries/aurelia-none-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 5,
+    "rightIdx": 48,
+    "time": "2026-09-09T17:02:35.318Z"
+  },
+  {
+    "leftFile": "entries/gemini-3-flash-preview-high-2026-08-25.svg",
+    "rightFile": "entries/mistral-large-3-none-2026-09-04.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 6,
+    "rightIdx": 47,
+    "time": "2026-09-09T17:02:48.562Z"
+  },
+  {
+    "leftFile": "entries/gemma-4-31b-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 7,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:02:55.062Z"
+  },
+  {
+    "leftFile": "entries/glm-4-9b-chat-none-2026-08-25.svg",
+    "rightFile": "entries/mistral-large-3-none-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 8,
+    "rightIdx": 47,
+    "time": "2026-09-09T17:03:02.674Z"
+  },
+  {
+    "leftFile": "entries/glm-4.5-flash-none-2026-08-25.svg",
+    "rightFile": "entries/claude-fable-5.1-high-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 9,
+    "rightIdx": 46,
+    "time": "2026-09-09T17:03:10.734Z"
+  },
+  {
+    "leftFile": "entries/glm-4.6v-flash-none-2026-08-25.svg",
+    "rightFile": "entries/aurelia-none-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 10,
+    "rightIdx": 48,
+    "time": "2026-09-09T17:03:18.335Z"
+  },
+  {
+    "leftFile": "entries/glm-4.7-flash-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 11,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:03:35.135Z"
+  },
+  {
+    "leftFile": "entries/gpt-4.1-none-2026-08-25.svg",
+    "rightFile": "entries/claude-fable-5.1-high-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 12,
+    "rightIdx": 46,
+    "time": "2026-09-09T17:03:43.462Z"
+  },
+  {
+    "leftFile": "entries/gpt-4o-none-2026-08-25.svg",
+    "rightFile": "entries/aurelia-none-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 13,
+    "rightIdx": 48,
+    "time": "2026-09-09T17:03:51.445Z"
+  },
+  {
+    "leftFile": "entries/grok-build-0.1-none-2026-08-25.svg",
+    "rightFile": "entries/mistral-large-3-none-2026-09-04.svg",
+    "result": "both-bad",
+    "mode": "smart",
+    "leftIdx": 14,
+    "rightIdx": 47,
+    "time": "2026-09-09T17:04:03.027Z"
+  },
+  {
+    "leftFile": "entries/grok-chat-fast-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 15,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:04:12.258Z"
+  },
+  {
+    "leftFile": "entries/huatuogpt-o1-7b-none-2026-08-25.svg",
+    "rightFile": "entries/claude-fable-5.1-high-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 16,
+    "rightIdx": 46,
+    "time": "2026-09-09T17:04:18.814Z"
+  },
+  {
+    "leftFile": "entries/internlm3-8b-instruct-none-2026-08-25.svg",
+    "rightFile": "entries/mistral-large-3-none-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 17,
+    "rightIdx": 47,
+    "time": "2026-09-09T17:04:24.845Z"
+  },
+  {
+    "leftFile": "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg",
+    "rightFile": "entries/aurelia-none-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 18,
+    "rightIdx": 48,
+    "time": "2026-09-09T17:04:34.275Z"
+  },
+  {
+    "leftFile": "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 19,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:04:43.695Z"
+  },
+  {
+    "leftFile": "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg",
+    "rightFile": "entries/mistral-large-3-none-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 21,
+    "rightIdx": 47,
+    "time": "2026-09-09T17:04:50.765Z"
+  },
+  {
+    "leftFile": "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg",
+    "rightFile": "entries/claude-fable-5.1-high-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 22,
+    "rightIdx": 46,
+    "time": "2026-09-09T17:05:01.092Z"
+  },
+  {
+    "leftFile": "entries/qwen2-7b-instruct-none-2026-08-25.svg",
+    "rightFile": "entries/gpt-6-astra-medium-2026-09-10.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 23,
+    "rightIdx": 49,
+    "time": "2026-09-09T17:05:07.456Z"
+  },
+  {
+    "leftFile": "entries/qwen3-4b-none-2026-08-25.svg",
+    "rightFile": "entries/aurelia-none-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 24,
+    "rightIdx": 48,
+    "time": "2026-09-09T17:05:14.096Z"
+  },
+  {
+    "leftFile": "entries/qwen3-8b-none-2026-08-25.svg",
+    "rightFile": "entries/claude-fable-5.1-high-2026-09-04.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 25,
+    "rightIdx": 46,
+    "time": "2026-09-09T17:05:20.392Z"
+  },
+  {
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
+    "rightFile": "entries/agnes-2.0-flash-none-2026-08-25.svg",
+    "result": "left",
+    "mode": "adjacent",
+    "leftIdx": 0,
+    "rightIdx": 1,
+    "time": "2026-09-09T17:05:30.462Z"
   }
 ]

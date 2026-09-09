@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">A cat playing the piano</title>
+  <desc id="desc">An orange cat sits on a velvet stool, happily playing an upright piano as musical notes float overhead.</desc>
+
+  <defs>
+    <linearGradient id="wall" x2="0" y2="1">
+      <stop stop-color="#fff7e8"/>
+      <stop offset="1" stop-color="#efddc4"/>
+    </linearGradient>
+    <linearGradient id="wood" x2="1" y2="1">
+      <stop stop-color="#533a48"/>
+      <stop offset="1" stop-color="#292536"/>
+    </linearGradient>
+    <linearGradient id="fur" x2="0.8" y2="1">
+      <stop stop-color="#ffc46b"/>
+      <stop offset="1" stop-color="#e98b40"/>
+    </linearGradient>
+    <pattern id="keys" width="25" height="46" patternUnits="userSpaceOnUse">
+      <rect width="25" height="46" fill="#fffaf0"/>
+      <path d="M24 0V46" stroke="#bdb4ac" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Cozy room -->
+  <rect width="800" height="600" fill="url(#wall)"/>
+  <circle cx="376" cy="258" r="218" fill="#fffaf0" opacity=".55"/>
+  <path d="M0 493H800V600H0Z" fill="#d9bb98"/>
+  <path d="M0 493H800" stroke="#c5a17e" stroke-width="5"/>
+  <path d="M0 543H800M117 493L83 600M625 493L681 600" stroke="#caab88" stroke-width="2"/>
+  <ellipse cx="423" cy="530" rx="307" ry="35" fill="#bc947b" opacity=".35"/>
+
+  <!-- Piano cabinet -->
+  <rect x="350" y="159" width="377" height="302" rx="12" fill="url(#wood)" stroke="#282332" stroke-width="4"/>
+  <rect x="341" y="148" width="395" height="20" rx="6" fill="#69505b"/>
+  <rect x="376" y="185" width="325" height="138" rx="5" fill="#634650" stroke="#bc9365" stroke-width="2"/>
+  <rect x="388" y="197" width="301" height="114" rx="3" fill="none" stroke="#a47c5f" opacity=".65"/>
+  <path d="M518 222Q538 202 558 222M538 211V230" fill="none" stroke="#d6b17a" stroke-width="2.5"/>
+  <text x="538" y="250" text-anchor="middle" font-family="Georgia, serif" font-size="13" letter-spacing="4" fill="#e7c78e">MEOW &amp; SONS</text>
+
+  <!-- Open sheet music -->
+  <path d="M476 286L469 215Q504 205 538 220Q570 204 605 215L599 286Z" fill="#fff8e7" stroke="#c9b699" stroke-width="2"/>
+  <path d="M538 220V284" stroke="#d7c5a9" stroke-width="2"/>
+  <g stroke="#b1a395" stroke-width="1">
+    <path d="M479 233H527M479 239H527M479 245H527M479 251H527M479 257H527"/>
+    <path d="M549 233H595M549 239H595M549 245H595M549 251H595M549 257H595"/>
+  </g>
+  <g fill="#57434a" stroke="#57434a" stroke-width="2">
+    <ellipse cx="489" cy="250" rx="4" ry="2.8" transform="rotate(-20 489 250)"/>
+    <path d="M493 249V230"/>
+    <ellipse cx="514" cy="244" rx="4" ry="2.8" transform="rotate(-20 514 244)"/>
+    <path d="M518 244V226"/>
+    <ellipse cx="561" cy="250" rx="4" ry="2.8"/>
+    <path d="M565 250V232L581 228V244"/>
+    <ellipse cx="577" cy="245" rx="4" ry="2.8"/>
+  </g>
+  <rect x="462" y="284" width="149" height="7" rx="3" fill="#b18a61"/>
+
+  <!-- Keyboard and legs -->
+  <path d="M350 331H727L743 351H326Z" fill="#79606a"/>
+  <rect x="326" y="348" width="417" height="64" rx="5" fill="#302938"/>
+  <rect x="350" y="350" width="350" height="46" fill="url(#keys)"/>
+  <g fill="#241f2b">
+    <rect x="367" y="350" width="14" height="29" rx="2"/>
+    <rect x="392" y="350" width="14" height="29" rx="2"/>
+    <rect x="442" y="350" width="14" height="29" rx="2"/>
+    <rect x="467" y="350" width="14" height="29" rx="2"/>
+    <rect x="492" y="350" width="14" height="29" rx="2"/>
+    <rect x="542" y="350" width="14" height="29" rx="2"/>
+    <rect x="567" y="350" width="14" height="29" rx="2"/>
+    <rect x="617" y="350" width="14" height="29" rx="2"/>
+    <rect x="642" y="350" width="14" height="29" rx="2"/>
+    <rect x="667" y="350" width="14" height="29" rx="2"/>
+  </g>
+  <path d="M331 403H739" stroke="#bf966b" stroke-width="3"/>
+  <path d="M354 414H376L371 520H350ZM698 414H720L727 520H706Z" fill="#352b3b"/>
+  <rect x="377" y="430" width="318" height="45" rx="3" fill="#3e303f"/>
+  <g fill="#d9b275">
+    <path d="M512 471V502Q497 514 516 514H530V471Z"/>
+    <path d="M547 471V502Q532 514 551 514H565V471Z"/>
+  </g>
+
+  <!-- Stool -->
+  <path d="M207 468L197 530M294 468L307 530" stroke="#4c3540" stroke-width="13" stroke-linecap="round"/>
+  <path d="M203 504H302" stroke="#4c3540" stroke-width="7"/>
+  <rect x="181" y="446" width="141" height="29" rx="13" fill="#843e55"/>
+  <rect x="185" y="442" width="133" height="22" rx="11" fill="#b76779"/>
+  <path d="M200 448H302" stroke="#d8939e" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Curled tail behind the cat -->
+  <path d="M235 417C184 450 129 421 140 382C148 353 178 364 174 383"
+        fill="none" stroke="#bd6938" stroke-width="30" stroke-linecap="round"/>
+  <path d="M235 411C184 444 132 418 143 382C149 362 168 366 167 379"
+        fill="none" stroke="#efa251" stroke-width="21" stroke-linecap="round"/>
+
+  <!-- Cat body and feet -->
+  <path d="M253 309C220 321 199 370 205 409C210 439 253 451 283 429C305 410 304 366 284 329Z"
+        fill="url(#fur)" stroke="#b96b3c" stroke-width="3"/>
+  <path d="M273 331C251 342 246 373 257 396C264 410 281 411 287 392C294 371 287 342 273 331Z"
+        fill="#ffe0a5"/>
+  <ellipse cx="263" cy="428" rx="37" ry="17" fill="#f5ad5c" stroke="#b96b3c" stroke-width="3"/>
+  <path d="M279 430V439M288 427L291 435" stroke="#b96b3c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M213 369L231 378M209 388L228 394M215 409L230 412"
+        fill="none" stroke="#cf793c" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Far arm reaching to the keys -->
+  <path d="M283 331Q329 335 361 359L415 361"
+        fill="none" stroke="#b96b3c" stroke-width="24" stroke-linecap="round"/>
+  <path d="M283 329Q329 333 362 356L415 358"
+        fill="none" stroke="#f4a657" stroke-width="18" stroke-linecap="round"/>
+  <ellipse cx="417" cy="360" rx="20" ry="10" fill="#ffd18a"/>
+  <path d="M421 357V364M428 357V363" stroke="#bf783e" stroke-width="1.7" stroke-linecap="round"/>
+
+  <!-- Cat head and pointed ears -->
+  <path d="M220 253L216 196L255 224Q279 219 299 233L337 210L328 270
+           Q333 302 302 321Q266 341 236 313Q214 294 220 253Z"
+        fill="url(#fur)" stroke="#b96b3c" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M225 211L228 247L246 231Z" fill="#e99586"/>
+  <path d="M326 225L303 240L322 253Z" fill="#e99586"/>
+  <path d="M265 225L269 242M283 226L282 242M298 233L292 247"
+        stroke="#ce773a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M224 273L238 277M224 288L237 289M317 278L328 274"
+        stroke="#ce773a" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Happy face -->
+  <path d="M244 269Q253 258 262 269M287 269Q296 258 305 269"
+        fill="none" stroke="#573b37" stroke-width="3.5" stroke-linecap="round"/>
+  <ellipse cx="264" cy="291" rx="18" ry="14" fill="#ffe4b4"/>
+  <ellipse cx="289" cy="291" rx="18" ry="14" fill="#ffe4b4"/>
+  <path d="M270 281Q277 277 284 281L277 288Z" fill="#a85b59"/>
+  <path d="M277 288V295M277 295Q269 302 263 295M277 295Q285 302 291 295"
+        fill="none" stroke="#684139" stroke-width="2.3" stroke-linecap="round"/>
+  <g stroke="#805444" stroke-width="1.8" stroke-linecap="round">
+    <path d="M251 288L209 282M250 296L207 303M299 288L341 278M300 296L343 299"/>
+  </g>
+
+  <!-- Bow tie and near arm -->
+  <path d="M263 322L248 313V336L266 329L283 339V315Z" fill="#447d77"/>
+  <circle cx="266" cy="326" r="5" fill="#305e5c"/>
+  <path d="M260 351Q290 384 331 380L365 374"
+        fill="none" stroke="#b96b3c" stroke-width="26" stroke-linecap="round"/>
+  <path d="M260 348Q290 379 331 375L365 370"
+        fill="none" stroke="#ffbc68" stroke-width="20" stroke-linecap="round"/>
+  <ellipse cx="369" cy="371" rx="22" ry="12" fill="#ffd18a"/>
+  <path d="M374 368L376 376M382 367L384 374"
+        stroke="#bf783e" stroke-width="1.7" stroke-linecap="round"/>
+
+  <!-- Floating melody -->
+  <g fill="#508a83">
+    <g transform="translate(358 128) rotate(-13)">
+      <ellipse cx="0" cy="0" rx="11" ry="8"/>
+      <path d="M7 0V-44H12V-1Z"/>
+      <path d="M10-44Q35-34 24-18Q26-31 10-32Z"/>
+    </g>
+    <g transform="translate(641 111) rotate(12)">
+      <ellipse cx="0" cy="0" rx="10" ry="7"/>
+      <ellipse cx="37" cy="-7" rx="10" ry="7"/>
+      <path d="M6 0V-43L43-50V-7H38V-38L11-33V0Z"/>
+    </g>
+  </g>
+  <g fill="#ca8654">
+    <path d="M429 79L433 90L444 94L433 98L429 109L425 98L414 94L425 90Z"/>
+    <circle cx="605" cy="75" r="4"/>
+    <circle cx="382" cy="191" r="3"/>
+    <path d="M170 276L173 284L181 287L173 290L170 298L167 290L159 287L167 284Z"/>
+  </g>
+</svg>

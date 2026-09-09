@@ -292,5 +292,11 @@
         "thinking": "none",
         "date": "2026-09-04",
         "file": "entries/aurelia-none-2026-09-04.svg"
+    },
+    {
+        "model": "gpt-6-astra",
+        "thinking": "medium",
+        "date": "2026-09-10",
+        "file": "entries/gpt-6-astra-medium-2026-09-10.svg"
     }
 ]

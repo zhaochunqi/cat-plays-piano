@@ -73,7 +73,7 @@
   },
   {
     "leftFile": "entries/glm-4.5-flash-none-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "right",
     "time": "2026-08-25T07:46:18.577Z"
   },
@@ -216,7 +216,7 @@
     "time": "2026-08-25T07:57:06.319Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
     "result": "both-bad",
     "time": "2026-08-25T07:57:10.106Z"
@@ -349,7 +349,7 @@
   },
   {
     "leftFile": "entries/gpt-4o-none-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "both-bad",
     "time": "2026-08-25T08:02:10.863Z"
   },
@@ -492,7 +492,7 @@
     "time": "2026-08-25T08:06:30.311Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/gpt-4.1-none-2026-08-25.svg",
     "result": "left",
     "time": "2026-08-25T08:06:36.964Z"
@@ -619,7 +619,7 @@
   },
   {
     "leftFile": "entries/grok-build-0.1-none-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "right",
     "time": "2026-08-25T08:08:20.520Z"
   },
@@ -768,7 +768,7 @@
     "time": "2026-08-25T08:12:31.322Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/glm-4.7-flash-none-2026-08-25.svg",
     "result": "left",
     "time": "2026-08-25T08:12:36.060Z"
@@ -901,7 +901,7 @@
   },
   {
     "leftFile": "entries/grok-4.5-none-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "left",
     "time": "2026-08-25T08:14:32.725Z"
   },
@@ -1027,7 +1027,7 @@
   },
   {
     "leftFile": "entries/LongCat-2.0-none-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "right",
     "time": "2026-08-25T08:16:03.385Z"
   },
@@ -1188,7 +1188,7 @@
     "time": "2026-08-25T08:18:20.891Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/glm-4.6v-flash-none-2026-08-25.svg",
     "result": "left",
     "time": "2026-08-25T08:18:30.153Z"
@@ -1320,7 +1320,7 @@
     "time": "2026-08-25T08:22:01.268Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/laguna-xs-2.1-free-none-2026-08-25.svg",
     "result": "left",
     "time": "2026-08-25T08:22:20.292Z"
@@ -1510,7 +1510,7 @@
   },
   {
     "leftFile": "entries/LongCat-2.0-deep-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "both-bad",
     "mode": "smart",
     "leftIdx": 19,
@@ -1798,7 +1798,7 @@
   },
   {
     "leftFile": "entries/qwen3.8-max-thinking-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "left",
     "mode": "unrated",
     "leftIdx": 6,
@@ -2013,7 +2013,7 @@
     "time": "2026-08-25T10:15:34.935Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg",
     "result": "left",
     "mode": "unrated",
@@ -2022,7 +2022,7 @@
     "time": "2026-08-25T10:15:39.820Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/gemini-3.1-pro-extend-2026-08-25.svg",
     "result": "right",
     "mode": "unrated",
@@ -2355,7 +2355,7 @@
     "time": "2026-08-25T13:18:23.858Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/nemotron-3-super-free-none-2026-08-25.svg",
     "result": "left",
     "mode": "smart",
@@ -2670,7 +2670,7 @@
     "time": "2026-08-25T13:21:19.078Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg",
     "result": "left",
     "mode": "smart",
@@ -2805,7 +2805,7 @@
     "time": "2026-08-25T13:22:21.620Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/qwen3-4b-none-2026-08-25.svg",
     "result": "left",
     "mode": "smart",
@@ -2967,7 +2967,7 @@
     "time": "2026-08-25T13:23:19.644Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/cohere-north-mini-code-free-none-2026-08-25.svg",
     "result": "left",
     "mode": "unrated",
@@ -3004,7 +3004,7 @@
   },
   {
     "leftFile": "entries/qwen3-8b-none-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "right",
     "mode": "unrated",
     "leftIdx": 40,
@@ -3102,7 +3102,7 @@
     "time": "2026-08-25T13:24:26.430Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg",
     "result": "left",
     "mode": "unrated",
@@ -3589,7 +3589,7 @@
   },
   {
     "leftFile": "entries/hy3-high-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "left",
     "mode": "smart",
     "leftIdx": 15,
@@ -3732,7 +3732,7 @@
     "time": "2026-09-03T16:52:00.132Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/gemini-3.1-pro-none-2026-08-25.svg",
     "result": "right",
     "mode": "unrated",
@@ -3994,7 +3994,7 @@
   },
   {
     "leftFile": "entries/agnes-2.5-flash-none-2026-08-25.svg",
-    "rightFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "rightFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "result": "left",
     "mode": "smart",
     "leftIdx": 13,
@@ -4281,7 +4281,7 @@
     "time": "2026-09-03T18:46:15.944Z"
   },
   {
-    "leftFile": "entries/ox-alpha-free-high-2026-08-24.svg",
+    "leftFile": "entries/GLM-5.3-Flash-high-2026-08-24.svg",
     "rightFile": "entries/claude-fable-5.1-high-2026-09-04.svg",
     "result": "right",
     "mode": "smart",

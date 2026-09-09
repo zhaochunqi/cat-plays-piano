@@ -64,7 +64,7 @@ PR 标题建议与 commit message 一致，描述里贴一句 `note`（效果评
 
 | 字段 | 说明 |
 | --- | --- |
-| `model` | 模型 ID，如 `ox-alpha-free` |
+| `model` | 模型 ID，如 `gpt-6-astra` |
 | `thinking` | 思考级别：`off` / `low` / `medium` / `high` / `max`，以及 `extend` / `deep` 等厂商自定义级别；**模型不支持思考时用 `none`**（不是 `null`） |
 | `date` | 生成日期 `YYYY-MM-DD` |
 | `file` | 相对仓库根的路径 |

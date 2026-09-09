@@ -41,20 +41,44 @@ Generate an SVG of a cat playing a piano.
 {
   "file": "entries/<model>-<thinking>-<date>.svg",
   "note": "一句话效果评测理由，放大视图展示",
-  "scores": { "cat": 0, "piano": 0, "playing": 0, "scene": 0, "detail": 0 },
-  "order": 1
+  "scores": { "cat": 0, "piano": 0, "playing": 0, "scene": 0, "detail": 0 }
 }
 ```
 
-- **`order`**：fractional 排序键，升序越小越靠前（No.1）。改排名只改这一个值，
-  无需手动挪数组、无需脚本。插在中间写小数即可，例如插在 #15 与 #16 之间写 `15.37`。
+- **`battleStats`**（可选）：对战 ELO 派生数据，由本地评测服务器（`just serve`）写入，
+  **不要手写**。字段 `{elo, rd, confidence:"high"|"mid"|"low", games, wins, losses, draws, bad, syncedAt}`。
+  新入库条目没有 `battleStats`，页面按 `elo = -1e9` 处理，自然垫底——这是预期行为，不用管。
+- **排序**（`index.html`）：**只按对战 ELO**，不再有人工策展序/ `order` 字段。
+  `battleStats.elo` 降序；ELO 差 ≤ `ELO_BAND`(40) 时依次比胜率 `wins/(wins+losses+draws)`、胜场、文件名。
+  （旧版 `order` fractional 键已废弃，rankings.json 里已无此字段。）
 - **`animated`**：可选布尔；`true` 表示 SVG 含动画（CSS `@keyframes` / SMIL `<animate>`）。画廊卡片与放大视图显示「▶ 动画」徽章，仅作标注、不影响排序与评分。
-- **`scores`**：五维各 0–10，仅用于放大视图的 Dota 风格雷达图展示，**不参与排序**（排序由 `order` 决定）。
+- **`scores`**：五维各 0–10，仅用于放大视图的 Dota 风格雷达图展示，**不参与排序**。
   维度含义：`cat`=猫、`piano`=钢琴、`playing`=演奏、`scene`=场景氛围、`detail`=细节。
   完整分段标准见下方「评分标准」章节。
 - **`note`**：点击作品放大时展示的评测理由。**必须与实际渲染图一致**——若原 note 与渲染结果不符
   （如误写"缺琴身"但实际有琴身、夸"姿态正确"实际不像在弹），应据实改写，不要保留错误描述。
-- 不在 `rankings.json` 榜单内的条目，页面排序时垫底（order 视为无穷大）。
+## 新增 thinking 级别时：**必须同步 `index.html` 的 `THINK_LABELS`**
+
+`index.html` 里 `THINK_LABELS` 把 thinking 值映射成中文（如 `extend → "扩展思考"`）。
+**没有映射的值会 fallback 成 `"thinking: <原值>"`**，而且筛选栏会自动为这个 fallback 串
+生成一个按钮——页面上就会出现「thinking: max」这种丑标签（历史上 `claude-sonnet-5-max`
+就漏过，`extreme` 也漏过）。
+
+所以入库新 thinking 值时，先在 `THINK_LABELS` 补一行：
+
+```js
+var THINK_LABELS = {
+  none: "直接生成", high: "深度思考", medium: "中度思考",
+  deep: "深度思考", extend: "扩展思考",
+  max: "最大思考", extreme: "极致思考",
+};
+```
+
+用的命名：**medium=中度 / high·deep=深度 / extend=扩展 / max=最大 / extreme=极致**。
+
+## 不在榜内的条目
+
+不在 `rankings.json` 榜单内的条目，页面排序时垫底（elo 视为 -1e9）。
 
 ## 评分标准（判分锚点）
 

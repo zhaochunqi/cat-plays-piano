@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF4E2"/>
+      <stop offset="1" stop-color="#F6D7BC"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CE9A6E"/>
+      <stop offset="1" stop-color="#B67F56"/>
+    </linearGradient>
+    <linearGradient id="pianoWood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4E3428"/>
+      <stop offset="1" stop-color="#332015"/>
+    </linearGradient>
+    <radialGradient id="spot" cx="0.5" cy="0.32" r="0.62">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <g id="note8">
+      <ellipse cx="0" cy="0" rx="9" ry="6.5" transform="rotate(-18)"/>
+      <rect x="7" y="-40" width="3.6" height="40" rx="1.8"/>
+      <path d="M 7 -40 C 20 -36 22 -24 12 -14 C 18 -26 12 -32 7 -33 Z"/>
+    </g>
+    <g id="note16">
+      <ellipse cx="0" cy="0" rx="8.5" ry="6" transform="rotate(-18)"/>
+      <ellipse cx="34" cy="-6" rx="8.5" ry="6" transform="rotate(-18 34 -6)"/>
+      <rect x="7" y="-38" width="3.4" height="38" rx="1.7"/>
+      <rect x="41" y="-44" width="3.4" height="38" rx="1.7"/>
+      <path d="M 7 -38 L 44.4 -44 L 44.4 -33 L 7 -27 Z"/>
+    </g>
+    <g id="sparkle">
+      <path d="M 0 -10 L 2.6 -2.6 L 10 0 L 2.6 2.6 L 0 10 L -2.6 2.6 L -10 0 L -2.6 -2.6 Z"/>
+    </g>
+  </defs>
+
+  <!-- room -->
+  <rect width="960" height="640" fill="url(#wall)"/>
+  <rect y="498" width="960" height="142" fill="url(#floor)"/>
+  <rect y="490" width="960" height="10" fill="#E9C39B"/>
+  <rect width="960" height="640" fill="url(#spot)"/>
+
+  <!-- wall picture with paw print -->
+  <rect x="64" y="110" width="96" height="76" rx="4" fill="#FFF6E8" stroke="#B5836B" stroke-width="6"/>
+  <ellipse cx="112" cy="158" rx="10" ry="8" fill="#C9898B"/>
+  <circle cx="100" cy="146" r="3.6" fill="#C9898B"/>
+  <circle cx="112" cy="142" r="3.6" fill="#C9898B"/>
+  <circle cx="124" cy="146" r="3.6" fill="#C9898B"/>
+
+  <!-- rug -->
+  <ellipse cx="470" cy="565" rx="390" ry="52" fill="#E7A9AD" opacity="0.55"/>
+  <ellipse cx="470" cy="565" rx="330" ry="40" fill="#F3C6C9" opacity="0.6"/>
+
+  <!-- shadows -->
+  <ellipse cx="320" cy="542" rx="220" ry="16" fill="#000000" opacity="0.08"/>
+  <ellipse cx="680" cy="546" rx="120" ry="13" fill="#000000" opacity="0.08"/>
+
+  <!-- piano -->
+  <g>
+    <rect x="120" y="150" width="420" height="24" rx="12" fill="#5C4033"/>
+    <rect x="128" y="158" width="404" height="342" rx="20" fill="url(#pianoWood)"/>
+    <rect x="150" y="205" width="340" height="95" rx="10" fill="#3A251A" stroke="#5C4033" stroke-width="3"/>
+    <rect x="150" y="350" width="300" height="125" rx="10" fill="#3A251A" stroke="#5C4033" stroke-width="3"/>
+    <!-- music desk ledge -->
+    <rect x="390" y="140" width="160" height="10" rx="4" fill="#2A1A10"/>
+    <!-- sheet music -->
+    <g transform="rotate(-4 430 118)">
+      <rect x="385" y="76" width="90" height="72" rx="4" fill="#FFFDF6" stroke="#E0D5BE" stroke-width="1.5"/>
+      <g stroke="#A79C88" stroke-width="1">
+        <line x1="393" y1="90" x2="467" y2="90"/>
+        <line x1="393" y1="97" x2="467" y2="97"/>
+        <line x1="393" y1="104" x2="467" y2="104"/>
+        <line x1="393" y1="111" x2="467" y2="111"/>
+        <line x1="393" y1="118" x2="467" y2="118"/>
+      </g>
+      <g fill="#4A4038">
+        <ellipse cx="405" cy="111" rx="3.4" ry="2.6"/>
+        <ellipse cx="420" cy="104" rx="3.4" ry="2.6"/>
+        <ellipse cx="436" cy="108" rx="3.4" ry="2.6"/>
+        <ellipse cx="452" cy="100" rx="3.4" ry="2.6"/>
+      </g>
+    </g>
+    <g transform="rotate(5 510 118)">
+      <rect x="465" y="76" width="90" height="72" rx="4" fill="#FFFDF6" stroke="#E0D5BE" stroke-width="1.5"/>
+      <g stroke="#A79C88" stroke-width="1">
+        <line x1="473" y1="90" x2="547" y2="90"/>
+        <line x1="473" y1="97" x2="547" y2="97"/>
+        <line x1="473" y1="104" x2="547" y2="104"/>
+        <line x1="473" y1="111" x2="547" y2="111"/>
+        <line x1="473" y1="118" x2="547" y2="118"/>
+      </g>
+      <g fill="#4A4038">
+        <ellipse cx="485" cy="104" rx="3.4" ry="2.6"/>
+        <ellipse cx="500" cy="111" rx="3.4" ry="2.6"/>
+        <ellipse cx="516" cy="102" rx="3.4" ry="2.6"/>
+        <ellipse cx="532" cy="108" rx="3.4" ry="2.6"/>
+      </g>
+    </g>
+    <!-- key bed and keys -->
+    <rect x="470" y="320" width="110" height="28" rx="6" fill="#2A1A10"/>
+    <rect x="476" y="312" width="98" height="16" rx="3" fill="#FFF8EA" stroke="#D8C9AE" stroke-width="1.5"/>
+    <g fill="#241812">
+      <rect x="484" y="310" width="7" height="10" rx="1.5"/>
+      <rect x="497" y="310" width="7" height="10" rx="1.5"/>
+      <rect x="517" y="310" width="7" height="10" rx="1.5"/>
+      <rect x="530" y="310" width="7" height="10" rx="1.5"/>
+      <rect x="543" y="310" width="7" height="10" rx="1.5"/>
+      <rect x="561" y="310" width="7" height="10" rx="1.5"/>
+    </g>
+    <!-- legs, wheels, pedals -->
+    <rect x="150" y="498" width="26" height="38" rx="4" fill="#2A1A10"/>
+    <rect x="470" y="498" width="26" height="38" rx="4" fill="#2A1A10"/>
+    <circle cx="163" cy="540" r="8" fill="#2A1A10"/>
+    <circle cx="483" cy="540" r="8" fill="#2A1A10"/>
+    <rect x="296" y="502" width="52" height="14" rx="4" fill="#2A1A10"/>
+    <rect x="308" y="516" width="10" height="8" rx="2" fill="#D9A441"/>
+    <rect x="326" y="516" width="10" height="8" rx="2" fill="#D9A441"/>
+  </g>
+
+  <!-- stool -->
+  <rect x="620" y="436" width="18" height="100" rx="4" fill="#6B4226"/>
+  <rect x="740" y="436" width="18" height="100" rx="4" fill="#6B4226"/>
+  <rect x="600" y="414" width="178" height="26" rx="13" fill="#8E2434"/>
+  <rect x="606" y="417" width="166" height="9" rx="4.5" fill="#B03A4B"/>
+
+  <!-- cat tail -->
+  <path d="M 745 405 C 815 405 830 320 786 288" stroke="#E8873A" stroke-width="22" fill="none" stroke-linecap="round"/>
+  <path d="M 745 405 C 815 405 830 320 786 288" stroke="#C0612B" stroke-width="22" fill="none" stroke-dasharray="9 24" stroke-dashoffset="16" opacity="0.85"/>
+
+  <!-- cat body -->
+  <ellipse cx="682" cy="384" rx="62" ry="58" fill="#E8873A"/>
+  <ellipse cx="700" cy="412" rx="48" ry="30" fill="#E8873A"/>
+  <ellipse cx="652" cy="395" rx="26" ry="34" fill="#F7C78A" opacity="0.75"/>
+  <path d="M 720 336 q 18 8 20 26" stroke="#C0612B" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M 732 368 q 10 9 8 24" stroke="#C0612B" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M 700 402 q -22 10 -24 30" stroke="#C0612B" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <ellipse cx="634" cy="430" rx="30" ry="12" fill="#F2A65A"/>
+  <line x1="622" y1="424" x2="622" y2="436" stroke="#C0612B" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="636" y1="423" x2="636" y2="437" stroke="#C0612B" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- ears -->
+  <path d="M 586 262 L 566 210 L 614 240 Z" fill="#E8873A"/>
+  <path d="M 630 246 L 652 198 L 670 252 Z" fill="#E8873A"/>
+  <path d="M 588 250 L 576 222 L 602 240 Z" fill="#F3A6A0"/>
+  <path d="M 637 236 L 650 210 L 660 242 Z" fill="#F3A6A0"/>
+
+  <!-- head -->
+  <circle cx="612" cy="298" r="44" fill="#E8873A"/>
+  <path d="M 600 258 l -5 -15" stroke="#C0612B" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 616 256 l 0 -15" stroke="#C0612B" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 632 260 l 5 -14" stroke="#C0612B" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="582" cy="312" rx="18" ry="13" fill="#F7C78A"/>
+  <path d="M 558 298 L 572 298 L 565 307 Z" fill="#E56B6F"/>
+  <ellipse cx="571" cy="323" rx="9" ry="11" fill="#8E3B3B"/>
+  <ellipse cx="571" cy="327" rx="5" ry="6" fill="#E56B6F"/>
+  <path d="M 590 288 q 9 -8 18 0" stroke="#5A3423" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="612" cy="318" rx="8" ry="5" fill="#F3A6A0" opacity="0.6"/>
+  <g stroke="#5A3423" stroke-width="2" opacity="0.65" stroke-linecap="round">
+    <line x1="564" y1="308" x2="526" y2="300"/>
+    <line x1="563" y1="313" x2="524" y2="313"/>
+    <line x1="564" y1="318" x2="528" y2="326"/>
+  </g>
+
+  <!-- front legs and paws on keys -->
+  <path d="M 632 352 C 590 342 560 330 534 322" stroke="#E8873A" stroke-width="17" fill="none" stroke-linecap="round"/>
+  <circle cx="526" cy="320" r="11" fill="#F7C78A"/>
+  <path d="M 640 374 C 600 364 570 350 546 336" stroke="#E8873A" stroke-width="17" fill="none" stroke-linecap="round"/>
+  <circle cx="540" cy="333" r="11" fill="#F7C78A"/>
+  <line x1="521" y1="315" x2="521" y2="325" stroke="#C0612B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="535" y1="328" x2="535" y2="338" stroke="#C0612B" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- floating musical notes -->
+  <use href="#note8" transform="translate(606 176) rotate(-8)" fill="#6A4C93"/>
+  <use href="#note16" transform="translate(672 122) rotate(6)" fill="#D9A441"/>
+  <use href="#note8" transform="translate(742 206) rotate(12) scale(0.95)" fill="#B5373F"/>
+  <use href="#note8" transform="translate(558 246) rotate(-14) scale(0.65)" fill="#6A4C93"/>
+  <use href="#note16" transform="translate(566 88) rotate(-6) scale(0.7)" fill="#D9A441"/>
+  <use href="#note8" transform="translate(812 130) rotate(16) scale(0.8)" fill="#6A4C93"/>
+
+  <!-- sparkles -->
+  <use href="#sparkle" transform="translate(616 130) scale(0.9)" fill="#F4C95D"/>
+  <use href="#sparkle" transform="translate(800 92) scale(0.8)" fill="#F4C95D"/>
+  <use href="#sparkle" transform="translate(876 224) scale(0.7)" fill="#F4C95D"/>
+
+  <!-- potted plant -->
+  <ellipse cx="848" cy="430" rx="10" ry="34" fill="#5C8A4D" transform="rotate(-18 848 430)"/>
+  <ellipse cx="872" cy="428" rx="10" ry="32" fill="#6E9E5C" transform="rotate(16 872 428)"/>
+  <ellipse cx="860" cy="418" rx="10" ry="36" fill="#638F50"/>
+  <path d="M 832 470 L 890 470 L 880 514 L 842 514 Z" fill="#B4573E"/>
+  <rect x="828" y="464" width="66" height="12" rx="4" fill="#9C4A35"/>
+</svg>

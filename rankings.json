@@ -10,15 +10,15 @@
       "detail": 8
     },
     "battleStats": {
-      "elo": 1169,
-      "rd": 143,
+      "elo": 1179,
+      "rd": 136,
       "confidence": "high",
-      "games": 25,
-      "wins": 23,
+      "games": 28,
+      "wins": 26,
       "losses": 1,
       "draws": 1,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487353+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265410+00:00"
     }
   },
   {
@@ -32,15 +32,38 @@
       "detail": 9
     },
     "battleStats": {
-      "elo": 1137,
-      "rd": 145,
+      "elo": 1149,
+      "rd": 143,
       "confidence": "high",
-      "games": 24,
-      "wins": 23,
+      "games": 25,
+      "wins": 24,
       "losses": 0,
       "draws": 1,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487368+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265440+00:00"
+    }
+  },
+  {
+    "file": "entries/grok-4.6-none-2026-08-25.svg",
+    "note": "橘色虎斑猫戴领结坐立式钢琴前弹奏，双爪明确落在琴键（含按下键高亮），房间暖光+飘动音符；渐变/投影/肉垫细节丰富，立体感强。",
+    "animated": true,
+    "scores": {
+      "cat": 10,
+      "piano": 9,
+      "playing": 10,
+      "scene": 8,
+      "detail": 9
+    },
+    "battleStats": {
+      "elo": 1114,
+      "rd": 143,
+      "confidence": "high",
+      "games": 25,
+      "wins": 22,
+      "losses": 3,
+      "draws": 0,
+      "bad": 0,
+      "syncedAt": "2026-09-10T03:07:49.265447+00:00"
     }
   },
   {
@@ -62,30 +85,7 @@
       "losses": 2,
       "draws": 0,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487371+00:00"
-    }
-  },
-  {
-    "file": "entries/grok-4.6-none-2026-08-25.svg",
-    "note": "橘色虎斑猫戴领结坐立式钢琴前弹奏，双爪明确落在琴键（含按下键高亮），房间暖光+飘动音符；渐变/投影/肉垫细节丰富，立体感强。",
-    "animated": true,
-    "scores": {
-      "cat": 10,
-      "piano": 9,
-      "playing": 10,
-      "scene": 8,
-      "detail": 9
-    },
-    "battleStats": {
-      "elo": 1101,
-      "rd": 145,
-      "confidence": "high",
-      "games": 24,
-      "wins": 21,
-      "losses": 3,
-      "draws": 0,
-      "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487372+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265453+00:00"
     }
   },
   {
@@ -99,15 +99,15 @@
       "detail": 9
     },
     "battleStats": {
-      "elo": 1080,
-      "rd": 175,
+      "elo": 1102,
+      "rd": 160,
       "confidence": "high",
-      "games": 15,
-      "wins": 15,
+      "games": 19,
+      "wins": 19,
       "losses": 0,
       "draws": 0,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487374+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265458+00:00"
     }
   },
   {
@@ -129,7 +129,29 @@
       "losses": 4,
       "draws": 2,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487376+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265464+00:00"
+    }
+  },
+  {
+    "file": "entries/kimi-k3-extreme-2026-09-10.svg",
+    "note": "立式钢琴部件齐全（琴身/琴腿/踏板/谱架乐谱），场景丰富（地毯、相框爪印、盆栽、飘散音符），猫笑眼双爪落键、坐琴凳姿态正确；但钢琴朝向画反——观众面对的是背板，琴键被甩到猫那侧，整台琴读成没有琴键面的柜子。",
+    "scores": {
+      "cat": 7,
+      "piano": 5,
+      "playing": 6,
+      "scene": 8,
+      "detail": 7
+    },
+    "battleStats": {
+      "elo": 1024,
+      "rd": 160,
+      "confidence": "high",
+      "games": 19,
+      "wins": 13,
+      "losses": 3,
+      "draws": 3,
+      "bad": 0,
+      "syncedAt": "2026-09-10T03:07:49.265470+00:00"
     }
   },
   {
@@ -144,15 +166,15 @@
       "detail": 8
     },
     "battleStats": {
-      "elo": 1037,
-      "rd": 145,
+      "elo": 1020,
+      "rd": 143,
       "confidence": "high",
-      "games": 24,
+      "games": 25,
       "wins": 16,
-      "losses": 3,
+      "losses": 4,
       "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487378+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265475+00:00"
     }
   },
   {
@@ -166,15 +188,15 @@
       "detail": 7
     },
     "battleStats": {
-      "elo": 1018,
-      "rd": 171,
+      "elo": 1008,
+      "rd": 157,
       "confidence": "high",
-      "games": 16,
-      "wins": 15,
-      "losses": 1,
-      "draws": 0,
+      "games": 20,
+      "wins": 17,
+      "losses": 2,
+      "draws": 1,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487379+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265479+00:00"
     }
   },
   {
@@ -189,15 +211,15 @@
       "detail": 6
     },
     "battleStats": {
-      "elo": 1000,
-      "rd": 145,
+      "elo": 1001,
+      "rd": 143,
       "confidence": "high",
-      "games": 24,
+      "games": 25,
       "wins": 14,
       "losses": 3,
-      "draws": 7,
+      "draws": 8,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487381+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265485+00:00"
     }
   },
   {
@@ -212,36 +234,36 @@
     },
     "battleStats": {
       "elo": 1000,
-      "rd": 143,
+      "rd": 138,
       "confidence": "high",
-      "games": 25,
-      "wins": 14,
+      "games": 27,
+      "wins": 16,
       "losses": 6,
       "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487383+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265490+00:00"
     }
   },
   {
-    "file": "entries/hy3-high-2026-08-25.svg",
-    "note": "圆头棕色生物更似鼠/仓鼠而非猫，前爪搭在键盘上但无明确弹奏姿态；钢琴有琴身、键盘与谱架，结构基本完整。",
+    "file": "entries/minimax-m3-none-2026-08-25.svg",
+    "note": "暖色场景完整（立式钢琴琴身/琴腿/键盘/音符/光斑/品牌铭牌），猫坐琴凳双爪落在琴键上（含肉垫分层+脚趾线条细节）。",
     "scores": {
-      "cat": 4,
-      "piano": 7,
-      "playing": 5,
-      "scene": 6,
+      "cat": 7,
+      "piano": 8,
+      "playing": 6,
+      "scene": 8,
       "detail": 6
     },
     "battleStats": {
-      "elo": 973,
+      "elo": 966,
       "rd": 145,
       "confidence": "high",
       "games": 24,
-      "wins": 13,
-      "losses": 5,
-      "draws": 6,
+      "wins": 12,
+      "losses": 7,
+      "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487384+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265495+00:00"
     }
   },
   {
@@ -263,29 +285,29 @@
       "losses": 6,
       "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487386+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265500+00:00"
     }
   },
   {
-    "file": "entries/minimax-m3-none-2026-08-25.svg",
-    "note": "暖色场景完整（立式钢琴琴身/琴腿/键盘/音符/光斑/品牌铭牌），猫坐琴凳双爪落在琴键上（含肉垫分层+脚趾线条细节）。",
+    "file": "entries/hy3-high-2026-08-25.svg",
+    "note": "圆头棕色生物更似鼠/仓鼠而非猫，前爪搭在键盘上但无明确弹奏姿态；钢琴有琴身、键盘与谱架，结构基本完整。",
     "scores": {
-      "cat": 7,
-      "piano": 8,
-      "playing": 6,
-      "scene": 8,
+      "cat": 4,
+      "piano": 7,
+      "playing": 5,
+      "scene": 6,
       "detail": 6
     },
     "battleStats": {
-      "elo": 962,
-      "rd": 148,
+      "elo": 960,
+      "rd": 143,
       "confidence": "high",
-      "games": 23,
-      "wins": 12,
-      "losses": 7,
-      "draws": 4,
+      "games": 25,
+      "wins": 13,
+      "losses": 6,
+      "draws": 6,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487387+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265505+00:00"
     }
   },
   {
@@ -299,37 +321,15 @@
       "detail": 8
     },
     "battleStats": {
-      "elo": 927,
-      "rd": 175,
+      "elo": 915,
+      "rd": 160,
       "confidence": "high",
-      "games": 15,
-      "wins": 8,
-      "losses": 5,
+      "games": 19,
+      "wins": 11,
+      "losses": 6,
       "draws": 2,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487389+00:00"
-    }
-  },
-  {
-    "file": "entries/agnes-2.5-flash-none-2026-08-25.svg",
-    "note": "猫趴在钢琴上爪子搭键，有琴腿乐谱，构图尚可；猫脸略呆。",
-    "scores": {
-      "cat": 7,
-      "piano": 7,
-      "playing": 5,
-      "scene": 6,
-      "detail": 6
-    },
-    "battleStats": {
-      "elo": 917,
-      "rd": 145,
-      "confidence": "high",
-      "games": 24,
-      "wins": 12,
-      "losses": 3,
-      "draws": 9,
-      "bad": 1,
-      "syncedAt": "2026-09-09T17:05:30.487391+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265510+00:00"
     }
   },
   {
@@ -351,7 +351,29 @@
       "losses": 9,
       "draws": 5,
       "bad": 0,
-      "syncedAt": "2026-09-09T17:05:30.487392+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265515+00:00"
+    }
+  },
+  {
+    "file": "entries/agnes-2.5-flash-none-2026-08-25.svg",
+    "note": "猫趴在钢琴上爪子搭键，有琴腿乐谱，构图尚可；猫脸略呆。",
+    "scores": {
+      "cat": 7,
+      "piano": 7,
+      "playing": 5,
+      "scene": 6,
+      "detail": 6
+    },
+    "battleStats": {
+      "elo": 908,
+      "rd": 141,
+      "confidence": "high",
+      "games": 26,
+      "wins": 13,
+      "losses": 4,
+      "draws": 9,
+      "bad": 1,
+      "syncedAt": "2026-09-10T03:07:49.265520+00:00"
     }
   },
   {
@@ -366,14 +388,14 @@
     },
     "battleStats": {
       "elo": 855,
-      "rd": 148,
+      "rd": 145,
       "confidence": "high",
-      "games": 23,
-      "wins": 8,
+      "games": 24,
+      "wins": 9,
       "losses": 6,
       "draws": 9,
       "bad": 1,
-      "syncedAt": "2026-09-09T17:05:30.487394+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265525+00:00"
     }
   },
   {
@@ -387,15 +409,15 @@
       "detail": 8
     },
     "battleStats": {
-      "elo": 805,
-      "rd": 148,
+      "elo": 797,
+      "rd": 145,
       "confidence": "high",
-      "games": 23,
+      "games": 24,
       "wins": 6,
-      "losses": 10,
+      "losses": 11,
       "draws": 7,
       "bad": 1,
-      "syncedAt": "2026-09-09T17:05:30.487397+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265530+00:00"
     }
   },
   {
@@ -417,29 +439,7 @@
       "losses": 8,
       "draws": 11,
       "bad": 1,
-      "syncedAt": "2026-09-09T17:05:30.487396+00:00"
-    }
-  },
-  {
-    "file": "entries/mistral-large-3-none-2026-09-04.svg",
-    "note": "圆头橘猫直接坐在键盘上，肚皮压住中部琴键，左右爪搭在键上并有蓝色按键高亮；钢琴是无琴腿的黑色键盘座，背景仅两枚音符，构图对称可爱但读不出正常弹奏坐姿。",
-    "scores": {
-      "cat": 7,
-      "piano": 5,
-      "playing": 5,
-      "scene": 4,
-      "detail": 5
-    },
-    "battleStats": {
-      "elo": 747,
-      "rd": 184,
-      "confidence": "high",
-      "games": 13,
-      "wins": 7,
-      "losses": 4,
-      "draws": 2,
-      "bad": 2,
-      "syncedAt": "2026-09-09T17:05:30.487399+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265535+00:00"
     }
   },
   {
@@ -453,15 +453,15 @@
       "detail": 6
     },
     "battleStats": {
-      "elo": 732,
-      "rd": 153,
+      "elo": 727,
+      "rd": 151,
       "confidence": "high",
-      "games": 21,
+      "games": 22,
       "wins": 6,
-      "losses": 12,
+      "losses": 13,
       "draws": 3,
       "bad": 2,
-      "syncedAt": "2026-09-09T17:05:30.487401+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265541+00:00"
     }
   },
   {
@@ -483,7 +483,29 @@
       "losses": 8,
       "draws": 0,
       "bad": 3,
-      "syncedAt": "2026-09-09T17:05:30.487402+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265552+00:00"
+    }
+  },
+  {
+    "file": "entries/mistral-large-3-none-2026-09-04.svg",
+    "note": "圆头橘猫直接坐在键盘上，肚皮压住中部琴键，左右爪搭在键上并有蓝色按键高亮；钢琴是无琴腿的黑色键盘座，背景仅两枚音符，构图对称可爱但读不出正常弹奏坐姿。",
+    "scores": {
+      "cat": 7,
+      "piano": 5,
+      "playing": 5,
+      "scene": 4,
+      "detail": 5
+    },
+    "battleStats": {
+      "elo": 641,
+      "rd": 171,
+      "confidence": "high",
+      "games": 16,
+      "wins": 9,
+      "losses": 5,
+      "draws": 2,
+      "bad": 3,
+      "syncedAt": "2026-09-10T03:07:49.265558+00:00"
     }
   },
   {
@@ -497,15 +519,15 @@
       "detail": 6
     },
     "battleStats": {
-      "elo": 617,
-      "rd": 160,
+      "elo": 613,
+      "rd": 153,
       "confidence": "high",
-      "games": 19,
+      "games": 21,
       "wins": 8,
-      "losses": 5,
+      "losses": 7,
       "draws": 6,
       "bad": 5,
-      "syncedAt": "2026-09-09T17:05:30.487403+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265563+00:00"
     }
   },
   {
@@ -519,15 +541,15 @@
       "detail": 4
     },
     "battleStats": {
-      "elo": 569,
-      "rd": 157,
+      "elo": 567,
+      "rd": 153,
       "confidence": "high",
-      "games": 20,
+      "games": 21,
       "wins": 6,
-      "losses": 9,
+      "losses": 10,
       "draws": 5,
       "bad": 4,
-      "syncedAt": "2026-09-09T17:05:30.487405+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265568+00:00"
     }
   },
   {
@@ -549,7 +571,7 @@
       "losses": 8,
       "draws": 3,
       "bad": 6,
-      "syncedAt": "2026-09-09T17:05:30.487406+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265594+00:00"
     }
   },
   {
@@ -564,14 +586,14 @@
     },
     "battleStats": {
       "elo": 369,
-      "rd": 160,
+      "rd": 157,
       "confidence": "high",
-      "games": 19,
+      "games": 20,
       "wins": 4,
-      "losses": 11,
+      "losses": 12,
       "draws": 4,
       "bad": 6,
-      "syncedAt": "2026-09-09T17:05:30.487408+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265607+00:00"
     }
   },
   {
@@ -586,14 +608,14 @@
     },
     "battleStats": {
       "elo": 201,
-      "rd": 167,
+      "rd": 163,
       "confidence": "high",
-      "games": 17,
+      "games": 18,
       "wins": 5,
-      "losses": 8,
+      "losses": 9,
       "draws": 4,
       "bad": 8,
-      "syncedAt": "2026-09-09T17:05:30.487410+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265614+00:00"
     }
   },
   {
@@ -608,14 +630,14 @@
     },
     "battleStats": {
       "elo": 178,
-      "rd": 167,
+      "rd": 163,
       "confidence": "high",
-      "games": 17,
+      "games": 18,
       "wins": 3,
-      "losses": 11,
+      "losses": 12,
       "draws": 3,
       "bad": 8,
-      "syncedAt": "2026-09-09T17:05:30.487411+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265620+00:00"
     }
   },
   {
@@ -637,7 +659,7 @@
       "losses": 7,
       "draws": 1,
       "bad": 9,
-      "syncedAt": "2026-09-09T17:05:30.487413+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265625+00:00"
     }
   },
   {
@@ -652,14 +674,14 @@
     },
     "battleStats": {
       "elo": 118,
-      "rd": 163,
+      "rd": 160,
       "confidence": "high",
-      "games": 18,
+      "games": 19,
       "wins": 0,
-      "losses": 18,
+      "losses": 19,
       "draws": 0,
       "bad": 7,
-      "syncedAt": "2026-09-09T17:05:30.487414+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265631+00:00"
     }
   },
   {
@@ -674,14 +696,14 @@
     },
     "battleStats": {
       "elo": 108,
-      "rd": 171,
+      "rd": 167,
       "confidence": "high",
-      "games": 16,
+      "games": 17,
       "wins": 3,
-      "losses": 12,
+      "losses": 13,
       "draws": 1,
       "bad": 9,
-      "syncedAt": "2026-09-09T17:05:30.487416+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265636+00:00"
     }
   },
   {
@@ -696,36 +718,14 @@
     },
     "battleStats": {
       "elo": 99,
-      "rd": 171,
+      "rd": 167,
       "confidence": "high",
-      "games": 16,
+      "games": 17,
       "wins": 5,
-      "losses": 9,
+      "losses": 10,
       "draws": 2,
       "bad": 9,
-      "syncedAt": "2026-09-09T17:05:30.487417+00:00"
-    }
-  },
-  {
-    "file": "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
-    "note": "灰猫趴在琴键上，构图简单，猫脸含糊。",
-    "scores": {
-      "cat": 5,
-      "piano": 4,
-      "playing": 3,
-      "scene": 4,
-      "detail": 3
-    },
-    "battleStats": {
-      "elo": 2,
-      "rd": 180,
-      "confidence": "high",
-      "games": 14,
-      "wins": 6,
-      "losses": 6,
-      "draws": 2,
-      "bad": 11,
-      "syncedAt": "2026-09-09T17:05:30.487419+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265640+00:00"
     }
   },
   {
@@ -739,15 +739,15 @@
       "detail": 3
     },
     "battleStats": {
-      "elo": -5,
-      "rd": 175,
+      "elo": 8,
+      "rd": 171,
       "confidence": "high",
-      "games": 15,
-      "wins": 1,
+      "games": 16,
+      "wins": 2,
       "losses": 11,
       "draws": 3,
       "bad": 10,
-      "syncedAt": "2026-09-09T17:05:30.487420+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265646+00:00"
     }
   },
   {
@@ -769,29 +769,7 @@
       "losses": 16,
       "draws": 0,
       "bad": 9,
-      "syncedAt": "2026-09-09T17:05:30.487422+00:00"
-    }
-  },
-  {
-    "file": "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg",
-    "note": "一排模糊矩形+小猫剪影，结构崩坏。",
-    "scores": {
-      "cat": 2,
-      "piano": 2,
-      "playing": 1,
-      "scene": 2,
-      "detail": 1
-    },
-    "battleStats": {
-      "elo": -64,
-      "rd": 175,
-      "confidence": "high",
-      "games": 15,
-      "wins": 0,
-      "losses": 15,
-      "draws": 0,
-      "bad": 10,
-      "syncedAt": "2026-09-09T17:05:30.487423+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265651+00:00"
     }
   },
   {
@@ -805,15 +783,59 @@
       "detail": 1
     },
     "battleStats": {
-      "elo": -67,
+      "elo": -80,
+      "rd": 167,
+      "confidence": "high",
+      "games": 17,
+      "wins": 0,
+      "losses": 17,
+      "draws": 0,
+      "bad": 9,
+      "syncedAt": "2026-09-10T03:07:49.265656+00:00"
+    }
+  },
+  {
+    "file": "entries/dots-studio-dots-3-note-preview-free-none-2026-08-25.svg",
+    "note": "灰猫趴在琴键上，构图简单，猫脸含糊。",
+    "scores": {
+      "cat": 5,
+      "piano": 4,
+      "playing": 3,
+      "scene": 4,
+      "detail": 3
+    },
+    "battleStats": {
+      "elo": -98,
+      "rd": 175,
+      "confidence": "high",
+      "games": 15,
+      "wins": 6,
+      "losses": 7,
+      "draws": 2,
+      "bad": 12,
+      "syncedAt": "2026-09-10T03:07:49.265661+00:00"
+    }
+  },
+  {
+    "file": "entries/deepseek-r1-distill-qwen-7b-none-2026-08-25.svg",
+    "note": "一排模糊矩形+小猫剪影，结构崩坏。",
+    "scores": {
+      "cat": 2,
+      "piano": 2,
+      "playing": 1,
+      "scene": 2,
+      "detail": 1
+    },
+    "battleStats": {
+      "elo": -164,
       "rd": 171,
       "confidence": "high",
       "games": 16,
       "wins": 0,
       "losses": 16,
       "draws": 0,
-      "bad": 9,
-      "syncedAt": "2026-09-09T17:05:30.487425+00:00"
+      "bad": 11,
+      "syncedAt": "2026-09-10T03:07:49.265665+00:00"
     }
   },
   {
@@ -835,7 +857,7 @@
       "losses": 7,
       "draws": 1,
       "bad": 13,
-      "syncedAt": "2026-09-09T17:05:30.487427+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265670+00:00"
     }
   },
   {
@@ -850,14 +872,14 @@
     },
     "battleStats": {
       "elo": -241,
-      "rd": 184,
+      "rd": 180,
       "confidence": "high",
-      "games": 13,
+      "games": 14,
       "wins": 1,
-      "losses": 12,
+      "losses": 13,
       "draws": 0,
       "bad": 12,
-      "syncedAt": "2026-09-09T17:05:30.487428+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265675+00:00"
     }
   },
   {
@@ -872,14 +894,14 @@
     },
     "battleStats": {
       "elo": -252,
-      "rd": 202,
+      "rd": 196,
       "confidence": "high",
-      "games": 10,
+      "games": 11,
       "wins": 7,
-      "losses": 3,
+      "losses": 4,
       "draws": 0,
       "bad": 14,
-      "syncedAt": "2026-09-09T17:05:30.487429+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265680+00:00"
     }
   },
   {
@@ -894,14 +916,14 @@
     },
     "battleStats": {
       "elo": -270,
-      "rd": 190,
+      "rd": 180,
       "confidence": "high",
-      "games": 12,
+      "games": 14,
       "wins": 2,
-      "losses": 10,
+      "losses": 12,
       "draws": 0,
       "bad": 13,
-      "syncedAt": "2026-09-09T17:05:30.487431+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265685+00:00"
     }
   },
   {
@@ -923,7 +945,7 @@
       "losses": 12,
       "draws": 0,
       "bad": 13,
-      "syncedAt": "2026-09-09T17:05:30.487433+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265691+00:00"
     }
   },
   {
@@ -945,7 +967,7 @@
       "losses": 8,
       "draws": 1,
       "bad": 14,
-      "syncedAt": "2026-09-09T17:05:30.487434+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265696+00:00"
     }
   },
   {
@@ -960,14 +982,14 @@
     },
     "battleStats": {
       "elo": -424,
-      "rd": 196,
+      "rd": 190,
       "confidence": "high",
-      "games": 11,
+      "games": 12,
       "wins": 0,
-      "losses": 11,
+      "losses": 12,
       "draws": 0,
       "bad": 14,
-      "syncedAt": "2026-09-09T17:05:30.487436+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265701+00:00"
     }
   },
   {
@@ -982,36 +1004,14 @@
     },
     "battleStats": {
       "elo": -437,
-      "rd": 196,
+      "rd": 190,
       "confidence": "high",
-      "games": 11,
+      "games": 12,
       "wins": 0,
-      "losses": 11,
+      "losses": 12,
       "draws": 0,
       "bad": 14,
-      "syncedAt": "2026-09-09T17:05:30.487437+00:00"
-    }
-  },
-  {
-    "file": "entries/glm-4.6v-flash-none-2026-08-25.svg",
-    "note": "猫头探出钢琴顶盖，琴身比例失调。",
-    "scores": {
-      "cat": 5,
-      "piano": 4,
-      "playing": 2,
-      "scene": 3,
-      "detail": 3
-    },
-    "battleStats": {
-      "elo": -464,
-      "rd": 209,
-      "confidence": "mid",
-      "games": 9,
-      "wins": 2,
-      "losses": 7,
-      "draws": 0,
-      "bad": 15,
-      "syncedAt": "2026-09-09T17:05:30.487439+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265706+00:00"
     }
   },
   {
@@ -1026,14 +1026,14 @@
     },
     "battleStats": {
       "elo": -524,
-      "rd": 202,
+      "rd": 196,
       "confidence": "high",
-      "games": 10,
+      "games": 11,
       "wins": 0,
-      "losses": 10,
+      "losses": 11,
       "draws": 0,
       "bad": 15,
-      "syncedAt": "2026-09-09T17:05:30.487441+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265711+00:00"
     }
   },
   {
@@ -1048,14 +1048,36 @@
     },
     "battleStats": {
       "elo": -549,
-      "rd": 217,
+      "rd": 209,
       "confidence": "mid",
-      "games": 8,
+      "games": 9,
       "wins": 2,
-      "losses": 6,
+      "losses": 7,
       "draws": 0,
       "bad": 16,
-      "syncedAt": "2026-09-09T17:05:30.487442+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265716+00:00"
+    }
+  },
+  {
+    "file": "entries/glm-4.6v-flash-none-2026-08-25.svg",
+    "note": "猫头探出钢琴顶盖，琴身比例失调。",
+    "scores": {
+      "cat": 5,
+      "piano": 4,
+      "playing": 2,
+      "scene": 3,
+      "detail": 3
+    },
+    "battleStats": {
+      "elo": -564,
+      "rd": 209,
+      "confidence": "mid",
+      "games": 9,
+      "wins": 2,
+      "losses": 7,
+      "draws": 0,
+      "bad": 16,
+      "syncedAt": "2026-09-10T03:07:49.265721+00:00"
     }
   },
   {
@@ -1070,14 +1092,14 @@
     },
     "battleStats": {
       "elo": -583,
-      "rd": 209,
-      "confidence": "mid",
-      "games": 9,
+      "rd": 202,
+      "confidence": "high",
+      "games": 10,
       "wins": 1,
-      "losses": 8,
+      "losses": 9,
       "draws": 0,
       "bad": 16,
-      "syncedAt": "2026-09-09T17:05:30.487444+00:00"
+      "syncedAt": "2026-09-10T03:07:49.265727+00:00"
     }
   },
   {
@@ -1092,25 +1114,14 @@
     },
     "battleStats": {
       "elo": -775,
-      "rd": 226,
+      "rd": 209,
       "confidence": "mid",
-      "games": 7,
+      "games": 9,
       "wins": 1,
-      "losses": 6,
+      "losses": 8,
       "draws": 0,
       "bad": 18,
-      "syncedAt": "2026-09-09T17:05:30.487445+00:00"
-    }
-  },
-  {
-    "file": "entries/kimi-k3-extreme-2026-09-10.svg",
-    "note": "立式钢琴部件齐全（琴身/琴腿/踏板/谱架乐谱），场景丰富（地毯、相框爪印、盆栽、飘散音符），猫笑眼双爪落键、坐琴凳姿态正确；但钢琴朝向画反——观众面对的是背板，琴键被甩到猫那侧，整台琴读成没有琴键面的柜子。",
-    "scores": {
-      "cat": 7,
-      "piano": 5,
-      "playing": 6,
-      "scene": 8,
-      "detail": 7
+      "syncedAt": "2026-09-10T03:07:49.265758+00:00"
     }
   }
 ]

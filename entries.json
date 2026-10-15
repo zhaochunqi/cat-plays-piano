@@ -304,5 +304,11 @@
         "thinking": "extreme",
         "date": "2026-09-10",
         "file": "entries/kimi-k3-extreme-2026-09-10.svg"
+    },
+    {
+        "model": "deepseek-v4-1-flash",
+        "thinking": "high",
+        "date": "2026-10-16",
+        "file": "entries/deepseek-v4-1-flash-high-2026-10-16.svg"
     }
 ]

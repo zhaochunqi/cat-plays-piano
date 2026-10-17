@@ -3571,5 +3571,50 @@
     "leftIdx": 44,
     "rightIdx": 45,
     "time": "2026-10-17T17:40:30.598Z"
+  },
+  {
+    "leftFile": "entries/deepseek-v4-1-flash-free-max-2026-10-18.svg",
+    "rightFile": "entries/glm-5-3-flash-free-low-2026-10-18.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 46,
+    "rightIdx": 47,
+    "time": "2026-10-17T17:40:38.626Z"
+  },
+  {
+    "leftFile": "entries/glm-5-3-flash-free-high-2026-10-18.svg",
+    "rightFile": "entries/glm-5-3-flash-free-max-2026-10-18.svg",
+    "result": "right",
+    "mode": "smart",
+    "leftIdx": 48,
+    "rightIdx": 49,
+    "time": "2026-10-17T17:40:50.898Z"
+  },
+  {
+    "leftFile": "entries/space-bunny-free-low-2026-10-18.svg",
+    "rightFile": "entries/space-bunny-free-medium-2026-10-18.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 50,
+    "rightIdx": 51,
+    "time": "2026-10-17T17:40:58.271Z"
+  },
+  {
+    "leftFile": "entries/space-bunny-free-xhigh-2026-10-18.svg",
+    "rightFile": "entries/hy3-low-2026-10-18.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 52,
+    "rightIdx": 54,
+    "time": "2026-10-17T17:41:05.950Z"
+  },
+  {
+    "leftFile": "entries/space-bunny-free-max-2026-10-18.svg",
+    "rightFile": "entries/step-5-preview-low-2026-10-18.svg",
+    "result": "left",
+    "mode": "smart",
+    "leftIdx": 53,
+    "rightIdx": 55,
+    "time": "2026-10-17T17:41:13.970Z"
   }
 ]

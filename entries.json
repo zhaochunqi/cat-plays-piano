@@ -114,48 +114,6 @@
         "file": "entries/liquid-lfm-2.5-2.6b-free-none-2026-08-25.svg"
     },
     {
-        "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free-none-2026-08-25.svg"
-    },
-    {
-        "model": "nvidia/nemotron-3-super-120b-a12b:free",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/nvidia-nemotron-3-super-120b-a12b-free-none-2026-08-25.svg"
-    },
-    {
-        "model": "poolside/laguna-s-2.1:free",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/poolside-laguna-s-2.1-free-none-2026-08-25.svg"
-    },
-    {
-        "model": "poolside/laguna-xs-2.1:free",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/poolside-laguna-xs-2.1-free-none-2026-08-25.svg"
-    },
-    {
-        "model": "qwen2-7b-instruct",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/qwen2-7b-instruct-none-2026-08-25.svg"
-    },
-    {
-        "model": "qwen3-4b",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/qwen3-4b-none-2026-08-25.svg"
-    },
-    {
-        "model": "qwen3-8b",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/qwen3-8b-none-2026-08-25.svg"
-    },
-    {
         "model": "LongCat-2.0",
         "thinking": "none",
         "date": "2026-08-25",
@@ -222,30 +180,6 @@
         "file": "entries/gemini-3.1-pro-extend-2026-08-25.svg"
     },
     {
-        "model": "nemotron-3-nano-omni-free",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/nemotron-3-nano-omni-free-none-2026-08-25.svg"
-    },
-    {
-        "model": "nemotron-3-super-free",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/nemotron-3-super-free-none-2026-08-25.svg"
-    },
-    {
-        "model": "laguna-xs-2.1-free",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/laguna-xs-2.1-free-none-2026-08-25.svg"
-    },
-    {
-        "model": "nemotron-3-ultra-free",
-        "thinking": "none",
-        "date": "2026-08-25",
-        "file": "entries/nemotron-3-ultra-free-none-2026-08-25.svg"
-    },
-    {
         "model": "qwen3.8-max",
         "thinking": "thinking",
         "date": "2026-08-25",
@@ -310,5 +244,155 @@
         "thinking": "high",
         "date": "2026-10-16",
         "file": "entries/deepseek-v4-1-flash-high-2026-10-16.svg"
+    },
+    {
+        "model": "Big Pickle",
+        "thinking": "none",
+        "date": "2026-10-18",
+        "file": "entries/big-pickle-none-2026-10-18.svg"
+    },
+    {
+        "model": "MiMo-V2.6-Flash Free",
+        "thinking": "none",
+        "date": "2026-10-18",
+        "file": "entries/mimo-v2-6-flash-free-none-2026-10-18.svg"
+    },
+    {
+        "model": "LongCat 2.5 Preview Free",
+        "thinking": "none",
+        "date": "2026-10-18",
+        "file": "entries/longcat-2-5-preview-free-none-2026-10-18.svg"
+    },
+    {
+        "model": "DeepSeek V4.1 Flash Free",
+        "thinking": "low",
+        "date": "2026-10-18",
+        "file": "entries/deepseek-v4-1-flash-free-low-2026-10-18.svg"
+    },
+    {
+        "model": "DeepSeek V4.1 Flash Free",
+        "thinking": "high",
+        "date": "2026-10-18",
+        "file": "entries/deepseek-v4-1-flash-free-high-2026-10-18.svg"
+    },
+    {
+        "model": "DeepSeek V4.1 Flash Free",
+        "thinking": "max",
+        "date": "2026-10-18",
+        "file": "entries/deepseek-v4-1-flash-free-max-2026-10-18.svg"
+    },
+    {
+        "model": "GLM-5.3-Flash Free",
+        "thinking": "low",
+        "date": "2026-10-18",
+        "file": "entries/glm-5-3-flash-free-low-2026-10-18.svg"
+    },
+    {
+        "model": "GLM-5.3-Flash Free",
+        "thinking": "high",
+        "date": "2026-10-18",
+        "file": "entries/glm-5-3-flash-free-high-2026-10-18.svg"
+    },
+    {
+        "model": "GLM-5.3-Flash Free",
+        "thinking": "max",
+        "date": "2026-10-18",
+        "file": "entries/glm-5-3-flash-free-max-2026-10-18.svg"
+    },
+    {
+        "model": "Space Bunny Free",
+        "thinking": "low",
+        "date": "2026-10-18",
+        "file": "entries/space-bunny-free-low-2026-10-18.svg"
+    },
+    {
+        "model": "Space Bunny Free",
+        "thinking": "medium",
+        "date": "2026-10-18",
+        "file": "entries/space-bunny-free-medium-2026-10-18.svg"
+    },
+    {
+        "model": "Space Bunny Free",
+        "thinking": "xhigh",
+        "date": "2026-10-18",
+        "file": "entries/space-bunny-free-xhigh-2026-10-18.svg"
+    },
+    {
+        "model": "Space Bunny Free",
+        "thinking": "max",
+        "date": "2026-10-18",
+        "file": "entries/space-bunny-free-max-2026-10-18.svg"
+    },
+    {
+        "model": "Hy3",
+        "thinking": "low",
+        "date": "2026-10-18",
+        "file": "entries/hy3-low-2026-10-18.svg"
+    },
+    {
+        "model": "Step-5-Preview",
+        "thinking": "low",
+        "date": "2026-10-18",
+        "file": "entries/step-5-preview-low-2026-10-18.svg"
+    },
+    {
+        "model": "Step-5-Preview",
+        "thinking": "medium",
+        "date": "2026-10-18",
+        "file": "entries/step-5-preview-medium-2026-10-18.svg"
+    },
+    {
+        "model": "Step-5-Preview",
+        "thinking": "high",
+        "date": "2026-10-18",
+        "file": "entries/step-5-preview-high-2026-10-18.svg"
+    },
+    {
+        "model": "Beam Free",
+        "thinking": "low",
+        "date": "2026-10-18",
+        "file": "entries/beam-free-low-2026-10-18.svg"
+    },
+    {
+        "model": "Beam Free",
+        "thinking": "medium",
+        "date": "2026-10-18",
+        "file": "entries/beam-free-medium-2026-10-18.svg"
+    },
+    {
+        "model": "Beam Free",
+        "thinking": "high",
+        "date": "2026-10-18",
+        "file": "entries/beam-free-high-2026-10-18.svg"
+    },
+    {
+        "model": "Beam Free",
+        "thinking": "xhigh",
+        "date": "2026-10-18",
+        "file": "entries/beam-free-xhigh-2026-10-18.svg"
+    },
+    {
+        "model": "Beam Free",
+        "thinking": "max",
+        "date": "2026-10-18",
+        "file": "entries/beam-free-max-2026-10-18.svg"
+    },
+    {
+        "model": "Grok-4.7",
+        "thinking": "high",
+        "date": "2026-10-18",
+        "file": "entries/grok-4-7-high-2026-10-18.svg"
+    },
+    {
+        "model": "Hy3 (X)",
+        "thinking": "high",
+        "date": "2026-10-18",
+        "file": "entries/hy3-x-high-2026-10-18.svg"
+    },
+    {
+        "model": "Space Bunny Free",
+        "thinking": "high",
+        "date": "2026-10-18",
+        "file": "entries/space-bunny-free-high-2026-10-18.svg"
     }
 ]

@@ -22,7 +22,34 @@ LLM 产出对比画廊。固定 prompt，收集不同模型（及思考级别）
 Generate an SVG of a cat playing a piano.
 ```
 
-## 新增一条目
+## 新增一条目（两条路）
+
+### A. magpie gateway 直连（裸模型，推荐，绕开 harness）
+
+pi / opencode 等工具里跑固定 prompt，模型会带上一堆 harness 的 system prompt、工具定义和
+上下文——同一个模型在画廊里会比"裸模型"更强或更弱，横向对比不干净。`just gen` 走 magpie
+的本地 gateway（`http://127.0.0.1:3425/v1`，本机免 key），模型只收到这一句 user message。
+
+```bash
+magpie healthcheck          # 网关在不在
+just gen <provider/model> <thinking>    # 例：just gen opencode-zen-free/beam-free max
+just gen-free                           # 所有免费模型 × 全部 thinking 档位
+just gen-provider <provider> [args]     # 某个 provider 的全部模型（top / <l,l> / --dry-run）
+```
+
+- gateway 地址可用 `MAGPIE_GATEWAY=http://host:port` 覆盖。
+- **不要维护模型清单文件**（历史上有个 `free.txt`）：`scripts/gen.py` 从 `/v1/models` 现查
+  模型、用模型自己列出的 `supported_reasoning_levels` 定档位；「免费」读
+  `~/.config/magpie/plugin-providers.json` 的 `free` 字段（与 magpie UI 同源），不靠名字猜。
+- `<thinking>` 只填 gateway 为该模型列出的 effort 档位。
+  **gateway 对无效档位静默降级，不报错**——拼错只会悄悄变成默认档，
+  所以每次看一眼输出里的 `reasoning_tokens` 随档位是否上升。
+- 落盘文件名用 magpie 的 `display_name` 的 slug（如 `Space Bunny Free` → `space-bunny-free`），
+  entries.json 的 `model` 用 display_name 原文；无档位的模型填 `none`。
+- 同一模型被两个 provider 供（`workbuddy/hy3` 与 `workbuddy-ai/hy3`）时只留一条：
+  display_name 相同，不 dedupe 会撞文件名、画廊里也分不出来。
+
+### B. 走 agent 工具（会带 harness 上下文）
 
 1. 用目标模型（及思考级别）跑上面固定 prompt，拿到**纯 SVG**。
 2. 存为 `entries/<model>-<thinking>-<date>.svg`；模型不支持思考级别时用 `none`。
@@ -117,22 +144,50 @@ python3 -m http.server 8123
 ## 可视化核查（给人眼用）
 
 模型自身无法直接看图。需要肉眼比对时，用已装在**隔离 node 工作区**
-（非项目仓库）的 `@resvg/resvg-js` 把 `entries/*.svg` 渲染成 PNG：
+（非项目仓库）的 `@resvg/resvg-js` + `sharp` 把 `entries/*.svg` 渲染成 PNG：
 
 ```bash
 cd ~/.workbuddy/binaries/node/workspace
-npm ls @resvg/resvg-js   # 确认已装
-# 用 resvg 的 JS API 把每个 svg 输出为 png，再交给用户看
+node render.mjs <svg>...      # 单张 → /tmp/png/<name>.png
+node sheet.mjs <svg>...       # 批量对照片：每张 6 个（3×2）带文件名标签 → /tmp/png/sheet-N.jpg
+node check.mjs <svg>...       # 只验证能否渲染（resvg 不认没有 xmlns 的根）
 ```
+
+评分前先用 `sheet.mjs` 拼对照图，**肉眼看图**再按上面「评分标准」填 `scores` 与 `note`——
+只看文件名或文字描述会误判（历史上有“有琴身”误写成“缺琴身”、把仓鼠评成猫 9 分）。
 
 脚本一律放 `/tmp` 或隔离工作区，**不要提交进仓库**。
 
 ## 坑（避免回归）
 
+### scripts/gen.py（裸模型生成器）
+
+- **`content` 可能是空的**：Beam Free 不发正文，而是发一个 `cat > /tmp/x.svg <<'EOF' …` 的
+  tool_call；它的 `function.arguments` 是**转义过的 JSON 字符串**，直接正则找 `<svg>` 会解析失败
+  （`not well-formed: line 1, column 11`），必须先 `json.loads` 再找。
+- **落盘前必须补 `xmlns`**：模型给的 `<svg>` 常没有命名空间，Python 的 ElementTree 能解析，
+  但 resvg 会报 `document does not have a root node`——所以写入的是补过 `xmlns` 的版本，
+  不是原文（`validate()` 把补过的文本返回给调用方落盘）。
+- **429 是账号级限流**：`workbuddy-ai` 报 `usage exceeds frequency limit …` 时是当天额度用完，
+  等到重置时间再跑；同一个 provider 并发不要超过 2～4。
+- **“免费”不看名字看 catalog**：`~/.config/magpie/plugin-providers.json` 里每个模型的 `free`
+  字段才是权威（跟 magpie UI 一致）。workbuddy 里带 free 名字的一个都没有，
+  真正 free=true 的只有 `hy3` / `step-5-preview`（+ workbuddy-ai 的 `deepseek-v4.1-flash`）。
+- **同名模型要去重**：`workbuddy/hy3` 与 `workbuddy-ai/hy3` 的 display_name 都是 `Hy3`，
+  不去重就会互相覆写同一个 SVG、画廊里也分不出是谁。
+
+### 页面与数据
+
 - **雷达图标签裁切**：`radarSVG` 把轴标签放在半径 `R+14`（中心 110,110），
   右侧「钢琴/演奏」与左侧「场景/细节」会超出默认 `0 0 220 220` viewBox 被静默裁掉。
   必须用够宽的 viewBox，例如 `"-40 -40 300 300"`（width/height 240），
   并按 x 相对中心选 `text-anchor`（start/middle/end）。改雷达图时务必先算标签包围盒。
-- **仓库干净**：所有工具/迁移脚本留在 `/tmp` 或 `~/.workbuddy` 隔离区，仓库只保留
-  `index.html`、`entries.json`、`rankings.json`、`entries/`、`README.md` 等源文件。
+- **`rankings.json` 是 2 空格缩进、`entries.json` 是 4 空格**（`server.py` 的 `save_json` 用 2），
+  手改/脚本改请对齐，否则 diff 全是排版噪声。
+- **别在 `just serve` 跑着的时候改 `rankings.json`**：服务器把整份榜单放在内存里，
+  每次投票都会重写回磁盘，你的新条目会被丢掉（改完再启动，或先停）。
+- **仓库边界**：`scripts/gen.py` 属于仓库（它是项目工具，随仓维护）；
+  一次性的迁移 / 批量脚本、渲染中间产物才放 `/tmp` 或 `~/.workbuddy` 隔离区，
+  不要提交进仓库。
 - **prompt 不变**：固定 prompt 是项目对比的基础，不要为"更好看"而改写。
+

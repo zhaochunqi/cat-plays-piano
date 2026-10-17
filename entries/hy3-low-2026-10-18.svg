@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#e0f7fa"/>
+  
+  <!-- Floor -->
+  <rect x="0" y="280" width="400" height="20" fill="#bcaaa4"/>
+  
+  <!-- Stool -->
+  <rect x="110" y="245" width="70" height="10" rx="3" fill="#795548"/>
+  <rect x="120" y="255" width="8" height="35" fill="#5d4037"/>
+  <rect x="162" y="255" width="8" height="35" fill="#5d4037"/>
+  
+  <!-- Piano Body -->
+  <rect x="250" y="70" width="110" height="210" fill="#212121"/>
+  <rect x="240" y="55" width="130" height="15" fill="#000000"/>
+  <!-- Piano Legs -->
+  <rect x="260" y="280" width="12" height="20" fill="#000"/>
+  <rect x="340" y="280" width="12" height="20" fill="#000"/>
+  
+  <!-- Keyboard -->
+  <rect x="215" y="190" width="50" height="22" fill="#fafafa" stroke="#999" stroke-width="1"/>
+  <!-- Black Keys -->
+  <rect x="222" y="190" width="5" height="13" fill="#000"/>
+  <rect x="232" y="190" width="5" height="13" fill="#000"/>
+  <rect x="245" y="190" width="5" height="13" fill="#000"/>
+  <rect x="255" y="190" width="5" height="13" fill="#000"/>
+  <rect x="265" y="190" width="5" height="13" fill="#000"/>
+  
+  <!-- Cat Tail (behind body) -->
+  <path d="M125,240 Q80,250 85,200 Q90,170 110,180" fill="none" stroke="#f4a261" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Cat Body -->
+  <ellipse cx="150" cy="200" rx="35" ry="48" fill="#f4a261"/>
+  <ellipse cx="160" cy="210" rx="20" ry="32" fill="#ffe0b2"/>
+  
+  <!-- Cat Head -->
+  <circle cx="155" cy="140" r="30" fill="#f4a261"/>
+  <!-- Ears -->
+  <polygon points="135,115 125,82 158,108" fill="#f4a261"/>
+  <polygon points="165,110 182,80 188,118" fill="#f4a261"/>
+  <polygon points="138,112 132,95 152,108" fill="#ffccbc"/>
+  <polygon points="168,110 178,92 182,115" fill="#ffccbc"/>
+  
+  <!-- Stripes -->
+  <path d="M145,112 Q150,118 147,128" stroke="#e76f51" stroke-width="3" fill="none"/>
+  <path d="M155,108 Q160,114 157,124" stroke="#e76f51" stroke-width="3" fill="none"/>
+  <path d="M125,195 Q135,200 130,215" stroke="#e76f51" stroke-width="3" fill="none"/>
+  <path d="M130,225 Q140,230 135,245" stroke="#e76f51" stroke-width="3" fill="none"/>
+  
+  <!-- Eye -->
+  <circle cx="168" cy="138" r="6" fill="#aed581"/>
+  <circle cx="170" cy="138" r="3" fill="#222"/>
+  <!-- Nose & Mouth -->
+  <circle cx="182" cy="146" r="3" fill="#e57373"/>
+  <path d="M182,149 Q177,154 172,151 M182,149 Q187,154 192,151" stroke="#222" fill="none" stroke-width="1"/>
+  <!-- Whiskers -->
+  <line x1="182" y1="146" x2="212" y2="142" stroke="#fff" stroke-width="1"/>
+  <line x1="182" y1="148" x2="212" y2="150" stroke="#fff" stroke-width="1"/>
+  <line x1="182" y1="150" x2="210" y2="158" stroke="#fff" stroke-width="1"/>
+  
+  <!-- Cat Arm Reaching to Keys -->
+  <path d="M172,215 Q200,220 223,202" stroke="#f4a261" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <!-- Paw on Keyboard -->
+  <ellipse cx="226" cy="201" rx="9" ry="7" fill="#ffe0b2"/>
+  
+  <!-- Music Notes -->
+  <text x="290" y="45" font-size="28" fill="#212121" font-family="sans-serif">&#9835;</text>
+  <text x="320" y="70" font-size="22" fill="#212121" font-family="sans-serif">&#9833;</text>
+  <text x="345" y="40" font-size="18" fill="#212121" font-family="sans-serif">&#9834;</text>
+</svg>

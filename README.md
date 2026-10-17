@@ -10,7 +10,40 @@ LLM 对比展示项目：固定 prompt `Generate an SVG of a cat playing a piano
 ## 如何添加新条目
 
 优先用本仓库自带的 skill `.agents/skills/cat-plays-piano/SKILL.md`。
-手动流程：
+
+### 方式 A：magpie 裸模型直连（推荐）
+
+从 pi / opencode 这类工具里跑固定 prompt，模型会额外收到一整套 harness 的 system prompt、
+工具定义和会话上下文——同一个模型在画廊里会比「裸模型」表现更好或更差，横向对比不干净。
+所以仓库内置了直连 [magpie](https://github.com/yetone/magpie) 本地 gateway 的生成器：
+模型只看到固定 prompt 这一句 user message，没有任何 harness 注入。
+
+```bash
+magpie healthcheck                              # 网关在不在（magpie 应用会自带，或 magpie serve）
+just gen <provider/model> <thinking>           # 例：just gen opencode-zen-free/beam-free max
+just gen-free                                  # 所有免费模型 × 全部 thinking 档位
+just gen-provider <provider> [args]            # 某个 provider 的全部模型（可加 top / <l,l> / --dry-run）
+```
+
+`scripts/gen.py` **不存任何模型清单文件**：模型从 gateway 的 `/v1/models` 现查，
+档位用该模型自己列出的 `supported_reasoning_levels`，所以模型上下架、档位增删都能自动跟上。
+
+- 「免费」的判定读 `~/.config/magpie/plugin-providers.json` 里每个模型的 `free` 字段
+  （与 magpie UI 的免费标记同源），**不是靠名字带 `-free` 猜**。
+- `--levels all|top|none|<l1,l2>`：全部档位 / 只取最高档 / 不带 reasoning / 指定档位。
+- `--dry-run` 先看任务清单；`--record` 生成成功即幂等写入 `entries.json`；
+  已入库的 `(模型, 档位)` 和已落盘文件默认跳过，`--force` 才重跑。
+- `--parallel N` 控并发（默认 4）。同 provider 并发过高会被 429 限流，脚本已带退避重试。
+
+> gateway 对无效的 thinking 档位会**静默降级且不报错**，所以档位必须以 gateway 列出的为准，
+> 并在生成后核对输出里的 `reasoning_tokens` 是否随档位上升。
+> 入库用的模型名取 magpie 的 `display_name`（如 `Space Bunny Free`），保持和其它条目一致；
+> 同一模型被多个 provider 供给（如 `workbuddy/hy3` 与 `workbuddy-ai/hy3`）时只留一条，
+> 否则 display_name 相同、落盘文件名会撞。
+
+生成后仍要照方式 B 的第 3–4 步把它们追加进 `entries.json` 与 `rankings.json`。
+
+### 方式 B：在 agent 工具里跑（带 harness 上下文）
 
 1. 用目标模型（及思考级别）跑固定 prompt，拿到纯 SVG。
 2. 存为 `entries/<model>-<thinking>-<date>.svg`；模型不支持思考级别时用 `none`。

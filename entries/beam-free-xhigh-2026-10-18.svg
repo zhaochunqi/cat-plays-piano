@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5d4037"/>
+      <stop offset="100%" stop-color="#3e2723"/>
+    </linearGradient>
+    <linearGradient id="catOrange" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9800"/>
+      <stop offset="100%" stop-color="#e65100"/>
+    </linearGradient>
+    <radialGradient id="eye" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#cddc39"/>
+      <stop offset="100%" stop-color="#827717"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background wall -->
+  <rect x="0" y="0" width="800" height="600" fill="#eceff1"/>
+  <!-- Floor -->
+  <rect x="0" y="500" width="800" height="100" fill="#bcaaa4"/>
+  <line x1="0" y1="500" x2="800" y2="500" stroke="#8d6e63" stroke-width="2"/>
+
+  <!-- Piano case -->
+  <rect x="80" y="180" width="640" height="200" rx="8" fill="url(#wood)" stroke="#212121" stroke-width="2"/>
+  <!-- Top lid -->
+  <rect x="80" y="160" width="640" height="24" rx="6" fill="#4e342e" stroke="#212121" stroke-width="2"/>
+  <!-- Music stand -->
+  <rect x="300" y="110" width="200" height="70" rx="4" fill="#6d4c41" stroke="#212121" stroke-width="2"/>
+  <!-- Sheet music -->
+  <rect x="315" y="120" width="170" height="50" fill="#fafafa" stroke="#bdbdbd" stroke-width="1"/>
+  <line x1="325" y1="132" x2="475" y2="132" stroke="#90caf9" stroke-width="1"/>
+  <line x1="325" y1="140" x2="475" y2="140" stroke="#90caf9" stroke-width="1"/>
+  <line x1="325" y1="148" x2="475" y2="148" stroke="#90caf9" stroke-width="1"/>
+  <line x1="325" y1="156" x2="475" y2="156" stroke="#90caf9" stroke-width="1"/>
+  <line x1="325" y1="164" x2="475" y2="164" stroke="#90caf9" stroke-width="1"/>
+  <!-- notes -->
+  <circle cx="340" cy="136" r="4" fill="#212121"/>
+  <circle cx="370" cy="152" r="4" fill="#212121"/>
+  <circle cx="400" cy="144" r="4" fill="#212121"/>
+  <circle cx="430" cy="160" r="4" fill="#212121"/>
+  <circle cx="460" cy="136" r="4" fill="#212121"/>
+
+  <!-- Keyboard bed -->
+  <rect x="100" y="380" width="600" height="60" fill="#212121" stroke="#000" stroke-width="2"/>
+
+  <!-- White keys -->
+  <g fill="#fafafa" stroke="#9e9e9e" stroke-width="1">
+    <!-- 12 white keys -->
+    <rect x="100" y="380" width="50" height="60"/>
+    <rect x="150" y="380" width="50" height="60"/>
+    <rect x="200" y="380" width="50" height="60"/>
+    <rect x="250" y="380" width="50" height="60"/>
+    <rect x="300" y="380" width="50" height="60"/>
+    <rect x="350" y="380" width="50" height="60"/>
+    <rect x="400" y="380" width="50" height="60"/>
+    <rect x="450" y="380" width="50" height="60"/>
+    <rect x="500" y="380" width="50" height="60"/>
+    <rect x="550" y="380" width="50" height="60"/>
+    <rect x="600" y="380" width="50" height="60"/>
+    <rect x="650" y="380" width="50" height="60"/>
+  </g>
+
+  <!-- Black keys -->
+  <g fill="#212121">
+    <rect x="135" y="380" width="30" height="38" rx="2"/>
+    <rect x="185" y="380" width="30" height="38" rx="2"/>
+    <rect x="285" y="380" width="30" height="38" rx="2"/>
+    <rect x="335" y="380" width="30" height="38" rx="2"/>
+    <rect x="385" y="380" width="30" height="38" rx="2"/>
+    <rect x="485" y="380" width="30" height="38" rx="2"/>
+    <rect x="535" y="380" width="30" height="38" rx="2"/>
+    <rect x="585" y="380" width="30" height="38" rx="2"/>
+    <rect x="635" y="380" width="30" height="38" rx="2"/>
+  </g>
+
+  <!-- Cat body -->
+  <ellipse cx="400" cy="500" rx="90" ry="60" fill="url(#catOrange)" stroke="#bf360c" stroke-width="2"/>
+  <!-- Cat head -->
+  <circle cx="400" cy="420" r="55" fill="url(#catOrange)" stroke="#bf360c" stroke-width="2"/>
+  <!-- Ears -->
+  <polygon points="355,380 375,330 395,380" fill="url(#catOrange)" stroke="#bf360c" stroke-width="2"/>
+  <polygon points="405,380 425,330 445,380" fill="url(#catOrange)" stroke="#bf360c" stroke-width="2"/>
+  <polygon points="365,378 375,345 385,378" fill="#ffccbc"/>
+  <polygon points="415,378 425,345 435,378" fill="#ffccbc"/>
+  <!-- Eyes -->
+  <ellipse cx="380" cy="415" rx="9" ry="12" fill="url(#eye)" stroke="#212121" stroke-width="1"/>
+  <ellipse cx="420" cy="415" rx="9" ry="12" fill="url(#eye)" stroke="#212121" stroke-width="1"/>
+  <circle cx="380" cy="418" r="4" fill="#212121"/>
+  <circle cx="420" cy="418" r="4" fill="#212121"/>
+  <circle cx="378" cy="414" r="2" fill="#fff"/>
+  <circle cx="418" cy="414" r="2" fill="#fff"/>
+  <!-- Nose -->
+  <polygon points="395,430 405,430 400,438" fill="#e91e63" stroke="#bf360c" stroke-width="1"/>
+  <!-- Mouth -->
+  <path d="M 400 438 Q 392 446 385 442" stroke="#212121" stroke-width="1.5" fill="none"/>
+  <path d="M 400 438 Q 408 446 415 442" stroke="#212121" stroke-width="1.5" fill="none"/>
+  <!-- Whiskers -->
+  <g stroke="#212121" stroke-width="1">
+    <line x1="360" y1="432" x2="330" y2="428"/>
+    <line x1="360" y1="438" x2="330" y2="438"/>
+    <line x1="360" y1="444" x2="330" y2="448"/>
+    <line x1="440" y1="432" x2="470" y2="428"/>
+    <line x1="440" y1="438" x2="470" y2="438"/>
+    <line x1="440" y1="444" x2="470" y2="448"/>
+  </g>
+  <!-- Tabby stripes -->
+  <g stroke="#bf360c" stroke-width="2" fill="none">
+    <path d="M 360 395 Q 375 385 390 395"/>
+    <path d="M 410 395 Q 425 385 440 395"/>
+  </g>
+
+  <!-- Paws on keys -->
+  <ellipse cx="330" cy="395" rx="22" ry="14" fill="url(#catOrange)" stroke="#bf360c" stroke-width="2"/>
+  <ellipse cx="470" cy="395" rx="22" ry="14" fill="url(#catOrange)" stroke="#bf360c" stroke-width="2"/>
+  <!-- paw pads -->
+  <circle cx="322" cy="396" r="3" fill="#ffccbc"/>
+  <circle cx="330" cy="393" r="3" fill="#ffccbc"/>
+  <circle cx="338" cy="396" r="3" fill="#ffccbc"/>
+  <circle cx="462" cy="396" r="3" fill="#ffccbc"/>
+  <circle cx="470" cy="393" r="3" fill="#ffccbc"/>
+  <circle cx="478" cy="396" r="3" fill="#ffccbc"/>
+
+  <!-- Tail -->
+  <path d="M 485 520 Q 560 490 540 440 Q 525 410 500 420" stroke="url(#catOrange)" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <path d="M 485 520 Q 560 490 540 440 Q 525 410 500 420" stroke="#bf360c" stroke-width="2" fill="none"/>
+
+  <!-- Bench -->
+  <rect x="320" y="545" width="160" height="18" rx="4" fill="#6d4c41" stroke="#212121" stroke-width="2"/>
+  <rect x="335" y="563" width="12" height="25" fill="#4e342e"/>
+  <rect x="453" y="563" width="12" height="25" fill="#4e342e"/>
+</svg>

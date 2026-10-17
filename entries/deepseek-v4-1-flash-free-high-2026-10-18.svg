@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-labelledby="title desc">
+  <title id="title">Cat Playing Piano</title>
+  <desc id="desc">A cute orange tabby cat peeking over an upright piano with its paws resting on the keys while music notes float in the air.</desc>
+
+  <defs>
+    <!-- Background & environment -->
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f7fe"/>
+      <stop offset="60%" stop-color="#dde8f9"/>
+      <stop offset="100%" stop-color="#c6d5f0"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff3cd" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ffe9b0" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#ffe9b0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c3cfea"/>
+      <stop offset="100%" stop-color="#aabbe0"/>
+    </linearGradient>
+
+    <!-- Piano materials -->
+    <linearGradient id="pianoBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4d4560"/>
+      <stop offset="45%" stop-color="#332c41"/>
+      <stop offset="100%" stop-color="#211c2c"/>
+    </linearGradient>
+    <linearGradient id="panelLow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#453d55"/>
+      <stop offset="100%" stop-color="#2c2538"/>
+    </linearGradient>
+    <linearGradient id="whiteKey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffdf9"/>
+      <stop offset="70%" stop-color="#f6f1e8"/>
+      <stop offset="100%" stop-color="#e1d9cd"/>
+    </linearGradient>
+    <linearGradient id="blackKey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b3449"/>
+      <stop offset="100%" stop-color="#110f19"/>
+    </linearGradient>
+
+    <!-- Cat fur -->
+    <linearGradient id="catFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbc084"/>
+      <stop offset="100%" stop-color="#ea9146"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="dropShadow" x="-30%" y="-30%" width="160%" height="190%">
+      <feOffset in="SourceAlpha" dx="0" dy="5" result="o"/>
+      <feGaussianBlur in="o" stdDeviation="4.5" result="b"/>
+      <feFlood flood-color="#0b0816" flood-opacity="0.42" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="s"/>
+      <feMerge>
+        <feMergeNode in="s"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reusable music note (eighth note) -->
+    <g id="note">
+      <ellipse cx="0" cy="0" rx="9.5" ry="6.8" transform="rotate(-20)" fill="#6f60ad"/>
+      <rect x="7.6" y="-36" width="3.2" height="36" rx="1.6" fill="#6f60ad"/>
+      <path d="M10.8 -36 C 21 -32 26 -23 23.5 -12 C 22.5 -19 17.5 -23 10.8 -24.5 Z" fill="#6f60ad"/>
+    </g>
+
+    <!-- Reusable sparkle -->
+    <g id="spark">
+      <path d="M0 -11 Q 2.2 -2.2 11 0 Q 2.2 2.2 0 11 Q -2.2 2.2 -11 0 Q -2.2 -2.2 0 -11 Z" fill="#e3b45c"/>
+    </g>
+  </defs>
+
+  <!-- ================= BACKGROUND ================= -->
+  <rect width="800" height="600" fill="url(#wall)"/>
+  <ellipse cx="400" cy="272" rx="330" ry="272" fill="url(#halo)"/>
+
+  <!-- Floor -->
+  <rect x="0" y="512" width="800" height="88" fill="url(#floorG)"/>
+  <ellipse cx="400" cy="562" rx="305" ry="22" fill="#7d8cb5" opacity="0.5" filter="url(#soft)"/>
+
+  <!-- ================= CAT (behind the piano) ================= -->
+
+  <!-- Tail -->
+  <path d="M476 296 C 536 288 574 252 556 218 C 546 198 516 200 512 220"
+        fill="none" stroke="url(#catFur)" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- Body / shoulders -->
+  <path d="M320 430 C 300 350 302 254 356 236 C 390 226 410 226 444 236 C 498 254 500 350 480 430 Z"
+        fill="url(#catFur)"/>
+
+  <!-- Ears (outer) -->
+  <path d="M344 146 L 348 90 Q 352 78 358 90 L 410 150 Z" fill="url(#catFur)"/>
+  <path d="M456 146 L 452 90 Q 448 78 442 90 L 390 150 Z" fill="url(#catFur)"/>
+
+  <!-- Ears (inner) -->
+  <path d="M356 140 L 358 100 Q 361 92 365 100 L 400 142 Z" fill="#f294a4"/>
+  <path d="M444 140 L 442 100 Q 439 92 435 100 L 400 142 Z" fill="#f294a4"/>
+
+  <!-- Head -->
+  <ellipse cx="400" cy="178" rx="70" ry="64" fill="url(#catFur)"/>
+
+  <!-- Forehead stripes -->
+  <g stroke="#d8793b" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M380 138 Q 377 130 380 121"/>
+    <path d="M400 134 Q 400 125 400 118"/>
+    <path d="M420 138 Q 423 130 420 121"/>
+  </g>
+
+  <!-- Cheek blush -->
+  <ellipse cx="350" cy="204" rx="15" ry="8.5" fill="#f28ba0" opacity="0.35"/>
+  <ellipse cx="450" cy="204" rx="15" ry="8.5" fill="#f28ba0" opacity="0.35"/>
+
+  <!-- Eyes -->
+  <ellipse cx="371" cy="174" rx="13" ry="15" fill="#2c2338"/>
+  <ellipse cx="429" cy="174" rx="13" ry="15" fill="#2c2338"/>
+  <circle cx="376" cy="168" r="5" fill="#ffffff"/>
+  <circle cx="434" cy="168" r="5" fill="#ffffff"/>
+  <circle cx="366" cy="180" r="2.6" fill="#ffffff" opacity="0.85"/>
+  <circle cx="424" cy="180" r="2.6" fill="#ffffff" opacity="0.85"/>
+
+  <!-- Muzzle -->
+  <ellipse cx="388" cy="210" rx="16" ry="12.5" fill="#fff7ec"/>
+  <ellipse cx="412" cy="210" rx="16" ry="12.5" fill="#fff7ec"/>
+
+  <!-- Nose -->
+  <path d="M390 193 Q 400 188 410 193 Q 408 204 400 205.5 Q 392 204 390 193 Z" fill="#ef7f96"/>
+
+  <!-- Mouth -->
+  <path d="M400 206 L 400 214 M 400 214 Q 391 223 383 215 M 400 214 Q 409 223 417 215"
+        fill="none" stroke="#b06a45" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Whiskers -->
+  <g stroke="#bd8253" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.75">
+    <path d="M346 201 Q 318 195 294 189"/>
+    <path d="M344 210 Q 316 210 290 210"/>
+    <path d="M346 219 Q 318 225 296 231"/>
+    <path d="M454 201 Q 482 195 506 189"/>
+    <path d="M456 210 Q 484 210 510 210"/>
+    <path d="M454 219 Q 482 225 504 231"/>
+  </g>
+
+  <!-- ================= PIANO ================= -->
+  <g>
+    <!-- Cabinet -->
+    <rect x="90" y="296" width="620" height="264" rx="14" fill="url(#pianoBody)"/>
+    <path d="M104 300 H 696" stroke="#6b6288" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+    <rect x="106" y="308" width="588" height="244" rx="8" fill="#3a3349"/>
+    <path d="M100 322 V 536" stroke="#5a5275" stroke-width="2" opacity="0.45"/>
+    <path d="M700 322 V 536" stroke="#5a5275" stroke-width="2" opacity="0.45"/>
+
+    <!-- Keybed recess (dark cavity) -->
+    <rect x="114" y="310" width="572" height="98" rx="5" fill="#131019"/>
+    <rect x="114" y="305" width="572" height="5" fill="#c9a24a" opacity="0.75"/>
+
+    <!-- White keys (perspective trapezoid) -->
+    <path d="M116 396 L 684 396 L 660 312 L 140 312 Z" fill="url(#whiteKey)"/>
+    <!-- Depth shading under the fallboard -->
+    <path d="M140 312 L 660 312 L 658 319 L 142 319 Z" fill="#b9b0a3" opacity="0.45"/>
+
+    <!-- Key dividers -->
+    <g stroke="#cdc5b8" stroke-width="1.3">
+      <path d="M156.57 396 L 177.14 312"/>
+      <path d="M197.14 396 L 214.29 312"/>
+      <path d="M237.71 396 L 251.43 312"/>
+      <path d="M278.29 396 L 288.57 312"/>
+      <path d="M318.86 396 L 325.71 312"/>
+      <path d="M359.43 396 L 362.86 312"/>
+      <path d="M400.00 396 L 400.00 312"/>
+      <path d="M440.57 396 L 437.14 312"/>
+      <path d="M481.14 396 L 474.29 312"/>
+      <path d="M521.71 396 L 511.43 312"/>
+      <path d="M562.29 396 L 548.57 312"/>
+      <path d="M602.86 396 L 585.71 312"/>
+      <path d="M643.43 396 L 622.86 312"/>
+    </g>
+
+    <!-- Black keys -->
+    <g fill="url(#blackKey)">
+      <path d="M148.07 312 L 169.07 312 L 145.79 356 L 126.79 356 Z"/>
+      <path d="M185.21 312 L 206.21 312 L 186.36 356 L 167.36 356 Z"/>
+      <path d="M259.50 312 L 280.50 312 L 267.49 356 L 248.49 356 Z"/>
+      <path d="M296.64 312 L 317.64 312 L 308.07 356 L 289.07 356 Z"/>
+      <path d="M333.79 312 L 354.79 312 L 348.64 356 L 329.64 356 Z"/>
+      <path d="M408.07 312 L 429.07 312 L 429.79 356 L 410.79 356 Z"/>
+      <path d="M445.21 312 L 466.21 312 L 471.21 356 L 452.21 356 Z"/>
+      <path d="M518.79 312 L 539.79 312 L 552.64 356 L 533.64 356 Z"/>
+      <path d="M555.93 312 L 576.93 312 L 593.21 356 L 574.21 356 Z"/>
+      <path d="M593.07 312 L 614.07 312 L 633.79 356 L 614.79 356 Z"/>
+    </g>
+
+    <!-- Lower front panel -->
+    <rect x="114" y="414" width="572" height="134" rx="5" fill="url(#panelLow)"/>
+    <rect x="114" y="414" width="572" height="3" fill="#c9a24a" opacity="0.5"/>
+    <circle cx="400" cy="486" r="15" fill="none" stroke="#c9a24a" stroke-width="2.5" opacity="0.5"/>
+    <circle cx="400" cy="486" r="4.5" fill="#c9a24a" opacity="0.5"/>
+  </g>
+
+  <!-- ================= ARMS & PAWS (over the keys) ================= -->
+  <g filter="url(#dropShadow)">
+    <path d="M350 278 C 332 314 312 342 302 366"
+          fill="none" stroke="url(#catFur)" stroke-width="27" stroke-linecap="round"/>
+    <path d="M450 278 C 468 314 488 342 498 366"
+          fill="none" stroke="url(#catFur)" stroke-width="27" stroke-linecap="round"/>
+    <ellipse cx="302" cy="380" rx="24" ry="18" fill="url(#catFur)"/>
+    <ellipse cx="498" cy="380" rx="24" ry="18" fill="url(#catFur)"/>
+  </g>
+
+  <!-- Toe lines -->
+  <g stroke="#d8793b" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.65">
+    <path d="M293 366 Q 292 375 294 383"/>
+    <path d="M302 364 Q 302 375 302 385"/>
+    <path d="M311 366 Q 312 375 310 383"/>
+    <path d="M489 366 Q 488 375 490 383"/>
+    <path d="M498 364 Q 498 375 498 385"/>
+    <path d="M507 366 Q 508 375 506 383"/>
+  </g>
+
+  <!-- ================= MUSIC IN THE AIR ================= -->
+  <g opacity="0.92">
+    <use href="#note" transform="translate(142 184) rotate(-14) scale(1.05)"/>
+    <use href="#note" transform="translate(238 106) rotate(8) scale(0.78)"/>
+    <use href="#note" transform="translate(638 162) rotate(12) scale(0.95)"/>
+    <use href="#note" transform="translate(700 258) rotate(-8) scale(0.70)"/>
+    <use href="#note" transform="translate(556 84) rotate(-16) scale(0.85)"/>
+  </g>
+
+  <g opacity="0.9">
+    <use href="#spark" transform="translate(196 74) scale(1)"/>
+    <use href="#spark" transform="translate(676 108) scale(0.8)"/>
+    <use href="#spark" transform="translate(94 202) scale(0.65)"/>
+    <use href="#spark" transform="translate(596 276) scale(0.55)"/>
+  </g>
+</svg>

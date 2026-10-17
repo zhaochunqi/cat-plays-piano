@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="A cat playing the piano">
+  <title>Cat playing the piano</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#fff8ec"/>
+      <stop offset="70%" stop-color="#f7e8cf"/>
+      <stop offset="100%" stop-color="#edd9b8"/>
+    </radialGradient>
+    <radialGradient id="spot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pianoG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a4060"/>
+      <stop offset=".55" stop-color="#7c2c4a"/>
+      <stop offset="1" stop-color="#5c1f38"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="1" stop-color="#d29b3a"/>
+    </linearGradient>
+    <linearGradient id="catG" gradientUnits="userSpaceOnUse" x1="400" y1="120" x2="400" y2="430">
+      <stop offset="0" stop-color="#ffc069"/>
+      <stop offset="1" stop-color="#f2913d"/>
+    </linearGradient>
+    <!-- reusable eighth note -->
+    <g id="note">
+      <ellipse rx="8.5" ry="6" transform="rotate(-20)"/>
+      <rect x="6.5" y="-32" width="3.4" height="33" rx="1.7"/>
+      <path d="M9.9 -32 C21 -27 22 -14 13 -7 C19 -15 19 -22 9.9 -22 Z"/>
+    </g>
+    <!-- reusable sparkle -->
+    <path id="sp" d="M0 -9 L2.2 -2.2 L9 0 L2.2 2.2 L0 9 L-2.2 2.2 L-9 0 L-2.2 -2.2 Z"/>
+  </defs>
+
+  <!-- background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="290" rx="260" ry="195" fill="url(#spot)"/>
+  <rect y="556" width="800" height="44" fill="#e7cfa2"/>
+  <line x1="0" y1="556" x2="800" y2="556" stroke="#cdb488" stroke-width="3"/>
+  <ellipse cx="400" cy="558" rx="330" ry="12" fill="#000" opacity=".07"/>
+
+  <!-- piano body -->
+  <rect x="120" y="140" width="560" height="252" rx="18" fill="url(#pianoG)"/>
+  <rect x="122" y="150" width="556" height="232" rx="14" fill="none" stroke="#caa04f" stroke-opacity=".28" stroke-width="3"/>
+  <rect x="120" y="152" width="16" height="228" rx="8" fill="#4a1628" opacity=".55"/>
+  <rect x="664" y="152" width="16" height="228" rx="8" fill="#4a1628" opacity=".55"/>
+
+  <!-- sheet music -->
+  <g transform="rotate(-5 258 112)">
+    <rect x="198" y="64" width="120" height="94" rx="5" fill="#fffdf5" stroke="#d8c9a8" stroke-width="2"/>
+    <path d="M212 84 H304 M212 94 H304 M212 104 H304 M212 114 H304 M212 124 H304" stroke="#8a93a6" stroke-width="1.6"/>
+    <ellipse cx="238" cy="94" rx="3.4" ry="2.6" fill="#41404b"/>
+    <ellipse cx="262" cy="114" rx="3.4" ry="2.6" fill="#41404b"/>
+    <path d="M241 94 V82 M265 114 V102" stroke="#41404b" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+
+  <!-- piano top rail -->
+  <rect x="104" y="126" width="592" height="26" rx="9" fill="#4a1628"/>
+  <circle cx="146" cy="139" r="5" fill="url(#gold)"/>
+  <circle cx="654" cy="139" r="5" fill="url(#gold)"/>
+
+  <!-- cat -->
+  <g stroke="#c96f16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M468 330 C545 315 585 275 588 225 C589 198 576 187 559 185" fill="none" stroke-width="27"/>
+    <path d="M468 330 C545 315 585 275 588 225 C589 198 576 187 559 185" fill="none" stroke="#f5a742" stroke-width="21"/>
+    <path d="M508 296 Q517 308 527 300" fill="none" stroke="#e0831f" stroke-width="6"/>
+    <path d="M547 260 Q559 266 565 252" fill="none" stroke="#e0831f" stroke-width="6"/>
+    <path d="M569 222 Q581 226 583 212" fill="none" stroke="#e0831f" stroke-width="6"/>
+    <ellipse cx="559" cy="187" rx="9" ry="8" transform="rotate(-42 559 187)" fill="#e0831f" stroke="none"/>
+
+    <ellipse cx="400" cy="335" rx="100" ry="88" fill="url(#catG)"/>
+    <ellipse cx="400" cy="356" rx="36" ry="48" fill="#ffe9cf" stroke="none"/>
+
+    <path d="M342 172 L318 76 L418 136 Z" fill="url(#catG)"/>
+    <path d="M458 172 L482 76 L382 136 Z" fill="url(#catG)"/>
+    <circle cx="400" cy="222" r="80" fill="url(#catG)"/>
+    <path d="M348 158 L334 96 L404 134 Z" fill="#f78fb3" stroke="#e06499" stroke-width="2"/>
+    <path d="M452 158 L466 96 L396 134 Z" fill="#f78fb3" stroke="#e06499" stroke-width="2"/>
+
+    <g fill="#e0831f" stroke="none">
+      <rect x="379" y="150" width="9" height="26" rx="4.5"/>
+      <rect x="395.5" y="146" width="9" height="30" rx="4.5"/>
+      <rect x="412" y="150" width="9" height="26" rx="4.5"/>
+    </g>
+
+    <ellipse cx="372" cy="222" rx="13" ry="15" fill="#fff" stroke="#d9a15e" stroke-width="2"/>
+    <ellipse cx="428" cy="222" rx="13" ry="15" fill="#fff" stroke="#d9a15e" stroke-width="2"/>
+    <ellipse cx="372" cy="224" rx="5.5" ry="11.5" fill="#23252e" stroke="none"/>
+    <ellipse cx="428" cy="224" rx="5.5" ry="11.5" fill="#23252e" stroke="none"/>
+    <circle cx="368.5" cy="215" r="3" fill="#fff" stroke="none"/>
+    <circle cx="424.5" cy="215" r="3" fill="#fff" stroke="none"/>
+    <circle cx="375" cy="231" r="1.8" fill="#fff" stroke="none" opacity=".9"/>
+    <circle cx="431" cy="231" r="1.8" fill="#fff" stroke="none" opacity=".9"/>
+
+    <ellipse cx="400" cy="257" rx="33" ry="23" fill="#ffe3c2" stroke="#e8b06a" stroke-width="2"/>
+    <path d="M390 247 h20 q1 8 -10 14 q-11 -6 -10 -14 Z" fill="#f0679e" stroke="none"/>
+    <path d="M400 261 Q392 272 383 265 M400 261 Q408 272 417 265" fill="none" stroke="#8d5a2b" stroke-width="3.5"/>
+
+    <ellipse cx="350" cy="252" rx="11" ry="6.5" fill="#ff9bb0" opacity=".55" stroke="none"/>
+    <ellipse cx="450" cy="252" rx="11" ry="6.5" fill="#ff9bb0" opacity=".55" stroke="none"/>
+    <path fill="none" stroke="#8d5a2b" stroke-width="2.2"
+          d="M356 248 L318 238 M354 259 L312 259 M356 270 L320 279
+             M444 248 L482 238 M446 259 L488 259 M444 270 L480 279"/>
+  </g>
+
+  <!-- keyboard -->
+  <rect x="92" y="386" width="616" height="64" rx="10" fill="#3f1224"/>
+  <rect x="98" y="389" width="604" height="4" rx="2" fill="#6b2440"/>
+  <rect x="100" y="394" width="600" height="50" rx="5" fill="#fcfcf9" stroke="#b9bdc7" stroke-width="1.5"/>
+  <path d="M137.5 395 V443 M175 395 V443 M212.5 395 V443 M250 395 V443 M287.5 395 V443 M325 395 V443
+           M362.5 395 V443 M400 395 V443 M437.5 395 V443 M475 395 V443 M512.5 395 V443 M550 395 V443
+           M587.5 395 V443 M625 395 V443 M662.5 395 V443" stroke="#c8ccd6" stroke-width="2"/>
+  <rect x="103" y="440" width="594" height="3.5" rx="1.8" fill="#dfe2e8" opacity=".85"/>
+  <g fill="#17171d">
+    <rect x="126.5" y="394" width="22" height="32" rx="4"/>
+    <rect x="164"   y="394" width="22" height="32" rx="4"/>
+    <rect x="239"   y="394" width="22" height="32" rx="4"/>
+    <rect x="276.5" y="394" width="22" height="32" rx="4"/>
+    <rect x="313.5" y="394" width="22" height="32" rx="4"/>
+    <rect x="389"   y="394" width="22" height="32" rx="4"/>
+    <rect x="426.5" y="394" width="22" height="32" rx="4"/>
+    <rect x="501.5" y="394" width="22" height="32" rx="4"/>
+    <rect x="539"   y="394" width="22" height="32" rx="4"/>
+    <rect x="576.5" y="394" width="22" height="32" rx="4"/>
+    <rect x="651.5" y="394" width="22" height="32" rx="4"/>
+  </g>
+
+  <!-- lower panel + pedals -->
+  <rect x="104" y="450" width="592" height="106" rx="8" fill="#5c1f38"/>
+  <rect x="140" y="468" width="520" height="72" rx="12" fill="#571e33" stroke="#caa04f" stroke-opacity=".35" stroke-width="2"/>
+  <circle cx="200" cy="504" r="6" fill="url(#gold)" opacity=".9"/>
+  <circle cx="400" cy="504" r="6" fill="url(#gold)" opacity=".9"/>
+  <circle cx="600" cy="504" r="6" fill="url(#gold)" opacity=".9"/>
+  <rect x="364" y="536" width="72" height="10" rx="5" fill="#3f1224"/>
+  <g fill="url(#gold)" stroke="#8a5a1a" stroke-width="1.5">
+    <rect x="374"   y="522" width="11" height="26" rx="4"/>
+    <rect x="394.5" y="522" width="11" height="26" rx="4"/>
+    <rect x="415"   y="522" width="11" height="26" rx="4"/>
+  </g>
+
+  <!-- paws on the keys -->
+  <g stroke="#c96f16" stroke-width="3" stroke-linecap="round">
+    <ellipse cx="336" cy="380" rx="16" ry="29" fill="url(#catG)" transform="rotate(34 336 380)"/>
+    <ellipse cx="468" cy="375" rx="16" ry="29" fill="url(#catG)" transform="rotate(-42 468 375)"/>
+    <circle cx="320" cy="406" r="17" fill="#ffe9cf" stroke="#d9a15e" stroke-width="2.5"/>
+    <circle cx="488" cy="397" r="17" fill="#ffe9cf" stroke="#d9a15e" stroke-width="2.5"/>
+    <g fill="#f78fb3" stroke="none">
+      <ellipse cx="320" cy="410" rx="6" ry="4.5"/>
+      <circle cx="311" cy="399" r="2.6"/><circle cx="320" cy="395" r="2.6"/><circle cx="329" cy="399" r="2.6"/>
+      <ellipse cx="488" cy="401" rx="6" ry="4.5"/>
+      <circle cx="479" cy="390" r="2.6"/><circle cx="488" cy="386" r="2.6"/><circle cx="497" cy="390" r="2.6"/>
+    </g>
+  </g>
+
+  <!-- floating music -->
+  <g fill="#e84393"><use xlink:href="#note" href="#note" transform="translate(205 118) rotate(-12)"/><use xlink:href="#note" href="#note" transform="translate(724 302) rotate(-8) scale(.7)"/></g>
+  <g fill="#6c5ce7"><use xlink:href="#note" href="#note" transform="translate(288 80) rotate(9) scale(.78)"/><use xlink:href="#note" href="#note" transform="translate(90 210) rotate(-10) scale(.6)"/></g>
+  <g fill="#00b894"><use xlink:href="#note" href="#note" transform="translate(522 92) rotate(7) scale(.9)"/><use xlink:href="#note" href="#note" transform="translate(150 176) rotate(12) scale(.58)"/></g>
+  <g fill="#0984e3"><use xlink:href="#note" href="#note" transform="translate(588 138) rotate(-14) scale(.72)"/></g>
+  <g fill="#fd9644"><use xlink:href="#note" href="#note" transform="translate(660 208) rotate(14) scale(.85)"/><use xlink:href="#note" href="#note" transform="translate(330 58) rotate(18) scale(.55)"/></g>
+  <g fill="#ffd166"><use xlink:href="#sp" href="#sp" transform="translate(312 182)"/><use xlink:href="#sp" href="#sp" transform="translate(498 166) scale(.7)"/><use xlink:href="#sp" href="#sp" transform="translate(540 258) scale(.55)"/></g>
+</svg>

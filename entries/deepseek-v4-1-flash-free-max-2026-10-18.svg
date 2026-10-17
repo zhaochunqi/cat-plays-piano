@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="A ginger cat playing an upright piano">
+  <title>Cat Playing Piano</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf5e7"/>
+      <stop offset="1" stop-color="#f7e4c9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="400" cy="315" r="295" fill="#f5e0c2"/>
+  <ellipse cx="400" cy="520" rx="330" ry="16" fill="#e9d2b1" opacity="0.8"/>
+
+  <!-- piano -->
+  <g>
+    <!-- base, pedals, casters -->
+    <rect x="150" y="496" width="500" height="26" rx="8" fill="#272d37"/>
+    <circle cx="175" cy="524" r="5.5" fill="#20242c"/>
+    <circle cx="625" cy="524" r="5.5" fill="#20242c"/>
+    <rect x="384.5" y="506" width="8" height="14" rx="3" fill="#d4a53f" stroke="#9c7220" stroke-width="1"/>
+    <rect x="396.5" y="506" width="8" height="14" rx="3" fill="#d4a53f" stroke="#9c7220" stroke-width="1"/>
+    <rect x="408.5" y="506" width="8" height="14" rx="3" fill="#d4a53f" stroke="#9c7220" stroke-width="1"/>
+    <!-- cabinet -->
+    <rect x="120" y="130" width="560" height="242" rx="14" fill="#333a46"/>
+    <rect x="146" y="152" width="508" height="200" rx="10" fill="#3d4553"/>
+    <!-- lid -->
+    <rect x="108" y="104" width="584" height="34" rx="10" fill="#272d37"/>
+    <rect x="126" y="111" width="300" height="7" rx="3.5" fill="#3c4453" opacity="0.9"/>
+  </g>
+
+  <!-- cat (peeking over the keyboard) -->
+  <g>
+    <!-- tail curling around the right side -->
+    <path d="M598 434C662 452 714 408 715 348 716 295 698 258 672 260 654 261 648 279 658 291 666 300 678 296 676 287"
+          fill="none" stroke="#f3a259" stroke-width="17" stroke-linecap="round"/>
+    <!-- chest -->
+    <rect x="322" y="302" width="156" height="78" rx="44" fill="#f3a259"/>
+    <!-- chest bib + collar bell -->
+    <ellipse cx="400" cy="360" rx="32" ry="18" fill="#fbeed8"/>
+    <circle cx="400" cy="350" r="7.5" fill="#e9b23d" stroke="#a87c22" stroke-width="1.5"/>
+    <circle cx="400" cy="352.5" r="1.6" fill="#a87c22"/>
+    <!-- ears -->
+    <polygon points="326,238 348,152 400,212" fill="#f3a259" stroke="#f3a259" stroke-width="10" stroke-linejoin="round"/>
+    <polygon points="474,238 452,152 400,212" fill="#f3a259" stroke="#f3a259" stroke-width="10" stroke-linejoin="round"/>
+    <polygon points="345,219 352,175 381,206" fill="#efb3a4"/>
+    <polygon points="455,219 448,175 419,206" fill="#efb3a4"/>
+    <!-- head -->
+    <circle cx="400" cy="268" r="76" fill="#f3a259"/>
+    <!-- forehead stripes -->
+    <path d="M386 220Q384 208 387 199M400 216Q398 206 400 198M414 220Q416 208 413 199"
+          fill="none" stroke="#dd8a3d" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+    <!-- blush -->
+    <circle cx="340" cy="296" r="13" fill="#ef8f7f" opacity="0.45"/>
+    <circle cx="460" cy="296" r="13" fill="#ef8f7f" opacity="0.45"/>
+    <!-- eyes -->
+    <ellipse cx="367" cy="264" rx="12" ry="15" fill="#3b2f26"/>
+    <ellipse cx="433" cy="264" rx="12" ry="15" fill="#3b2f26"/>
+    <circle cx="362" cy="257" r="4.5" fill="#ffffff"/>
+    <circle cx="428" cy="257" r="4.5" fill="#ffffff"/>
+    <circle cx="372" cy="268" r="2" fill="#ffffff" opacity="0.9"/>
+    <circle cx="438" cy="268" r="2" fill="#ffffff" opacity="0.9"/>
+    <!-- muzzle -->
+    <circle cx="382" cy="302" r="21" fill="#fbeed8"/>
+    <circle cx="418" cy="302" r="21" fill="#fbeed8"/>
+    <!-- nose -->
+    <path d="M392 292Q400 287 408 292 400 302 392 292Z" fill="#e0786a"/>
+    <!-- mouth -->
+    <path d="M400 302C398 309 391 311 386 308M400 302C402 309 409 311 414 308"
+          fill="none" stroke="#8a5a42" stroke-width="3" stroke-linecap="round"/>
+    <!-- whiskers -->
+    <path d="M362 296C334 288 314 286 296 290M360 306C330 306 310 308 292 312M362 316C336 322 318 328 304 336"
+          fill="none" stroke="#8a5a42" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+    <path d="M438 296C466 288 486 286 504 290M440 306C470 306 490 308 508 312M438 316C464 322 482 328 496 336"
+          fill="none" stroke="#8a5a42" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <!-- keyboard -->
+  <g>
+    <!-- cheek blocks -->
+    <rect x="120" y="368" width="30" height="110" fill="#272d37"/>
+    <rect x="650" y="368" width="30" height="110" fill="#272d37"/>
+    <!-- white keys -->
+    <rect x="150" y="368" width="500" height="110" fill="#fbf8f1"/>
+    <path d="M183.3 368V478M216.7 368V478M250 368V478M283.3 368V478M316.7 368V478M350 368V478M383.3 368V478M416.7 368V478M450 368V478M483.3 368V478M516.7 368V478M550 368V478M583.3 368V478M616.7 368V478"
+          stroke="#d8d1c1" stroke-width="1.5" fill="none"/>
+    <!-- black keys -->
+    <g fill="#1f232b">
+      <rect x="174.3" y="368" width="18" height="78" rx="3"/>
+      <rect x="207.7" y="368" width="18" height="78" rx="3"/>
+      <rect x="274.3" y="368" width="18" height="78" rx="3"/>
+      <rect x="307.7" y="368" width="18" height="78" rx="3"/>
+      <rect x="341"   y="368" width="18" height="78" rx="3"/>
+      <rect x="407.7" y="368" width="18" height="78" rx="3"/>
+      <rect x="441"   y="368" width="18" height="78" rx="3"/>
+      <rect x="507.7" y="368" width="18" height="78" rx="3"/>
+      <rect x="541"   y="368" width="18" height="78" rx="3"/>
+      <rect x="574.3" y="368" width="18" height="78" rx="3"/>
+    </g>
+    <!-- black key top bevels -->
+    <g fill="#454e60" opacity="0.7">
+      <rect x="175.8" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="209.2" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="275.8" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="309.2" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="342.5" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="409.2" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="442.5" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="509.2" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="542.5" y="369.5" width="15" height="2.5" rx="1"/>
+      <rect x="575.8" y="369.5" width="15" height="2.5" rx="1"/>
+    </g>
+    <!-- bottom shading -->
+    <rect x="150" y="466" width="500" height="12" fill="#ece3d0"/>
+    <!-- keybed -->
+    <rect x="120" y="478" width="560" height="18" fill="#272d37"/>
+    <rect x="120" y="478" width="560" height="3" fill="#454e60" opacity="0.9"/>
+  </g>
+
+  <!-- paws on the keys -->
+  <g>
+    <ellipse cx="335" cy="390" rx="23" ry="5.5" fill="#e0d5bd"/>
+    <ellipse cx="465" cy="390" rx="23" ry="5.5" fill="#e0d5bd"/>
+    <ellipse cx="335" cy="380" rx="24" ry="12" fill="#f3a259"/>
+    <ellipse cx="465" cy="380" rx="24" ry="12" fill="#f3a259"/>
+    <path d="M328 373Q326 381 328 389M342 373Q344 381 342 389M458 373Q456 381 458 389M472 373Q474 381 472 389"
+          fill="none" stroke="#dd8a3d" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <!-- floating music -->
+  <g fill="#c58b3a">
+    <!-- beamed eighth notes -->
+    <ellipse cx="543" cy="232" rx="11" ry="8" transform="rotate(-18 543 232)"/>
+    <ellipse cx="579" cy="232" rx="11" ry="8" transform="rotate(-18 579 232)"/>
+    <path d="M551 227V184M587 227V184" stroke="#c58b3a" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M549 183H589" stroke="#c58b3a" stroke-width="8" fill="none"/>
+    <!-- eighth note -->
+    <ellipse cx="235" cy="248" rx="11" ry="8" transform="rotate(-18 235 248)"/>
+    <path d="M243.5 244V194" stroke="#c58b3a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M243.5 194q16 5 12 23" fill="none" stroke="#c58b3a" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- high eighth note -->
+    <ellipse cx="272" cy="142" rx="11" ry="8" transform="rotate(-18 272 142)"/>
+    <path d="M280.5 138V88" stroke="#c58b3a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M280.5 88q16 5 12 23" fill="none" stroke="#c58b3a" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- quarter note -->
+    <ellipse cx="622" cy="300" rx="10" ry="7.5" transform="rotate(-18 622 300)"/>
+    <path d="M630.5 296V246" stroke="#c58b3a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- hearts & sparkles -->
+  <g fill="#ef8f80" opacity="0.85">
+    <path transform="translate(200 178) scale(0.9)"
+          d="M12 21C5 14 1 10.6 1 6.6 1 3.2 3.5 1 6.5 1 8.9 1 11 2.4 12 4.5 13 2.4 15.1 1 17.5 1 20.5 1 23 3.2 23 6.6 23 10.6 19 14 12 21Z"/>
+    <path transform="translate(560 198) scale(0.7)"
+          d="M12 21C5 14 1 10.6 1 6.6 1 3.2 3.5 1 6.5 1 8.9 1 11 2.4 12 4.5 13 2.4 15.1 1 17.5 1 20.5 1 23 3.2 23 6.6 23 10.6 19 14 12 21Z"/>
+  </g>
+  <g fill="#e9c07a">
+    <path d="M0 -9Q1 -1 9 0 1 1 0 9-1 1-9 0-1-1 0-9Z" transform="translate(478 112) scale(0.85)"/>
+    <path d="M0 -9Q1 -1 9 0 1 1 0 9-1 1-9 0-1-1 0-9Z" transform="translate(154 236) scale(0.6)"/>
+  </g>
+</svg>

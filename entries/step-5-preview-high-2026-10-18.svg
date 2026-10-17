@@ -1,0 +1,107 @@
+<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="500" height="400" fill="#E0FBFC"/>
+  <rect y="350" width="500" height="50" fill="#A8DADC"/>
+  <ellipse cx="250" cy="352" rx="190" ry="12" fill="#000000" opacity="0.08"/>
+
+  <!-- Piano Body -->
+  <rect x="100" y="150" width="300" height="200" rx="8" fill="#2B2D42" stroke="#1B1B2F" stroke-width="2"/>
+  <rect x="100" y="150" width="300" height="35" rx="8" fill="#3D3E52"/>
+  <rect x="110" y="240" width="280" height="40" fill="#1F2033"/>
+  <text x="250" y="268" font-family="sans-serif" font-size="18" font-weight="bold" fill="#8D99AE" text-anchor="middle">MEOWFORD</text>
+
+  <!-- Tail -->
+  <path d="M112 300 Q 70 285 80 230" fill="none" stroke="#F4A261" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Cat -->
+  <!-- Ears -->
+  <path d="M218 68 L208 22 L250 58 Z" fill="#F4A261" stroke="#E08E45" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M282 68 L292 22 L250 58 Z" fill="#F4A261" stroke="#E08E45" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M220 62 L214 34 L242 56 Z" fill="#FFCDB2"/>
+  <path d="M280 62 L286 34 L258 56 Z" fill="#FFCDB2"/>
+
+  <!-- Head -->
+  <circle cx="250" cy="100" r="42" fill="#F4A261" stroke="#E08E45" stroke-width="2"/>
+
+  <!-- Face -->
+  <path d="M234 96 Q240 104 246 96" fill="none" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M254 96 Q260 104 266 96" fill="none" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M250 108 L256 114 L244 114 Z" fill="#E76F51"/>
+  <path d="M250 114 L250 120" fill="none" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+  <path d="M250 120 Q242 126 236 120" fill="none" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+  <path d="M250 120 Q258 126 264 120" fill="none" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Whiskers -->
+  <path d="M216 108 L182 102 M216 114 L182 114 M216 120 L184 126" fill="none" stroke="#3D2B1F" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M284 108 L318 102 M284 114 L318 114 M284 120 L316 126" fill="none" stroke="#3D2B1F" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Collar -->
+  <path d="M225 138 Q250 156 275 138" fill="none" stroke="#E63946" stroke-width="8"/>
+  <circle cx="250" cy="150" r="6" fill="#FFD166" stroke="#D4A017" stroke-width="1"/>
+
+  <!-- Arms -->
+  <path d="M230 148 C220 190, 200 250, 185 310" fill="none" stroke="#F4A261" stroke-width="26" stroke-linecap="round"/>
+  <path d="M270 148 C280 190, 300 250, 315 310" fill="none" stroke="#F4A261" stroke-width="26" stroke-linecap="round"/>
+
+  <!-- White Keys -->
+  <g fill="#FFFFFF" stroke="#BDC3C7" stroke-width="1">
+    <rect x="114" y="280" width="17" height="70"/>
+    <rect x="131" y="280" width="17" height="70"/>
+    <rect x="148" y="280" width="17" height="70"/>
+    <rect x="165" y="280" width="17" height="70"/>
+    <rect x="182" y="280" width="17" height="70"/>
+    <rect x="199" y="280" width="17" height="70"/>
+    <rect x="216" y="280" width="17" height="70"/>
+    <rect x="233" y="280" width="17" height="70"/>
+    <rect x="250" y="280" width="17" height="70"/>
+    <rect x="267" y="280" width="17" height="70"/>
+    <rect x="284" y="280" width="17" height="70"/>
+    <rect x="301" y="280" width="17" height="70"/>
+    <rect x="318" y="280" width="17" height="70"/>
+    <rect x="335" y="280" width="17" height="70"/>
+    <rect x="352" y="280" width="17" height="70"/>
+    <rect x="369" y="280" width="17" height="70"/>
+  </g>
+
+  <!-- Black Keys -->
+  <g fill="#17202A">
+    <rect x="116" y="280" width="12" height="42"/>
+    <rect x="133" y="280" width="12" height="42"/>
+    <rect x="167" y="280" width="12" height="42"/>
+    <rect x="184" y="280" width="12" height="42"/>
+    <rect x="201" y="280" width="12" height="42"/>
+    <rect x="235" y="280" width="12" height="42"/>
+    <rect x="252" y="280" width="12" height="42"/>
+    <rect x="286" y="280" width="12" height="42"/>
+    <rect x="303" y="280" width="12" height="42"/>
+    <rect x="320" y="280" width="12" height="42"/>
+  </g>
+
+  <!-- Paws -->
+  <circle cx="185" cy="315" r="18" fill="#F4A261" stroke="#E08E45" stroke-width="2"/>
+  <circle cx="315" cy="315" r="18" fill="#F4A261" stroke="#E08E45" stroke-width="2"/>
+  <path d="M178 309 L178 321 M192 309 L192 321" stroke="#E08E45" stroke-width="2" stroke-linecap="round"/>
+  <path d="M308 309 L308 321 M322 309 L322 321" stroke="#E08E45" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Musical Notes -->
+  <g transform="translate(130, 75) rotate(-10)" fill="#1D3557">
+    <ellipse cx="0" cy="0" rx="8" ry="6"/>
+    <ellipse cx="30" cy="-5" rx="8" ry="6"/>
+    <path d="M7 0 L7 -35 M37 -5 L37 -40" stroke="#1D3557" stroke-width="3"/>
+    <path d="M7 -35 L37 -40 L37 -30 L7 -25 Z"/>
+  </g>
+  <g transform="translate(370, 80) rotate(10)" fill="#1D3557">
+    <ellipse cx="0" cy="0" rx="8" ry="6"/>
+    <path d="M6 0 L6 -38" stroke="#1D3557" stroke-width="3"/>
+    <path d="M6 -38 C14 -36, 16 -28, 12 -20" fill="none" stroke="#1D3557" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(160, 45) scale(0.8)" fill="#1D3557">
+    <ellipse cx="0" cy="0" rx="8" ry="6"/>
+    <path d="M6 0 L6 -35" stroke="#1D3557" stroke-width="3"/>
+  </g>
+  <g transform="translate(410, 50) scale(0.7) rotate(15)" fill="#1D3557">
+    <ellipse cx="0" cy="0" rx="8" ry="6"/>
+    <path d="M6 0 L6 -35" stroke="#1D3557" stroke-width="3"/>
+    <path d="M6 -35 C14 -33, 16 -25, 12 -17" fill="none" stroke="#1D3557" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Cat playing piano</title>
+  <desc id="desc">An orange tabby cat playing a grand piano, eyes blissfully closed, with musical notes floating upward.</desc>
+
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="78%">
+      <stop offset="0%" stop-color="#3c3055"/>
+      <stop offset="100%" stop-color="#171226"/>
+    </radialGradient>
+
+    <radialGradient id="spot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff2cf" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#fff2cf" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="lacquer" x1="0" y1="0" x2="1" y2="0.35">
+      <stop offset="0%" stop-color="#0c0c11"/>
+      <stop offset="35%" stop-color="#3e3e4e"/>
+      <stop offset="55%" stop-color="#1b1b23"/>
+      <stop offset="100%" stop-color="#07070a"/>
+    </linearGradient>
+
+    <linearGradient id="keyWhite" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#f3efe7"/>
+      <stop offset="100%" stop-color="#ddd5c6"/>
+    </linearGradient>
+
+    <linearGradient id="catFur" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#ffbe66"/>
+      <stop offset="55%" stop-color="#f59231"/>
+      <stop offset="100%" stop-color="#dc711a"/>
+    </linearGradient>
+
+    <linearGradient id="catBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff2dc"/>
+      <stop offset="100%" stop-color="#ffe2b6"/>
+    </linearGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="drop" x="-40%" y="-40%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <!-- ====== Background & stage ====== -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="250" rx="340" ry="260" fill="url(#spot)"/>
+  <rect y="500" width="800" height="100" fill="#251d38"/>
+  <rect y="500" width="800" height="5" fill="#3a2e52"/>
+  <ellipse cx="390" cy="508" rx="250" ry="16" fill="#120d1e" opacity=".55"/>
+
+  <!-- ====== Piano ====== -->
+  <g filter="url(#drop)">
+    <!-- legs -->
+    <rect x="150" y="336" width="22" height="170" rx="6" fill="#16161d"/>
+    <rect x="524" y="336" width="22" height="170" rx="6" fill="#0d0d12"/>
+    <rect x="146" y="342" width="5" height="156" fill="#5a5a6e" opacity=".5"/>
+
+    <!-- grand body -->
+    <path d="M96,300 C170,246 320,236 424,264 C516,290 556,266 598,214
+             L660,232 C610,302 520,336 402,350 C282,364 152,352 96,330 Z"
+          fill="url(#lacquer)"/>
+    <!-- lid sheen -->
+    <path d="M140,296 C232,254 358,250 440,278"
+          fill="none" stroke="#8d8da6" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+    <!-- lid prop -->
+    <line x1="598" y1="222" x2="586" y2="286" stroke="#9a9ab2" stroke-width="6" stroke-linecap="round"/>
+    <!-- music desk -->
+    <rect x="252" y="238" width="140" height="54" rx="6" fill="#12121a" stroke="#5b5b70" stroke-width="3"/>
+    <g stroke="#4a4a5e" stroke-width="2">
+      <line x1="272" y1="238" x2="272" y2="292"/>
+      <line x1="300" y1="238" x2="300" y2="292"/>
+      <line x1="330" y1="238" x2="330" y2="292"/>
+      <line x1="358" y1="238" x2="358" y2="292"/>
+    </g>
+    <line x1="252" y1="268" x2="392" y2="268" stroke="#4a4a5e" stroke-width="2"/>
+
+    <!-- keyboard bed -->
+    <rect x="98" y="350" width="472" height="28" rx="5" fill="#101017"/>
+    <rect x="98" y="350" width="472" height="6" fill="#5f5f76"/>
+
+    <!-- white keys -->
+    <g fill="url(#keyWhite)" stroke="#b7b0a2" stroke-width="1">
+      <rect x="104" y="356" width="27" height="58" rx="3"/>
+      <rect x="131" y="356" width="27" height="58" rx="3"/>
+      <rect x="158" y="356" width="27" height="58" rx="3"/>
+      <rect x="185" y="356" width="27" height="58" rx="3"/>
+      <rect x="212" y="356" width="27" height="58" rx="3"/>
+      <rect x="239" y="356" width="27" height="58" rx="3"/>
+      <rect x="266" y="356" width="27" height="58" rx="3"/>
+      <rect x="293" y="356" width="27" height="58" rx="3"/>
+      <rect x="320" y="356" width="27" height="58" rx="3"/>
+      <rect x="347" y="356" width="27" height="58" rx="3"/>
+      <rect x="374" y="356" width="27" height="58" rx="3"/>
+      <rect x="401" y="356" width="27" height="58" rx="3"/>
+      <rect x="428" y="356" width="27" height="58" rx="3"/>
+      <rect x="455" y="356" width="27" height="58" rx="3"/>
+      <rect x="482" y="356" width="27" height="58" rx="3"/>
+      <rect x="509" y="356" width="27" height="58" rx="3"/>
+      <rect x="536" y="356" width="27" height="58" rx="3"/>
+    </g>
+
+    <!-- black keys -->
+    <g fill="#12121a">
+      <rect x="122" y="356" width="16" height="36" rx="2"/>
+      <rect x="149" y="356" width="16" height="36" rx="2"/>
+      <rect x="203" y="356" width="16" height="36" rx="2"/>
+      <rect x="230" y="356" width="16" height="36" rx="2"/>
+      <rect x="257" y="356" width="16" height="36" rx="2"/>
+      <rect x="311" y="356" width="16" height="36" rx="2"/>
+      <rect x="338" y="356" width="16" height="36" rx="2"/>
+      <rect x="392" y="356" width="16" height="36" rx="2"/>
+      <rect x="419" y="356" width="16" height="36" rx="2"/>
+      <rect x="446" y="356" width="16" height="36" rx="2"/>
+      <rect x="500" y="356" width="16" height="36" rx="2"/>
+      <rect x="527" y="356" width="16" height="36" rx="2"/>
+    </g>
+    <rect x="104" y="408" width="459" height="7" fill="#000" opacity=".18"/>
+
+    <!-- pedals -->
+    <rect x="298" y="486" width="94" height="10" rx="5" fill="#8c6a3e"/>
+    <circle cx="320" cy="491" r="6" fill="#c79a56"/>
+    <circle cx="345" cy="491" r="6" fill="#c79a56"/>
+    <circle cx="370" cy="491" r="6" fill="#c79a56"/>
+  </g>
+
+  <!-- ====== Cat ====== -->
+  <g filter="url(#drop)">
+    <!-- tail -->
+    <path d="M300,468 C252,518 184,520 172,462 C166,432 200,422 214,446"
+          fill="none" stroke="#e8811f" stroke-width="19" stroke-linecap="round"/>
+    <path d="M300,468 C252,518 184,520 172,462 C166,432 200,422 214,446"
+          fill="none" stroke="#ffbe66" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+
+    <!-- body / haunch on bench -->
+    <ellipse cx="322" cy="446" rx="126" ry="48" fill="url(#catFur)"/>
+    <ellipse cx="346" cy="462" rx="74" ry="34" fill="url(#catBelly)"/>
+    <g stroke="#cf6c16" stroke-width="9" stroke-linecap="round" opacity=".75">
+      <path d="M258,420 q4,18 -8,28"/>
+      <path d="M292,414 q4,18 -8,28"/>
+      <path d="M326,412 q4,18 -8,28"/>
+    </g>
+
+    <!-- chest -->
+    <ellipse cx="382" cy="374" rx="54" ry="58" fill="url(#catFur)"/>
+    <ellipse cx="390" cy="386" rx="34" ry="42" fill="url(#catBelly)" opacity=".95"/>
+
+    <!-- left arm reaching to the keys -->
+    <path d="M372,342 C432,336 470,356 502,372"
+          fill="none" stroke="#f59231" stroke-width="26" stroke-linecap="round"/>
+    <ellipse cx="508" cy="374" rx="20" ry="15" fill="#ffd49c"/>
+    <g stroke="#dd9a5c" stroke-width="2" stroke-linecap="round">
+      <line x1="499" y1="366" x2="497" y2="377"/>
+      <line x1="509" y1="364" x2="508" y2="375"/>
+      <line x1="519" y1="366" x2="519" y2="377"/>
+    </g>
+
+    <!-- right arm pressing a lower key -->
+    <path d="M368,396 C418,404 452,414 474,424"
+          fill="none" stroke="#e8861f" stroke-width="24" stroke-linecap="round"/>
+    <ellipse cx="480" cy="426" rx="19" ry="14" fill="#ffd49c"/>
+
+    <!-- ears -->
+    <path d="M344,226 L336,170 L390,200 Z" fill="#f59231"/>
+    <path d="M352,222 L348,188 L378,205 Z" fill="#ffb3c1"/>
+    <path d="M440,226 L448,170 L396,200 Z" fill="#f59231"/>
+    <path d="M432,222 L436,188 L406,205 Z" fill="#ffb3c1"/>
+
+    <!-- head -->
+    <circle cx="392" cy="268" r="62" fill="url(#catFur)"/>
+    <g stroke="#cf6c16" stroke-width="7" stroke-linecap="round" opacity=".8">
+      <path d="M372,212 L375,228"/>
+      <path d="M392,208 L392,226"/>
+      <path d="M412,212 L409,228"/>
+      <path d="M356,226 L364,238"/>
+      <path d="M428,226 L420,238"/>
+    </g>
+
+    <!-- happy closed eyes -->
+    <g fill="none" stroke="#2c1a10" stroke-width="5" stroke-linecap="round">
+      <path d="M356,268 q15,15 30,0"/>
+      <path d="M398,268 q15,15 30,0"/>
+    </g>
+
+    <!-- muzzle -->
+    <ellipse cx="392" cy="292" rx="34" ry="24" fill="#fff4e0"/>
+    <path d="M384,284 q8,7 16,0 q-8,12 -16,0 Z" fill="#e07a8f"/>
+    <path d="M392,292 v6 M392,298 q-8,7 -14,1 M392,298 q8,7 14,1"
+          fill="none" stroke="#2c1a10" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- whiskers -->
+    <g stroke="#fff8ec" stroke-width="2.5" stroke-linecap="round" opacity=".9">
+      <path d="M352,288 L310,280"/>
+      <path d="M352,296 L310,300"/>
+      <path d="M432,288 L474,280"/>
+      <path d="M432,296 L474,300"/>
+    </g>
+  </g>
+
+  <!-- ====== Floating notes ====== -->
+  <g fill="#ffe08a" stroke="#c99a2e" stroke-width="2" filter="url(#glow)">
+<g transform="translate(640,132) rotate(12)">
+      <ellipse cx="0" cy="0" rx="9" ry="6.5" transform="rotate(-20 0 0)"/>
+      <rect x="6" y="-40" width="3.5" height="40"/>
+      <path d="M9.5,-40 q16,6 15,20 q-6,-12 -15,-12 Z"/>
+    </g>
+    <g transform="translate(700,226) rotate(8)">
+      <ellipse cx="0" cy="0" rx="8" ry="5.5" transform="rotate(-20 0 0)"/>
+      <rect x="5.5" y="-34" width="3.2" height="34"/>
+      <path d="M8.7,-34 q14,5 13,18 q-5,-11 -13,-11 Z"/>
+    </g>
+    <g transform="translate(604,296) rotate(-8)">
+      <ellipse cx="0" cy="0" rx="7" ry="5" transform="rotate(-20 0 0)"/>
+      <rect x="5" y="-28" width="3" height="28"/>
+      <path d="M8,-28 q12,4 11,15 q-4,-9 -11,-9 Z"/>
+    </g>
+    <!-- beamed pair, left side -->
+    <g transform="translate(152,170) rotate(-10)">
+      <path d="M0,-46 L34,-56 L34,-46 Z"/>
+      <rect x="0" y="-46" width="3.5" height="46"/>
+      <rect x="30.5" y="-56" width="3.5" height="56"/>
+      <ellipse cx="-2" cy="0" rx="8" ry="5.5" transform="rotate(-20 -2 0)"/>
+      <ellipse cx="28" cy="-10" rx="8" ry="5.5" transform="rotate(-20 28 -10)"/>
+    </g>
+    <g transform="translate(96,262) rotate(10)">
+      <ellipse cx="0" cy="0" rx="7" ry="5" transform="rotate(-20 0 0)"/>
+      <rect x="5" y="-30" width="3" height="30"/>
+      <path d="M8,-30 q13,5 12,16 q-4,-10 -12,-10 Z"/>
+    </g>
+  </g>
+</svg>

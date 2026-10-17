@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-labelledby="t d">
+  <title id="t">A cat playing the piano</title>
+  <desc id="d">An orange tabby cat sits at an upright piano, paws on the keys, head tilted, with musical notes floating in the air.</desc>
+
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf2e0"/>
+      <stop offset="1" stop-color="#eed7b9"/>
+    </linearGradient>
+    <pattern id="stripes" width="46" height="46" patternUnits="userSpaceOnUse">
+      <rect width="20" height="46" fill="#ffffff" opacity=".30"/>
+    </pattern>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cf9f6d"/>
+      <stop offset="1" stop-color="#a3754c"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#71402a"/>
+      <stop offset=".55" stop-color="#552c1b"/>
+      <stop offset="1" stop-color="#3a1d11"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8d5535"/>
+      <stop offset="1" stop-color="#57301f"/>
+    </linearGradient>
+    <linearGradient id="key" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".85" stop-color="#f2ece1"/>
+      <stop offset="1" stop-color="#ddd4c3"/>
+    </linearGradient>
+    <linearGradient id="bkey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3946"/>
+      <stop offset="1" stop-color="#15151b"/>
+    </linearGradient>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fabc74"/>
+      <stop offset="1" stop-color="#e68f3c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff7e6" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#fff7e6" stop-opacity="0"/>
+    </radialGradient>
+
+    <g id="note8" fill="currentColor">
+      <ellipse rx="11" ry="7.5" transform="rotate(-20)"/>
+      <path d="M9 -3 V-46" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M9 -46 q18 6 15 24 q-3 -13 -15 -13 z"/>
+    </g>
+    <g id="note2" fill="currentColor">
+      <ellipse rx="11" ry="7.5" transform="rotate(-20)"/>
+      <ellipse cx="26" cy="-6" rx="11" ry="7.5" transform="rotate(-20 26 -6)"/>
+      <path d="M9 -3 V-46 M35 -9 V-52" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M9 -46 L35 -52 L35 -42 L9 -36 Z"/>
+    </g>
+    <path id="spark" fill="#e8b53f"
+      d="M0 -13 Q2.5 -2.5 13 0 Q2.5 2.5 0 13 Q-2.5 2.5 -13 0 Q-2.5 -2.5 0 -13 Z"/>
+  </defs>
+
+  <!-- room -->
+  <rect width="800" height="600" fill="url(#wall)"/>
+  <rect width="800" height="470" fill="url(#stripes)"/>
+  <rect y="452" width="800" height="20" fill="#e9d6bc"/>
+  <rect y="470" width="800" height="130" fill="url(#floor)"/>
+  <path d="M0 500 H800 M0 546 H800" stroke="#8e6540" stroke-width="2" opacity=".35"/>
+  <ellipse cx="400" cy="270" rx="330" ry="240" fill="url(#glow)"/>
+  <ellipse cx="400" cy="578" rx="350" ry="26" fill="#000" opacity=".13"/>
+
+  <!-- little plant, left -->
+  <g>
+    <path d="M62 502 C40 486 36 462 46 448 C64 452 74 470 68 490 Z" fill="#6c9a5c"/>
+    <path d="M64 502 C64 476 78 458 96 456 C98 476 84 496 64 502 Z" fill="#7fae6a"/>
+    <path d="M62 500 C56 480 56 462 62 450" stroke="#4f7a45" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M36 500 H90 L82 546 H44 Z" fill="#c76b4f"/>
+    <rect x="32" y="492" width="62" height="12" rx="4" fill="#d97d5e"/>
+  </g>
+
+  <!-- piano body -->
+  <rect x="152" y="262" width="496" height="132" rx="6" fill="url(#wood)"/>
+  <rect x="168" y="278" width="464" height="100" rx="4" fill="none" stroke="#d4a94a" stroke-width="3" opacity=".85"/>
+  <rect x="138" y="234" width="524" height="28" rx="10" fill="url(#lid)"/>
+  <rect x="146" y="236" width="508" height="6" rx="3" fill="#a4694a" opacity=".7"/>
+  <rect x="152" y="392" width="496" height="22" rx="4" fill="#2e1910"/>
+  <rect x="152" y="478" width="496" height="16" rx="3" fill="#2a170e"/>
+  <rect x="152" y="494" width="496" height="56" rx="5" fill="url(#wood)"/>
+  <rect x="138" y="548" width="524" height="26" rx="7" fill="#31200f"/>
+  <rect x="346" y="572" width="30" height="12" rx="4" fill="#d9b451"/>
+  <rect x="424" y="572" width="30" height="12" rx="4" fill="#d9b451"/>
+
+  <!-- cat: tail (behind body) -->
+  <path d="M498 398 C566 404 604 364 588 330" fill="none" stroke="#e68f3c" stroke-width="24" stroke-linecap="round"/>
+  <path d="M588 330 C582 304 552 296 534 312" fill="none" stroke="#ffe7c6" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- cat: body -->
+  <path d="M296 420 C286 354 302 310 340 288 C354 280 378 274 400 274
+           C422 274 446 280 460 288 C498 310 514 354 504 420 Z" fill="url(#fur)"/>
+  <path d="M344 420 C340 348 356 306 400 306 C444 306 460 348 456 420 Z" fill="#ffe7c6"/>
+  <g fill="none" stroke="#dd8236" stroke-width="10" stroke-linecap="round" opacity=".75">
+    <path d="M314 348 q17 11 35 4"/>
+    <path d="M320 380 q17 11 35 4"/>
+    <path d="M486 348 q-17 11 -35 4"/>
+    <path d="M480 380 q-17 11 -35 4"/>
+  </g>
+
+  <!-- cat: arms -->
+  <path d="M348 300 C332 342 318 380 320 414" fill="none" stroke="#f0a254" stroke-width="34" stroke-linecap="round"/>
+  <path d="M456 302 C472 344 486 382 484 414" fill="none" stroke="#f0a254" stroke-width="34" stroke-linecap="round"/>
+
+  <!-- cat: head (tilted) -->
+  <g transform="rotate(-7 400 190)">
+    <path d="M336 158 Q328 98 344 86 Q374 112 398 140 Z" fill="url(#fur)"/>
+    <path d="M464 158 Q472 98 456 86 Q426 112 402 140 Z" fill="url(#fur)"/>
+    <path d="M349 150 Q345 116 352 108 Q370 126 386 142 Z" fill="#f2a3a0"/>
+    <path d="M451 150 Q455 116 448 108 Q430 126 414 142 Z" fill="#f2a3a0"/>
+    <ellipse cx="400" cy="190" rx="72" ry="64" fill="url(#fur)"/>
+    <g stroke="#dd8236" stroke-width="8" stroke-linecap="round" fill="none" opacity=".8">
+      <path d="M386 138 v16"/>
+      <path d="M400 132 v18"/>
+      <path d="M414 138 v16"/>
+    </g>
+    <ellipse cx="400" cy="214" rx="40" ry="27" fill="#ffe7c6"/>
+    <ellipse cx="342" cy="218" rx="16" ry="10" fill="#ef8b78" opacity=".45"/>
+    <ellipse cx="458" cy="218" rx="16" ry="10" fill="#ef8b78" opacity=".45"/>
+    <ellipse cx="364" cy="192" rx="15" ry="18" fill="#26262e"/>
+    <ellipse cx="436" cy="192" rx="15" ry="18" fill="#26262e"/>
+    <circle cx="359" cy="186" r="5.5" fill="#fff"/>
+    <circle cx="431" cy="186" r="5.5" fill="#fff"/>
+    <circle cx="369" cy="200" r="2.6" fill="#fff" opacity=".85"/>
+    <circle cx="441" cy="200" r="2.6" fill="#fff" opacity=".85"/>
+    <path d="M389 203 Q400 197 411 203 Q404 218 400 218 Q396 218 389 203 Z" fill="#d9695f"/>
+    <g fill="none" stroke="#8a4f2a" stroke-width="3.4" stroke-linecap="round">
+      <path d="M400 218 v6"/>
+      <path d="M400 224 q-8 12 -19 4"/>
+      <path d="M400 224 q8 12 19 4"/>
+    </g>
+    <g fill="none" stroke="#f7e9d4" stroke-width="3" stroke-linecap="round">
+      <path d="M352 206 L302 194"/>
+      <path d="M350 216 L298 216"/>
+      <path d="M353 226 L308 240"/>
+      <path d="M448 206 L498 194"/>
+      <path d="M450 216 L502 216"/>
+      <path d="M447 226 L492 240"/>
+    </g>
+  </g>
+
+  <!-- keys (drawn over the cat so it sits behind the keyboard) -->
+  <rect x="160" y="414" width="480" height="66" rx="3" fill="url(#key)"/>
+  <rect x="160" y="414" width="480" height="9" fill="#000" opacity=".08"/>
+  <g stroke="#cdc4b3" stroke-width="1.2">
+    <path d="M180 414 V480 M200 414 V480 M220 414 V480 M240 414 V480 M260 414 V480 M280 414 V480
+             M300 414 V480 M320 414 V480 M340 414 V480 M360 414 V480 M380 414 V480 M400 414 V480
+             M420 414 V480 M440 414 V480 M460 414 V480 M480 414 V480 M500 414 V480 M520 414 V480
+             M540 414 V480 M560 414 V480 M580 414 V480 M600 414 V480 M620 414 V480"/>
+  </g>
+  <g fill="url(#bkey)">
+    <rect x="174" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="194" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="234" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="254" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="274" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="314" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="334" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="374" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="394" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="414" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="454" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="474" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="514" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="534" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="554" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="594" y="414" width="12" height="40" rx="2.5"/>
+    <rect x="614" y="414" width="12" height="40" rx="2.5"/>
+  </g>
+
+  <!-- paws pressing the keys -->
+  <ellipse cx="320" cy="456" rx="28" ry="6" fill="#000" opacity=".13"/>
+  <ellipse cx="484" cy="458" rx="28" ry="6" fill="#000" opacity=".13"/>
+  <ellipse cx="320" cy="438" rx="28" ry="20" fill="url(#fur)"/>
+  <ellipse cx="484" cy="440" rx="28" ry="20" fill="url(#fur)"/>
+  <g fill="none" stroke="#d9803a" stroke-width="2.6" stroke-linecap="round">
+    <path d="M308 440 v9 M320 444 v9 M332 440 v9"/>
+    <path d="M472 442 v9 M484 446 v9 M496 442 v9"/>
+  </g>
+  <g fill="none" stroke="#f0a254" stroke-width="3" stroke-linecap="round" opacity=".8">
+    <path d="M528 424 q10 6 10 16"/>
+    <path d="M540 414 q14 9 14 24"/>
+  </g>
+
+  <!-- floating music & sparkles -->
+  <g color="#3f5f8f">
+    <use href="#note8" transform="translate(616 148) rotate(-10) scale(1.15)"/>
+    <use href="#note8" transform="translate(668 224) rotate(12) scale(.85)"/>
+    <use href="#note2" transform="translate(596 78) rotate(4) scale(.8)"/>
+    <use href="#note8" transform="translate(170 148) rotate(10) scale(1.05)"/>
+    <use href="#note8" transform="translate(120 214) rotate(-12) scale(.85)"/>
+    <use href="#note2" transform="translate(200 72) rotate(-5) scale(.85)"/>
+  </g>
+  <g color="#c96a4f">
+    <use href="#note8" transform="translate(708 330) rotate(14) scale(.7)"/>
+    <use href="#note8" transform="translate(92 344) rotate(-14) scale(.7)"/>
+  </g>
+  <use href="#spark" transform="translate(268 78) scale(.9)"/>
+  <use href="#spark" transform="translate(540 66) scale(.65)"/>
+  <use href="#spark" transform="translate(730 180) scale(.7)"/>
+  <use href="#spark" transform="translate(66 258) scale(.75)"/>
+</svg>

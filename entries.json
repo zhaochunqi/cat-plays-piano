@@ -394,5 +394,11 @@
         "thinking": "high",
         "date": "2026-10-18",
         "file": "entries/space-bunny-free-high-2026-10-18.svg"
+    },
+    {
+        "model": "minimax-m3.1-flash-free",
+        "thinking": "none",
+        "date": "2026-10-20",
+        "file": "entries/minimax-m3.1-flash-free-none-2026-10-20.svg"
     }
 ]
